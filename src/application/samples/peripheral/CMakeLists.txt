@@ -5,7 +5,9 @@
 if(DEFINED CONFIG_SAMPLE_SUPPORT_AMIC)
     add_subdirectory_if_exist(amic)
 endif()
-
+if(DEFINED CONFIG_SAMPLE_SUPPORT_SLE_ONE_TO_MANY)
+    add_subdirectory_if_exist(sle_one_to_many)
+endif()
 if(DEFINED CONFIG_SAMPLE_SUPPORT_BLINKY)
     add_subdirectory_if_exist(blinky)
 endif()

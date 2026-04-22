@@ -448,3 +448,17 @@ menu "WATCHDOG Sample Configuration"
     osource "application/samples/peripheral/watchdog/Kconfig"
 endmenu
 endif
+
+config SAMPLE_SUPPORT_SLE_ONE_TO_MANY
+    bool
+    prompt "Support SLE_ONE_TO_MANY Sample."
+    default n
+    depends on ENABLE_PERIPHERAL_SAMPLE
+    help
+        This option means support SLE_ONE_TO_MANY Sample.
+
+if SAMPLE_SUPPORT_SLE_ONE_TO_MANY
+menu "SLE ONE-TO-MANY Sample Configuration"
+    osource "application/samples/peripheral/sle_one_to_many/Kconfig"
+endmenu
+endif
