@@ -108,6 +108,20 @@ menu "Hello World Sample Configuration"
 endmenu
 endif
 
+config SAMPLE_SUPPORT_MY_PROJECT_63
+    bool
+    prompt "Support My_project_63 Sample."
+    default n
+    depends on ENABLE_PERIPHERAL_SAMPLE
+    help
+        This option means support My_project_63 sample.
+
+if SAMPLE_SUPPORT_MY_PROJECT_63
+menu "My_project_63 Sample Configuration"
+    osource "application/samples/peripheral/My_project_63/Kconfig"
+endmenu
+endif
+
 config SAMPLE_SUPPORT_BUTTON
     bool
     prompt "Support BUTTON Sample."

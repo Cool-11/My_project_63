@@ -1,0 +1,12 @@
+#===============================================================================
+# @brief    Kconfig file
+#===============================================================================
+menu "My Project 63 Configuration"
+
+config MY_PROJECT_63_ENABLE_STARTUP_LOG
+    bool "Enable startup logs"
+    default y
+    help
+        Print startup phase logs for fast bring-up diagnostics.
+
+endmenu

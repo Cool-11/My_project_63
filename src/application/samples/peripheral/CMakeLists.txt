@@ -128,4 +128,8 @@ if(DEFINED CONFIG_SAMPLE_SUPPORT_HELLOWORLD_OLED)
     add_subdirectory_if_exist(helloworld_oled)
 endif()
 
+if(DEFINED CONFIG_SAMPLE_SUPPORT_MY_PROJECT_63)
+    add_subdirectory_if_exist(My_project_63)
+endif()
+
 set(SOURCES "${SOURCES}" PARENT_SCOPE)
