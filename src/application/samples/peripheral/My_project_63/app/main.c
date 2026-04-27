@@ -88,7 +88,19 @@ static void *my63_main_task(const char *arg)
     osal_printk("[WS63_APP] all modules init done\r\n");
 
     for (;;) {
-        osal_printk("[WS63_APP] heartbeat alive\r\n");
+        if (sle_network_is_target_found() != 0) {
+            const sle_addr_t *addr = sle_network_get_target_addr();
+            osal_printk("[WS63_APP] heartbeat alive target=%d connected=%d authenticated=%d\r\n",
+                sle_network_is_target_found(), sle_network_is_connected(), sle_network_is_authenticated());
+            if (addr != NULL) {
+                osal_printk("[WS63_APP] target addr=%02x:%02x:%02x:%02x:%02x:%02x\r\n",
+                    addr->addr[0], addr->addr[1], addr->addr[2],
+                    addr->addr[3], addr->addr[4], addr->addr[5]);
+            }
+        } else {
+            osal_printk("[WS63_APP] heartbeat alive target=%d connected=%d authenticated=%d\r\n",
+                sle_network_is_target_found(), sle_network_is_connected(), sle_network_is_authenticated());
+        }
         osal_msleep(MY63_HEARTBEAT_MS);
     }
 
