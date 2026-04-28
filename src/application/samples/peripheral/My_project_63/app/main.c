@@ -90,16 +90,25 @@ static void *my63_main_task(const char *arg)
     for (;;) {
         if (sle_network_is_target_found() != 0) {
             const sle_addr_t *addr = sle_network_get_target_addr();
-            osal_printk("[WS63_APP] heartbeat alive target=%d connected=%d authenticated=%d\r\n",
-                sle_network_is_target_found(), sle_network_is_connected(), sle_network_is_authenticated());
+            osal_printk("[WS63_APP] heartbeat target=%d connected=%d link_lost=%d authenticated=%d ssap_ready=%d scan_cnt=%u scan_on=%d\r\n",
+                sle_network_is_target_found(), sle_network_is_connected(),
+                sle_network_is_link_lost(), sle_network_is_authenticated(), sle_network_is_ssap_ready(),
+                sle_network_get_scan_count(), sle_network_get_scan_active());
             if (addr != NULL) {
                 osal_printk("[WS63_APP] target addr=%02x:%02x:%02x:%02x:%02x:%02x\r\n",
                     addr->addr[0], addr->addr[1], addr->addr[2],
                     addr->addr[3], addr->addr[4], addr->addr[5]);
             }
         } else {
-            osal_printk("[WS63_APP] heartbeat alive target=%d connected=%d authenticated=%d\r\n",
-                sle_network_is_target_found(), sle_network_is_connected(), sle_network_is_authenticated());
+            osal_printk("[WS63_APP] heartbeat target=%d connected=%d link_lost=%d authenticated=%d ssap_ready=%d scan_cnt=%u scan_on=%d\r\n",
+                sle_network_is_target_found(), sle_network_is_connected(),
+                sle_network_is_link_lost(), sle_network_is_authenticated(), sle_network_is_ssap_ready(),
+                sle_network_get_scan_count(), sle_network_get_scan_active());
+
+            if (sle_network_get_scan_count() == 0 && sle_network_get_scan_active() == 0) {
+                osal_printk("[WS63_APP] scan not active and no results, restarting scan\r\n");
+                (void)sle_network_start_scan();
+            }
         }
         osal_msleep(MY63_HEARTBEAT_MS);
     }

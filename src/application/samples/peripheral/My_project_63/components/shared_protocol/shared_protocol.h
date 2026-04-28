@@ -19,6 +19,9 @@ typedef struct __attribute__((packed)) {
 #define SHARED_PROTO_ADV_FIELD_LEN 12U
 #define SHARED_PROTO_MAGIC 0xAABBCCDDU
 
+_Static_assert(sizeof(shared_proto_adv_field_t) == SHARED_PROTO_ADV_FIELD_LEN,
+    "shared_proto_adv_field_t must be 12 bytes");
+
 typedef enum {
     SHARED_PROTO_OK = 0,
     SHARED_PROTO_ERR_NULL = -1,
