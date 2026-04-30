@@ -1,9 +1,9 @@
 星闪智能仓储 WS63 ↔ BS21E 联调协同规范
-版本：v1.0生效日期：2026-04-28当前状态：BS21E 端已准备完毕，安全模式暂不启用（仅用于快速验证基础链路），先跑通「扫描→连接→SSAP 发现→简单指令收发」闭环
+版本：v1.3生效日期：2026-04-28当前状态：BS21E 端已准备完毕，安全模式暂不启用（仅用于快速验证基础链路），先跑通「扫描→连接→SSAP 发现→简单指令收发」闭环
 前置说明
 核心原则：所有标🔴的项必须 100% 严格对齐，否则联调会直接失败
 当前优先级：先验证基础链路，基础链路跑通后统一开启安全模式
-BS21E 端状态：已烧录通用固件，tag_id=0，电量模拟值 = 95，广播间隔 = 200ms
+BS21E 端状态：已烧录通用固件，tag_id=0，电量模拟值 = 100，广播间隔 = 0xC8（25ms）
 一、🔴 最高优先级：协议一致性（两端必须完全一致）
 1.1 广播 Payload 结构体
 直接引用 BS21E 端提供的 shared_protocol.h，禁止单独定义：
@@ -283,3 +283,144 @@ AD Field 4: TX_POWER_LEVEL (type=0x0A)
 AD Field 5: COMPLETE_LOCAL_NAME (type=0x09) — 值为 "BS2x_Tag"
 seek_rsp_data: NULL（无扫描响应数据）
 WS63 端匹配策略：优先匹配 manufacturer data（magic + tag_id），降级匹配 local_name("BS2x_Tag")
+
+十一、🔴 补丁 v3：BS21E 参数全面对齐（2026-04-29，当前版本）
+11.1 问题背景
+根据 BS21E 端提供的完整广播参数表，WS63 端存在多处参数不匹配，是 target=0 的根本原因。本次补丁对照 BS21E 实际参数逐一修正。
+11.2 BS21E 端完整参数表（权威参考）
+一、广播（Announce）参数
+参数	十六进制值	十进制值	实际时间	说明
+announce_handle	0x01	1	—	广播句柄
+announce_mode	0x02	2	—	CONNECTABLE_SCANABLE
+announce_gt_role	0x01	1	—	T_CAN_NEGO
+announce_level	0x01	1	—	NORMAL
+announce_channel_map	0x07	7	—	37/38/39 三信道全开
+announce_interval_min	0xC8	200	25ms	单位125μs
+announce_interval_max	0xC8	200	25ms	单位125μs
+announce_tx_power	0x00	0	0 dBm	默认发射功率
+二、连接（Connection）参数
+参数	十六进制值	十进制值	实际时间	说明
+conn_interval_min	0x64	100	12.5ms	单位125μs
+conn_interval_max	0x64	100	12.5ms	单位125μs
+conn_max_latency	0x1F3	499	—	从机最大潜伏次数
+conn_supervision_timeout	0x1F4	500	62.5ms	单位125μs
+三、广播数据（Announce Data）
+数据段	类型字节	值字节	说明
+[0]	0x02	—	长度2字节
+[1]	DISCOVERY_LEVEL	0x01	NORMAL
+[2]	—	0x01	SLE_ANNOUNCE_LEVEL_NORMAL
+[3]	0x02	—	长度2字节
+[4]	ACCESS_MODE	0x02	开放访问
+[5]	—	0x00	开放模式
+[6+]	0x10	—	Manufacturer Data 长度（16字节 = 1 type + 2 ID + 13 data）
+[7]	MANUFACTURER_SPECIFIC_DATA	0xFF	厂商数据标识
+[8]	MANUFACTURER_ID_L	0x5A	厂商ID低字节
+[9]	MANUFACTURER_ID_H	0xA5	厂商ID高字节
+[10~21]	—	—	shared_proto_adv_field_t 共12字节业务数据
+四、扫应答数据（Seek Rsp Data）
+数据段	类型字节	值字节	说明
+[0]	0x02	—	长度2字节
+[1]	TX_POWER_LEVEL	0x0C	发射功率
+[2]	—	0x00	0 dBm
+[3]	0x09	—	长度9字节
+[4]	COMPLETE_LOCAL_NAME	0x0B	完整本地名称（SLE类型编码）
+[5~12]	—	"BS2x_Tag"	8字节设备名
+11.3 本次修改清单（v3 补丁）
+修改项一：🔴 Manufacturer Data 偏移 + 长度判断修复（P0 最致命）
+文件：components/sle_network/sle_network.c
+函数：my63_extract_adv_field
+修改前：
+field_data_len == SHARED_PROTO_ADV_FIELD_LEN（即 == 12）
+unpack 从 data[offset + 2U] 开始读
+修改后：
+field_data_len >= SHARED_PROTO_ADV_FIELD_LEN + MY63_MANUFACTURER_ID_LEN（即 >= 14）
+先校验厂商ID：data[offset+2]==0x5A && data[offset+3]==0xA5
+unpack 从 data[offset + 2U + MY63_MANUFACTURER_ID_LEN] 开始读（跳过2字节厂商ID）
+unpack 长度传入 SHARED_PROTO_ADV_FIELD_LEN（12字节）
+原因：BS21E 端 manufacturer data 格式为 厂商ID(0x5A,0xA5) + shared_proto_adv_field_t(12字节)，共14字节。旧代码要求 field_data_len==12 但实际是15（field_len=16, data_len=15），永远不匹配。
+新增宏定义：
+#define MY63_MANUFACTURER_ID_L  0x5A
+#define MY63_MANUFACTURER_ID_H  0xA5
+#define MY63_MANUFACTURER_ID_LEN 2
+修改项二：🔴 连接间隔修复（P0）
+文件：components/sle_network/sle_network.c
+宏：MY63_SLE_DEFAULT_CONN_INTERVAL
+修改前：0x14（20，2.5ms）
+修改后：0x64（100，12.5ms）
+原因：BS21E 端 conn_interval = 0x64，两端必须完全一致。
+修改项三：🔴 扫描间隔修复（P0）
+文件：components/sle_network/sle_network.c
+宏：MY63_SLE_SEEK_INTERVAL_DEFAULT
+修改前：100（12.5ms）
+修改后：0xC8（200，25ms）
+原因：BS21E 要求 WS63 扫描间隔 ≥ 0xC8。
+修改项四：🔴 扫描窗口修复（P0）
+文件：components/sle_network/sle_network.c
+宏：MY63_SLE_SEEK_WINDOW_DEFAULT
+修改前：100（12.5ms）
+修改后：0x50（80，10ms）
+原因：BS21E 建议窗口 < 扫描间隔，建议 0x50。
+修改项五：🟡 COMPLETE_LOCAL_NAME 类型字节修复（P1）
+文件：components/sle_network/sle_network.c
+宏：MY63_ADV_FIELD_TYPE_COMPLETE_NAME
+修改前：0x09（BLE 标准编码）
+修改后：0x0B（SLE 协议编码）
+原因：BS21E 端 seek_rsp_data 中 COMPLETE_LOCAL_NAME 的类型字节是 0x0B，不是 BLE 的 0x09。SLE 协议的 AD type 编码与 BLE 不同。
+修改项六：🟡 厂商ID校验（P2）
+文件：components/sle_network/sle_network.c
+函数：my63_extract_adv_field
+新增：解析到 type=0xFF 字段后，先校验前2字节是否为 0x5A 0xA5，不匹配则打印警告。
+11.4 修改历史汇总
+版本	日期	修改内容	涉及文件
+v1.0	2026-04-28	初始规范	—
+v1.1（补丁v1）	2026-04-29	扫描原始数据诊断：RAW PAYLOAD 打印 + AD field 逐字段打印	sle_network.c
+v1.2（补丁v2）	2026-04-29	local_name 匹配 + 主动扫描 + 扫描计数器 + 心跳增强 + 扫描自动重启	sle_network.c, sle_network.h, main.c
+v1.3（补丁v3）	2026-04-29	Manufacturer Data 偏移修复 + 连接/扫描参数全面对齐 + local_name type 0x0B + 厂商ID校验	sle_network.c
+11.5 调试方式
+步骤一：烧录后观察心跳
+[WS63_APP] heartbeat target=0 connected=0 link_lost=0 authenticated=0 ssap_ready=0 scan_cnt=X scan_on=1
+- scan_cnt=0 scan_on=1 → 扫描在跑但没收到任何设备 → 检查 BS21E 是否上电、是否在广播
+- scan_cnt>0 scan_on=1 → 收到了设备，继续看下面的日志
+步骤二：观察 RAW PAYLOAD 和 AD field 日志
+[WS63_NET] seek result #1 rssi=-XX, addr=XX:XX:XX:XX:XX:XX
+[WS63_NET] RAW PAYLOAD len=XX: 02 01 01 02 02 00 10 FF 5A A5 DD CC BB AA ...
+[WS63_NET] AD field offset=6 len=22 type=0xFF data_len=21 hex: 5A A5 DD CC BB AA ...
+正常情况下应该看到：
+- type=0xFF 的 AD field
+- 前两字节为 5A A5（厂商ID匹配）
+- 后面 12 字节为 shared_proto_adv_field_t
+步骤三：观察匹配结果
+成功路径：
+[WS63_NET] manufacturer ID matched: 0x5A 0xA5
+[WS63_NET] adv matched tag=0 qty=X status=X bat=100 seq=X name_match=X
+[WS63_NET] target broadcast matched, stopping scan
+厂商ID不匹配：
+[WS63_NET] manufacturer ID mismatch: got 0xXX 0xXX, expect 0x5A 0xA5
+→ BS21E 端厂商ID不是 0x5A 0xA5，需确认 BS21E 固件
+厂商ID匹配但 magic 失败：
+[WS63_NET] manufacturer field found, ID ok, but unpack/magic failed, payload first 4 bytes: XX XX XX XX
+→ 看前4字节判断实际 magic 值，可能是字节序问题
+local_name 匹配但 manufacturer data 失败（降级连接）：
+[WS63_NET] local_name matched "BS2x_Tag"
+[WS63_NET] local_name matched but manufacturer data invalid, connect by name
+→ 基础链路可通，但业务数据不可用，需排查 manufacturer data 格式
+步骤四：观察连接和 SSAP 发现
+[WS63_NET] connect target addr=XX:XX:XX:XX:XX:XX
+[WS63_NET] conn state change conn_id=X state=2 pair=0 reason=0
+[WS63_NET] pair state none, start pair
+[WS63_NET] pair complete conn_id=X status=0x0
+[WS63_NET] ssap exchange info ...
+[WS63_NET] ssap service start=0xXXXX end=0xXXXX
+[WS63_NET] ssap discovery ready handle=0xXXXX
+如果连接失败，检查：
+- 连接间隔是否两端一致（0x64）
+- 安全模式是否两端都是 NO_SECURITY
+11.6 关键诊断决策树（更新版）
+1. scan_cnt=0 → BS21E 未广播或信号未到达 WS63
+2. scan_cnt>0 但无 type=0xFF → BS21E 没有使用 manufacturer specific 类型
+3. type=0xFF 但 data_len < 14 → 两端结构体长度不一致
+4. type=0xFF 且 data_len≥14 但厂商ID不匹配 → BS21E 端厂商ID不是 0x5A 0xA5
+5. 厂商ID匹配但 magic 失败 → 看前4字节判断字节序问题
+6. magic 匹配但 tag_id≠0 → BS21E 端 tag_id 配置不同
+7. 全部匹配成功但连接失败 → 检查连接间隔和安全模式
+8. 连接成功但 SSAP 发现失败 → 检查 Service/Property UUID

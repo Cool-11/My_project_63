@@ -11,15 +11,18 @@
 #include "../shared_protocol/shared_protocol.h"
 
 #define SLE_MTU_SIZE_DEFAULT        1500
-#define MY63_SLE_SEEK_INTERVAL_DEFAULT 100
-#define MY63_SLE_SEEK_WINDOW_DEFAULT   100
+#define MY63_SLE_SEEK_INTERVAL_DEFAULT 0xC8
+#define MY63_SLE_SEEK_WINDOW_DEFAULT   0x50
 #define MY63_SLE_SCAN_PHY_NUM          1
-#define MY63_SLE_DEFAULT_CONN_INTERVAL  0x14
+#define MY63_SLE_DEFAULT_CONN_INTERVAL  0x64
 #define MY63_SLE_DEFAULT_TIMEOUT        0x1f4
 #define MY63_SLE_DEFAULT_SCAN_INTERVAL   400
 #define MY63_SLE_DEFAULT_SCAN_WINDOW     20
 #define MY63_ADV_FIELD_TYPE_MANUFACTURER 0xFF
-#define MY63_ADV_FIELD_TYPE_COMPLETE_NAME 0x09
+#define MY63_ADV_FIELD_TYPE_COMPLETE_NAME 0x0B
+#define MY63_MANUFACTURER_ID_L           0x5A
+#define MY63_MANUFACTURER_ID_H           0xA5
+#define MY63_MANUFACTURER_ID_LEN         2
 #define MY63_TARGET_TAG_ID               0
 #define MY63_UUID_16BIT_LEN              2
 #define MY63_UUID_128BIT_LEN             16
@@ -150,15 +153,27 @@ static int my63_extract_adv_field(const sle_seek_result_info_t *seek_result,
         }
         osal_printk("\r\n");
 
-        if (field_type == MY63_ADV_FIELD_TYPE_MANUFACTURER && field_data_len == SHARED_PROTO_ADV_FIELD_LEN) {
-            if (shared_protocol_unpack_adv(&data[offset + 2U], field_data_len, out_field) == SHARED_PROTO_OK) {
+        if (field_type == MY63_ADV_FIELD_TYPE_MANUFACTURER &&
+            field_data_len >= SHARED_PROTO_ADV_FIELD_LEN + MY63_MANUFACTURER_ID_LEN) {
+            if (data[offset + 2U] != MY63_MANUFACTURER_ID_L ||
+                data[offset + 2U + 1U] != MY63_MANUFACTURER_ID_H) {
+                osal_printk("[WS63_NET] manufacturer ID mismatch: got 0x%02X 0x%02X, expect 0x%02X 0x%02X\r\n",
+                    data[offset + 2U], data[offset + 2U + 1U],
+                    MY63_MANUFACTURER_ID_L, MY63_MANUFACTURER_ID_H);
+            } else if (shared_protocol_unpack_adv(&data[offset + 2U + MY63_MANUFACTURER_ID_LEN],
+                SHARED_PROTO_ADV_FIELD_LEN, out_field) == SHARED_PROTO_OK) {
                 return 1;
+            } else {
+                osal_printk("[WS63_NET] manufacturer field found, ID ok, but unpack/magic failed, payload first 4 bytes: %02X %02X %02X %02X\r\n",
+                    data[offset + 2U + MY63_MANUFACTURER_ID_LEN],
+                    data[offset + 2U + MY63_MANUFACTURER_ID_LEN + 1U],
+                    data[offset + 2U + MY63_MANUFACTURER_ID_LEN + 2U],
+                    data[offset + 2U + MY63_MANUFACTURER_ID_LEN + 3U]);
             }
-            osal_printk("[WS63_NET] manufacturer field found but unpack/magic failed, first 4 bytes: %02X %02X %02X %02X\r\n",
-                data[offset + 2U], data[offset + 3U], data[offset + 4U], data[offset + 5U]);
         } else if (field_type == MY63_ADV_FIELD_TYPE_MANUFACTURER) {
-            osal_printk("[WS63_NET] manufacturer field type=0xFF but data_len=%u expect=%u\r\n",
-                (unsigned int)field_data_len, (unsigned int)SHARED_PROTO_ADV_FIELD_LEN);
+            osal_printk("[WS63_NET] manufacturer field type=0xFF but data_len=%u expect>=%u\r\n",
+                (unsigned int)field_data_len,
+                (unsigned int)(SHARED_PROTO_ADV_FIELD_LEN + MY63_MANUFACTURER_ID_LEN));
         }
 
         offset = (uint8_t)(offset + field_len + 1U);
