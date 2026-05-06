@@ -162,3 +162,99 @@ int shared_protocol_init(void)
     osal_printk("[WS63_SHARED] init done\r\n");
     return SHARED_PROTO_OK;
 }
+
+int shared_protocol_unpack_inventory(const uint8_t *buf, uint16_t len, ssap_inventory_rsp_t *out)
+{
+    osal_printk("[WS63_SHARED] unpack_inventory start\r\n");
+    if ((buf == NULL) || (out == NULL)) {
+        osal_printk("[WS63_SHARED] unpack_inventory failed: null input\r\n");
+        return SHARED_PROTO_ERR_NULL;
+    }
+
+    if (len < SSAP_INVENTORY_RSP_LEN) {
+        osal_printk("[WS63_SHARED] unpack_inventory failed: len=%u expect>=%u\r\n",
+            (unsigned int)len, (unsigned int)SSAP_INVENTORY_RSP_LEN);
+        return SHARED_PROTO_ERR_LEN;
+    }
+
+    if (buf[0] != SSAP_RSP_INVENTORY) {
+        osal_printk("[WS63_SHARED] unpack_inventory failed: cmd=0x%02X expect=0x%02X\r\n",
+            buf[0], SSAP_RSP_INVENTORY);
+        return SHARED_PROTO_ERR_CMD;
+    }
+
+    out->cmd = buf[0];
+    out->tag_id = read_le16(&buf[1]);
+    out->qty = read_le16(&buf[3]);
+    out->status = buf[5];
+    out->battery = buf[6];
+    out->seq = read_le16(&buf[7]);
+
+    osal_printk("[WS63_SHARED] unpack_inventory done: tag=%u qty=%u status=%u bat=%u seq=%u\r\n",
+        (unsigned int)out->tag_id, (unsigned int)out->qty,
+        (unsigned int)out->status, (unsigned int)out->battery, (unsigned int)out->seq);
+    return SHARED_PROTO_OK;
+}
+
+int shared_protocol_unpack_bind_rsp(const uint8_t *buf, uint16_t len, ssap_bind_rsp_t *out)
+{
+    osal_printk("[WS63_SHARED] unpack_bind_rsp start\r\n");
+    if ((buf == NULL) || (out == NULL)) {
+        osal_printk("[WS63_SHARED] unpack_bind_rsp failed: null input\r\n");
+        return SHARED_PROTO_ERR_NULL;
+    }
+
+    if (len < SSAP_BIND_RSP_LEN) {
+        osal_printk("[WS63_SHARED] unpack_bind_rsp failed: len=%u expect>=%u\r\n",
+            (unsigned int)len, (unsigned int)SSAP_BIND_RSP_LEN);
+        return SHARED_PROTO_ERR_LEN;
+    }
+
+    if (buf[0] != SSAP_RSP_BIND_OK && buf[0] != SSAP_RSP_BIND_FAIL) {
+        osal_printk("[WS63_SHARED] unpack_bind_rsp failed: cmd=0x%02X expect 0xA0/0xAF\r\n", buf[0]);
+        return SHARED_PROTO_ERR_CMD;
+    }
+
+    out->cmd = buf[0];
+    out->tag_id = read_le16(&buf[1]);
+
+    osal_printk("[WS63_SHARED] unpack_bind_rsp done: cmd=0x%02X tag=%u %s\r\n",
+        out->cmd, (unsigned int)out->tag_id,
+        (out->cmd == SSAP_RSP_BIND_OK) ? "OK" : "FAIL");
+    return SHARED_PROTO_OK;
+}
+
+int shared_protocol_pack_write_cmd(uint8_t cmd, uint16_t param, uint8_t *out_buf, uint16_t out_len)
+{
+    osal_printk("[WS63_SHARED] pack_write_cmd start cmd=0x%02X param=%u\r\n",
+        (unsigned int)cmd, (unsigned int)param);
+    if (out_buf == NULL) {
+        osal_printk("[WS63_SHARED] pack_write_cmd failed: null output\r\n");
+        return SHARED_PROTO_ERR_NULL;
+    }
+
+    if (cmd == SSAP_CMD_FIND || cmd == SSAP_CMD_STOP_FIND || cmd == SSAP_CMD_INVENTORY) {
+        if (out_len < 1) {
+            osal_printk("[WS63_SHARED] pack_write_cmd failed: out_len=%u need 1\r\n", (unsigned int)out_len);
+            return SHARED_PROTO_ERR_LEN;
+        }
+        out_buf[0] = cmd;
+        osal_printk("[WS63_SHARED] pack_write_cmd done: [0x%02X] 1-byte cmd\r\n", cmd);
+        return 1;
+    }
+
+    if (cmd == SSAP_CMD_UPDATE_QTY || cmd == SSAP_CMD_BIND_TAG) {
+        if (out_len < 3) {
+            osal_printk("[WS63_SHARED] pack_write_cmd failed: out_len=%u need 3\r\n", (unsigned int)out_len);
+            return SHARED_PROTO_ERR_LEN;
+        }
+        out_buf[0] = cmd;
+        write_le16(&out_buf[1], param);
+        osal_printk("[WS63_SHARED] pack_write_cmd done: [0x%02X 0x%02X 0x%02X] 3-byte cmd+param\r\n",
+            cmd, out_buf[1], out_buf[2]);
+        return 3;
+    }
+
+    osal_printk("[WS63_SHARED] pack_write_cmd failed: unknown cmd=0x%02X\r\n", (unsigned int)cmd);
+    return SHARED_PROTO_ERR_CMD;
+}

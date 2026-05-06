@@ -67,6 +67,8 @@ static int g_my63_ssap_ready = 0;
 static uint16_t g_my63_conn_id = 0;
 static ssapc_find_service_result_t g_my63_find_service_result = {0};
 static uint16_t g_my63_property_handle = 0;
+static int g_my63_cccd_written = 0;
+static sle_notify_callback g_my63_notify_cb = NULL;
 static volatile uint32_t g_my63_scan_result_count = 0;
 static volatile int g_my63_scan_active = 0;
 
@@ -216,6 +218,7 @@ static void my63_restart_scan_after_security_fail(const sle_addr_t *addr, const 
     g_my63_authenticated = 0;
     g_my63_ssap_ready = 0;
     g_my63_property_handle = 0;
+    g_my63_cccd_written = 0;
     (void)memset_s(&g_my63_find_service_result, sizeof(ssapc_find_service_result_t), 0,
         sizeof(ssapc_find_service_result_t));
     (void)sle_network_start_scan();
@@ -327,7 +330,7 @@ int sle_network_is_authenticated(void)
 
 int sle_network_is_ssap_ready(void)
 {
-    return (g_my63_ssap_ready != 0 && g_my63_property_handle != 0) ? 1 : 0;
+    return (g_my63_ssap_ready != 0 && g_my63_property_handle != 0 && g_my63_cccd_written != 0) ? 1 : 0;
 }
 
 const sle_addr_t *sle_network_get_target_addr(void)
@@ -343,6 +346,63 @@ uint32_t sle_network_get_scan_count(void)
 int sle_network_get_scan_active(void)
 {
     return (int)g_my63_scan_active;
+}
+
+int sle_network_send_cmd(uint8_t cmd, uint16_t param)
+{
+    ssapc_write_param_t write_param = {0};
+    static uint8_t cmd_buf[3] = {0};
+    int pack_len;
+
+    if (g_my63_conn_id == 0 || g_my63_property_handle == 0 || g_my63_cccd_written == 0) {
+        osal_printk("[WS63_NET] send_cmd failed: conn_id=%u handle=0x%04x cccd=%d\r\n",
+            g_my63_conn_id, g_my63_property_handle, g_my63_cccd_written);
+        return -1;
+    }
+
+    pack_len = shared_protocol_pack_write_cmd(cmd, param, cmd_buf, (uint16_t)sizeof(cmd_buf));
+    if (pack_len < 0) {
+        osal_printk("[WS63_NET] send_cmd pack failed: cmd=0x%02X ret=%d\r\n", (unsigned int)cmd, pack_len);
+        return pack_len;
+    }
+
+    write_param.handle = g_my63_property_handle;
+    write_param.type = SSAP_PROPERTY_TYPE_VALUE;
+    write_param.data_len = (uint16_t)pack_len;
+    write_param.data = cmd_buf;
+
+    osal_printk("[WS63_NET] send_cmd cmd=0x%02X param=%u len=%d handle=0x%04x\r\n",
+        (unsigned int)cmd, (unsigned int)param, pack_len, g_my63_property_handle);
+    errcode_t ret = ssapc_write_req(0, g_my63_conn_id, &write_param);
+    if (ret != ERRCODE_SLE_SUCCESS) {
+        osal_printk("[WS63_NET] send_cmd write failed ret=0x%x\r\n", ret);
+        return (int)ret;
+    }
+
+    osal_printk("[WS63_NET] send_cmd req sent ok\r\n");
+    return 0;
+}
+
+int sle_network_disconnect(void)
+{
+    if (g_my63_conn_id == 0 || g_my63_connected == 0) {
+        osal_printk("[WS63_NET] disconnect skip: not connected\r\n");
+        return -1;
+    }
+
+    osal_printk("[WS63_NET] disconnect conn_id=%u\r\n", g_my63_conn_id);
+    errcode_t ret = sle_disconnect_remote_device(&g_my63_target_addr);
+    if (ret != ERRCODE_SLE_SUCCESS) {
+        osal_printk("[WS63_NET] disconnect failed ret=0x%x\r\n", ret);
+        return (int)ret;
+    }
+    return 0;
+}
+
+void sle_network_register_notify_cb(sle_notify_callback cb)
+{
+    g_my63_notify_cb = cb;
+    osal_printk("[WS63_NET] notify callback registered cb=%p\r\n", (void *)cb);
 }
 
 static void my63_sle_enable_cb(errcode_t status)
@@ -422,6 +482,7 @@ static void my63_connect_state_changed_cb(uint16_t conn_id, const sle_addr_t *ad
         g_my63_authenticated = 0;
         g_my63_ssap_ready = 0;
         g_my63_property_handle = 0;
+        g_my63_cccd_written = 0;
         g_my63_conn_id = conn_id;
         (void)memset_s(&g_my63_find_service_result, sizeof(ssapc_find_service_result_t), 0,
             sizeof(ssapc_find_service_result_t));
@@ -449,6 +510,7 @@ static void my63_connect_state_changed_cb(uint16_t conn_id, const sle_addr_t *ad
         g_my63_authenticated = 0;
         g_my63_ssap_ready = 0;
         g_my63_property_handle = 0;
+        g_my63_cccd_written = 0;
         (void)memset_s(&g_my63_find_service_result, sizeof(ssapc_find_service_result_t), 0,
             sizeof(ssapc_find_service_result_t));
         osal_printk("[WS63_NET] disconnected, reason=%d\r\n", disc_reason);
@@ -625,6 +687,33 @@ static void my63_ssap_find_structure_cmp_cb(uint8_t client_id, uint16_t conn_id,
     ssapc_find_structure(0, conn_id, &prop_param);
 }
 
+static void my63_write_cccd(void)
+{
+    ssapc_write_param_t param = {0};
+    static uint8_t cccd_val[2] = {0x01, 0x00};
+    errcode_t ret;
+
+    if (g_my63_conn_id == 0 || g_my63_property_handle == 0) {
+        osal_printk("[WS63_NET] write_cccd skip: conn_id=%u handle=0x%04x\r\n",
+            g_my63_conn_id, g_my63_property_handle);
+        return;
+    }
+
+    param.handle = g_my63_property_handle;
+    param.type = SSAP_DESCRIPTOR_CLIENT_CONFIGURATION;
+    param.data_len = 2;
+    param.data = cccd_val;
+
+    osal_printk("[WS63_NET] write_cccd handle=0x%04x data=[0x01,0x00] conn_id=%u\r\n",
+        g_my63_property_handle, g_my63_conn_id);
+    ret = ssapc_write_req(0, g_my63_conn_id, &param);
+    if (ret != ERRCODE_SLE_SUCCESS) {
+        osal_printk("[WS63_NET] write_cccd failed ret=0x%x\r\n", ret);
+        return;
+    }
+    osal_printk("[WS63_NET] write_cccd req sent ok\r\n");
+}
+
 static void my63_ssap_find_property_cb(uint8_t client_id, uint16_t conn_id,
     ssapc_find_property_result_t *property, errcode_t status)
 {
@@ -647,6 +736,13 @@ static void my63_ssap_find_property_cb(uint8_t client_id, uint16_t conn_id,
     g_my63_property_handle = property->handle;
     g_my63_ssap_ready = 1;
     osal_printk("[WS63_NET] ssap discovery ready handle=0x%04x\r\n", property->handle);
+
+    if (property->operate_indication & SSAP_OPERATE_INDICATION_BIT_NOTIFY) {
+        osal_printk("[WS63_NET] property supports NOTIFY, writing CCCD\r\n");
+        my63_write_cccd();
+    } else {
+        osal_printk("[WS63_NET] property does NOT support NOTIFY, skip CCCD\r\n");
+    }
 }
 
 static void my63_ssap_write_cfm_cb(uint8_t client_id, uint16_t conn_id, ssapc_write_result_t *write_result,
@@ -654,8 +750,24 @@ static void my63_ssap_write_cfm_cb(uint8_t client_id, uint16_t conn_id, ssapc_wr
 {
     unused(client_id);
     unused(conn_id);
-    unused(write_result);
-    osal_printk("[WS63_NET] ssap write cfm status=0x%x\r\n", status);
+
+    if (write_result == NULL) {
+        osal_printk("[WS63_NET] ssap write cfm null result status=0x%x\r\n", status);
+        return;
+    }
+
+    osal_printk("[WS63_NET] ssap write cfm handle=0x%04x type=%u len=%u status=0x%x\r\n",
+        write_result->handle, (unsigned int)write_result->type,
+        (unsigned int)write_result->data_len, status);
+
+    if (write_result->type == SSAP_DESCRIPTOR_CLIENT_CONFIGURATION) {
+        if (status == ERRCODE_SLE_SUCCESS) {
+            g_my63_cccd_written = 1;
+            osal_printk("[WS63_NET] CCCD write SUCCESS, Notify enabled\r\n");
+        } else {
+            osal_printk("[WS63_NET] CCCD write FAILED status=0x%x\r\n", status);
+        }
+    }
 }
 
 static void my63_ssap_read_cfm_cb(uint8_t client_id, uint16_t conn_id, ssapc_handle_value_t *read_data,
@@ -672,8 +784,48 @@ static void my63_ssap_notification_cb(uint8_t client_id, uint16_t conn_id, ssapc
 {
     unused(client_id);
     unused(conn_id);
-    unused(data);
-    osal_printk("[WS63_NET] ssap notification status=0x%x\r\n", status);
+
+    if (data == NULL || data->data == NULL || data->data_len == 0) {
+        osal_printk("[WS63_NET] notify null data status=0x%x\r\n", status);
+        return;
+    }
+
+    if (status != ERRCODE_SLE_SUCCESS) {
+        osal_printk("[WS63_NET] notify error status=0x%x\r\n", status);
+        return;
+    }
+
+    osal_printk("[WS63_NET] notify recv handle=0x%04x len=%u cmd=0x%02X\r\n",
+        data->handle, (unsigned int)data->data_len, data->data[0]);
+
+    if (data->data[0] == SSAP_RSP_INVENTORY) {
+        ssap_inventory_rsp_t inv = {0};
+        int ret = shared_protocol_unpack_inventory(data->data, data->data_len, &inv);
+        if (ret == SHARED_PROTO_OK) {
+            osal_printk("[WS63_NET] inventory rsp: tag=%u qty=%u status=%u bat=%u seq=%u\r\n",
+                (unsigned int)inv.tag_id, (unsigned int)inv.qty,
+                (unsigned int)inv.status, (unsigned int)inv.battery, (unsigned int)inv.seq);
+            if (g_my63_notify_cb != NULL) {
+                g_my63_notify_cb(&inv, NULL);
+            }
+        } else {
+            osal_printk("[WS63_NET] inventory unpack failed ret=%d\r\n", ret);
+        }
+    } else if (data->data[0] == SSAP_RSP_BIND_OK || data->data[0] == SSAP_RSP_BIND_FAIL) {
+        ssap_bind_rsp_t bind = {0};
+        int ret = shared_protocol_unpack_bind_rsp(data->data, data->data_len, &bind);
+        if (ret == SHARED_PROTO_OK) {
+            osal_printk("[WS63_NET] bind rsp: cmd=0x%02X tag=%u\r\n",
+                bind.cmd, (unsigned int)bind.tag_id);
+            if (g_my63_notify_cb != NULL) {
+                g_my63_notify_cb(NULL, &bind);
+            }
+        } else {
+            osal_printk("[WS63_NET] bind unpack failed ret=%d\r\n", ret);
+        }
+    } else {
+        osal_printk("[WS63_NET] notify unknown cmd=0x%02X\r\n", data->data[0]);
+    }
 }
 
 static void my63_ssap_indication_cb(uint8_t client_id, uint16_t conn_id, ssapc_handle_value_t *data,
@@ -682,7 +834,7 @@ static void my63_ssap_indication_cb(uint8_t client_id, uint16_t conn_id, ssapc_h
     unused(client_id);
     unused(conn_id);
     unused(data);
-    osal_printk("[WS63_NET] ssap indication status=0x%x\r\n", status);
+    osal_printk("[WS63_NET] indication status=0x%x (unused)\r\n", status);
 }
 
 static void my63_ssapc_register(void)
@@ -710,6 +862,7 @@ int sle_network_init(void)
     g_my63_authenticated = 0;
     g_my63_ssap_ready = 0;
     g_my63_property_handle = 0;
+    g_my63_cccd_written = 0;
     g_my63_conn_id = 0;
     g_my63_scan_result_count = 0;
     g_my63_scan_active = 0;

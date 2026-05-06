@@ -1,10 +1,261 @@
 #include "uart_vision.h"
 #include "soc_osal.h"
+#include "uart.h"
+#include "pinctrl.h"
+#include "cJSON.h"
+#include <string.h>
+
+static uint8_t g_uv_ring[UV_RING_SIZE];
+static volatile uint16_t g_uv_ring_head = 0;
+static volatile uint16_t g_uv_ring_tail = 0;
+
+static uint8_t g_uv_rx_buf[UV_RING_SIZE];
+static uart_buffer_config_t g_uv_buffer_cfg = {
+    .rx_buffer = g_uv_rx_buf,
+    .rx_buffer_size = sizeof(g_uv_rx_buf)
+};
+
+static uv_cmd_handler_t g_uv_cmd_handler = NULL;
+
+static void uv_ring_push(const uint8_t *data, uint16_t len)
+{
+    for (uint16_t i = 0; i < len; i++) {
+        uint16_t next = (g_uv_ring_head + 1) % UV_RING_SIZE;
+        if (next == g_uv_ring_tail) {
+            break;
+        }
+        g_uv_ring[g_uv_ring_head] = data[i];
+        g_uv_ring_head = next;
+    }
+}
+
+static bool uv_ring_has_newline(void)
+{
+    uint16_t i = g_uv_ring_tail;
+    uint16_t dist = 0;
+    while (i != g_uv_ring_head) {
+        if (g_uv_ring[i] == '\n' && dist < UV_LINE_MAX) {
+            return true;
+        }
+        i = (i + 1) % UV_RING_SIZE;
+        dist++;
+    }
+    return false;
+}
+
+static uint16_t uv_ring_read_line(uint8_t *out, uint16_t max_len)
+{
+    uint16_t count = 0;
+    while (g_uv_ring_tail != g_uv_ring_head && count < max_len - 1) {
+        uint8_t ch = g_uv_ring[g_uv_ring_tail];
+        g_uv_ring_tail = (g_uv_ring_tail + 1) % UV_RING_SIZE;
+        if (ch == '\n') {
+            out[count] = '\0';
+            return count;
+        }
+        if (ch != '\r') {
+            out[count++] = ch;
+        }
+    }
+    if (count >= max_len - 1) {
+        while (g_uv_ring_tail != g_uv_ring_head) {
+            uint8_t ch = g_uv_ring[g_uv_ring_tail];
+            g_uv_ring_tail = (g_uv_ring_tail + 1) % UV_RING_SIZE;
+            if (ch == '\n') {
+                break;
+            }
+        }
+    }
+    out[count] = '\0';
+    return count;
+}
+
+static void uv_uart_rx_cb(const void *buffer, uint16_t length, bool error)
+{
+    if (error || buffer == NULL || length == 0) {
+        return;
+    }
+    uv_ring_push((const uint8_t *)buffer, length);
+}
+
+static void uv_uart_init_pin(void)
+{
+    uapi_pin_set_mode(UV_UART_TX_PIN, PIN_MODE_1);
+    uapi_pin_set_mode(UV_UART_RX_PIN, PIN_MODE_1);
+    osal_printk("[WS63_UART] pin set tx=%d rx=%d mode=1\r\n", UV_UART_TX_PIN, UV_UART_RX_PIN);
+}
+
+static int uv_uart_init_config(void)
+{
+    uart_attr_t attr = {
+        .baud_rate = UV_UART_BAUDRATE,
+        .data_bits = UART_DATA_BIT_8,
+        .stop_bits = UART_STOP_BIT_1,
+        .parity = UART_PARITY_NONE
+    };
+    uart_pin_config_t pin_cfg = {
+        .tx_pin = UV_UART_TX_PIN,
+        .rx_pin = UV_UART_RX_PIN,
+        .cts_pin = PIN_NONE,
+        .rts_pin = PIN_NONE
+    };
+    errcode_t ret = uapi_uart_deinit(UV_UART_BUS);
+    if (ret != ERRCODE_SUCC) {
+        osal_printk("[WS63_UART] deinit failed ret=0x%x\r\n", ret);
+    }
+
+    ret = uapi_uart_init(UV_UART_BUS, &pin_cfg, &attr, NULL, &g_uv_buffer_cfg);
+    if (ret != ERRCODE_SUCC) {
+        osal_printk("[WS63_UART] init failed ret=0x%x\r\n", ret);
+        return (int)ret;
+    }
+    osal_printk("[WS63_UART] init ok bus=%u baud=%u\r\n", UV_UART_BUS, UV_UART_BAUDRATE);
+    return 0;
+}
+
+static int uv_uart_register_rx(void)
+{
+    errcode_t ret = uapi_uart_register_rx_callback(UV_UART_BUS,
+        UART_RX_CONDITION_FULL_OR_SUFFICIENT_DATA_OR_IDLE, 1, uv_uart_rx_cb);
+    if (ret != ERRCODE_SUCC) {
+        osal_printk("[WS63_UART] register rx cb failed ret=0x%x\r\n", ret);
+        return (int)ret;
+    }
+    osal_printk("[WS63_UART] register rx cb ok\r\n");
+    return 0;
+}
+
+void uart_vision_register_cmd_handler(uv_cmd_handler_t handler)
+{
+    g_uv_cmd_handler = handler;
+    osal_printk("[WS63_UART] cmd handler registered=%p\r\n", (void *)handler);
+}
+
+static void uv_dispatch_line(const char *line, uint16_t len)
+{
+    cJSON *root = cJSON_Parse(line);
+    if (root == NULL) {
+        osal_printk("[WS63_UART] json parse fail len=%u\r\n", (unsigned int)len);
+        return;
+    }
+
+    cJSON *j_cmd = cJSON_GetObjectItem(root, UV_CMD_FIELD);
+    cJSON *j_seq = cJSON_GetObjectItem(root, UV_SEQ_FIELD);
+    cJSON *j_data = cJSON_GetObjectItem(root, UV_DATA_FIELD);
+
+    if (j_cmd == NULL || !cJSON_IsString(j_cmd)) {
+        osal_printk("[WS63_UART] missing cmd field\r\n");
+        cJSON_Delete(root);
+        return;
+    }
+
+    uint16_t seq = (j_seq != NULL && cJSON_IsNumber(j_seq)) ? (uint16_t)j_seq->valueint : 0;
+    const char *cmd = j_cmd->valuestring;
+    char *data_str = (j_data != NULL) ? cJSON_PrintUnformatted(j_data) : NULL;
+
+    osal_printk("[WS63_UART] recv cmd=%s seq=%u\r\n", cmd, (unsigned int)seq);
+
+    if (g_uv_cmd_handler != NULL) {
+        g_uv_cmd_handler(cmd, seq, data_str);
+    } else {
+        osal_printk("[WS63_UART] no cmd handler registered\r\n");
+    }
+
+    if (data_str != NULL) {
+        cJSON_free(data_str);
+    }
+    cJSON_Delete(root);
+}
+
+static void uv_process_ring(void)
+{
+    static uint8_t line_buf[UV_LINE_MAX];
+    while (uv_ring_has_newline()) {
+        uint16_t line_len = uv_ring_read_line(line_buf, sizeof(line_buf));
+        if (line_len == 0) {
+            continue;
+        }
+        if (line_len >= UV_LINE_MAX - 1) {
+            osal_printk("[WS63_UART] line too long drop len=%u\r\n", (unsigned int)line_len);
+            continue;
+        }
+        osal_printk("[WS63_UART] line len=%u\r\n", (unsigned int)line_len);
+        uv_dispatch_line((const char *)line_buf, line_len);
+    }
+}
+
+int uart_vision_send_json(uint16_t seq, const char *cmd, int code, const char *msg,
+    const char *data_json)
+{
+    if (cmd == NULL) {
+        osal_printk("[WS63_UART] send_json null cmd\r\n");
+        return -1;
+    }
+
+    cJSON *root = cJSON_CreateObject();
+    if (root == NULL) {
+        osal_printk("[WS63_UART] send_json create obj fail\r\n");
+        return -1;
+    }
+
+    cJSON_AddStringToObject(root, UV_CMD_FIELD, cmd);
+    cJSON_AddNumberToObject(root, UV_SEQ_FIELD, seq);
+    cJSON_AddNumberToObject(root, UV_CODE_FIELD, code);
+    if (msg != NULL) {
+        cJSON_AddStringToObject(root, UV_MSG_FIELD, msg);
+    }
+    if (data_json != NULL) {
+        cJSON *data_obj = cJSON_Parse(data_json);
+        if (data_obj != NULL) {
+            cJSON_AddItemToObject(root, UV_DATA_FIELD, data_obj);
+        }
+    }
+
+    char *out = cJSON_PrintUnformatted(root);
+    cJSON_Delete(root);
+    if (out == NULL) {
+        osal_printk("[WS63_UART] send_json print fail\r\n");
+        return -1;
+    }
+
+    uint32_t out_len = (uint32_t)strlen(out);
+    out[out_len] = '\n';
+    out_len++;
+
+    int32_t written = uapi_uart_write(UV_UART_BUS, (const uint8_t *)out, out_len, 0);
+    cJSON_free(out);
+
+    if (written < 0) {
+        osal_printk("[WS63_UART] send_json write fail ret=%d\r\n", (int)written);
+        return (int)written;
+    }
+
+    osal_printk("[WS63_UART] send cmd=%s seq=%u code=%d len=%u\r\n",
+        cmd, (unsigned int)seq, code, (unsigned int)out_len);
+    return 0;
+}
 
 int uart_vision_init(void)
 {
     osal_printk("[WS63_UART] init start\r\n");
-    osal_printk("[WS63_UART] protocol: JSON line mode with LF terminator\r\n");
+
+    uv_uart_init_pin();
+
+    int ret = uv_uart_init_config();
+    if (ret != 0) {
+        return ret;
+    }
+
+    ret = uv_uart_register_rx();
+    if (ret != 0) {
+        return ret;
+    }
+
     osal_printk("[WS63_UART] init done\r\n");
     return 0;
+}
+
+void uart_vision_poll(void)
+{
+    uv_process_ring();
 }

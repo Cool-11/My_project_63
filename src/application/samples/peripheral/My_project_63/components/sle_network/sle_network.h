@@ -2,10 +2,13 @@
 #define MY63_SLE_NETWORK_H
 
 #include "sle_device_discovery.h"
+#include "../shared_protocol/shared_protocol.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+typedef void (*sle_notify_callback)(const ssap_inventory_rsp_t *inv, const ssap_bind_rsp_t *bind);
 
 int sle_network_init(void);
 void sle_network_connect_param_init(void);
@@ -19,6 +22,9 @@ int sle_network_is_ssap_ready(void);
 const sle_addr_t *sle_network_get_target_addr(void);
 uint32_t sle_network_get_scan_count(void);
 int sle_network_get_scan_active(void);
+int sle_network_send_cmd(uint8_t cmd, uint16_t param);
+int sle_network_disconnect(void);
+void sle_network_register_notify_cb(sle_notify_callback cb);
 
 #ifdef __cplusplus
 }
