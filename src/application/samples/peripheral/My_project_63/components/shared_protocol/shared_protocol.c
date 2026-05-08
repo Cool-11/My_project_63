@@ -14,6 +14,19 @@ static uint32_t read_le32(const uint8_t *buf)
         ((uint32_t)buf[3] << 24));
 }
 
+static uint32_t read_be32(const uint8_t *buf)
+{
+    return (uint32_t)(((uint32_t)buf[0] << 24) |
+        ((uint32_t)buf[1] << 16) |
+        ((uint32_t)buf[2] << 8) |
+        buf[3]);
+}
+
+static uint16_t read_be16(const uint8_t *buf)
+{
+    return (uint16_t)(((uint16_t)buf[0] << 8) | buf[1]);
+}
+
 static void write_le16(uint8_t *buf, uint16_t value)
 {
     buf[0] = (uint8_t)(value & 0xFFU);
@@ -35,7 +48,7 @@ int shared_protocol_validate(const shared_proto_adv_field_t *field)
         return SHARED_PROTO_ERR_NULL;
     }
 
-    if (field->magic != SHARED_PROTO_MAGIC) {
+    if (field->magic != SHARED_PROTO_MAGIC && field->magic != SHARED_PROTO_MAGIC_BE) {
         osal_printk("[WS63_SHARED] validate failed: bad magic=0x%08x\r\n", (unsigned int)field->magic);
         return SHARED_PROTO_ERR_MAGIC;
     }
@@ -103,11 +116,31 @@ int shared_protocol_unpack_adv(const uint8_t *in_buf, uint16_t in_len, shared_pr
     }
 
     field->magic = read_le32(&in_buf[0]);
-    field->tag_id = read_le16(&in_buf[4]);
-    field->qty = read_le16(&in_buf[6]);
-    field->status = in_buf[8];
-    field->battery = in_buf[9];
-    field->seq = read_le16(&in_buf[10]);
+    if (field->magic == SHARED_PROTO_MAGIC) {
+        field->tag_id = read_le16(&in_buf[4]);
+        field->qty = read_le16(&in_buf[6]);
+        field->status = in_buf[8];
+        field->battery = in_buf[9];
+        field->seq = read_le16(&in_buf[10]);
+        osal_printk("[WS63_SHARED] unpack LE ok\r\n");
+    } else {
+        uint32_t be_magic = read_be32(&in_buf[0]);
+        osal_printk("[WS63_SHARED] LE magic=0x%08x mismatch, try BE raw=0x%08x\r\n",
+            (unsigned int)field->magic, (unsigned int)be_magic);
+        if (be_magic == SHARED_PROTO_MAGIC_BE) {
+            field->magic = be_magic;
+            field->tag_id = read_be16(&in_buf[4]);
+            field->qty = read_be16(&in_buf[6]);
+            field->status = in_buf[8];
+            field->battery = in_buf[9];
+            field->seq = read_be16(&in_buf[10]);
+            osal_printk("[WS63_SHARED] unpack BE ok\r\n");
+        } else {
+            osal_printk("[WS63_SHARED] unpack failed: magic LE=0x%08x BE=0x%08x both mismatch\r\n",
+                (unsigned int)field->magic, (unsigned int)be_magic);
+            return SHARED_PROTO_ERR_MAGIC;
+        }
+    }
 
     ret = shared_protocol_validate(field);
     if (ret != SHARED_PROTO_OK) {

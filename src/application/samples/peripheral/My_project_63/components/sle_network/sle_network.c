@@ -187,27 +187,40 @@ static int my63_extract_adv_field(const sle_seek_result_info_t *seek_result,
 static int my63_uuid_match(const sle_uuid_t *uuid, const uint8_t *uuid_128, uint16_t u16)
 {
     if (uuid == NULL) {
+        osal_printk("[WS63_NET] uuid_match: null uuid\r\n");
         return 0;
     }
 
+    osal_printk("[WS63_NET] uuid_match: uuid_len=%u comparing to u16=0x%04X\r\n",
+        (unsigned int)uuid->len, (unsigned int)u16);
+
     if (uuid->len == MY63_UUID_128BIT_LEN && uuid_128 != NULL) {
         if (memcmp(uuid->uuid, uuid_128, MY63_UUID_128BIT_LEN) == 0) {
+            osal_printk("[WS63_NET] uuid_match: 128-bit match ok\r\n");
             return 1;
         }
+        osal_printk("[WS63_NET] uuid_match: 128-bit mismatch, got: ");
+        for (int i = 0; i < MY63_UUID_128BIT_LEN; i++) {
+            osal_printk("%02X ", uuid->uuid[i]);
+        }
+        osal_printk("\r\n");
     }
 
     if (uuid->len == MY63_UUID_16BIT_LEN) {
         uint16_t got = (uint16_t)(uuid->uuid[MY63_UUID_INDEX] |
             ((uint16_t)uuid->uuid[MY63_UUID_INDEX + 1U] << 8));
+        osal_printk("[WS63_NET] uuid_match: 16-bit got=0x%04X expect=0x%04X %s\r\n",
+            (unsigned int)got, (unsigned int)u16, (got == u16) ? "MATCH" : "MISMATCH");
         return (got == u16) ? 1 : 0;
     }
 
+    osal_printk("[WS63_NET] uuid_match: unknown len=%u\r\n", (unsigned int)uuid->len);
     return 0;
 }
 
 static void my63_restart_scan_after_security_fail(const sle_addr_t *addr, const char *reason)
 {
-    osal_printk("[WS63_NET] %s, remove pair and restart scan\r\n", reason);
+    osal_printk("[WS63_NET] %s, remove pair and restart scan after delay\r\n", reason);
     if (addr != NULL) {
         sle_remove_paired_remote_device(addr);
     }
@@ -221,6 +234,7 @@ static void my63_restart_scan_after_security_fail(const sle_addr_t *addr, const 
     g_my63_cccd_written = 0;
     (void)memset_s(&g_my63_find_service_result, sizeof(ssapc_find_service_result_t), 0,
         sizeof(ssapc_find_service_result_t));
+    osal_msleep(1000);
     (void)sle_network_start_scan();
 }
 
@@ -244,6 +258,9 @@ static void my63_start_ssap_exchange(void)
 {
     ssap_exchange_info_t info = {0};
 
+    osal_printk("[WS63_NET] start_ssap_exchange check: connected=%d conn_id=%u authenticated=%d\r\n",
+        g_my63_connected, g_my63_conn_id, g_my63_authenticated);
+
     if (g_my63_connected == 0 || g_my63_conn_id == 0) {
         osal_printk("[WS63_NET] skip ssap exchange connected=%d conn_id=%u\r\n",
             g_my63_connected, g_my63_conn_id);
@@ -252,8 +269,10 @@ static void my63_start_ssap_exchange(void)
 
     info.mtu_size = SLE_MTU_SIZE_DEFAULT;
     info.version = 1;
-    osal_printk("[WS63_NET] request ssap exchange info conn_id=%u\r\n", g_my63_conn_id);
-    ssapc_exchange_info_req(1, g_my63_conn_id, &info);
+    osal_printk("[WS63_NET] request ssap exchange info conn_id=%u mtu=%u version=%u\r\n",
+        g_my63_conn_id, info.mtu_size, info.version);
+    errcode_t ret = ssapc_exchange_info_req(1, g_my63_conn_id, &info);
+    osal_printk("[WS63_NET] ssapc_exchange_info_req ret=0x%x\r\n", ret);
 }
 
 int sle_network_start_scan(void)
@@ -472,8 +491,24 @@ static void my63_pair_complete_cb(uint16_t conn_id, const sle_addr_t *addr, errc
 static void my63_connect_state_changed_cb(uint16_t conn_id, const sle_addr_t *addr,
     sle_acb_state_t conn_state, sle_pair_state_t pair_state, sle_disc_reason_t disc_reason)
 {
-    osal_printk("[WS63_NET] conn state change conn_id=%u state=%d pair=%d reason=%d\r\n",
-        conn_id, conn_state, pair_state, disc_reason);
+    const char *state_str = "UNKNOWN";
+    const char *pair_str = "UNKNOWN";
+
+    switch (conn_state) {
+        case SLE_ACB_STATE_NONE: state_str = "NONE"; break;
+        case SLE_ACB_STATE_CONNECTED: state_str = "CONNECTED"; break;
+        case SLE_ACB_STATE_DISCONNECTED: state_str = "DISCONNECTED"; break;
+        default: break;
+    }
+    switch (pair_state) {
+        case SLE_PAIR_NONE: pair_str = "NONE"; break;
+        case SLE_PAIR_PAIRING: pair_str = "PAIRING"; break;
+        case SLE_PAIR_PAIRED: pair_str = "PAIRED"; break;
+        default: break;
+    }
+
+    osal_printk("[WS63_NET] conn state change conn_id=%u state=%s pair=%s reason=%d\r\n",
+        conn_id, state_str, pair_str, disc_reason);
 
     if (conn_state == SLE_ACB_STATE_CONNECTED) {
         g_my63_connected = 1;
@@ -585,6 +620,11 @@ static void my63_seek_result_cb(sle_seek_result_info_t *seek_result_data)
         return;
     }
 
+    if (adv.tag_id == 0) {
+        osal_printk("[WS63_NET] adv tag_id=0 invalid, skip\r\n");
+        return;
+    }
+
     if (adv.tag_id != MY63_TARGET_TAG_ID) {
         osal_printk("[WS63_NET] adv tag_id mismatch=%u\r\n", (unsigned int)adv.tag_id);
         return;
@@ -645,16 +685,25 @@ static void my63_ssap_find_structure_cb(uint8_t client_id, uint16_t conn_id, ssa
     osal_printk("[WS63_NET] ssap find structure client_id=%u conn_id=%u status=0x%x\r\n",
         client_id, conn_id, status);
     if (service == NULL || status != ERRCODE_SLE_SUCCESS) {
+        osal_printk("[WS63_NET] ssap find structure: service=%p status=0x%x, skip\r\n",
+            (void *)service, status);
         return;
     }
+
+    osal_printk("[WS63_NET] ssap find structure: start_hdl=0x%04x end_hdl=0x%04x uuid_len=%u uuid: ",
+        service->start_hdl, service->end_hdl, service->uuid.len);
+    for (uint8_t i = 0; i < service->uuid.len && i < 16; i++) {
+        osal_printk("%02X ", service->uuid.uuid[i]);
+    }
+    osal_printk("\r\n");
 
     if (my63_uuid_match(&service->uuid, g_my63_service_uuid, MY63_SERVICE_UUID_16) == 0) {
         osal_printk("[WS63_NET] ssap service uuid not matched\r\n");
         return;
     }
 
-    osal_printk("[WS63_NET] ssap service start=0x%04x end=0x%04x uuid_len=%u\r\n",
-        service->start_hdl, service->end_hdl, service->uuid.len);
+    osal_printk("[WS63_NET] ssap service MATCHED start=0x%04x end=0x%04x\r\n",
+        service->start_hdl, service->end_hdl);
     g_my63_find_service_result.start_hdl = service->start_hdl;
     g_my63_find_service_result.end_hdl = service->end_hdl;
     (void)memcpy_s(&g_my63_find_service_result.uuid, sizeof(sle_uuid_t), &service->uuid, sizeof(sle_uuid_t));
@@ -673,18 +722,23 @@ static void my63_ssap_find_structure_cmp_cb(uint8_t client_id, uint16_t conn_id,
     osal_printk("[WS63_NET] ssap find structure cmp client_id=%u conn_id=%u status=0x%x type=%u uuid_len=%u\r\n",
         client_id, conn_id, status, structure_result->type, structure_result->uuid.len);
     if (status != ERRCODE_SLE_SUCCESS) {
+        osal_printk("[WS63_NET] ssap find structure cmp FAILED status=0x%x\r\n", status);
         return;
     }
 
     if (g_my63_find_service_result.start_hdl == 0 || g_my63_find_service_result.end_hdl == 0) {
-        osal_printk("[WS63_NET] ssap service range invalid, skip property discovery\r\n");
+        osal_printk("[WS63_NET] ssap service range invalid start=0x%04x end=0x%04x, skip property discovery\r\n",
+            g_my63_find_service_result.start_hdl, g_my63_find_service_result.end_hdl);
         return;
     }
 
+    osal_printk("[WS63_NET] ssap find property start_hdl=0x%04x end_hdl=0x%04x\r\n",
+        g_my63_find_service_result.start_hdl, g_my63_find_service_result.end_hdl);
     prop_param.start_hdl = g_my63_find_service_result.start_hdl;
     prop_param.end_hdl = g_my63_find_service_result.end_hdl;
     prop_param.type = SSAP_FIND_TYPE_PROPERTY;
-    ssapc_find_structure(0, conn_id, &prop_param);
+    errcode_t ret = ssapc_find_structure(0, conn_id, &prop_param);
+    osal_printk("[WS63_NET] ssapc_find_structure(property) ret=0x%x\r\n", ret);
 }
 
 static void my63_write_cccd(void)
@@ -722,9 +776,15 @@ static void my63_ssap_find_property_cb(uint8_t client_id, uint16_t conn_id,
         return;
     }
 
-    osal_printk("[WS63_NET] ssap find property client_id=%u conn_id=%u status=0x%x descriptors=%u\r\n",
-        client_id, conn_id, status, property->descriptors_count);
+    osal_printk("[WS63_NET] ssap find property client_id=%u conn_id=%u status=0x%x handle=0x%04x descriptors=%u uuid_len=%u uuid: ",
+        client_id, conn_id, status, property->handle, property->descriptors_count, property->uuid.len);
+    for (uint8_t i = 0; i < property->uuid.len && i < 16; i++) {
+        osal_printk("%02X ", property->uuid.uuid[i]);
+    }
+    osal_printk("\r\n");
+
     if (status != ERRCODE_SLE_SUCCESS) {
+        osal_printk("[WS63_NET] ssap find property FAILED status=0x%x\r\n", status);
         return;
     }
 
@@ -735,7 +795,8 @@ static void my63_ssap_find_property_cb(uint8_t client_id, uint16_t conn_id,
 
     g_my63_property_handle = property->handle;
     g_my63_ssap_ready = 1;
-    osal_printk("[WS63_NET] ssap discovery ready handle=0x%04x\r\n", property->handle);
+    osal_printk("[WS63_NET] ssap property MATCHED handle=0x%04x operate_indication=0x%x\r\n",
+        property->handle, property->operate_indication);
 
     if (property->operate_indication & SSAP_OPERATE_INDICATION_BIT_NOTIFY) {
         osal_printk("[WS63_NET] property supports NOTIFY, writing CCCD\r\n");
@@ -798,7 +859,18 @@ static void my63_ssap_notification_cb(uint8_t client_id, uint16_t conn_id, ssapc
     osal_printk("[WS63_NET] notify recv handle=0x%04x len=%u cmd=0x%02X\r\n",
         data->handle, (unsigned int)data->data_len, data->data[0]);
 
+    if (data->data_len < 1) {
+        osal_printk("[WS63_NET] notify data too short len=%u\r\n",
+            (unsigned int)data->data_len);
+        return;
+    }
+
     if (data->data[0] == SSAP_RSP_INVENTORY) {
+        if (data->data_len < SSAP_INVENTORY_RSP_LEN) {
+            osal_printk("[WS63_NET] inventory rsp too short len=%u expect>=%u\r\n",
+                (unsigned int)data->data_len, (unsigned int)SSAP_INVENTORY_RSP_LEN);
+            return;
+        }
         ssap_inventory_rsp_t inv = {0};
         int ret = shared_protocol_unpack_inventory(data->data, data->data_len, &inv);
         if (ret == SHARED_PROTO_OK) {
@@ -812,6 +884,11 @@ static void my63_ssap_notification_cb(uint8_t client_id, uint16_t conn_id, ssapc
             osal_printk("[WS63_NET] inventory unpack failed ret=%d\r\n", ret);
         }
     } else if (data->data[0] == SSAP_RSP_BIND_OK || data->data[0] == SSAP_RSP_BIND_FAIL) {
+        if (data->data_len < SSAP_BIND_RSP_LEN) {
+            osal_printk("[WS63_NET] bind rsp too short len=%u expect>=%u\r\n",
+                (unsigned int)data->data_len, (unsigned int)SSAP_BIND_RSP_LEN);
+            return;
+        }
         ssap_bind_rsp_t bind = {0};
         int ret = shared_protocol_unpack_bind_rsp(data->data, data->data_len, &bind);
         if (ret == SHARED_PROTO_OK) {

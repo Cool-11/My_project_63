@@ -220,13 +220,14 @@ static void my63_heartbeat(uint64_t now)
     }
     g_my63_last_heartbeat = now;
 
-    osal_printk("[WS63_APP] hb sle=%d/%d/%d wifi=%d mqtt=%d cache=%u\r\n",
+    osal_printk("[WS63_APP] hb sle=%d/%d/%d wifi=%d mqtt=%d cache=%u uart_ring=%u\r\n",
         sle_network_is_target_found(),
         sle_network_is_connected(),
         sle_network_is_ssap_ready(),
         (int)cs_wifi_get_state(),
         (int)cs_mqtt_get_state(),
-        (unsigned int)cs_cache_count());
+        (unsigned int)cs_cache_count(),
+        (unsigned int)uart_vision_ring_usage());
 }
 
 static void *my63_main_task(const char *arg)

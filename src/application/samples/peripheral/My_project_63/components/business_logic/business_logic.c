@@ -275,6 +275,7 @@ static void biz_cmd_inbound(uint16_t seq, const char *data_json)
         errno_t rc = strncpy_s(entry->zone, BIZ_ZONE_LEN,
             j_zone->valuestring, BIZ_ZONE_LEN - 1);
         if (rc != EOK) {
+            osal_printk("[WS63_BIZ] inbound zone copy fail rc=%d\r\n", (int)rc);
             entry->zone[0] = '\0';
         }
     }
@@ -282,6 +283,7 @@ static void biz_cmd_inbound(uint16_t seq, const char *data_json)
         errno_t rc = strncpy_s(entry->item, BIZ_ITEM_LEN,
             j_item->valuestring, BIZ_ITEM_LEN - 1);
         if (rc != EOK) {
+            osal_printk("[WS63_BIZ] inbound item copy fail rc=%d\r\n", (int)rc);
             entry->item[0] = '\0';
         }
     }
@@ -502,18 +504,27 @@ static void biz_cmd_mqtt_connect(uint16_t seq, const char *data_json)
     }
     cJSON *j_cid = cJSON_GetObjectItem(root, "client_id");
     if (j_cid != NULL && cJSON_IsString(j_cid)) {
-        strncpy_s(params.client_id, BIZ_MQTT_CID_MAX,
+        errno_t rc2 = strncpy_s(params.client_id, BIZ_MQTT_CID_MAX,
             j_cid->valuestring, BIZ_MQTT_CID_MAX - 1);
+        if (rc2 != EOK) {
+            osal_printk("[WS63_BIZ] mqtt_connect client_id copy fail rc=%d\r\n", (int)rc2);
+        }
     }
     cJSON *j_user = cJSON_GetObjectItem(root, "username");
     if (j_user != NULL && cJSON_IsString(j_user)) {
-        strncpy_s(params.username, BIZ_MQTT_USER_MAX,
+        errno_t rc3 = strncpy_s(params.username, BIZ_MQTT_USER_MAX,
             j_user->valuestring, BIZ_MQTT_USER_MAX - 1);
+        if (rc3 != EOK) {
+            osal_printk("[WS63_BIZ] mqtt_connect username copy fail rc=%d\r\n", (int)rc3);
+        }
     }
     cJSON *j_pass = cJSON_GetObjectItem(root, "password");
     if (j_pass != NULL && cJSON_IsString(j_pass)) {
-        strncpy_s(params.password, BIZ_MQTT_PASS_MAX,
+        errno_t rc4 = strncpy_s(params.password, BIZ_MQTT_PASS_MAX,
             j_pass->valuestring, BIZ_MQTT_PASS_MAX - 1);
+        if (rc4 != EOK) {
+            osal_printk("[WS63_BIZ] mqtt_connect password copy fail rc=%d\r\n", (int)rc4);
+        }
     }
     cJSON_Delete(root);
 

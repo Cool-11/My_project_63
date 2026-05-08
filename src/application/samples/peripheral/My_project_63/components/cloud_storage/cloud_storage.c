@@ -8,6 +8,7 @@
 #include "wifi_linked_info.h"
 #include "lwip/netifapi.h"
 #include "MQTTClient.h"
+#include "tcxo.h"
 #include <string.h>
 
 static cs_wifi_state_t g_cs_wifi_state = CS_WIFI_IDLE;
@@ -15,6 +16,8 @@ static cs_wifi_state_cb g_cs_wifi_state_cb = NULL;
 static struct netif *g_cs_netif = NULL;
 static char g_cs_ifname[CS_IFNAME_LEN] = "wlan0";
 static bool g_cs_wifi_inited = false;
+static uint64_t g_cs_dhcp_start_ms = 0;
+#define CS_DHCP_TIMEOUT_MS 30000
 
 static cs_mqtt_state_t g_cs_mqtt_state = CS_MQTT_IDLE;
 static cs_mqtt_state_cb g_cs_mqtt_state_cb = NULL;
@@ -117,6 +120,12 @@ static int cs_wifi_do_connect(const char *ssid, const char *psk)
 {
     wifi_sta_config_stru config = {0};
 
+    if (ssid == NULL || strlen(ssid) == 0 || strlen(ssid) > WIFI_MAX_SSID_LEN - 1) {
+        osal_printk("[WS63_CLOUD] ssid invalid len=%u\r\n",
+            ssid ? (unsigned int)strlen(ssid) : 0);
+        return -1;
+    }
+
     errno_t rc = strncpy_s((char *)config.ssid, WIFI_MAX_SSID_LEN,
         ssid, WIFI_MAX_SSID_LEN - 1);
     if (rc != EOK) {
@@ -164,6 +173,7 @@ static int cs_wifi_start_dhcp(void)
         return -1;
     }
 
+    g_cs_dhcp_start_ms = uapi_tcxo_get_ms();
     osal_printk("[WS63_CLOUD] dhcp started\r\n");
     return 0;
 }
@@ -295,6 +305,14 @@ int cs_mqtt_connect(const cs_mqtt_config_t *config)
 {
     if (config == NULL) {
         osal_printk("[WS63_CLOUD] mqtt config null\r\n");
+        return -1;
+    }
+
+    if (config->uri == NULL || strlen(config->uri) < 6 ||
+        (strncmp(config->uri, "tcp://", 6) != 0 &&
+         strncmp(config->uri, "ssl://", 6) != 0)) {
+        osal_printk("[WS63_CLOUD] mqtt uri invalid: %s\r\n",
+            config->uri ? config->uri : "null");
         return -1;
     }
 
@@ -597,6 +615,14 @@ void cloud_storage_poll(void)
         if (cs_check_dhcp_done()) {
             osal_printk("[WS63_CLOUD] dhcp got ip\r\n");
             cs_set_wifi_state(CS_WIFI_GOT_IP);
+        } else if (g_cs_dhcp_start_ms != 0) {
+            uint64_t now = uapi_tcxo_get_ms();
+            if (now - g_cs_dhcp_start_ms >= CS_DHCP_TIMEOUT_MS) {
+                osal_printk("[WS63_CLOUD] dhcp timeout %ums, disconnecting\r\n",
+                    CS_DHCP_TIMEOUT_MS);
+                g_cs_dhcp_start_ms = 0;
+                cs_wifi_disconnect();
+            }
         }
     }
 

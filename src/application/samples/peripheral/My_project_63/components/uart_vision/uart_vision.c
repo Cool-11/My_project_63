@@ -3,11 +3,14 @@
 #include "uart.h"
 #include "pinctrl.h"
 #include "cJSON.h"
+#include "tcxo.h"
 #include <string.h>
 
 static uint8_t g_uv_ring[UV_RING_SIZE];
 static volatile uint16_t g_uv_ring_head = 0;
 static volatile uint16_t g_uv_ring_tail = 0;
+static volatile uint32_t g_uv_ring_drop_count = 0;
+static volatile uint64_t g_uv_last_recv_ms = 0;
 
 static uint8_t g_uv_rx_buf[UV_RING_SIZE];
 static uart_buffer_config_t g_uv_buffer_cfg = {
@@ -17,11 +20,19 @@ static uart_buffer_config_t g_uv_buffer_cfg = {
 
 static uv_cmd_handler_t g_uv_cmd_handler = NULL;
 
+static uint16_t uv_ring_count(void)
+{
+    uint16_t head = g_uv_ring_head;
+    uint16_t tail = g_uv_ring_tail;
+    return (head >= tail) ? (head - tail) : (UV_RING_SIZE - tail + head);
+}
+
 static void uv_ring_push(const uint8_t *data, uint16_t len)
 {
     for (uint16_t i = 0; i < len; i++) {
         uint16_t next = (g_uv_ring_head + 1) % UV_RING_SIZE;
         if (next == g_uv_ring_tail) {
+            g_uv_ring_drop_count++;
             break;
         }
         g_uv_ring[g_uv_ring_head] = data[i];
@@ -34,7 +45,7 @@ static bool uv_ring_has_newline(void)
     uint16_t i = g_uv_ring_tail;
     uint16_t dist = 0;
     while (i != g_uv_ring_head) {
-        if (g_uv_ring[i] == '\n' && dist < UV_LINE_MAX) {
+        if ((g_uv_ring[i] == '\n' || g_uv_ring[i] == '\r') && dist < UV_LINE_MAX) {
             return true;
         }
         i = (i + 1) % UV_RING_SIZE;
@@ -49,19 +60,23 @@ static uint16_t uv_ring_read_line(uint8_t *out, uint16_t max_len)
     while (g_uv_ring_tail != g_uv_ring_head && count < max_len - 1) {
         uint8_t ch = g_uv_ring[g_uv_ring_tail];
         g_uv_ring_tail = (g_uv_ring_tail + 1) % UV_RING_SIZE;
-        if (ch == '\n') {
+        if (ch == '\n' || ch == '\r') {
+            if (ch == '\r') {
+                if (g_uv_ring_tail != g_uv_ring_head &&
+                    g_uv_ring[g_uv_ring_tail] == '\n') {
+                    g_uv_ring_tail = (g_uv_ring_tail + 1) % UV_RING_SIZE;
+                }
+            }
             out[count] = '\0';
             return count;
         }
-        if (ch != '\r') {
-            out[count++] = ch;
-        }
+        out[count++] = ch;
     }
     if (count >= max_len - 1) {
         while (g_uv_ring_tail != g_uv_ring_head) {
             uint8_t ch = g_uv_ring[g_uv_ring_tail];
             g_uv_ring_tail = (g_uv_ring_tail + 1) % UV_RING_SIZE;
-            if (ch == '\n') {
+            if (ch == '\n' || ch == '\r') {
                 break;
             }
         }
@@ -75,14 +90,16 @@ static void uv_uart_rx_cb(const void *buffer, uint16_t length, bool error)
     if (error || buffer == NULL || length == 0) {
         return;
     }
+    g_uv_last_recv_ms = uapi_tcxo_get_ms();
     uv_ring_push((const uint8_t *)buffer, length);
 }
 
 static void uv_uart_init_pin(void)
 {
-    uapi_pin_set_mode(UV_UART_TX_PIN, PIN_MODE_1);
-    uapi_pin_set_mode(UV_UART_RX_PIN, PIN_MODE_1);
-    osal_printk("[WS63_UART] pin set tx=%d rx=%d mode=1\r\n", UV_UART_TX_PIN, UV_UART_RX_PIN);
+    uapi_pin_set_mode(UV_UART_TX_PIN, (pin_mode_t)UV_UART_TX_PIN_MODE);
+    uapi_pin_set_mode(UV_UART_RX_PIN, (pin_mode_t)UV_UART_RX_PIN_MODE);
+    osal_printk("[WS63_UART] pin set tx=%d mode=%d rx=%d mode=%d\r\n",
+        UV_UART_TX_PIN, UV_UART_TX_PIN_MODE, UV_UART_RX_PIN, UV_UART_RX_PIN_MODE);
 }
 
 static int uv_uart_init_config(void)
@@ -101,7 +118,7 @@ static int uv_uart_init_config(void)
     };
     errcode_t ret = uapi_uart_deinit(UV_UART_BUS);
     if (ret != ERRCODE_SUCC) {
-        osal_printk("[WS63_UART] deinit failed ret=0x%x\r\n", ret);
+        osal_printk("[WS63_UART] deinit ret=0x%x (may be first init)\r\n", ret);
     }
 
     ret = uapi_uart_init(UV_UART_BUS, &pin_cfg, &attr, NULL, &g_uv_buffer_cfg);
@@ -109,7 +126,8 @@ static int uv_uart_init_config(void)
         osal_printk("[WS63_UART] init failed ret=0x%x\r\n", ret);
         return (int)ret;
     }
-    osal_printk("[WS63_UART] init ok bus=%u baud=%u\r\n", UV_UART_BUS, UV_UART_BAUDRATE);
+    osal_printk("[WS63_UART] init ok bus=%u baud=%u tx=%d rx=%d\r\n",
+        UV_UART_BUS, UV_UART_BAUDRATE, UV_UART_TX_PIN, UV_UART_RX_PIN);
     return 0;
 }
 
@@ -133,6 +151,9 @@ void uart_vision_register_cmd_handler(uv_cmd_handler_t handler)
 
 static void uv_dispatch_line(const char *line, uint16_t len)
 {
+    osal_printk("[WS63_UART] dispatch line len=%u content=%s\r\n",
+        (unsigned int)len, line);
+
     cJSON *root = cJSON_Parse(line);
     if (root == NULL) {
         osal_printk("[WS63_UART] json parse fail len=%u\r\n", (unsigned int)len);
@@ -167,9 +188,26 @@ static void uv_dispatch_line(const char *line, uint16_t len)
     cJSON_Delete(root);
 }
 
+static void uv_check_timeout(void)
+{
+    if (g_uv_last_recv_ms == 0 || g_uv_ring_head == g_uv_ring_tail) {
+        return;
+    }
+    uint64_t now = uapi_tcxo_get_ms();
+    if (now - g_uv_last_recv_ms >= UV_LINE_TIMEOUT_MS) {
+        if (!uv_ring_has_newline() && g_uv_ring_head != g_uv_ring_tail) {
+            uint16_t drop_len = uv_ring_count();
+            g_uv_ring_tail = g_uv_ring_head;
+            osal_printk("[WS63_UART] timeout drop partial line len=%u\r\n",
+                (unsigned int)drop_len);
+        }
+    }
+}
+
 static void uv_process_ring(void)
 {
     static uint8_t line_buf[UV_LINE_MAX];
+    uv_check_timeout();
     while (uv_ring_has_newline()) {
         uint16_t line_len = uv_ring_read_line(line_buf, sizeof(line_buf));
         if (line_len == 0) {
@@ -179,8 +217,13 @@ static void uv_process_ring(void)
             osal_printk("[WS63_UART] line too long drop len=%u\r\n", (unsigned int)line_len);
             continue;
         }
-        osal_printk("[WS63_UART] line len=%u\r\n", (unsigned int)line_len);
         uv_dispatch_line((const char *)line_buf, line_len);
+    }
+    if (g_uv_ring_drop_count > 0) {
+        osal_printk("[WS63_UART] ring drop count=%u used=%u/%u\r\n",
+            (unsigned int)g_uv_ring_drop_count,
+            (unsigned int)uv_ring_count(), (unsigned int)UV_RING_SIZE);
+        g_uv_ring_drop_count = 0;
     }
 }
 
@@ -219,10 +262,10 @@ int uart_vision_send_json(uint16_t seq, const char *cmd, int code, const char *m
     }
 
     uint32_t out_len = (uint32_t)strlen(out);
-    out[out_len] = '\n';
-    out_len++;
-
     int32_t written = uapi_uart_write(UV_UART_BUS, (const uint8_t *)out, out_len, 0);
+    if (written >= 0) {
+        uapi_uart_write(UV_UART_BUS, (const uint8_t *)"\r\n", 2, 0);
+    }
     cJSON_free(out);
 
     if (written < 0) {
@@ -233,6 +276,11 @@ int uart_vision_send_json(uint16_t seq, const char *cmd, int code, const char *m
     osal_printk("[WS63_UART] send cmd=%s seq=%u code=%d len=%u\r\n",
         cmd, (unsigned int)seq, code, (unsigned int)out_len);
     return 0;
+}
+
+uint16_t uart_vision_ring_usage(void)
+{
+    return uv_ring_count();
 }
 
 int uart_vision_init(void)
@@ -251,7 +299,8 @@ int uart_vision_init(void)
         return ret;
     }
 
-    osal_printk("[WS63_UART] init done\r\n");
+    osal_printk("[WS63_UART] init done bus=%u tx=%d rx=%d baud=%u\r\n",
+        UV_UART_BUS, UV_UART_TX_PIN, UV_UART_RX_PIN, UV_UART_BAUDRATE);
     return 0;
 }
 

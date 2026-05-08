@@ -9,10 +9,13 @@ extern "C" {
 
 #define UV_UART_BUS         1
 #define UV_UART_BAUDRATE    115200
-#define UV_UART_TX_PIN      17
-#define UV_UART_RX_PIN      18
+#define UV_UART_TX_PIN      15
+#define UV_UART_RX_PIN      16
+#define UV_UART_TX_PIN_MODE 1
+#define UV_UART_RX_PIN_MODE 1
 #define UV_RING_SIZE        512
 #define UV_LINE_MAX         256
+#define UV_LINE_TIMEOUT_MS  100
 #define UV_SEQ_FIELD        "seq"
 #define UV_CMD_FIELD        "cmd"
 #define UV_DATA_FIELD       "data"
@@ -26,6 +29,7 @@ int uart_vision_send_json(uint16_t seq, const char *cmd, int code, const char *m
     const char *data_json);
 void uart_vision_register_cmd_handler(uv_cmd_handler_t handler);
 void uart_vision_poll(void);
+uint16_t uart_vision_ring_usage(void);
 
 #ifdef __cplusplus
 }
