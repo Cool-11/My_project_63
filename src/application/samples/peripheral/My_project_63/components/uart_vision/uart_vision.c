@@ -164,13 +164,18 @@ static void uv_dispatch_line(const char *line, uint16_t len)
     cJSON *j_seq = cJSON_GetObjectItem(root, UV_SEQ_FIELD);
     cJSON *j_data = cJSON_GetObjectItem(root, UV_DATA_FIELD);
 
+    /* ESP32 upstream uses "type" instead of "cmd" */
     if (j_cmd == NULL || !cJSON_IsString(j_cmd)) {
-        osal_printk("[WS63_UART] missing cmd field\r\n");
+        j_cmd = cJSON_GetObjectItem(root, UV_TYPE_FIELD);
+    }
+    if (j_cmd == NULL || !cJSON_IsString(j_cmd)) {
+        osal_printk("[WS63_UART] missing cmd/type field\r\n");
         cJSON_Delete(root);
         return;
     }
 
-    uint16_t seq = (j_seq != NULL && cJSON_IsNumber(j_seq)) ? (uint16_t)j_seq->valueint : 0;
+    int raw_seq = (j_seq != NULL && cJSON_IsNumber(j_seq)) ? j_seq->valueint : 0;
+    uint16_t seq = (raw_seq >= 0 && raw_seq <= 0xFFFF) ? (uint16_t)raw_seq : 0;
     const char *cmd = j_cmd->valuestring;
     char *data_str = (j_data != NULL) ? cJSON_PrintUnformatted(j_data) : NULL;
 
@@ -275,6 +280,27 @@ int uart_vision_send_json(uint16_t seq, const char *cmd, int code, const char *m
 
     osal_printk("[WS63_UART] send cmd=%s seq=%u code=%d len=%u\r\n",
         cmd, (unsigned int)seq, code, (unsigned int)out_len);
+    return 0;
+}
+
+int uart_vision_send_raw_json(const char *json_str)
+{
+    if (json_str == NULL) {
+        return -1;
+    }
+
+    uint32_t len = (uint32_t)strlen(json_str);
+    int32_t written = uapi_uart_write(UV_UART_BUS, (const uint8_t *)json_str, len, 0);
+    if (written >= 0) {
+        uapi_uart_write(UV_UART_BUS, (const uint8_t *)"\r\n", 2, 0);
+    }
+
+    if (written < 0) {
+        osal_printk("[WS63_UART] raw send fail ret=%d\r\n", (int)written);
+        return (int)written;
+    }
+
+    osal_printk("[WS63_UART] raw send len=%u\r\n", (unsigned int)len);
     return 0;
 }
 

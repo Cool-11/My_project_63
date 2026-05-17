@@ -202,13 +202,14 @@ static void my63_poll_cloud(void)
 
 static void my63_poll_sle(uint64_t now)
 {
-    if (sle_network_is_target_found() == 0) {
-        if (sle_network_get_scan_count() == 0 &&
-            sle_network_get_scan_active() == 0) {
-            if (now - g_my63_last_rescan >= MY63_SLE_RESCAN_MS) {
-                g_my63_last_rescan = now;
-                (void)sle_network_start_scan();
-            }
+    sle_network_poll();
+
+    /* 扫描未激活时定期重启 */
+    if (sle_network_is_connected() == 0 &&
+        sle_network_get_scan_active() == 0) {
+        if (now - g_my63_last_rescan >= MY63_SLE_RESCAN_MS) {
+            g_my63_last_rescan = now;
+            (void)sle_network_start_scan();
         }
     }
 }
@@ -220,10 +221,11 @@ static void my63_heartbeat(uint64_t now)
     }
     g_my63_last_heartbeat = now;
 
-    osal_printk("[WS63_APP] hb sle=%d/%d/%d wifi=%d mqtt=%d cache=%u uart_ring=%u\r\n",
+    osal_printk("[WS63_APP] hb sle=%d/%d/%d scan_tbl=%u wifi=%d mqtt=%d cache=%u uart_ring=%u\r\n",
         sle_network_is_target_found(),
         sle_network_is_connected(),
         sle_network_is_ssap_ready(),
+        (unsigned int)sle_network_get_scan_table_count(),
         (int)cs_wifi_get_state(),
         (int)cs_mqtt_get_state(),
         (unsigned int)cs_cache_count(),

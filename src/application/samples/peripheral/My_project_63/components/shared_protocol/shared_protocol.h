@@ -37,10 +37,12 @@ typedef enum {
 #define SSAP_CMD_INVENTORY      0x02
 #define SSAP_CMD_UPDATE_QTY     0x10
 #define SSAP_CMD_BIND_TAG       0x20
+#define SSAP_CMD_UNBIND_TAG     0x21
 
 #define SSAP_RSP_INVENTORY      0x82
 #define SSAP_RSP_BIND_OK        0xA0
-#define SSAP_RSP_BIND_FAIL      0xAF
+#define SSAP_RSP_UNBIND_OK      0xA1
+#define SSAP_RSP_BIND_FAIL      0xAF  /* bind/unbind 失败复用 */
 
 #define SSAP_CCCD_NOTIFY_EN     0x0001
 

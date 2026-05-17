@@ -41,6 +41,12 @@ static void write_le32(uint8_t *buf, uint32_t value)
     buf[3] = (uint8_t)((value >> 24) & 0xFFU);
 }
 
+static void write_be16(uint8_t *buf, uint16_t value)
+{
+    buf[0] = (uint8_t)((value >> 8) & 0xFFU);
+    buf[1] = (uint8_t)(value & 0xFFU);
+}
+
 int shared_protocol_validate(const shared_proto_adv_field_t *field)
 {
     if (field == NULL) {
@@ -217,11 +223,11 @@ int shared_protocol_unpack_inventory(const uint8_t *buf, uint16_t len, ssap_inve
     }
 
     out->cmd = buf[0];
-    out->tag_id = read_le16(&buf[1]);
-    out->qty = read_le16(&buf[3]);
+    out->tag_id = read_be16(&buf[1]);
+    out->qty = read_be16(&buf[3]);
     out->status = buf[5];
     out->battery = buf[6];
-    out->seq = read_le16(&buf[7]);
+    out->seq = read_be16(&buf[7]);
 
     osal_printk("[WS63_SHARED] unpack_inventory done: tag=%u qty=%u status=%u bat=%u seq=%u\r\n",
         (unsigned int)out->tag_id, (unsigned int)out->qty,
@@ -249,7 +255,7 @@ int shared_protocol_unpack_bind_rsp(const uint8_t *buf, uint16_t len, ssap_bind_
     }
 
     out->cmd = buf[0];
-    out->tag_id = read_le16(&buf[1]);
+    out->tag_id = read_be16(&buf[1]);
 
     osal_printk("[WS63_SHARED] unpack_bind_rsp done: cmd=0x%02X tag=%u %s\r\n",
         out->cmd, (unsigned int)out->tag_id,
@@ -282,7 +288,7 @@ int shared_protocol_pack_write_cmd(uint8_t cmd, uint16_t param, uint8_t *out_buf
             return SHARED_PROTO_ERR_LEN;
         }
         out_buf[0] = cmd;
-        write_le16(&out_buf[1], param);
+        write_be16(&out_buf[1], param);
         osal_printk("[WS63_SHARED] pack_write_cmd done: [0x%02X 0x%02X 0x%02X] 3-byte cmd+param\r\n",
             cmd, out_buf[1], out_buf[2]);
         return 3;

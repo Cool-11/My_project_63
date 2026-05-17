@@ -13,7 +13,8 @@ extern "C" {
 #define BIZ_ITEM_LEN            16
 #define BIZ_MAC_LEN             6
 #define BIZ_NV_KEY_TAG_MAP      0x5001
-#define BIZ_PENDING_TIMEOUT_MS  5000
+#define BIZ_PENDING_TIMEOUT_SLE_MS   5000
+#define BIZ_PENDING_TIMEOUT_ESP32_MS 15000
 
 #define BIZ_MQTT_URI_MAX        128
 #define BIZ_MQTT_CID_MAX        64
@@ -57,6 +58,7 @@ typedef struct {
 
 typedef void (*biz_notify_uart_t)(uint16_t seq, const char *cmd, int code,
     const char *msg, const char *data_json);
+typedef void (*biz_raw_json_uart_t)(const char *json_str);
 typedef void (*biz_cloud_publish_t)(const char *payload, uint16_t len);
 typedef int (*biz_wifi_cmd_t)(const char *ssid, const char *psk);
 typedef int (*biz_mqtt_cmd_handler_t)(biz_mqtt_cmd_t cmd, const biz_mqtt_connect_params_t *params);
@@ -66,12 +68,13 @@ void business_logic_poll(void);
 
 biz_tag_entry_t *biz_map_find_by_tag(uint16_t tag_id);
 biz_tag_entry_t *biz_map_find_by_mac(const uint8_t *mac);
-biz_tag_entry_t *biz_map_alloc(void);
+biz_tag_entry_t *biz_map_add(uint16_t tag_id);
 int biz_map_remove(uint16_t tag_id);
 int biz_map_save_nv(void);
 int biz_map_load_nv(void);
 
 void business_logic_register_uart_cb(biz_notify_uart_t cb);
+void business_logic_register_raw_json_cb(biz_raw_json_uart_t cb);
 void business_logic_register_cloud_cb(biz_cloud_publish_t cb);
 void business_logic_register_wifi_cmd_cb(biz_wifi_cmd_t cb);
 void business_logic_register_mqtt_cmd_cb(biz_mqtt_cmd_handler_t cb);

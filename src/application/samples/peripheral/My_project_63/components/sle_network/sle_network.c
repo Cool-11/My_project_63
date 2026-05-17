@@ -2,6 +2,7 @@
 #include "soc_osal.h"
 #include "securec.h"
 #include "common_def.h"
+#include "tcxo.h"
 #include <string.h>
 
 #include "sle_device_discovery.h"
@@ -10,7 +11,7 @@
 #include "sle_ssap_client.h"
 #include "../shared_protocol/shared_protocol.h"
 
-#define SLE_MTU_SIZE_DEFAULT        1500
+#define SLE_MTU_SIZE_DEFAULT        512
 #define MY63_SLE_SEEK_INTERVAL_DEFAULT 0xC8
 #define MY63_SLE_SEEK_WINDOW_DEFAULT   0x50
 #define MY63_SLE_SCAN_PHY_NUM          1
@@ -23,7 +24,6 @@
 #define MY63_MANUFACTURER_ID_L           0x5A
 #define MY63_MANUFACTURER_ID_H           0xA5
 #define MY63_MANUFACTURER_ID_LEN         2
-#define MY63_TARGET_TAG_ID               0
 #define MY63_UUID_16BIT_LEN              2
 #define MY63_UUID_128BIT_LEN             16
 #define MY63_UUID_INDEX                  14
@@ -71,6 +71,13 @@ static int g_my63_cccd_written = 0;
 static sle_notify_callback g_my63_notify_cb = NULL;
 static volatile uint32_t g_my63_scan_result_count = 0;
 static volatile int g_my63_scan_active = 0;
+
+/* 扫描表：记录所有扫到的 BS21E 标签 */
+static sle_scan_entry_t g_scan_table[SLE_SCAN_TABLE_MAX] = {0};
+static uint16_t g_scan_count = 0;
+
+static sle_scan_entry_t *scan_table_find_by_tag(uint16_t tag_id);
+static void scan_table_cleanup(void);
 
 static int my63_check_local_name(const sle_seek_result_info_t *seek_result)
 {
@@ -418,6 +425,58 @@ int sle_network_disconnect(void)
     return 0;
 }
 
+int sle_network_connect_by_tag(uint16_t tag_id)
+{
+    if (g_my63_connecting || g_my63_connected) {
+        osal_printk("[WS63_NET] connect_by_tag skip: already connecting/connected\r\n");
+        return -1;
+    }
+
+    sle_scan_entry_t *entry = scan_table_find_by_tag(tag_id);
+    if (entry == NULL) {
+        osal_printk("[WS63_NET] connect_by_tag: tag_id=%u not found in scan table\r\n",
+            (unsigned int)tag_id);
+        return -2;
+    }
+
+    /* 停止扫描，准备连接 */
+    (void)sle_network_stop_scan();
+
+    g_my63_target_addr.type = 0;
+    (void)memcpy_s(g_my63_target_addr.addr, SLE_ADDR_LEN, entry->mac, SLE_ADDR_LEN);
+    g_my63_target_found = 1;
+    g_my63_connecting = 1;
+
+    osal_printk("[WS63_NET] connect_by_tag tag_id=%u mac=%02x:%02x:%02x:%02x:%02x:%02x\r\n",
+        (unsigned int)tag_id,
+        entry->mac[0], entry->mac[1], entry->mac[2],
+        entry->mac[3], entry->mac[4], entry->mac[5]);
+
+    errcode_t ret = sle_connect_remote_device(&g_my63_target_addr);
+    if (ret != ERRCODE_SLE_SUCCESS) {
+        osal_printk("[WS63_NET] connect_by_tag failed ret=0x%x\r\n", ret);
+        g_my63_connecting = 0;
+        (void)sle_network_start_scan();
+        return (int)ret;
+    }
+    return 0;
+}
+
+const sle_scan_entry_t *sle_network_get_scan_table(void)
+{
+    return g_scan_table;
+}
+
+uint16_t sle_network_get_scan_table_count(void)
+{
+    return g_scan_count;
+}
+
+void sle_network_poll(void)
+{
+    scan_table_cleanup();
+}
+
 void sle_network_register_notify_cb(sle_notify_callback cb)
 {
     g_my63_notify_cb = cb;
@@ -433,11 +492,17 @@ static void my63_sle_enable_cb(errcode_t status)
     }
 
     {
-        uint8_t local_addr[SLE_ADDR_LEN] = {0x13, 0x67, 0x5c, 0x07, 0x00, 0x51};
-        sle_addr_t local_address;
-
-        local_address.type = 0;
-        (void)memcpy_s(local_address.addr, SLE_ADDR_LEN, local_addr, SLE_ADDR_LEN);
+        sle_addr_t local_address = {0};
+        if (sle_get_local_addr(&local_address) == ERRCODE_SLE_SUCCESS) {
+            osal_printk("[WS63_NET] using real local addr: %02X:%02X:%02X:%02X:%02X:%02X\r\n",
+                local_address.addr[0], local_address.addr[1], local_address.addr[2],
+                local_address.addr[3], local_address.addr[4], local_address.addr[5]);
+        } else {
+            osal_printk("[WS63_NET] WARN: sle_get_local_addr failed, using default\r\n");
+            uint8_t fallback_addr[SLE_ADDR_LEN] = {0x13, 0x67, 0x5c, 0x07, 0x00, 0x51};
+            local_address.type = 0;
+            (void)memcpy_s(local_address.addr, SLE_ADDR_LEN, fallback_addr, SLE_ADDR_LEN);
+        }
         sle_set_local_addr(&local_address);
     }
 
@@ -544,18 +609,90 @@ static void my63_connect_state_changed_cb(uint16_t conn_id, const sle_addr_t *ad
         g_my63_link_lost = 1;
         g_my63_authenticated = 0;
         g_my63_ssap_ready = 0;
+        g_my63_target_found = 0;
         g_my63_property_handle = 0;
         g_my63_cccd_written = 0;
         (void)memset_s(&g_my63_find_service_result, sizeof(ssapc_find_service_result_t), 0,
             sizeof(ssapc_find_service_result_t));
-        osal_printk("[WS63_NET] disconnected, reason=%d\r\n", disc_reason);
+        osal_printk("[WS63_NET] disconnected, reason=%d, auto-restart scan\r\n", disc_reason);
         (void)sle_network_start_scan();
+    }
+}
+
+/* 扫描表：添加或更新条目 */
+static void scan_table_add_or_update(uint16_t tag_id, const uint8_t *mac,
+    uint8_t battery, uint16_t qty, uint8_t status)
+{
+    /* 先查找已有条目 */
+    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+        if (g_scan_table[i].used && g_scan_table[i].tag_id == tag_id) {
+            g_scan_table[i].battery = battery;
+            g_scan_table[i].qty = qty;
+            g_scan_table[i].status = status;
+            g_scan_table[i].last_seen_ms = uapi_tcxo_get_ms();
+            if (mac != NULL) {
+                (void)memcpy_s(g_scan_table[i].mac, 6, mac, 6);
+            }
+            return;
+        }
+    }
+    /* 新条目：找空位 */
+    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+        if (!g_scan_table[i].used) {
+            g_scan_table[i].tag_id = tag_id;
+            g_scan_table[i].battery = battery;
+            g_scan_table[i].qty = qty;
+            g_scan_table[i].status = status;
+            g_scan_table[i].last_seen_ms = uapi_tcxo_get_ms();
+            g_scan_table[i].used = true;
+            if (mac != NULL) {
+                (void)memcpy_s(g_scan_table[i].mac, 6, mac, 6);
+            }
+            g_scan_count++;
+            osal_printk("[WS63_NET] scan table add tag_id=%u total=%u\r\n",
+                (unsigned int)tag_id, (unsigned int)g_scan_count);
+            return;
+        }
+    }
+    osal_printk("[WS63_NET] scan table FULL, drop tag_id=%u\r\n", (unsigned int)tag_id);
+}
+
+/* 扫描表：按 tag_id 查找 */
+static sle_scan_entry_t *scan_table_find_by_tag(uint16_t tag_id)
+{
+    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+        if (g_scan_table[i].used && g_scan_table[i].tag_id == tag_id) {
+            return &g_scan_table[i];
+        }
+    }
+    return NULL;
+}
+
+/* 扫描表：过期清理（30s标记离线，5min清除） */
+static void scan_table_cleanup(void)
+{
+    uint64_t now = uapi_tcxo_get_ms();
+    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+        if (!g_scan_table[i].used) {
+            continue;
+        }
+        uint64_t age = now - g_scan_table[i].last_seen_ms;
+        if (age >= SLE_SCAN_ENTRY_EXPIRE_MS) {
+            osal_printk("[WS63_NET] scan table expire tag_id=%u age=%ums\r\n",
+                (unsigned int)g_scan_table[i].tag_id, (unsigned int)age);
+            g_scan_table[i].used = false;
+            g_scan_count--;
+        } else if (age >= SLE_SCAN_ENTRY_TIMEOUT_MS) {
+            /* 30s 未扫到，标记离线（status=0x02 语义复用为离线） */
+            if (g_scan_table[i].status == 0x00) {
+                g_scan_table[i].status = 0x02;
+            }
+        }
     }
 }
 
 static void my63_seek_result_cb(sle_seek_result_info_t *seek_result_data)
 {
-    errno_t ret;
     shared_proto_adv_field_t adv = {0};
     int name_matched = 0;
     int adv_matched = 0;
@@ -598,63 +735,26 @@ static void my63_seek_result_cb(sle_seek_result_info_t *seek_result_data)
 
     adv_matched = my63_extract_adv_field(seek_result_data, &adv);
     if (adv_matched == 0) {
-        if (name_matched) {
-            osal_printk("[WS63_NET] local_name matched but manufacturer data invalid, connect by name\r\n");
-            ret = memcpy_s(&g_my63_target_addr, sizeof(sle_addr_t), &seek_result_data->addr, sizeof(sle_addr_t));
-            if (ret != EOK) {
-                osal_printk("[WS63_NET] target address copy failed ret=%d\r\n", (int)ret);
-                return;
-            }
-            g_my63_target_found = 1;
-            (void)sle_network_stop_scan();
-            if (!g_my63_connecting && !g_my63_connected) {
-                g_my63_connecting = 1;
-                osal_printk("[WS63_NET] connect target (by name) addr=%02x:%02x:%02x:%02x:%02x:%02x\r\n",
-                    g_my63_target_addr.addr[0], g_my63_target_addr.addr[1], g_my63_target_addr.addr[2],
-                    g_my63_target_addr.addr[3], g_my63_target_addr.addr[4], g_my63_target_addr.addr[5]);
-                (void)sle_connect_remote_device(&g_my63_target_addr);
-            }
-            return;
-        }
         osal_printk("[WS63_NET] adv payload not matched or magic invalid\r\n");
         return;
     }
 
+    /* tag_id=0 的广播忽略（未配网的标签） */
     if (adv.tag_id == 0) {
-        osal_printk("[WS63_NET] adv tag_id=0 invalid, skip\r\n");
+        osal_printk("[WS63_NET] adv tag_id=0 (unconfigured), skip\r\n");
         return;
     }
 
-    if (adv.tag_id != MY63_TARGET_TAG_ID) {
-        osal_printk("[WS63_NET] adv tag_id mismatch=%u\r\n", (unsigned int)adv.tag_id);
-        return;
-    }
-
-    osal_printk("[WS63_NET] adv matched tag=%u qty=%u status=%u bat=%u seq=%u name_match=%d\r\n",
+    osal_printk("[WS63_NET] adv matched tag=%u qty=%u status=%u bat=%u seq=%u\r\n",
         (unsigned int)adv.tag_id,
         (unsigned int)adv.qty,
         (unsigned int)adv.status,
         (unsigned int)adv.battery,
-        (unsigned int)adv.seq,
-        name_matched);
+        (unsigned int)adv.seq);
 
-    osal_printk("[WS63_NET] target broadcast matched, stopping scan\r\n");
-    ret = memcpy_s(&g_my63_target_addr, sizeof(sle_addr_t), &seek_result_data->addr, sizeof(sle_addr_t));
-    if (ret != EOK) {
-        osal_printk("[WS63_NET] target address copy failed ret=%d\r\n", (int)ret);
-        return;
-    }
-
-    g_my63_target_found = 1;
-    (void)sle_network_stop_scan();
-
-    if (!g_my63_connecting && !g_my63_connected) {
-        g_my63_connecting = 1;
-        osal_printk("[WS63_NET] connect target addr=%02x:%02x:%02x:%02x:%02x:%02x\r\n",
-            g_my63_target_addr.addr[0], g_my63_target_addr.addr[1], g_my63_target_addr.addr[2],
-            g_my63_target_addr.addr[3], g_my63_target_addr.addr[4], g_my63_target_addr.addr[5]);
-        (void)sle_connect_remote_device(&g_my63_target_addr);
-    }
+    /* 记录到扫描表（不停止扫描，不自动连接） */
+    scan_table_add_or_update(adv.tag_id, seek_result_data->addr.addr,
+        adv.battery, adv.qty, adv.status);
 }
 
 static void my63_ssap_exchange_info_cb(uint8_t client_id, uint16_t conn_id, ssap_exchange_info_t *param,
@@ -883,7 +983,7 @@ static void my63_ssap_notification_cb(uint8_t client_id, uint16_t conn_id, ssapc
         } else {
             osal_printk("[WS63_NET] inventory unpack failed ret=%d\r\n", ret);
         }
-    } else if (data->data[0] == SSAP_RSP_BIND_OK || data->data[0] == SSAP_RSP_BIND_FAIL) {
+    } else if (data->data[0] == SSAP_RSP_BIND_OK || data->data[0] == SSAP_RSP_UNBIND_OK || data->data[0] == SSAP_RSP_BIND_FAIL) {
         if (data->data_len < SSAP_BIND_RSP_LEN) {
             osal_printk("[WS63_NET] bind rsp too short len=%u expect>=%u\r\n",
                 (unsigned int)data->data_len, (unsigned int)SSAP_BIND_RSP_LEN);
