@@ -23,8 +23,8 @@ extern "C" {
 #define CS_NV_KEY_MQTT_CFG  0x5002
 #define CS_NV_KEY_WIFI_CFG  0x5003
 
-#define CS_THINGSKIT_TELEMETRY_TOPIC  "v1/devices/me/telemetry"
-#define CS_THINGSKIT_RPC_SUB_TOPIC    "v1/devices/me/rpc/request/+"
+#define CS_THINGSKIT_GATEWAY_TELEMETRY    "v1/gateway/telemetry"
+#define CS_THINGSKIT_GATEWAY_RPC_SUB      "v1/gateway/rpc"
 
 typedef enum {
     CS_WIFI_IDLE = 0,
@@ -78,8 +78,10 @@ cs_mqtt_state_t cs_mqtt_get_state(void);
 bool cs_mqtt_is_connected(void);
 int cs_mqtt_publish(const char *topic, const char *payload, uint16_t len);
 int cs_mqtt_publish_telemetry(const char *payload, uint16_t len);
+int cs_mqtt_publish_gateway(const char *payload, uint16_t len);
 void cs_mqtt_register_state_cb(cs_mqtt_state_cb cb);
 void cs_mqtt_register_msg_cb(cs_mqtt_msg_cb cb);
+int cs_mqtt_subscribe_gateway(void);
 
 int cs_cache_push(const char *topic, const char *payload, uint16_t len);
 uint16_t cs_cache_count(void);

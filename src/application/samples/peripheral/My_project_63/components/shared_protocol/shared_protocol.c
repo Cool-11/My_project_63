@@ -133,7 +133,7 @@ int shared_protocol_unpack_adv(const uint8_t *in_buf, uint16_t in_len, shared_pr
         uint32_t be_magic = read_be32(&in_buf[0]);
         osal_printk("[WS63_SHARED] LE magic=0x%08x mismatch, try BE raw=0x%08x\r\n",
             (unsigned int)field->magic, (unsigned int)be_magic);
-        if (be_magic == SHARED_PROTO_MAGIC_BE) {
+        if (be_magic == SHARED_PROTO_MAGIC) {
             field->magic = be_magic;
             field->tag_id = read_be16(&in_buf[4]);
             field->qty = read_be16(&in_buf[6]);
@@ -249,8 +249,8 @@ int shared_protocol_unpack_bind_rsp(const uint8_t *buf, uint16_t len, ssap_bind_
         return SHARED_PROTO_ERR_LEN;
     }
 
-    if (buf[0] != SSAP_RSP_BIND_OK && buf[0] != SSAP_RSP_BIND_FAIL) {
-        osal_printk("[WS63_SHARED] unpack_bind_rsp failed: cmd=0x%02X expect 0xA0/0xAF\r\n", buf[0]);
+    if (buf[0] != SSAP_RSP_BIND_OK && buf[0] != SSAP_RSP_UNBIND_OK && buf[0] != SSAP_RSP_BIND_FAIL) {
+        osal_printk("[WS63_SHARED] unpack_bind_rsp failed: cmd=0x%02X expect 0xA0/0xA1/0xAF\r\n", buf[0]);
         return SHARED_PROTO_ERR_CMD;
     }
 
@@ -259,7 +259,7 @@ int shared_protocol_unpack_bind_rsp(const uint8_t *buf, uint16_t len, ssap_bind_
 
     osal_printk("[WS63_SHARED] unpack_bind_rsp done: cmd=0x%02X tag=%u %s\r\n",
         out->cmd, (unsigned int)out->tag_id,
-        (out->cmd == SSAP_RSP_BIND_OK) ? "OK" : "FAIL");
+        (out->cmd == SSAP_RSP_BIND_FAIL) ? "FAIL" : "OK");
     return SHARED_PROTO_OK;
 }
 
@@ -282,7 +282,7 @@ int shared_protocol_pack_write_cmd(uint8_t cmd, uint16_t param, uint8_t *out_buf
         return 1;
     }
 
-    if (cmd == SSAP_CMD_UPDATE_QTY || cmd == SSAP_CMD_BIND_TAG) {
+    if (cmd == SSAP_CMD_UPDATE_QTY || cmd == SSAP_CMD_BIND_TAG || cmd == SSAP_CMD_UNBIND_TAG) {
         if (out_len < 3) {
             osal_printk("[WS63_SHARED] pack_write_cmd failed: out_len=%u need 3\r\n", (unsigned int)out_len);
             return SHARED_PROTO_ERR_LEN;

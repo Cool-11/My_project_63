@@ -247,8 +247,14 @@ static void biz_publish_tag_update(biz_tag_entry_t *entry)
     if (root == NULL) {
         return;
     }
+    cJSON *arr = cJSON_CreateArray();
+    if (arr == NULL) {
+        cJSON_Delete(root);
+        return;
+    }
     cJSON *tag = cJSON_CreateObject();
     if (tag == NULL) {
+        cJSON_Delete(arr);
         cJSON_Delete(root);
         return;
     }
@@ -258,7 +264,11 @@ static void biz_publish_tag_update(biz_tag_entry_t *entry)
     cJSON_AddNumberToObject(tag, "qty", entry->qty);
     cJSON_AddNumberToObject(tag, "status", entry->status);
     cJSON_AddNumberToObject(tag, "battery", entry->battery);
-    cJSON_AddItemToObject(root, "tag_update", tag);
+    cJSON_AddItemToArray(arr, tag);
+
+    char key[16];
+    snprintf(key, sizeof(key), "tag_%03u", (unsigned int)entry->tag_id);
+    cJSON_AddItemToObject(root, key, arr);
 
     char *str = cJSON_PrintUnformatted(root);
     cJSON_Delete(root);

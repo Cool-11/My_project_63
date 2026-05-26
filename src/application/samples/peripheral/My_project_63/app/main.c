@@ -48,7 +48,7 @@ static void my63_cloud_publish_cb(const char *payload, uint16_t len)
     if (payload == NULL || len == 0) {
         return;
     }
-    int ret = cs_mqtt_publish_telemetry(payload, len);
+    int ret = cs_mqtt_publish_gateway(payload, len);
     if (ret != 0) {
         osal_printk("[WS63_APP] cloud publish fail ret=%d\r\n", ret);
     }

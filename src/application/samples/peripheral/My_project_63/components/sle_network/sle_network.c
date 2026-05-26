@@ -93,7 +93,7 @@ static int my63_check_local_name(const sle_seek_result_info_t *seek_result)
         uint8_t field_type;
         uint8_t field_data_len;
 
-        if (field_len == 0 || (uint8_t)(offset + field_len) >= length + 1U) {
+        if (field_len == 0 || (uint16_t)offset + (uint16_t)field_len >= (uint16_t)length) {
             break;
         }
 
@@ -139,7 +139,7 @@ static int my63_extract_adv_field(const sle_seek_result_info_t *seek_result,
         uint8_t field_type;
         uint8_t field_data_len;
 
-        if (field_len == 0 || (uint8_t)(offset + field_len) >= length + 1U) {
+        if (field_len == 0 || (uint16_t)offset + (uint16_t)field_len >= (uint16_t)length) {
             osal_printk("[WS63_NET] AD field parse break at offset=%u field_len=%u total_len=%u\r\n",
                 (unsigned int)offset, (unsigned int)field_len, (unsigned int)length);
             break;

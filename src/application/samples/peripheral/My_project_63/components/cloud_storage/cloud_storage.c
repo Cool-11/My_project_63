@@ -396,6 +396,15 @@ int cs_mqtt_connect(const cs_mqtt_config_t *config)
             CS_THINGSKIT_RPC_SUB_TOPIC);
     }
 
+    mqtt_rc = MQTTClient_subscribe(g_cs_mqtt_client,
+        CS_THINGSKIT_GATEWAY_RPC_SUB, 1);
+    if (mqtt_rc != MQTTCLIENT_SUCCESS) {
+        osal_printk("[WS63_CLOUD] gateway subscribe fail rc=%d\r\n", mqtt_rc);
+    } else {
+        osal_printk("[WS63_CLOUD] gateway subscribed topic=%s\r\n",
+            CS_THINGSKIT_GATEWAY_RPC_SUB);
+    }
+
     cs_cache_flush();
     return 0;
 }
@@ -466,6 +475,11 @@ int cs_mqtt_publish_telemetry(const char *payload, uint16_t len)
     return cs_mqtt_publish(CS_THINGSKIT_TELEMETRY_TOPIC, payload, len);
 }
 
+int cs_mqtt_publish_gateway(const char *payload, uint16_t len)
+{
+    return cs_mqtt_publish(CS_THINGSKIT_GATEWAY_TELEMETRY, payload, len);
+}
+
 void cs_mqtt_register_state_cb(cs_mqtt_state_cb cb)
 {
     g_cs_mqtt_state_cb = cb;
@@ -474,6 +488,25 @@ void cs_mqtt_register_state_cb(cs_mqtt_state_cb cb)
 void cs_mqtt_register_msg_cb(cs_mqtt_msg_cb cb)
 {
     g_cs_mqtt_msg_cb = cb;
+}
+
+int cs_mqtt_subscribe_gateway(void)
+{
+    if (!cs_mqtt_is_connected() || g_cs_mqtt_client == NULL) {
+        osal_printk("[WS63_CLOUD] subscribe_gateway skipped, mqtt not connected\r\n");
+        return -1;
+    }
+
+    int rc = MQTTClient_subscribe(g_cs_mqtt_client,
+        CS_THINGSKIT_GATEWAY_RPC_SUB, 1);
+    if (rc != MQTTCLIENT_SUCCESS) {
+        osal_printk("[WS63_CLOUD] subscribe_gateway fail rc=%d\r\n", rc);
+        return -2;
+    }
+
+    osal_printk("[WS63_CLOUD] subscribe_gateway ok topic=%s\r\n",
+        CS_THINGSKIT_GATEWAY_RPC_SUB);
+    return 0;
 }
 
 int cs_cache_push(const char *topic, const char *payload, uint16_t len)
