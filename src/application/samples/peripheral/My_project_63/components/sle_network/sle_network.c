@@ -4,6 +4,7 @@
 #include "common_def.h"
 #include "tcxo.h"
 #include <string.h>
+#include "cmsis_os2.h"
 
 #include "sle_device_discovery.h"
 #include "sle_connection_manager.h"
@@ -72,123 +73,103 @@ static sle_notify_callback g_my63_notify_cb = NULL;
 static volatile uint32_t g_my63_scan_result_count = 0;
 static volatile int g_my63_scan_active = 0;
 
+/* SLE 广播消息队列（事件驱动核心，ISR→主循环） */
+static osMessageQueueId_t g_adv_queue = NULL;
+
 /* 扫描表：记录所有扫到的 BS21E 标签 */
 static sle_scan_entry_t g_scan_table[SLE_SCAN_TABLE_MAX] = {0};
 static uint16_t g_scan_count = 0;
 
 static sle_scan_entry_t *scan_table_find_by_tag(uint16_t tag_id);
+static void scan_table_add_or_update(uint16_t tag_id, const uint8_t *mac,
+    uint8_t battery, uint16_t qty, uint8_t status);
 static void scan_table_cleanup(void);
 
-static int my63_check_local_name(const sle_seek_result_info_t *seek_result)
+/* SLE 广播消息队列初始化（256 条，每条 sizeof(sle_adv_msg)） */
+int sle_adv_queue_init(void)
 {
-    if (seek_result == NULL || seek_result->data == NULL || seek_result->data_length == 0) {
-        return 0;
+    if (g_adv_queue != NULL) {
+        return 0;  /* 已初始化 */
     }
-
-    const uint8_t *data = seek_result->data;
-    uint8_t length = seek_result->data_length;
-
-    for (uint8_t offset = 0; (uint8_t)(offset + 1U) < length;) {
-        uint8_t field_len = data[offset];
-        uint8_t field_type;
-        uint8_t field_data_len;
-
-        if (field_len == 0 || (uint16_t)offset + (uint16_t)field_len >= (uint16_t)length) {
-            break;
-        }
-
-        field_type = data[offset + 1U];
-        field_data_len = (uint8_t)(field_len - 1U);
-
-        if (field_type == MY63_ADV_FIELD_TYPE_COMPLETE_NAME) {
-            if (field_data_len == MY63_BS21E_LOCAL_NAME_LEN &&
-                memcmp(&data[offset + 2U], MY63_BS21E_LOCAL_NAME, MY63_BS21E_LOCAL_NAME_LEN) == 0) {
-                return 1;
-            }
-            if (field_data_len > 0 && field_data_len <= 32) {
-                char name_buf[33] = {0};
-                uint8_t copy_len = field_data_len;
-                if (copy_len > 32) {
-                    copy_len = 32;
-                }
-                (void)memcpy_s(name_buf, 32, &data[offset + 2U], copy_len);
-                osal_printk("[WS63_NET] found local_name=\"%s\" len=%u (expect \"%s\" len=%u)\r\n",
-                    name_buf, (unsigned int)field_data_len,
-                    MY63_BS21E_LOCAL_NAME, (unsigned int)MY63_BS21E_LOCAL_NAME_LEN);
-            }
-        }
-
-        offset = (uint8_t)(offset + field_len + 1U);
+    g_adv_queue = osMessageQueueNew(256, sizeof(struct sle_adv_msg), NULL);
+    if (g_adv_queue == NULL) {
+        osal_printk("[WS63_NET] adv queue create FAILED\r\n");
+        return -1;
     }
-
+    osal_printk("[WS63_NET] adv queue created: 256 x %uB\r\n",
+        (unsigned int)sizeof(struct sle_adv_msg));
     return 0;
 }
 
-static int my63_extract_adv_field(const sle_seek_result_info_t *seek_result,
-    shared_proto_adv_field_t *out_field)
+/* 从队列取出一条广播消息（主循环调用，非阻塞） */
+int sle_adv_queue_get(struct sle_adv_msg *msg)
 {
-    if (seek_result == NULL || seek_result->data == NULL || seek_result->data_length == 0 || out_field == NULL) {
+    if (g_adv_queue == NULL || msg == NULL) {
+        return -1;
+    }
+    return (osMessageQueueGet(g_adv_queue, msg, NULL, 0) == osOK) ? 0 : -1;
+}
+
+/* 查询队列中待处理条数 */
+uint16_t sle_adv_queue_count(void)
+{
+    if (g_adv_queue == NULL) {
         return 0;
     }
+    return (uint16_t)osMessageQueueGetCount(g_adv_queue);
+}
 
-    const uint8_t *data = seek_result->data;
-    uint8_t length = seek_result->data_length;
+/* 出队处理：从 raw 字节提取 manufacturer data → unpack → 更新扫描表 */
+static int sle_adv_extract_and_update(const struct sle_adv_msg *msg)
+{
+    static shared_proto_adv_field_t s_adv;  /* 静态 buffer，避免栈上反复分配 */
+    const uint8_t *data = msg->raw;
+    uint16_t len = msg->raw_len;
 
-    for (uint8_t offset = 0; (uint8_t)(offset + 1U) < length;) {
-        uint8_t field_len = data[offset];
-        uint8_t field_type;
-        uint8_t field_data_len;
-
-        if (field_len == 0 || (uint16_t)offset + (uint16_t)field_len >= (uint16_t)length) {
-            osal_printk("[WS63_NET] AD field parse break at offset=%u field_len=%u total_len=%u\r\n",
-                (unsigned int)offset, (unsigned int)field_len, (unsigned int)length);
+    /* 遍历 AD 结构体，按偏移量查找 manufacturer data (type=0xFF) */
+    for (uint16_t off = 0; off + 1 < len;) {
+        uint8_t field_len = data[off];
+        if (field_len == 0 || (uint16_t)(off + field_len) >= len) {
             break;
         }
+        uint8_t field_type = data[off + 1];
+        uint8_t payload_len = (uint8_t)(field_len - 1);
 
-        field_type = data[offset + 1U];
-        field_data_len = (uint8_t)(field_len - 1U);
-
-        osal_printk("[WS63_NET] AD field offset=%u len=%u type=0x%02X data_len=%u hex: ",
-            (unsigned int)offset, (unsigned int)field_len, (unsigned int)field_type,
-            (unsigned int)field_data_len);
-        {
-            uint8_t print_len = field_data_len;
-            if (print_len > 16) {
-                print_len = 16;
-            }
-            for (uint8_t p = 0; p < print_len; p++) {
-                osal_printk("%02X ", data[offset + 2U + p]);
-            }
-        }
-        osal_printk("\r\n");
-
+        /* manufacturer data: type=0xFF, 至少 2(ID)+12(adv)=14 字节 */
         if (field_type == MY63_ADV_FIELD_TYPE_MANUFACTURER &&
-            field_data_len >= SHARED_PROTO_ADV_FIELD_LEN + MY63_MANUFACTURER_ID_LEN) {
-            if (data[offset + 2U] != MY63_MANUFACTURER_ID_L ||
-                data[offset + 2U + 1U] != MY63_MANUFACTURER_ID_H) {
-                osal_printk("[WS63_NET] manufacturer ID mismatch: got 0x%02X 0x%02X, expect 0x%02X 0x%02X\r\n",
-                    data[offset + 2U], data[offset + 2U + 1U],
-                    MY63_MANUFACTURER_ID_L, MY63_MANUFACTURER_ID_H);
-            } else if (shared_protocol_unpack_adv(&data[offset + 2U + MY63_MANUFACTURER_ID_LEN],
-                SHARED_PROTO_ADV_FIELD_LEN, out_field) == SHARED_PROTO_OK) {
-                return 1;
-            } else {
-                osal_printk("[WS63_NET] manufacturer field found, ID ok, but unpack/magic failed, payload first 4 bytes: %02X %02X %02X %02X\r\n",
-                    data[offset + 2U + MY63_MANUFACTURER_ID_LEN],
-                    data[offset + 2U + MY63_MANUFACTURER_ID_LEN + 1U],
-                    data[offset + 2U + MY63_MANUFACTURER_ID_LEN + 2U],
-                    data[offset + 2U + MY63_MANUFACTURER_ID_LEN + 3U]);
+            payload_len >= SHARED_PROTO_ADV_FIELD_LEN + MY63_MANUFACTURER_ID_LEN) {
+            /* 校验厂商 ID: 0x5A 0xA5 */
+            if (data[off + 2] == MY63_MANUFACTURER_ID_L &&
+                data[off + 3] == MY63_MANUFACTURER_ID_H) {
+                /* 从偏移量 off+4 开始 unpack adv field（跳过 2B 厂商 ID） */
+                if (shared_protocol_unpack_adv(&data[off + 4],
+                    SHARED_PROTO_ADV_FIELD_LEN, &s_adv) == SHARED_PROTO_OK) {
+                    if (s_adv.tag_id != 0) {
+                        scan_table_add_or_update(s_adv.tag_id, msg->addr,
+                            s_adv.battery, s_adv.qty, s_adv.status);
+                        return 1;  /* 解析成功 */
+                    }
+                }
+                return 0;  /* magic 不匹配或 tag_id=0 */
             }
-        } else if (field_type == MY63_ADV_FIELD_TYPE_MANUFACTURER) {
-            osal_printk("[WS63_NET] manufacturer field type=0xFF but data_len=%u expect>=%u\r\n",
-                (unsigned int)field_data_len,
-                (unsigned int)(SHARED_PROTO_ADV_FIELD_LEN + MY63_MANUFACTURER_ID_LEN));
         }
-
-        offset = (uint8_t)(offset + field_len + 1U);
+        off = (uint16_t)(off + field_len + 1);
     }
+    return 0;  /* 未找到 manufacturer data */
+}
 
-    return 0;
+/* 主循环调用：出队所有待处理广播，返回处理条数 */
+uint16_t sle_adv_dequeue(void)
+{
+    struct sle_adv_msg msg;
+    uint16_t processed = 0;
+
+    while (sle_adv_queue_get(&msg) == 0) {
+        if (sle_adv_extract_and_update(&msg) > 0) {
+            processed++;
+        }
+    }
+    return processed;
 }
 
 static int my63_uuid_match(const sle_uuid_t *uuid, const uint8_t *uuid_128, uint16_t u16)
@@ -691,70 +672,34 @@ static void scan_table_cleanup(void)
     }
 }
 
+/* SLE 扫描回调 — 非阻塞：只做 memcpy + 入队，协议解析在主循环 */
 static void my63_seek_result_cb(sle_seek_result_info_t *seek_result_data)
 {
-    shared_proto_adv_field_t adv = {0};
-    int name_matched = 0;
-    int adv_matched = 0;
+    struct sle_adv_msg msg = {0};
 
-    if (seek_result_data == NULL) {
-        osal_printk("[WS63_NET] my63_seek_result_cb null result\r\n");
+    if (seek_result_data == NULL || seek_result_data->data == NULL ||
+        seek_result_data->data_length == 0) {
+        return;
+    }
+
+    /* 丢弃过长的广播数据 */
+    if (seek_result_data->data_length > SLE_ADV_RAW_MAX) {
         return;
     }
 
     g_my63_scan_result_count++;
 
-    osal_printk("[WS63_NET] seek result #%u rssi=%d, addr=%02x:%02x:%02x:%02x:%02x:%02x\r\n",
-        (unsigned int)g_my63_scan_result_count,
-        (int)seek_result_data->rssi,
-        seek_result_data->addr.addr[0],
-        seek_result_data->addr.addr[1],
-        seek_result_data->addr.addr[2],
-        seek_result_data->addr.addr[3],
-        seek_result_data->addr.addr[4],
-        seek_result_data->addr.addr[5]);
+    /* 仅 memcpy，不做任何解析或打印 */
+    msg.raw_len = seek_result_data->data_length;
+    (void)memcpy_s(msg.raw, SLE_ADV_RAW_MAX, seek_result_data->data, msg.raw_len);
+    (void)memcpy_s(msg.addr, 6, seek_result_data->addr.addr, 6);
+    msg.rssi = (int8_t)seek_result_data->rssi;
+    msg.ts_ms = uapi_tcxo_get_ms();
 
-    osal_printk("[WS63_NET] RAW PAYLOAD len=%u: ", (unsigned int)seek_result_data->data_length);
-    if (seek_result_data->data != NULL && seek_result_data->data_length > 0) {
-        uint16_t dump_len = seek_result_data->data_length;
-        if (dump_len > 32) {
-            dump_len = 32;
-        }
-        for (uint16_t i = 0; i < dump_len; i++) {
-            osal_printk("%02X ", seek_result_data->data[i]);
-        }
-    } else {
-        osal_printk("(null or empty)");
+    /* 入队（非阻塞，满则丢弃） */
+    if (osMessageQueuePut(g_adv_queue, &msg, 0, 0) != osOK) {
+        /* 队列满，丢弃此条（不做打印，避免阻塞） */
     }
-    osal_printk("\r\n");
-
-    name_matched = my63_check_local_name(seek_result_data);
-    if (name_matched) {
-        osal_printk("[WS63_NET] local_name matched \"%s\"\r\n", MY63_BS21E_LOCAL_NAME);
-    }
-
-    adv_matched = my63_extract_adv_field(seek_result_data, &adv);
-    if (adv_matched == 0) {
-        osal_printk("[WS63_NET] adv payload not matched or magic invalid\r\n");
-        return;
-    }
-
-    /* tag_id=0 的广播忽略（未配网的标签） */
-    if (adv.tag_id == 0) {
-        osal_printk("[WS63_NET] adv tag_id=0 (unconfigured), skip\r\n");
-        return;
-    }
-
-    osal_printk("[WS63_NET] adv matched tag=%u qty=%u status=%u bat=%u seq=%u\r\n",
-        (unsigned int)adv.tag_id,
-        (unsigned int)adv.qty,
-        (unsigned int)adv.status,
-        (unsigned int)adv.battery,
-        (unsigned int)adv.seq);
-
-    /* 记录到扫描表（不停止扫描，不自动连接） */
-    scan_table_add_or_update(adv.tag_id, seek_result_data->addr.addr,
-        adv.battery, adv.qty, adv.status);
 }
 
 static void my63_ssap_exchange_info_cb(uint8_t client_id, uint16_t conn_id, ssap_exchange_info_t *param,
@@ -1031,6 +976,12 @@ static void my63_ssapc_register(void)
 int sle_network_init(void)
 {
     osal_printk("[WS63_NET] init start\r\n");
+
+    /* 初始化广播消息队列（必须在注册回调之前） */
+    if (sle_adv_queue_init() != 0) {
+        osal_printk("[WS63_NET] FATAL: adv queue init failed\r\n");
+        return -1;
+    }
 
     g_my63_target_found = 0;
     g_my63_connecting = 0;

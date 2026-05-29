@@ -4,6 +4,7 @@
 #include "securec.h"
 #include "cJSON.h"
 #include "../uart_vision/uart_vision.h"
+#include "../uart_display/uart_display.h"
 #include "../sle_network/sle_network.h"
 #include "tcxo.h"
 #include <string.h>
@@ -14,6 +15,10 @@ static biz_raw_json_uart_t g_biz_raw_json_cb = NULL;
 static biz_cloud_publish_t g_biz_cloud_cb = NULL;
 static biz_wifi_cmd_t g_biz_wifi_cmd_cb = NULL;
 static biz_mqtt_cmd_handler_t g_biz_mqtt_cmd_cb = NULL;
+static biz_ud_cmd_handler_t g_biz_screen_cb = NULL;
+
+/* 白名单 + 去重条目数组（packed 27B × 32 = 864B） */
+static struct TagListEntry g_biz_tag_list[TAG_LIST_MAX] = {0};
 
 static struct {
     char cmd[16];
@@ -96,6 +101,12 @@ void business_logic_register_mqtt_cmd_cb(biz_mqtt_cmd_handler_t cb)
 {
     g_biz_mqtt_cmd_cb = cb;
     osal_printk("[WS63_BIZ] mqtt cmd cb registered=%p\r\n", (void *)cb);
+}
+
+void business_logic_register_screen_cb(biz_ud_cmd_handler_t cb)
+{
+    g_biz_screen_cb = cb;
+    osal_printk("[WS63_BIZ] screen cb registered=%p\r\n", (void *)cb);
 }
 
 biz_tag_entry_t *biz_map_find_by_tag(uint16_t tag_id)
@@ -1191,6 +1202,236 @@ static void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
     }
 }
 
+/* ========== Phase 4: 白名单 + 去重 + status 映射 + 串口屏分发 ========== */
+
+/* 按 MAC 查找 TagListEntry（O(n) 线性查找） */
+static struct TagListEntry *biz_tag_list_find_by_mac(const uint8_t *mac)
+{
+    if (mac == NULL) {
+        return NULL;
+    }
+    for (uint16_t i = 0; i < TAG_LIST_MAX; i++) {
+        if (g_biz_tag_list[i].used &&
+            memcmp(g_biz_tag_list[i].mac, mac, 6) == 0) {
+            return &g_biz_tag_list[i];
+        }
+    }
+    return NULL;
+}
+
+/* 更新或创建 TagListEntry 条目 */
+static void biz_tag_list_update(const uint8_t *mac, uint16_t tag_id, int8_t rssi)
+{
+    struct TagListEntry *entry = biz_tag_list_find_by_mac(mac);
+    if (entry != NULL) {
+        entry->last_seen_ms = uapi_tcxo_get_ms();
+        entry->rssi = rssi;
+        entry->tag_id = tag_id;
+        return;
+    }
+    /* 新条目：找空位 */
+    for (uint16_t i = 0; i < TAG_LIST_MAX; i++) {
+        if (!g_biz_tag_list[i].used) {
+            (void)memcpy_s(g_biz_tag_list[i].mac, 6, mac, 6);
+            g_biz_tag_list[i].tag_id = tag_id;
+            g_biz_tag_list[i].rssi = rssi;
+            g_biz_tag_list[i].last_seen_ms = uapi_tcxo_get_ms();
+            g_biz_tag_list[i].last_publish_ms = 0;
+            g_biz_tag_list[i].whitelisted = false;
+            g_biz_tag_list[i].used = true;
+            return;
+        }
+    }
+    /* 数组满，丢弃 */
+}
+
+/* 判断 tag_id 是否已注册（白名单核心） */
+static bool biz_is_whitelisted(uint16_t tag_id, const uint8_t *mac)
+{
+    biz_tag_entry_t *entry = biz_map_find_by_tag(tag_id);
+    if (entry == NULL) {
+        return false;
+    }
+    /* MAC 一致性校验 */
+    if (memcmp(entry->mac, mac, BIZ_MAC_LEN) != 0) {
+        osal_printk("[WS63_BIZ] whitelist MAC mismatch tag_id=%u\r\n",
+            (unsigned int)tag_id);
+        return false;
+    }
+    return true;
+}
+
+/* 时间窗去重：DEDUP_WINDOW_MS 内不重复上云 */
+static bool biz_should_publish(const struct TagListEntry *entry)
+{
+    if (entry == NULL) {
+        return false;
+    }
+    uint64_t now = uapi_tcxo_get_ms();
+    if (entry->last_publish_ms != 0 &&
+        (now - entry->last_publish_ms) < DEDUP_WINDOW_MS) {
+        return false;  /* 去重窗口内，跳过 */
+    }
+    return true;
+}
+
+/* BS21E status → WS63 上云 status 映射 */
+static int biz_map_status_to_cloud(uint8_t bs21e_status, bool whitelisted)
+{
+    if (!whitelisted) {
+        return 0;  /* 未注册 → 空闲 */
+    }
+    switch (bs21e_status) {
+        case BS21E_STATUS_IDLE:           return 2;  /* 在线-空闲 */
+        case BS21E_STATUS_FINDING:        return 2;  /* 在线-寻物 */
+        case BS21E_STATUS_IN_USE:         return 2;  /* 在线-使用中 */
+        case BS21E_STATUS_NOT_PROVISIONED: return 0;  /* 未配网 → 空闲 */
+        default:                          return 2;
+    }
+}
+
+/* 主循环调用：处理扫描表中的条目，白名单+去重后上云 */
+void biz_handle_sle_adv(void)
+{
+    const sle_scan_entry_t *scan = sle_network_get_scan_table();
+    uint16_t count = sle_network_get_scan_table_count();
+    uint64_t now = uapi_tcxo_get_ms();
+
+    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX && count > 0; i++) {
+        if (!scan[i].used) {
+            continue;
+        }
+        count--;
+
+        /* 更新 TagListEntry（白名单+去重共用） */
+        biz_tag_list_update(scan[i].mac, scan[i].tag_id, 0);
+
+        struct TagListEntry *tle = biz_tag_list_find_by_mac(scan[i].mac);
+        if (tle == NULL) {
+            continue;
+        }
+
+        /* 白名单判定 */
+        bool whitelisted = biz_is_whitelisted(scan[i].tag_id, scan[i].mac);
+        tle->whitelisted = whitelisted;
+
+        if (!whitelisted) {
+            continue;  /* 未注册，不上云 */
+        }
+
+        /* 时间窗去重 */
+        if (!biz_should_publish(tle)) {
+            continue;
+        }
+
+        /* status 映射 */
+        int cloud_status = biz_map_status_to_cloud(scan[i].status, whitelisted);
+
+        /* 更新映射表条目 */
+        biz_tag_entry_t *entry = biz_map_find_by_tag(scan[i].tag_id);
+        if (entry != NULL) {
+            entry->battery = scan[i].battery;
+            entry->qty = scan[i].qty;
+            entry->status = (biz_tag_status_t)cloud_status;
+        }
+
+        /* MQTT 网关上云 */
+        biz_publish_tag_update(entry);
+
+        /* 更新去重时间戳 */
+        tle->last_publish_ms = now;
+    }
+}
+
+/* 串口屏回复封装：#cmd,param1,param2,...\r\n */
+static void biz_screen_reply(const char *cmd, const char *fmt, ...)
+{
+    if (cmd == NULL) {
+        return;
+    }
+    /* 使用 uart_display_send 直接发送 */
+    char params[128] = {0};
+    if (fmt != NULL && fmt[0] != '\0') {
+        va_list ap;
+        va_start(ap, fmt);
+        vsnprintf(params, sizeof(params), fmt, ap);
+        va_end(ap);
+    }
+    uart_display_send(cmd, "%s", params);
+}
+
+/* 串口屏命令分发：@in/@out/@inv/@find/@back */
+void biz_handle_screen_cmd(const char *cmd, const char *params)
+{
+    if (cmd == NULL) {
+        return;
+    }
+
+    osal_printk("[WS63_BIZ] screen cmd=%s params=%s\r\n",
+        cmd, params ? params : "(null)");
+
+    if (strcmp(cmd, "in") == 0) {
+        /* @in,start 或 @in,capture,0005 */
+        if (params == NULL || strncmp(params, "start", 5) == 0) {
+            /* 进入入库模式，等待标签选择 */
+            biz_screen_reply("PROG", "IN_START");
+        } else if (strncmp(params, "capture", 7) == 0) {
+            /* @in,capture,0005 → 入库指定标签 */
+            const char *id_str = strchr(params + 7, ',');
+            if (id_str != NULL) {
+                id_str++;  /* 跳过逗号 */
+                uint16_t tag_id = 0;
+                if (ud_str_to_tag_id(id_str, &tag_id) == 0) {
+                    biz_screen_reply("TAG", "%s", id_str);
+                } else {
+                    biz_screen_reply("ERR", "INVALID_ID");
+                }
+            }
+        }
+    } else if (strcmp(cmd, "out") == 0) {
+        /* @out,start 或 @out,capture,0005 */
+        if (params == NULL || strncmp(params, "start", 5) == 0) {
+            biz_screen_reply("PROG", "OUT_START");
+        } else if (strncmp(params, "capture", 7) == 0) {
+            const char *id_str = strchr(params + 7, ',');
+            if (id_str != NULL) {
+                id_str++;
+                uint16_t tag_id = 0;
+                if (ud_str_to_tag_id(id_str, &tag_id) == 0) {
+                    biz_screen_reply("TAG", "%s", id_str);
+                } else {
+                    biz_screen_reply("ERR", "INVALID_ID");
+                }
+            }
+        }
+    } else if (strcmp(cmd, "inv") == 0) {
+        /* @inv,all / @inv,tag,0005 / @inv,zone,A1 */
+        if (params == NULL || strncmp(params, "all", 3) == 0) {
+            biz_screen_reply("PROG", "INV_ALL");
+        } else if (strncmp(params, "tag,", 4) == 0) {
+            biz_screen_reply("PROG", "INV_TAG,%s", params + 4);
+        } else if (strncmp(params, "zone,", 5) == 0) {
+            biz_screen_reply("PROG", "INV_ZONE,%s", params + 5);
+        }
+    } else if (strcmp(cmd, "find") == 0) {
+        /* @find,0005 */
+        if (params != NULL) {
+            uint16_t tag_id = 0;
+            if (ud_str_to_tag_id(params, &tag_id) == 0) {
+                biz_screen_reply("FIND", "%s", params);
+            } else {
+                biz_screen_reply("ERR", "INVALID_ID");
+            }
+        }
+    } else if (strcmp(cmd, "back") == 0) {
+        /* @back → 返回主页 */
+        biz_screen_reply("HOME", "");
+    } else {
+        osal_printk("[WS63_BIZ] unknown screen cmd=%s\r\n", cmd);
+        biz_screen_reply("ERR", "UNKNOWN_CMD");
+    }
+}
+
 void business_logic_poll(void)
 {
     if (!g_biz_pending.active) {
@@ -1262,6 +1503,7 @@ int business_logic_init(void)
     sle_network_register_notify_cb(biz_sle_notify_cb);
     business_logic_register_uart_cb(biz_uart_send_wrapper);
     business_logic_register_raw_json_cb(biz_raw_json_send_wrapper);
+    uart_display_register_cmd_handler(biz_handle_screen_cmd);
 
     osal_printk("[WS63_BIZ] init done count=%u\r\n",
         (unsigned int)g_biz_map.count);

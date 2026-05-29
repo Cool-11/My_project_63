@@ -3,20 +3,30 @@
 #include "app_init.h"
 #include "tcxo.h"
 #include "securec.h"
+#include "cmsis_os2.h"
+#include "los_task.h"
 #include "../components/shared_protocol/shared_protocol.h"
 #include "../components/sle_network/sle_network.h"
 #include "../components/uart_vision/uart_vision.h"
+#include "../components/uart_display/uart_display.h"
 #include "../components/cloud_storage/cloud_storage.h"
 #include "../components/business_logic/business_logic.h"
 
 #define MY63_TASK_STACK_SIZE 0x2000
 #define MY63_TASK_PRIORITY   26
-#define MY63_POLL_INTERVAL_MS  10
 #define MY63_HEARTBEAT_MS    30000
 #define MY63_SLE_RESCAN_MS   5000
+#define MY63_EVENT_WAIT_MS   100     /* 无事件时最长睡眠 100ms */
+
+/* 事件标志句柄（全局，供各模块 osEventFlagsSet 使用） */
+osEventFlagsId_t g_my63_events = NULL;
 
 static uint64_t g_my63_last_heartbeat = 0;
 static uint64_t g_my63_last_rescan = 0;
+
+/* CPU 监控计数器 */
+static volatile uint32_t g_idle_count = 0;
+static volatile uint32_t g_total_count = 0;
 static cs_mqtt_config_t g_my63_mqtt_cfg = {0};
 static bool g_my63_mqtt_cfg_loaded = false;
 static cs_wifi_config_t g_my63_wifi_cfg = {0};
@@ -129,6 +139,29 @@ static int my63_mqtt_cmd_cb(biz_mqtt_cmd_t cmd, const biz_mqtt_connect_params_t 
     return -1;
 }
 
+/* CPU 监控：idle hook，注册到 LiteOS idle task */
+static void my63_idle_hook(void)
+{
+    g_idle_count++;
+    g_total_count++;
+}
+
+/* CPU 监控：计算并打印 CPU 占用率 */
+static void my63_cpu_report(void)
+{
+    uint32_t idle = g_idle_count;
+    uint32_t total = g_total_count;
+    g_idle_count = 0;
+    g_total_count = 0;
+
+    if (total == 0) {
+        return;
+    }
+    uint32_t cpu_pct = (total > idle) ? ((total - idle) * 100 / total) : 0;
+    osal_printk("[WS63_APP] cpu=%u%% (idle=%u/%u)\r\n",
+        (unsigned int)cpu_pct, (unsigned int)idle, (unsigned int)total);
+}
+
 static int my63_init_modules(void)
 {
     int ret;
@@ -151,6 +184,12 @@ static int my63_init_modules(void)
         return ret;
     }
 
+    ret = uart_display_init();
+    if (ret != 0) {
+        osal_printk("[WS63_APP] uart_display init fail ret=%d\r\n", ret);
+        return ret;
+    }
+
     ret = cloud_storage_init();
     if (ret != 0) {
         osal_printk("[WS63_APP] cloud_storage init fail ret=%d\r\n", ret);
@@ -166,6 +205,9 @@ static int my63_init_modules(void)
     cs_wifi_register_state_cb(my63_wifi_state_cb);
     cs_mqtt_register_state_cb(my63_mqtt_state_cb);
     cs_mqtt_register_msg_cb(my63_mqtt_msg_cb);
+
+    /* 注册 CPU 监控 idle hook */
+    LOS_IdleHandlerHookReg(my63_idle_hook);
 
     business_logic_register_cloud_cb(my63_cloud_publish_cb);
     business_logic_register_wifi_cmd_cb(my63_wifi_cmd_cb);
@@ -183,21 +225,6 @@ static int my63_init_modules(void)
     }
 
     return 0;
-}
-
-static void my63_poll_uart(void)
-{
-    uart_vision_poll();
-}
-
-static void my63_poll_business(void)
-{
-    business_logic_poll();
-}
-
-static void my63_poll_cloud(void)
-{
-    cloud_storage_poll();
 }
 
 static void my63_poll_sle(uint64_t now)
@@ -220,6 +247,8 @@ static void my63_heartbeat(uint64_t now)
         return;
     }
     g_my63_last_heartbeat = now;
+
+    my63_cpu_report();
 
     osal_printk("[WS63_APP] hb sle=%d/%d/%d scan_tbl=%u wifi=%d mqtt=%d cache=%u uart_ring=%u\r\n",
         sle_network_is_target_found(),
@@ -248,16 +277,51 @@ static void *my63_main_task(const char *arg)
     g_my63_last_heartbeat = uapi_tcxo_get_ms();
     g_my63_last_rescan = g_my63_last_heartbeat;
 
+    /* 创建事件标志 */
+    g_my63_events = osEventFlagsNew(NULL);
+    if (g_my63_events == NULL) {
+        osal_printk("[WS63_APP] FATAL: event flags create failed\r\n");
+        return NULL;
+    }
+    osal_printk("[WS63_APP] event flags created\r\n");
+
+    /* 事件驱动主循环 */
     for (;;) {
+        uint32_t flags = osEventFlagsWait(g_my63_events, EVENT_ALL,
+            osFlagsWaitAny, MY63_EVENT_WAIT_MS);
         uint64_t now = uapi_tcxo_get_ms();
 
-        my63_poll_uart();
-        my63_poll_business();
-        my63_poll_cloud();
+        /* UART1 RX（ESP32 JSON） */
+        if (flags & EVENT_UART1_RX) {
+            uart_vision_poll();
+        }
+
+        /* UART2 RX（串口屏 CSV） */
+        if (flags & EVENT_UART2_RX) {
+            uart_display_poll();
+        }
+
+        /* SLE 广播队列有数据 */
+        if (flags & EVENT_SLE_ADV) {
+            sle_adv_dequeue();
+            biz_handle_sle_adv();
+        }
+
+        /* 定时器事件（心跳/超时/扫描重启） */
+        if (flags & EVENT_TIMER) {
+            business_logic_poll();
+        }
+
+        /* 轮询类任务（无论什么事件都检查） */
+        cloud_storage_poll();
         my63_poll_sle(now);
+        business_logic_poll();
         my63_heartbeat(now);
 
-        osal_msleep(MY63_POLL_INTERVAL_MS);
+        /* 如果 flags 为超时（无特定事件），继续循环 */
+        if ((int32_t)flags < 0) {
+            continue;
+        }
     }
 
     return NULL;

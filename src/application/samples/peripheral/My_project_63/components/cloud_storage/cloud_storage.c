@@ -388,12 +388,12 @@ int cs_mqtt_connect(const cs_mqtt_config_t *config)
     osal_printk("[WS63_CLOUD] mqtt connected uri=%s\r\n", g_cs_mqtt_config.uri);
 
     mqtt_rc = MQTTClient_subscribe(g_cs_mqtt_client,
-        CS_THINGSKIT_RPC_SUB_TOPIC, 1);
+        CS_THINGSKIT_GATEWAY_RPC_SUB, 1);
     if (mqtt_rc != MQTTCLIENT_SUCCESS) {
         osal_printk("[WS63_CLOUD] mqtt subscribe fail rc=%d\r\n", mqtt_rc);
     } else {
         osal_printk("[WS63_CLOUD] mqtt subscribed topic=%s\r\n",
-            CS_THINGSKIT_RPC_SUB_TOPIC);
+            CS_THINGSKIT_GATEWAY_RPC_SUB);
     }
 
     mqtt_rc = MQTTClient_subscribe(g_cs_mqtt_client,
@@ -472,7 +472,7 @@ int cs_mqtt_publish(const char *topic, const char *payload, uint16_t len)
 
 int cs_mqtt_publish_telemetry(const char *payload, uint16_t len)
 {
-    return cs_mqtt_publish(CS_THINGSKIT_TELEMETRY_TOPIC, payload, len);
+    return cs_mqtt_publish(CS_THINGSKIT_GATEWAY_TELEMETRY, payload, len);
 }
 
 int cs_mqtt_publish_gateway(const char *payload, uint16_t len)

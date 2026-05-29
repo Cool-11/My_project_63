@@ -21,12 +21,21 @@ extern "C" {
 #define BIZ_MQTT_USER_MAX       64
 #define BIZ_MQTT_PASS_MAX       64
 
+/* BS21E status → WS63 上云映射 */
 typedef enum {
-    BIZ_TAG_IDLE = 0,
-    BIZ_TAG_BOUND,
-    BIZ_TAG_ONLINE,
-    BIZ_TAG_OFFLINE
+    BIZ_TAG_IDLE = 0,           /* 未注册/空闲 */
+    BIZ_TAG_BOUND,              /* 已绑定（注册完成） */
+    BIZ_TAG_ONLINE,             /* 在线（BS21E status=0/1/2 映射） */
+    BIZ_TAG_OFFLINE             /* 离线（超时未扫描到） */
 } biz_tag_status_t;
+
+/* BS21E 广播中的原始 status 值 */
+typedef enum {
+    BS21E_STATUS_IDLE = 0,          /* 空闲 */
+    BS21E_STATUS_FINDING = 1,       /* 寻物中 */
+    BS21E_STATUS_IN_USE = 2,        /* 使用中 */
+    BS21E_STATUS_NOT_PROVISIONED = 3 /* 未配网 */
+} bs21e_adv_status_t;
 
 typedef enum {
     BIZ_MQTT_CMD_CONNECT = 1,
@@ -63,8 +72,15 @@ typedef void (*biz_cloud_publish_t)(const char *payload, uint16_t len);
 typedef int (*biz_wifi_cmd_t)(const char *ssid, const char *psk);
 typedef int (*biz_mqtt_cmd_handler_t)(biz_mqtt_cmd_t cmd, const biz_mqtt_connect_params_t *params);
 
+/* 串口屏命令回调：cmd="in_start", params="0005" 等已解析参数 */
+typedef void (*biz_ud_cmd_handler_t)(const char *cmd, const char *params);
+
 int business_logic_init(void);
 void business_logic_poll(void);
+
+/* 事件驱动新增：主循环调用的非阻塞入口 */
+void biz_handle_sle_adv(void);      /* 处理 SLE 广播队列数据 */
+void biz_handle_screen_cmd(const char *cmd, const char *params); /* 串口屏命令入口 */
 
 biz_tag_entry_t *biz_map_find_by_tag(uint16_t tag_id);
 biz_tag_entry_t *biz_map_find_by_mac(const uint8_t *mac);
@@ -78,6 +94,7 @@ void business_logic_register_raw_json_cb(biz_raw_json_uart_t cb);
 void business_logic_register_cloud_cb(biz_cloud_publish_t cb);
 void business_logic_register_wifi_cmd_cb(biz_wifi_cmd_t cb);
 void business_logic_register_mqtt_cmd_cb(biz_mqtt_cmd_handler_t cb);
+void business_logic_register_screen_cb(biz_ud_cmd_handler_t cb);
 
 #ifdef __cplusplus
 }
