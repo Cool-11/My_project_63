@@ -17,6 +17,9 @@ static biz_wifi_cmd_t g_biz_wifi_cmd_cb = NULL;
 static biz_mqtt_cmd_handler_t g_biz_mqtt_cmd_cb = NULL;
 static biz_ud_cmd_handler_t g_biz_screen_cb = NULL;
 
+/* 前向声明 */
+static void biz_screen_reply(const char *cmd, const char *fmt, ...);
+
 /* 白名单 + 去重条目数组（packed 27B × 32 = 864B） */
 static struct TagListEntry g_biz_tag_list[TAG_LIST_MAX] = {0};
 
@@ -470,6 +473,33 @@ static int biz_parse_mac(const char *str, uint8_t *mac)
     return 0;
 }
 
+/* Tag ID 格式转换: uint16_t → "0x0001" (发给ESP32) */
+static int biz_tag_id_to_esp32(uint16_t id, char *buf, uint16_t len)
+{
+    if (buf == NULL || len < 7) {
+        return -1;
+    }
+    return snprintf(buf, len, "0x%04X", (unsigned int)id);
+}
+
+/* Tag ID 格式转换: "0x0001" → uint16_t (从ESP32接收) */
+static int biz_esp32_to_tag_id(const char *str, uint16_t *out)
+{
+    if (str == NULL || out == NULL) {
+        return -1;
+    }
+    const char *p = str;
+    if (p[0] == '0' && (p[1] == 'x' || p[1] == 'X')) {
+        p += 2;
+    }
+    unsigned long val = strtoul(p, NULL, 16);
+    if (val == 0 || val > 0xFFFF) {
+        return -2;
+    }
+    *out = (uint16_t)val;
+    return 0;
+}
+
 static void biz_cmd_outbound(uint16_t seq, const char *data_json)
 {
     cJSON *root = cJSON_Parse(data_json);
@@ -795,43 +825,227 @@ static void biz_cmd_mqtt_publish(uint16_t seq, const char *data_json)
     biz_reply(seq, "mqtt_publish", 0, "ok", NULL);
 }
 
+/* ESP32响应处理: capture_progress → #PROG,<step>,<view>,<score> */
+static void biz_handle_capture_progress(cJSON *root)
+{
+    cJSON *j_view = cJSON_GetObjectItem(root, "view");
+    cJSON *j_step = cJSON_GetObjectItem(root, "step");
+    cJSON *j_score = cJSON_GetObjectItem(root, "blur_score");
+
+    const char *view = (j_view && cJSON_IsString(j_view)) ? j_view->valuestring : "?";
+    const char *step_str = (j_step && cJSON_IsString(j_step)) ? j_step->valuestring : "0/0";
+    double score = (j_score && cJSON_IsNumber(j_score)) ? j_score->valuedouble : 0.0;
+
+    /* step "1/3" → 取分子 "1" */
+    int step_num = atoi(step_str);
+
+    biz_screen_reply("PROG", "%d,%s,%.1f", step_num, view, score);
+    osal_printk("[WS63_BIZ] capture_progress step=%d view=%s score=%.1f\r\n",
+        step_num, view, score);
+}
+
+/* ESP32响应处理: asset_info → 按task区分outbound/inventory */
+static void biz_handle_asset_info(cJSON *root)
+{
+    cJSON *j_task = cJSON_GetObjectItem(root, "task");
+    const char *task = (j_task && cJSON_IsString(j_task)) ? j_task->valuestring : "";
+
+    if (strcmp(task, "outbound") == 0) {
+        /* 出库分步: asset_info → #ASSET_INFO,id,name,qty,remove,remain */
+        cJSON *j_tag = cJSON_GetObjectItem(root, "tag_id");
+        cJSON *j_name = cJSON_GetObjectItem(root, "item_name");
+        cJSON *j_qty = cJSON_GetObjectItem(root, "quantity");
+        cJSON *j_remove = cJSON_GetObjectItem(root, "remove_qty");
+        cJSON *j_remain = cJSON_GetObjectItem(root, "remaining_qty");
+
+        const char *tag_str = (j_tag && cJSON_IsString(j_tag)) ? j_tag->valuestring : "0";
+        const char *name = (j_name && cJSON_IsString(j_name)) ? j_name->valuestring : "?";
+        int qty = (j_qty && cJSON_IsNumber(j_qty)) ? j_qty->valueint : 0;
+        int remove = (j_remove && cJSON_IsNumber(j_remove)) ? j_remove->valueint : 0;
+        int remain = (j_remain && cJSON_IsNumber(j_remain)) ? j_remain->valueint : 0;
+
+        /* tag_id "0x0001" → "0001" for screen */
+        uint16_t tag_id = 0;
+        biz_esp32_to_tag_id(tag_str, &tag_id);
+        char tag_display[8];
+        ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
+
+        biz_screen_reply("ASSET_INFO", "%s,%s,%d,%d,%d", tag_display, name, qty, remove, remain);
+        osal_printk("[WS63_BIZ] outbound asset_info: %s qty=%d remove=%d remain=%d\r\n",
+            tag_display, qty, remove, remain);
+    } else if (strcmp(task, "inventory") == 0) {
+        /* 盘点: asset_info → 日志记录（屏已通过#TAG_INFO显示） */
+        osal_printk("[WS63_BIZ] inventory asset_info (log only)\r\n");
+    }
+}
+
+/* ESP32响应处理: asset_detail → #TAG_INFO,id,name,area,count */
+static void biz_handle_asset_detail(cJSON *root)
+{
+    cJSON *j_found = cJSON_GetObjectItem(root, "found");
+    if (j_found && cJSON_IsBool(j_found) && !cJSON_IsTrue(j_found)) {
+        biz_screen_reply("ERR", "ERR_ASSET_NOT_FOUND,标签未注册");
+        return;
+    }
+
+    cJSON *j_tag = cJSON_GetObjectItem(root, "tag_id");
+    cJSON *j_name = cJSON_GetObjectItem(root, "item_name");
+    cJSON *j_area = cJSON_GetObjectItem(root, "storage_area");
+    cJSON *j_qty = cJSON_GetObjectItem(root, "quantity");
+
+    const char *tag_str = (j_tag && cJSON_IsString(j_tag)) ? j_tag->valuestring : "0";
+    const char *name = (j_name && cJSON_IsString(j_name)) ? j_name->valuestring : "?";
+    const char *area = (j_area && cJSON_IsString(j_area)) ? j_area->valuestring : "?";
+    int qty = (j_qty && cJSON_IsNumber(j_qty)) ? j_qty->valueint : 0;
+
+    uint16_t tag_id = 0;
+    biz_esp32_to_tag_id(tag_str, &tag_id);
+    char tag_display[8];
+    ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
+
+    biz_screen_reply("TAG_INFO", "%s,%s,%s,%d", tag_display, name, area, qty);
+}
+
+/* ESP32响应处理: asset_list_page → #LIST + #ITEM×N */
+static void biz_handle_asset_list_page(cJSON *root)
+{
+    cJSON *j_page = cJSON_GetObjectItem(root, "page");
+    cJSON *j_tp = cJSON_GetObjectItem(root, "total_pages");
+    cJSON *j_tc = cJSON_GetObjectItem(root, "total_count");
+    cJSON *j_assets = cJSON_GetObjectItem(root, "assets");
+
+    int page = (j_page && cJSON_IsNumber(j_page)) ? j_page->valueint : 1;
+    int tp = (j_tp && cJSON_IsNumber(j_tp)) ? j_tp->valueint : 1;
+    int tc = (j_tc && cJSON_IsNumber(j_tc)) ? j_tc->valueint : 0;
+
+    biz_screen_reply("LIST", "%d,%d,%d", page, tp, tc);
+
+    if (j_assets && cJSON_IsArray(j_assets)) {
+        int count = cJSON_GetArraySize(j_assets);
+        for (int i = 0; i < count && i < 6; i++) {
+            cJSON *item = cJSON_GetArrayItem(j_assets, i);
+            if (item == NULL) continue;
+
+            cJSON *j_tag = cJSON_GetObjectItem(item, "tag_id");
+            cJSON *j_name = cJSON_GetObjectItem(item, "item_name");
+            cJSON *j_area = cJSON_GetObjectItem(item, "storage_area");
+            cJSON *j_qty = cJSON_GetObjectItem(item, "quantity");
+
+            const char *tag_str = (j_tag && cJSON_IsString(j_tag)) ? j_tag->valuestring : "0";
+            const char *name = (j_name && cJSON_IsString(j_name)) ? j_name->valuestring : "?";
+            const char *area = (j_area && cJSON_IsString(j_area)) ? j_area->valuestring : "?";
+            int qty = (j_qty && cJSON_IsNumber(j_qty)) ? j_qty->valueint : 0;
+
+            uint16_t tag_id = 0;
+            biz_esp32_to_tag_id(tag_str, &tag_id);
+            char tag_display[8];
+            ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
+
+            biz_screen_reply("ITEM", "%d,%s,%s,%s,%d", i, tag_display, name, area, qty);
+        }
+    }
+}
+
+/* ESP32响应处理: task_done → 按task分发 */
+static void biz_handle_task_done(cJSON *root, const char *data_json)
+{
+    cJSON *j_task = cJSON_GetObjectItem(root, "task");
+    if (j_task == NULL || !cJSON_IsString(j_task)) {
+        return;
+    }
+    const char *task = j_task->valuestring;
+
+    if (strcmp(task, "register") == 0) {
+        cJSON *j_result = cJSON_GetObjectItem(root, "result");
+        const char *result = (j_result && cJSON_IsString(j_result)) ? j_result->valuestring : "?";
+        cJSON *j_tag = cJSON_GetObjectItem(root, "tag_id");
+        const char *tag_str = (j_tag && cJSON_IsString(j_tag)) ? j_tag->valuestring : "0";
+        uint16_t tag_id = 0;
+        biz_esp32_to_tag_id(tag_str, &tag_id);
+        char tag_display[8];
+        ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
+
+        biz_screen_reply("DONE", "reg,%s,%s", result, tag_display);
+        if (g_biz_pending.active) {
+            biz_clear_pending();
+        }
+    } else if (strcmp(task, "outbound") == 0) {
+        cJSON *j_match = cJSON_GetObjectItem(root, "is_match");
+        bool is_match = (j_match && cJSON_IsBool(j_match)) ? cJSON_IsTrue(j_match) : false;
+        biz_screen_reply("DONE", "out,%s", is_match ? "success" : "fail");
+        if (g_biz_pending.active) {
+            biz_clear_pending();
+        }
+    } else if (strcmp(task, "inventory") == 0) {
+        cJSON *j_conf = cJSON_GetObjectItem(root, "weighted_confidence");
+        double conf = (j_conf && cJSON_IsNumber(j_conf)) ? j_conf->valuedouble : 0.0;
+        const char *result = (conf >= 0.75) ? "match" : "mismatch";
+        biz_screen_reply("DONE", "check,%s,%.2f", result, conf);
+        if (g_biz_pending.active) {
+            biz_clear_pending();
+        }
+    } else if (strcmp(task, "delete") == 0) {
+        biz_screen_reply("DONE", "del,success");
+        if (g_biz_pending.active) {
+            biz_clear_pending();
+        }
+    } else {
+        /* 其他task_done: 保持原有逻辑 */
+        const char *mapped = biz_map_esp32_task(task);
+        if (g_biz_pending.active && strcmp(mapped, g_biz_pending.cmd) == 0) {
+            biz_reply(g_biz_pending.seq, g_biz_pending.cmd, 0, "ok", data_json);
+            biz_clear_pending();
+        }
+    }
+}
+
+/* ESP32响应处理: verification_start → #MSG提醒 */
+static void biz_handle_verification_start(cJSON *root)
+{
+    cJSON *j_msg = cJSON_GetObjectItem(root, "message");
+    const char *msg = (j_msg && cJSON_IsString(j_msg)) ? j_msg->valuestring : "请拍摄正面视图验证";
+    biz_screen_reply("MSG", "%s", msg);
+}
+
+/* ESP32响应处理: pong → 日志记录 */
+static void biz_handle_pong(cJSON *root)
+{
+    cJSON *j_state = cJSON_GetObjectItem(root, "current_state");
+    const char *state = (j_state && cJSON_IsString(j_state)) ? j_state->valuestring : "?";
+    osal_printk("[WS63_BIZ] pong state=%s\r\n", state);
+}
+
 static void biz_handle_esp32_msg(const char *cmd, const char *data_json)
 {
     cJSON *root = (data_json != NULL) ? cJSON_Parse(data_json) : NULL;
 
-    if (strcmp(cmd, "task_done") == 0) {
-        if (root == NULL) {
-            return;
-        }
-        cJSON *j_task = cJSON_GetObjectItem(root, "task");
-        if (j_task == NULL || !cJSON_IsString(j_task)) {
-            cJSON_Delete(root);
-            return;
-        }
-        const char *task = j_task->valuestring;
-        const char *mapped = biz_map_esp32_task(task);
-
-        if (g_biz_pending.active && strcmp(mapped, g_biz_pending.cmd) == 0) {
-            osal_printk("[WS63_BIZ] esp32 task_done task=%s matched pending=%s\r\n",
-                task, g_biz_pending.cmd);
-            biz_reply(g_biz_pending.seq, g_biz_pending.cmd, 0, "ok", data_json);
-            biz_clear_pending();
-        } else {
-            osal_printk("[WS63_BIZ] esp32 task_done task=%s no pending match\r\n", task);
-        }
+    /* 按 cmd 分发到具体处理函数 */
+    if (strcmp(cmd, "capture_progress") == 0) {
+        if (root != NULL) biz_handle_capture_progress(root);
+    } else if (strcmp(cmd, "asset_info") == 0) {
+        if (root != NULL) biz_handle_asset_info(root);
+    } else if (strcmp(cmd, "asset_detail") == 0) {
+        if (root != NULL) biz_handle_asset_detail(root);
+    } else if (strcmp(cmd, "asset_list_page") == 0) {
+        if (root != NULL) biz_handle_asset_list_page(root);
+    } else if (strcmp(cmd, "task_done") == 0) {
+        if (root != NULL) biz_handle_task_done(root, data_json);
+    } else if (strcmp(cmd, "verification_start") == 0) {
+        if (root != NULL) biz_handle_verification_start(root);
+    } else if (strcmp(cmd, "pong") == 0) {
+        if (root != NULL) biz_handle_pong(root);
     } else if (strcmp(cmd, "error") == 0) {
-        if (root == NULL) {
-            return;
+        if (root != NULL) {
+            cJSON *j_msg = cJSON_GetObjectItem(root, "msg");
+            cJSON *j_code = cJSON_GetObjectItem(root, "code");
+            const char *msg = (j_msg && cJSON_IsString(j_msg)) ? j_msg->valuestring : "esp32 error";
+            const char *code = (j_code && cJSON_IsString(j_code)) ? j_code->valuestring : "UNKNOWN";
+            biz_screen_reply("ERR", "%s,%s", code, msg);
+            if (g_biz_pending.active) {
+                biz_clear_pending();
+            }
+            osal_printk("[WS63_BIZ] esp32 error: %s %s\r\n", code, msg);
         }
-        cJSON *j_msg = cJSON_GetObjectItem(root, "msg");
-        const char *msg = (j_msg && cJSON_IsString(j_msg)) ?
-            j_msg->valuestring : "esp32 error";
-
-        if (g_biz_pending.active) {
-            biz_reply(g_biz_pending.seq, g_biz_pending.cmd, -1, msg, NULL);
-            biz_clear_pending();
-        }
-        osal_printk("[WS63_BIZ] esp32 error: %s\r\n", msg);
     } else if (strcmp(cmd, "mqtt_connected") == 0 ||
                strcmp(cmd, "mqtt_error") == 0 ||
                strcmp(cmd, "mqtt_publish_result") == 0 ||
@@ -1154,17 +1368,19 @@ static void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
                     /* 从映射表读取完整参数转发 ESP32 */
                     biz_tag_entry_t *reg_entry = biz_map_find_by_tag(g_biz_pending.tag_id);
                     char esp32_cmd[192];
+                    char tag_str[8];
+                    biz_tag_id_to_esp32(g_biz_pending.tag_id, tag_str, sizeof(tag_str));
                     if (reg_entry != NULL) {
                         snprintf(esp32_cmd, sizeof(esp32_cmd),
-                            "{\"cmd\":\"register\",\"tag_id\":%u,"
+                            "{\"cmd\":\"register\",\"tag_id\":\"%s\","
                             "\"item_name\":\"%s\",\"storage_area\":\"%s\",\"qty\":%u}",
-                            (unsigned int)g_biz_pending.tag_id,
+                            tag_str,
                             reg_entry->item, reg_entry->zone,
                             (unsigned int)reg_entry->qty);
                     } else {
                         snprintf(esp32_cmd, sizeof(esp32_cmd),
-                            "{\"cmd\":\"register\",\"tag_id\":%u}",
-                            (unsigned int)g_biz_pending.tag_id);
+                            "{\"cmd\":\"register\",\"tag_id\":\"%s\"}",
+                            tag_str);
                     }
                     biz_raw_json_send(esp32_cmd);
                     /* keep pending (timeout=15s), wait for ESP32 task_done */
@@ -1360,7 +1576,283 @@ static void biz_screen_reply(const char *cmd, const char *fmt, ...)
     uart_display_send(cmd, "%s", params);
 }
 
-/* 串口屏命令分发：@in/@out/@inv/@find/@back */
+/* ========== Page1 入库命令处理 ========== */
+
+/* @in,start → SLE扫描 + 查DB → #TAG/#VERIFY */
+static void biz_screen_in_start(void)
+{
+    /* TODO: SLE扫描取最强标签 + 查biz_map */
+    /* 临时实现: 提示需要SLE扫描 */
+    biz_screen_reply("MSG", "请按匹配按钮扫描标签");
+}
+
+/* @in,capture,<id>,<qty>,<area>,<name>,<mode> → 拼register JSON */
+static void biz_screen_in_capture(const char *params)
+{
+    /* 解析: id,qty,area,name,mode */
+    char id_str[8] = {0};
+    char qty_str[8] = {0};
+    char area[32] = {0};
+    char name[64] = {0};
+    char mode_str[4] = {0};
+
+    int parsed = sscanf(params, "%7[^,],%7[^,],%31[^,],%63[^,],%3[^,]",
+        id_str, qty_str, area, name, mode_str);
+    if (parsed < 2) {
+        biz_screen_reply("ERR", "INVALID_PARAMS,参数不足");
+        return;
+    }
+
+    uint16_t tag_id = 0;
+    if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
+        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        return;
+    }
+
+    int mode = (parsed >= 5) ? atoi(mode_str) : 0;
+    int qty = atoi(qty_str);
+
+    /* 构造ESP32 register JSON */
+    char tag_esp32[8];
+    biz_tag_id_to_esp32(tag_id, tag_esp32, sizeof(tag_esp32));
+
+    char esp32_json[256];
+    if (mode == 2) {
+        /* 验证模式: 仅tag_id+quantity */
+        snprintf(esp32_json, sizeof(esp32_json),
+            "{\"cmd\":\"register\",\"tag_id\":\"%s\",\"quantity\":%d}",
+            tag_esp32, qty);
+    } else {
+        /* 新注册/覆写: 完整字段 */
+        snprintf(esp32_json, sizeof(esp32_json),
+            "{\"cmd\":\"register\",\"tag_id\":\"%s\",\"item_name\":\"%s\","
+            "\"storage_area\":\"%s\",\"quantity\":%d,\"is_overwrite\":%s}",
+            tag_esp32, name, area, qty, (mode == 1) ? "true" : "false");
+    }
+
+    biz_raw_json_send(esp32_json);
+    biz_set_pending("register", 0, tag_id);
+    biz_screen_reply("PROG", "1,front,0");
+    osal_printk("[WS63_BIZ] screen in,capture tag=%s qty=%d mode=%d\r\n",
+        id_str, qty, mode);
+}
+
+/* @in,photo,<view> → capture JSON */
+static void biz_screen_in_photo(const char *view)
+{
+    char esp32_json[64];
+    snprintf(esp32_json, sizeof(esp32_json),
+        "{\"cmd\":\"capture\",\"view\":\"%s\"}", view);
+    biz_raw_json_send(esp32_json);
+}
+
+/* @in,confirm → 持久化+上云 */
+static void biz_screen_in_confirm(void)
+{
+    biz_screen_reply("MSG", "确认入库完成");
+    /* TODO: 持久化资产记录 */
+}
+
+/* @in,cancel → 取消 */
+static void biz_screen_in_cancel(void)
+{
+    char esp32_json[32];
+    snprintf(esp32_json, sizeof(esp32_json), "{\"cmd\":\"cancel\"}");
+    biz_raw_json_send(esp32_json);
+    biz_clear_pending();
+    biz_screen_reply("MSG", "已取消入库");
+}
+
+/* ========== Page2 出库命令处理 ========== */
+
+/* @out,start → SLE扫描+查DB → #TAG,id,name,area,total */
+static void biz_screen_out_start(void)
+{
+    /* TODO: SLE扫描取最强标签 + 查biz_map → #TAG */
+    biz_screen_reply("MSG", "请按匹配按钮扫描标签");
+}
+
+/* @out,capture,<id>,<qty> → outbound JSON */
+static void biz_screen_out_capture(const char *params)
+{
+    char id_str[8] = {0};
+    char qty_str[8] = {0};
+
+    if (sscanf(params, "%7[^,],%7[^,]", id_str, qty_str) < 2) {
+        biz_screen_reply("ERR", "INVALID_PARAMS,参数不足");
+        return;
+    }
+
+    uint16_t tag_id = 0;
+    if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
+        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        return;
+    }
+
+    char tag_esp32[8];
+    biz_tag_id_to_esp32(tag_id, tag_esp32, sizeof(tag_esp32));
+
+    char esp32_json[128];
+    snprintf(esp32_json, sizeof(esp32_json),
+        "{\"cmd\":\"outbound\",\"tag_id\":\"%s\",\"remove_qty\":%s}",
+        tag_esp32, qty_str);
+
+    biz_raw_json_send(esp32_json);
+    biz_set_pending("outbound", 0, tag_id);
+    osal_printk("[WS63_BIZ] screen out,capture tag=%s qty=%s\r\n", id_str, qty_str);
+}
+
+/* @out,photo,front → capture JSON */
+static void biz_screen_out_photo(const char *view)
+{
+    char esp32_json[64];
+    snprintf(esp32_json, sizeof(esp32_json),
+        "{\"cmd\":\"capture\",\"view\":\"%s\"}", view);
+    biz_raw_json_send(esp32_json);
+}
+
+/* @out,confirm → 持久化 */
+static void biz_screen_out_confirm(void)
+{
+    biz_screen_reply("MSG", "确认出库完成");
+    /* TODO: 持久化 */
+}
+
+/* @out,cancel → 取消 */
+static void biz_screen_out_cancel(void)
+{
+    char esp32_json[32];
+    snprintf(esp32_json, sizeof(esp32_json), "{\"cmd\":\"cancel\"}");
+    biz_raw_json_send(esp32_json);
+    biz_clear_pending();
+    biz_screen_reply("MSG", "已取消出库");
+}
+
+/* ========== Page3 盘点命令处理 ========== */
+
+/* @check,global → SLE组播 + list_assets_page → #INV */
+static void biz_screen_check_global(void)
+{
+    /* TODO: SLE组播统计 + ESP32 list_assets_page */
+    biz_screen_reply("MSG", "全局盘点中...");
+}
+
+/* @check,specific,<id> → get_asset → #TAG_INFO */
+static void biz_screen_check_specific(const char *id_str)
+{
+    uint16_t tag_id = 0;
+    if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
+        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        return;
+    }
+
+    char tag_esp32[8];
+    biz_tag_id_to_esp32(tag_id, tag_esp32, sizeof(tag_esp32));
+
+    char esp32_json[96];
+    snprintf(esp32_json, sizeof(esp32_json),
+        "{\"cmd\":\"get_asset\",\"tag_id\":\"%s\"}", tag_esp32);
+    biz_raw_json_send(esp32_json);
+    osal_printk("[WS63_BIZ] screen check,specific tag=%s\r\n", id_str);
+}
+
+/* @check,capture,<id> → inventory JSON */
+static void biz_screen_check_capture(const char *id_str)
+{
+    uint16_t tag_id = 0;
+    if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
+        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        return;
+    }
+
+    char tag_esp32[8];
+    biz_tag_id_to_esp32(tag_id, tag_esp32, sizeof(tag_esp32));
+
+    char esp32_json[96];
+    snprintf(esp32_json, sizeof(esp32_json),
+        "{\"cmd\":\"inventory\",\"tag_id\":\"%s\"}", tag_esp32);
+    biz_raw_json_send(esp32_json);
+    biz_set_pending("inventory", 0, tag_id);
+    biz_screen_reply("PROG", "1,front,0");
+}
+
+/* @check,photo,<view> → capture JSON */
+static void biz_screen_check_photo(const char *view)
+{
+    char esp32_json[64];
+    snprintf(esp32_json, sizeof(esp32_json),
+        "{\"cmd\":\"capture\",\"view\":\"%s\"}", view);
+    biz_raw_json_send(esp32_json);
+}
+
+/* ========== Page4 查找命令处理 ========== */
+
+/* @find,list,<page> → list_assets_page */
+static void biz_screen_find_list(const char *page_str)
+{
+    int page = atoi(page_str);
+    if (page < 1) page = 1;
+
+    char esp32_json[96];
+    snprintf(esp32_json, sizeof(esp32_json),
+        "{\"cmd\":\"list_assets_page\",\"page\":%d,\"page_size\":6}", page);
+    biz_raw_json_send(esp32_json);
+}
+
+/* @find,locate,<id> → SLE蜂鸣(不经ESP32) */
+static void biz_screen_find_locate(const char *id_str)
+{
+    uint16_t tag_id = 0;
+    if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
+        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        return;
+    }
+
+    /* TODO: WS63→SLE直接蜂鸣指令 */
+    biz_screen_reply("LOCATE", "found,%s", id_str);
+    osal_printk("[WS63_BIZ] screen find,locate tag=%s (SLE蜂鸣)\r\n", id_str);
+}
+
+/* @find,stop → SLE停止蜂鸣 */
+static void biz_screen_find_stop(void)
+{
+    /* TODO: WS63→SLE停止蜂鸣 */
+    biz_screen_reply("MSG", "已停止定位");
+}
+
+/* ========== Page5 设置命令处理 ========== */
+
+/* @setting,wifi,<ssid>,<pwd> → WiFi连接 */
+static void biz_screen_setting_wifi(const char *params)
+{
+    char ssid[64] = {0};
+    char pwd[64] = {0};
+    sscanf(params, "%63[^,],%63[^,]", ssid, pwd);
+
+    if (g_biz_wifi_cmd_cb != NULL) {
+        int ret = g_biz_wifi_cmd_cb(ssid, pwd);
+        if (ret == 0) {
+            biz_screen_reply("WIFI", "ok");
+        } else {
+            biz_screen_reply("WIFI", "fail");
+        }
+    } else {
+        biz_screen_reply("ERR", "WIFI_NOT_AVAILABLE,WiFi不可用");
+    }
+}
+
+/* @setting,disconnect → WiFi断开 */
+static void biz_screen_setting_disconnect(void)
+{
+    if (g_biz_wifi_cmd_cb != NULL) {
+        g_biz_wifi_cmd_cb(NULL, NULL);
+    }
+    biz_screen_reply("NET", "wifi,disconnected,");
+}
+
+/* ========== 统一命令分发 ========== */
+
+/* 串口屏命令分发：按页面分发到具体处理函数 */
 void biz_handle_screen_cmd(const char *cmd, const char *params)
 {
     if (cmd == NULL) {
@@ -1371,64 +1863,65 @@ void biz_handle_screen_cmd(const char *cmd, const char *params)
         cmd, params ? params : "(null)");
 
     if (strcmp(cmd, "in") == 0) {
-        /* @in,start 或 @in,capture,0005 */
         if (params == NULL || strncmp(params, "start", 5) == 0) {
-            /* 进入入库模式，等待标签选择 */
-            biz_screen_reply("PROG", "IN_START");
+            biz_screen_in_start();
         } else if (strncmp(params, "capture", 7) == 0) {
-            /* @in,capture,0005 → 入库指定标签 */
-            const char *id_str = strchr(params + 7, ',');
-            if (id_str != NULL) {
-                id_str++;  /* 跳过逗号 */
-                uint16_t tag_id = 0;
-                if (ud_str_to_tag_id(id_str, &tag_id) == 0) {
-                    biz_screen_reply("TAG", "%s", id_str);
-                } else {
-                    biz_screen_reply("ERR", "INVALID_ID");
-                }
-            }
+            biz_screen_in_capture(params + 8);
+        } else if (strncmp(params, "photo", 5) == 0) {
+            biz_screen_in_photo(params + 6);
+        } else if (strncmp(params, "confirm", 7) == 0) {
+            biz_screen_in_confirm();
+        } else if (strncmp(params, "cancel", 6) == 0) {
+            biz_screen_in_cancel();
         }
     } else if (strcmp(cmd, "out") == 0) {
-        /* @out,start 或 @out,capture,0005 */
         if (params == NULL || strncmp(params, "start", 5) == 0) {
-            biz_screen_reply("PROG", "OUT_START");
+            biz_screen_out_start();
         } else if (strncmp(params, "capture", 7) == 0) {
-            const char *id_str = strchr(params + 7, ',');
-            if (id_str != NULL) {
-                id_str++;
-                uint16_t tag_id = 0;
-                if (ud_str_to_tag_id(id_str, &tag_id) == 0) {
-                    biz_screen_reply("TAG", "%s", id_str);
-                } else {
-                    biz_screen_reply("ERR", "INVALID_ID");
-                }
-            }
+            biz_screen_out_capture(params + 8);
+        } else if (strncmp(params, "photo", 5) == 0) {
+            biz_screen_out_photo(params + 6);
+        } else if (strncmp(params, "confirm", 7) == 0) {
+            biz_screen_out_confirm();
+        } else if (strncmp(params, "cancel", 6) == 0) {
+            biz_screen_out_cancel();
         }
-    } else if (strcmp(cmd, "inv") == 0) {
-        /* @inv,all / @inv,tag,0005 / @inv,zone,A1 */
-        if (params == NULL || strncmp(params, "all", 3) == 0) {
-            biz_screen_reply("PROG", "INV_ALL");
-        } else if (strncmp(params, "tag,", 4) == 0) {
-            biz_screen_reply("PROG", "INV_TAG,%s", params + 4);
-        } else if (strncmp(params, "zone,", 5) == 0) {
-            biz_screen_reply("PROG", "INV_ZONE,%s", params + 5);
+    } else if (strcmp(cmd, "check") == 0 || strcmp(cmd, "inv") == 0) {
+        if (params == NULL || strncmp(params, "global", 6) == 0) {
+            biz_screen_check_global();
+        } else if (strncmp(params, "specific", 8) == 0) {
+            biz_screen_check_specific(params + 9);
+        } else if (strncmp(params, "capture", 7) == 0) {
+            biz_screen_check_capture(params + 8);
+        } else if (strncmp(params, "photo", 5) == 0) {
+            biz_screen_check_photo(params + 6);
+        } else if (strncmp(params, "cancel", 6) == 0) {
+            biz_clear_pending();
+            biz_screen_reply("MSG", "已取消盘点");
         }
     } else if (strcmp(cmd, "find") == 0) {
-        /* @find,0005 */
-        if (params != NULL) {
-            uint16_t tag_id = 0;
-            if (ud_str_to_tag_id(params, &tag_id) == 0) {
-                biz_screen_reply("FIND", "%s", params);
-            } else {
-                biz_screen_reply("ERR", "INVALID_ID");
-            }
+        if (strncmp(params, "list", 4) == 0) {
+            biz_screen_find_list(params + 5);
+        } else if (strncmp(params, "locate", 6) == 0) {
+            biz_screen_find_locate(params + 7);
+        } else if (strncmp(params, "stop", 4) == 0) {
+            biz_screen_find_stop();
+        } else if (strncmp(params, "cancel", 6) == 0) {
+            biz_screen_reply("MSG", "已取消查找");
+        }
+    } else if (strcmp(cmd, "setting") == 0) {
+        if (strncmp(params, "wifi", 4) == 0) {
+            biz_screen_setting_wifi(params + 5);
+        } else if (strncmp(params, "disconnect", 10) == 0) {
+            biz_screen_setting_disconnect();
+        } else if (strncmp(params, "cancel", 6) == 0) {
+            biz_screen_reply("MSG", "已取消设置");
         }
     } else if (strcmp(cmd, "back") == 0) {
-        /* @back → 返回主页 */
         biz_screen_reply("HOME", "");
     } else {
         osal_printk("[WS63_BIZ] unknown screen cmd=%s\r\n", cmd);
-        biz_screen_reply("ERR", "UNKNOWN_CMD");
+        biz_screen_reply("ERR", "UNKNOWN_CMD,未知命令");
     }
 }
 

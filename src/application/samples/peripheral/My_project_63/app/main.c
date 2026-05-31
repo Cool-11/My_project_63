@@ -35,9 +35,16 @@ static bool g_my63_wifi_cfg_loaded = false;
 static void my63_wifi_state_cb(cs_wifi_state_t state)
 {
     osal_printk("[WS63_APP] wifi state cb=%d\r\n", (int)state);
-    if (state == CS_WIFI_GOT_IP && g_my63_mqtt_cfg_loaded) {
-        osal_printk("[WS63_APP] wifi got ip, auto reconnect mqtt\r\n");
-        cs_mqtt_connect(&g_my63_mqtt_cfg);
+    if (state == CS_WIFI_GOT_IP) {
+        uart_display_send("NET", "wifi,connected,");
+        if (g_my63_mqtt_cfg_loaded) {
+            osal_printk("[WS63_APP] wifi got ip, auto reconnect mqtt\r\n");
+            cs_mqtt_connect(&g_my63_mqtt_cfg);
+        }
+    } else if (state == CS_WIFI_DISCONNECTED) {
+        uart_display_send("NET", "wifi,disconnected,");
+    } else if (state == CS_WIFI_CONNECTING) {
+        uart_display_send("NET", "wifi,connecting,");
     }
 }
 
