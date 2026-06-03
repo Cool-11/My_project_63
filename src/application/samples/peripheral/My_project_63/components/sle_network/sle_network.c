@@ -165,8 +165,19 @@ uint16_t sle_adv_dequeue(void)
     uint16_t processed = 0;
 
     while (sle_adv_queue_get(&msg) == 0) {
-        if (sle_adv_extract_and_update(&msg) > 0) {
+        int ret = sle_adv_extract_and_update(&msg);
+        if (ret > 0) {
             processed++;
+        } else {
+            /* 调试：打印被丢弃的广播的前 16 字节 */
+            static uint32_t drop_log_count = 0;
+            if (drop_log_count < 10) {
+                drop_log_count++;
+                osal_printk("[WS63_NET] adv drop: len=%u data=%02X%02X%02X%02X %02X%02X%02X%02X\r\n",
+                    (unsigned int)msg.raw_len,
+                    msg.raw[0], msg.raw[1], msg.raw[2], msg.raw[3],
+                    msg.raw[4], msg.raw[5], msg.raw[6], msg.raw[7]);
+            }
         }
     }
     return processed;
