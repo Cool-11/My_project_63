@@ -49,9 +49,14 @@ uint32_t biz_get_pending_timeout_ms(const char *cmd)
     if (cmd == NULL) {
         return BIZ_PENDING_TIMEOUT_SLE_MS;
     }
-    if (strcmp(cmd, "register") == 0 || strcmp(cmd, "outbound") == 0) {
+    /* ESP32 命令：拍摄过程较长，15秒超时 */
+    if (strcmp(cmd, "register") == 0 ||
+        strcmp(cmd, "outbound") == 0 ||
+        strcmp(cmd, "in_capture") == 0 ||
+        strcmp(cmd, "check_global") == 0) {
         return BIZ_PENDING_TIMEOUT_ESP32_MS;
     }
+    /* SLE 命令：BIND_TAG/FIND 等，5秒超时 */
     return BIZ_PENDING_TIMEOUT_SLE_MS;
 }
 

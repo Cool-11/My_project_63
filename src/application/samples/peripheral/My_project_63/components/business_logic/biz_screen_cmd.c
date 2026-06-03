@@ -9,70 +9,71 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* ========== Page1 入库命令处理 ========== */
+/* ========== 共用扫描逻辑 ========== */
 
-/* @in,start → 读 scan_table → 过滤未注册 → 取 RSSI 最强 → #TAG / #FULL / #ERR */
-static void biz_screen_in_start(void)
+/* 扫描表查找结果 */
+typedef enum {
+    SCAN_OK,            /* 找到最佳标签 */
+    SCAN_EMPTY,         /* 扫描表为空 */
+    SCAN_ALL_REGISTERED /* 所有标签已注册 */
+} scan_result_t;
+
+/* 从扫描表取最强标签（registered=true 取已注册，false 取未注册） */
+static scan_result_t biz_scan_find_best(bool registered, int *out_idx)
 {
     const sle_scan_entry_t *scan = sle_network_get_scan_table();
     if (scan == NULL) {
-        biz_screen_reply("ERR", "ERR_SCAN_FAIL,扫描表不可用");
-        return;
+        return SCAN_EMPTY;
     }
 
     int best_idx = -1;
     uint64_t best_time = 0;
-    bool has_any_tag = false;
-    bool all_registered = true;
+    bool has_any = false;
+    bool has_match = false;
 
-    /* 遍历扫描表，找最近扫描到的未注册标签（last_seen_ms 最大 = 信号最强） */
     for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
-        if (!scan[i].used) {
-            continue;
-        }
-        has_any_tag = true;
+        if (!scan[i].used) continue;
+        has_any = true;
 
-        /* 检查是否已在 biz_map 中注册 */
-        biz_tag_entry_t *entry = biz_map_find_by_tag(scan[i].tag_id);
-        if (entry != NULL) {
-            continue;  /* 已注册，跳过 */
-        }
+        bool in_map = (biz_map_find_by_tag(scan[i].tag_id) != NULL);
+        bool match = registered ? in_map : !in_map;
+        if (!match) continue;
 
-        /* 未注册 */
-        all_registered = false;
-
-        /* 取最近扫描到的（信号最强） */
+        has_match = true;
         if (scan[i].last_seen_ms > best_time) {
             best_time = scan[i].last_seen_ms;
             best_idx = (int)i;
         }
     }
 
-    if (!has_any_tag) {
-        /* 扫描表为空，附近无标签 */
+    if (!has_any) return SCAN_EMPTY;
+    if (!has_match) return SCAN_ALL_REGISTERED;
+    *out_idx = best_idx;
+    return SCAN_OK;
+}
+
+/* ========== Page1 入库命令处理 ========== */
+
+/* @in,start → 扫描未注册 → #TAG / #FULL / #ERR */
+static void biz_screen_in_start(void)
+{
+    int idx = 0;
+    scan_result_t r = biz_scan_find_best(false, &idx);
+
+    if (r == SCAN_EMPTY) {
         biz_screen_reply("ERR", "ERR_NO_TAG,未找到标签");
         return;
     }
-
-    if (all_registered) {
-        /* 所有标签都已注册 */
+    if (r == SCAN_ALL_REGISTERED) {
         biz_screen_reply("FULL", "");
         return;
     }
 
-    if (best_idx >= 0) {
-        /* 找到最强未注册标签 */
-        char tag_str[8];
-        ud_tag_id_to_str(scan[best_idx].tag_id, tag_str, sizeof(tag_str));
-        biz_screen_reply("TAG", "%s", tag_str);
-
-        /* 记录到 pending（不连接 BS21E） */
-        biz_set_pending("in_start", 0, scan[best_idx].tag_id);
-
-        osal_printk("[WS63_BIZ] in,start found tag=%s\r\n", tag_str);
-    } else {
-        biz_screen_reply("ERR", "ERR_NO_TAG,未找到标签");
-    }
+    const sle_scan_entry_t *scan = sle_network_get_scan_table();
+    char tag_str[8];
+    ud_tag_id_to_str(scan[idx].tag_id, tag_str, sizeof(tag_str));
+    biz_screen_reply("TAG", "%s", tag_str);
+    biz_set_pending("in_start", 0, scan[idx].tag_id);
 }
 
 /* @in,capture,<id>,<qty>,<area>,<name>,<mode> → 拼register JSON */
@@ -188,59 +189,33 @@ static void biz_screen_in_cancel(void)
 
 /* ========== Page2 出库命令处理 ========== */
 
-/* @out,start → 读 scan_table → 过滤已注册 → 取 RSSI 最强 → #TAG,name,area,total */
+/* @out,start → 扫描已注册 → #TAG,name,area,total / #ERR */
 static void biz_screen_out_start(void)
 {
-    const sle_scan_entry_t *scan = sle_network_get_scan_table();
-    if (scan == NULL) {
-        biz_screen_reply("ERR", "ERR_SCAN_FAIL,扫描表不可用");
+    int idx = 0;
+    scan_result_t r = biz_scan_find_best(true, &idx);
+
+    if (r == SCAN_EMPTY) {
+        biz_screen_reply("ERR", "ERR_NO_TAG,未找到已注册标签");
         return;
     }
-
-    int best_idx = -1;
-    uint64_t best_time = 0;
-    bool has_registered = false;
-
-    /* 遍历扫描表，找最近扫描到的已注册标签 */
-    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
-        if (!scan[i].used) {
-            continue;
-        }
-
-        /* 检查是否在 biz_map 中已注册 */
-        biz_tag_entry_t *entry = biz_map_find_by_tag(scan[i].tag_id);
-        if (entry == NULL) {
-            continue;  /* 未注册，跳过 */
-        }
-
-        has_registered = true;
-
-        /* 取最近扫描到的（信号最强） */
-        if (scan[i].last_seen_ms > best_time) {
-            best_time = scan[i].last_seen_ms;
-            best_idx = (int)i;
-        }
-    }
-
-    if (!has_registered) {
+    if (r == SCAN_ALL_REGISTERED) {
         biz_screen_reply("ERR", "ERR_NO_TAG,未找到已注册标签");
         return;
     }
 
-    if (best_idx >= 0) {
-        biz_tag_entry_t *entry = biz_map_find_by_tag(scan[best_idx].tag_id);
-        if (entry != NULL) {
-            char tag_str[8];
-            ud_tag_id_to_str(entry->tag_id, tag_str, sizeof(tag_str));
-            biz_screen_reply("TAG", "%s,%s,%s,%u",
-                tag_str, entry->item, entry->zone, (unsigned int)entry->qty);
-
-            /* 记录 pending */
-            biz_set_pending("out_start", 0, entry->tag_id);
-
-            osal_printk("[WS63_BIZ] out,start found tag=%s\r\n", tag_str);
-        }
+    const sle_scan_entry_t *scan = sle_network_get_scan_table();
+    biz_tag_entry_t *entry = biz_map_find_by_tag(scan[idx].tag_id);
+    if (entry == NULL) {
+        biz_screen_reply("ERR", "ERR_INTERNAL,内部错误");
+        return;
     }
+
+    char tag_str[8];
+    ud_tag_id_to_str(entry->tag_id, tag_str, sizeof(tag_str));
+    biz_screen_reply("TAG", "%s,%s,%s,%u",
+        tag_str, entry->item, entry->zone, (unsigned int)entry->qty);
+    biz_set_pending("out_start", 0, entry->tag_id);
 }
 
 /* @out,capture,<id>,<qty> → outbound JSON */
@@ -549,77 +524,96 @@ static void biz_screen_setting_disconnect(void)
     biz_screen_reply("NET", "wifi,disconnected,");
 }
 
-/* ========== 统一命令分发 ========== */
+/* ========== 统一命令分发（拆分为子分发器） ========== */
 
-/* 串口屏命令分发：按页面分发到具体处理函数 */
+static void biz_screen_dispatch_in(const char *params)
+{
+    if (params == NULL || strncmp(params, "start", 5) == 0) {
+        biz_screen_in_start();
+    } else if (strncmp(params, "capture", 7) == 0) {
+        biz_screen_in_capture(params + 8);
+    } else if (strncmp(params, "photo", 5) == 0) {
+        biz_screen_in_photo(params + 6);
+    } else if (strncmp(params, "confirm", 7) == 0) {
+        biz_screen_in_confirm();
+    } else if (strncmp(params, "cancel", 6) == 0) {
+        biz_screen_in_cancel();
+    }
+}
+
+static void biz_screen_dispatch_out(const char *params)
+{
+    if (params == NULL || strncmp(params, "start", 5) == 0) {
+        biz_screen_out_start();
+    } else if (strncmp(params, "capture", 7) == 0) {
+        biz_screen_out_capture(params + 8);
+    } else if (strncmp(params, "photo", 5) == 0) {
+        biz_screen_out_photo(params + 6);
+    } else if (strncmp(params, "confirm", 7) == 0) {
+        biz_screen_out_confirm();
+    } else if (strncmp(params, "cancel", 6) == 0) {
+        biz_screen_out_cancel();
+    }
+}
+
+static void biz_screen_dispatch_check(const char *params)
+{
+    if (params == NULL || strncmp(params, "global", 6) == 0) {
+        biz_screen_check_global();
+    } else if (strncmp(params, "specific", 8) == 0) {
+        biz_screen_check_specific(params + 9);
+    } else if (strncmp(params, "capture", 7) == 0) {
+        biz_screen_check_capture(params + 8);
+    } else if (strncmp(params, "photo", 5) == 0) {
+        biz_screen_check_photo(params + 6);
+    } else if (strncmp(params, "cancel", 6) == 0) {
+        biz_clear_pending();
+        biz_screen_reply("MSG", "已取消盘点");
+    }
+}
+
+static void biz_screen_dispatch_find(const char *params)
+{
+    if (strncmp(params, "list", 4) == 0) {
+        biz_screen_find_list(params + 5);
+    } else if (strncmp(params, "locate", 6) == 0) {
+        biz_screen_find_locate(params + 7);
+    } else if (strncmp(params, "stop", 4) == 0) {
+        biz_screen_find_stop();
+    } else if (strncmp(params, "cancel", 6) == 0) {
+        biz_screen_reply("MSG", "已取消查找");
+    }
+}
+
+static void biz_screen_dispatch_setting(const char *params)
+{
+    if (strncmp(params, "wifi", 4) == 0) {
+        biz_screen_setting_wifi(params + 5);
+    } else if (strncmp(params, "disconnect", 10) == 0) {
+        biz_screen_setting_disconnect();
+    } else if (strncmp(params, "cancel", 6) == 0) {
+        biz_screen_reply("MSG", "已取消设置");
+    }
+}
+
+/* 串口屏命令分发：按页面分发到子分发器 */
 void biz_handle_screen_cmd(const char *cmd, const char *params)
 {
-    if (cmd == NULL) {
-        return;
-    }
-
-    osal_printk("[WS63_BIZ] screen cmd=%s params=%s\r\n",
-        cmd, params ? params : "(null)");
+    if (cmd == NULL) return;
 
     if (strcmp(cmd, "in") == 0) {
-        if (params == NULL || strncmp(params, "start", 5) == 0) {
-            biz_screen_in_start();
-        } else if (strncmp(params, "capture", 7) == 0) {
-            biz_screen_in_capture(params + 8);
-        } else if (strncmp(params, "photo", 5) == 0) {
-            biz_screen_in_photo(params + 6);
-        } else if (strncmp(params, "confirm", 7) == 0) {
-            biz_screen_in_confirm();
-        } else if (strncmp(params, "cancel", 6) == 0) {
-            biz_screen_in_cancel();
-        }
+        biz_screen_dispatch_in(params);
     } else if (strcmp(cmd, "out") == 0) {
-        if (params == NULL || strncmp(params, "start", 5) == 0) {
-            biz_screen_out_start();
-        } else if (strncmp(params, "capture", 7) == 0) {
-            biz_screen_out_capture(params + 8);
-        } else if (strncmp(params, "photo", 5) == 0) {
-            biz_screen_out_photo(params + 6);
-        } else if (strncmp(params, "confirm", 7) == 0) {
-            biz_screen_out_confirm();
-        } else if (strncmp(params, "cancel", 6) == 0) {
-            biz_screen_out_cancel();
-        }
+        biz_screen_dispatch_out(params);
     } else if (strcmp(cmd, "check") == 0 || strcmp(cmd, "inv") == 0) {
-        if (params == NULL || strncmp(params, "global", 6) == 0) {
-            biz_screen_check_global();
-        } else if (strncmp(params, "specific", 8) == 0) {
-            biz_screen_check_specific(params + 9);
-        } else if (strncmp(params, "capture", 7) == 0) {
-            biz_screen_check_capture(params + 8);
-        } else if (strncmp(params, "photo", 5) == 0) {
-            biz_screen_check_photo(params + 6);
-        } else if (strncmp(params, "cancel", 6) == 0) {
-            biz_clear_pending();
-            biz_screen_reply("MSG", "已取消盘点");
-        }
+        biz_screen_dispatch_check(params);
     } else if (strcmp(cmd, "find") == 0) {
-        if (strncmp(params, "list", 4) == 0) {
-            biz_screen_find_list(params + 5);
-        } else if (strncmp(params, "locate", 6) == 0) {
-            biz_screen_find_locate(params + 7);
-        } else if (strncmp(params, "stop", 4) == 0) {
-            biz_screen_find_stop();
-        } else if (strncmp(params, "cancel", 6) == 0) {
-            biz_screen_reply("MSG", "已取消查找");
-        }
+        biz_screen_dispatch_find(params);
     } else if (strcmp(cmd, "setting") == 0) {
-        if (strncmp(params, "wifi", 4) == 0) {
-            biz_screen_setting_wifi(params + 5);
-        } else if (strncmp(params, "disconnect", 10) == 0) {
-            biz_screen_setting_disconnect();
-        } else if (strncmp(params, "cancel", 6) == 0) {
-            biz_screen_reply("MSG", "已取消设置");
-        }
+        biz_screen_dispatch_setting(params);
     } else if (strcmp(cmd, "back") == 0) {
         biz_screen_reply("HOME", "");
     } else {
-        osal_printk("[WS63_BIZ] unknown screen cmd=%s\r\n", cmd);
         biz_screen_reply("ERR", "UNKNOWN_CMD,未知命令");
     }
 }

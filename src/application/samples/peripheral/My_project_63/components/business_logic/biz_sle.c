@@ -12,9 +12,7 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
     const ssap_bind_rsp_t *bind)
 {
     if (inv != NULL) {
-        osal_printk("[WS63_BIZ] sle inv tag_id=%u qty=%u status=%u bat=%u\r\n",
-            (unsigned int)inv->tag_id, (unsigned int)inv->qty,
-            (unsigned int)inv->status, (unsigned int)inv->battery);
+        /* inv 回调在 bt_service 上下文，不做 printk */
         biz_tag_entry_t *entry = biz_map_find_by_tag(inv->tag_id);
         if (entry != NULL) {
             entry->qty = inv->qty;
@@ -36,8 +34,7 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
     }
 
     if (bind != NULL) {
-        osal_printk("[WS63_BIZ] sle bind cmd=0x%02x tag_id=%u\r\n",
-            bind->cmd, (unsigned int)bind->tag_id);
+        /* bind 回调在 bt_service 上下文，仅保留错误日志 */
 
         /* handle inbound/register bind response */
         if (g_biz_pending.active &&
@@ -65,7 +62,7 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
                     }
                     /* 从映射表读取完整参数转发 ESP32 */
                     biz_tag_entry_t *reg_entry = biz_map_find_by_tag(g_biz_pending.tag_id);
-                    char esp32_cmd[192];
+                    static char esp32_cmd[192];  /* static: 减少回调栈压力 */
                     char tag_str[8];
                     biz_tag_id_to_esp32(g_biz_pending.tag_id, tag_str, sizeof(tag_str));
                     if (reg_entry != NULL) {
@@ -109,13 +106,9 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
                 /* 发送蜂鸣指令（5秒后自动停止由 main loop 处理） */
                 sle_network_send_cmd(SSAP_CMD_FIND, g_biz_pending.tag_id);
                 biz_screen_reply("MSG", "绑定成功");
-                osal_printk("[WS63_BIZ] in,confirm BIND_OK tag=%u\r\n",
-                    (unsigned int)g_biz_pending.tag_id);
             } else {
                 /* 绑定失败：BS21E 不在范围 */
                 biz_screen_reply("ERR", "ERR_BIND_FAIL,绑定失败,请重新扫描");
-                osal_printk("[WS63_BIZ] in,confirm BIND_FAIL tag=%u cmd=0x%02x\r\n",
-                    (unsigned int)g_biz_pending.tag_id, bind->cmd);
             }
             biz_clear_pending();
         }
