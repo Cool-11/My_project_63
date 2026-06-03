@@ -54,18 +54,19 @@ static scan_result_t biz_scan_find_best(bool registered, int *out_idx)
 
 /* ========== Page1 入库命令处理 ========== */
 
-/* @in,start → 扫描未注册 → #TAG / #FULL / #MSG */
+/* @in,start → 扫描未注册 → #TAG / #MSG */
 static void biz_screen_in_start(void)
 {
     int idx = 0;
     scan_result_t r = biz_scan_find_best(false, &idx);
 
     if (r == SCAN_EMPTY) {
-        biz_screen_reply("MSG", "未找到标签,请靠近后重试");
+        /* 扫描表为空，屏端显示 t5 提示 */
+        biz_screen_reply("MSG", "No tag nearby");
         return;
     }
     if (r == SCAN_ALL_REGISTERED) {
-        biz_screen_reply("MSG", "所有标签已注册");
+        biz_screen_reply("MSG", "All tags registered");
         return;
     }
 
@@ -149,7 +150,7 @@ static void biz_screen_in_confirm(void)
     /* 用 pending 中的 tag_id 查 biz_map 获取 MAC */
     biz_tag_entry_t *entry = biz_map_find_by_tag(g_biz_pending.tag_id);
     if (entry == NULL) {
-        biz_screen_reply("ERR", "ERR_NOT_REGISTERED,标签未注册");
+        biz_screen_reply("ERR", "ERR_NOT_REGISTERED,Not registered");
         biz_clear_pending();
         return;
     }
@@ -157,7 +158,7 @@ static void biz_screen_in_confirm(void)
     /* 连接 BS21E */
     int ret = sle_network_connect_by_tag(g_biz_pending.tag_id);
     if (ret != 0) {
-        biz_screen_reply("ERR", "ERR_CONNECT_FAIL,连接失败(%d)", ret);
+        biz_screen_reply("ERR", "ERR_CONNECT_FAIL,Connect fail(%d)", ret);
         biz_clear_pending();
         return;
     }
@@ -165,14 +166,14 @@ static void biz_screen_in_confirm(void)
     /* 发送 BIND_TAG */
     ret = sle_network_send_cmd(SSAP_CMD_BIND_TAG, g_biz_pending.tag_id);
     if (ret != 0) {
-        biz_screen_reply("ERR", "ERR_BIND_SEND_FAIL,绑定指令发送失败");
+        biz_screen_reply("ERR", "ERR_BIND_SEND_FAIL,Bind send fail");
         biz_clear_pending();
         return;
     }
 
     /* 更新 pending 状态，等待 biz_sle_notify_cb 回调 */
     biz_set_pending("in_confirm", 0, g_biz_pending.tag_id);
-    biz_screen_reply("MSG", "正在绑定...");
+    biz_screen_reply("MSG", "Binding...");
     osal_printk("[WS63_BIZ] in,confirm tag=%u sent BIND_TAG\r\n",
         (unsigned int)g_biz_pending.tag_id);
 }
@@ -184,7 +185,7 @@ static void biz_screen_in_cancel(void)
     snprintf(esp32_json, sizeof(esp32_json), "{\"cmd\":\"cancel\"}");
     biz_raw_json_send(esp32_json);
     biz_clear_pending();
-    biz_screen_reply("MSG", "已取消入库");
+    biz_screen_reply("MSG", "Inbound cancelled");
 }
 
 /* ========== Page2 出库命令处理 ========== */
@@ -196,14 +197,14 @@ static void biz_screen_out_start(void)
     scan_result_t r = biz_scan_find_best(true, &idx);
 
     if (r == SCAN_EMPTY || r == SCAN_ALL_REGISTERED) {
-        biz_screen_reply("MSG", "未找到已注册标签,请靠近后重试");
+        biz_screen_reply("MSG", "No registered tag nearby");
         return;
     }
 
     const sle_scan_entry_t *scan = sle_network_get_scan_table();
     biz_tag_entry_t *entry = biz_map_find_by_tag(scan[idx].tag_id);
     if (entry == NULL) {
-        biz_screen_reply("ERR", "ERR_INTERNAL,内部错误");
+        biz_screen_reply("ERR", "ERR_INTERNAL,Internal error");
         return;
     }
 
@@ -267,7 +268,7 @@ static void biz_screen_out_cancel(void)
     snprintf(esp32_json, sizeof(esp32_json), "{\"cmd\":\"cancel\"}");
     biz_raw_json_send(esp32_json);
     biz_clear_pending();
-    biz_screen_reply("MSG", "已取消出库");
+    biz_screen_reply("MSG", "Outbound cancelled");
 }
 
 /* ========== Page3 盘点命令处理 ========== */
@@ -325,10 +326,10 @@ void biz_check_global_compare(uint16_t esp32_total)
         }
 
         if (!found_in_sle) {
-            /* 未盘点到 */
+            /* Not scanned */
             char tag_str[8];
             ud_tag_id_to_str(entry->tag_id, tag_str, sizeof(tag_str));
-            biz_screen_reply("MSG", "%s 未盘点到", tag_str);
+            biz_screen_reply("MSG", "%s Not scanned", tag_str);
             miss_count++;
         } else {
             /* 盘点到，比对数据（item_name + quantity） */
@@ -460,7 +461,7 @@ static void biz_screen_find_stop(void)
         sle_network_send_cmd(SSAP_CMD_STOP_FIND, g_locate_tags[i].tag_id);
     }
     g_locate_count = 0;
-    biz_screen_reply("MSG", "已停止定位");
+    biz_screen_reply("MSG", "Stopped");
     osal_printk("[WS63_BIZ] find,stop all beeps stopped\r\n");
 }
 
@@ -564,7 +565,7 @@ static void biz_screen_dispatch_check(const char *params)
         biz_screen_check_photo(params + 6);
     } else if (strncmp(params, "cancel", 6) == 0) {
         biz_clear_pending();
-        biz_screen_reply("MSG", "已取消盘点");
+        biz_screen_reply("MSG", "Check cancelled");
     }
 }
 
@@ -577,7 +578,7 @@ static void biz_screen_dispatch_find(const char *params)
     } else if (strncmp(params, "stop", 4) == 0) {
         biz_screen_find_stop();
     } else if (strncmp(params, "cancel", 6) == 0) {
-        biz_screen_reply("MSG", "已取消查找");
+        biz_screen_reply("MSG", "Find cancelled");
     }
 }
 
@@ -588,7 +589,7 @@ static void biz_screen_dispatch_setting(const char *params)
     } else if (strncmp(params, "disconnect", 10) == 0) {
         biz_screen_setting_disconnect();
     } else if (strncmp(params, "cancel", 6) == 0) {
-        biz_screen_reply("MSG", "已取消设置");
+        biz_screen_reply("MSG", "Setting cancelled");
     }
 }
 
@@ -610,6 +611,6 @@ void biz_handle_screen_cmd(const char *cmd, const char *params)
     } else if (strcmp(cmd, "back") == 0) {
         biz_screen_reply("HOME", "");
     } else {
-        biz_screen_reply("ERR", "UNKNOWN_CMD,未知命令");
+        biz_screen_reply("ERR", "UNKNOWN_CMD,Unknown cmd");
     }
 }
