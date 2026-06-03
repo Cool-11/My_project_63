@@ -410,7 +410,7 @@ Tag ID 格式转换职责：
 
 约束：
 - 新命令码必须 `>= 0x30`，避免与现有命令冲突（0x00/0x01/0x02/0x10/0x20）。
-- 新回复码必须 `>= 0xB0`，避免与现有回复冲突（0x82/0xA0/0xAF）。
+- 新回复码必须 `>= 0xB0`，避免与现有回复冲突（0x82/0xA0/0xAF/0xA1 BIND_FAIL）。
 - `shared_protocol_pack_write_cmd()` 的 switch-case 必须同步扩展。
 - `sle_network` 的 `my63_ssap_notification_cb` 必须同步扩展分发逻辑。
 - **所有新字段必须使用大端序**。
