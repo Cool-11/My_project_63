@@ -12,7 +12,8 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
     const ssap_bind_rsp_t *bind)
 {
     if (inv != NULL) {
-        /* inv 回调在 bt_service 上下文，不做 printk */
+        osal_printk("[WS63_BIZ] inv tag=%u qty=%u\r\n",
+            (unsigned int)inv->tag_id, (unsigned int)inv->qty);
         biz_tag_entry_t *entry = biz_map_find_by_tag(inv->tag_id);
         if (entry != NULL) {
             entry->qty = inv->qty;
@@ -34,7 +35,8 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
     }
 
     if (bind != NULL) {
-        /* bind 回调在 bt_service 上下文，仅保留错误日志 */
+        osal_printk("[WS63_BIZ] bind cmd=0x%02x tag=%u\r\n",
+            bind->cmd, (unsigned int)bind->tag_id);
 
         /* handle inbound/register bind response */
         if (g_biz_pending.active &&
@@ -106,9 +108,13 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
                 /* 发送蜂鸣指令（5秒后自动停止由 main loop 处理） */
                 sle_network_send_cmd(SSAP_CMD_FIND, g_biz_pending.tag_id);
                 biz_screen_reply("MSG", "绑定成功");
+                osal_printk("[WS63_BIZ] in,confirm BIND_OK tag=%u\r\n",
+                    (unsigned int)g_biz_pending.tag_id);
             } else {
                 /* 绑定失败：BS21E 不在范围 */
                 biz_screen_reply("ERR", "ERR_BIND_FAIL,绑定失败,请重新扫描");
+                osal_printk("[WS63_BIZ] in,confirm BIND_FAIL tag=%u\r\n",
+                    (unsigned int)g_biz_pending.tag_id);
             }
             biz_clear_pending();
         }
