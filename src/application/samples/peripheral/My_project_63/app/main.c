@@ -146,14 +146,17 @@ static int my63_mqtt_cmd_cb(biz_mqtt_cmd_t cmd, const biz_mqtt_connect_params_t 
     return -1;
 }
 
-/* CPU 监控：idle hook，注册到 LiteOS idle task */
+/* CPU 监控：idle hook，注册到 LiteOS idle task（暂时禁用，排查 NMI） */
+#if 0
 static void my63_idle_hook(void)
 {
     g_idle_count++;
     g_total_count++;
 }
+#endif
 
-/* CPU 监控：计算并打印 CPU 占用率 */
+/* CPU 监控：计算并打印 CPU 占用率（暂时禁用，排查 NMI） */
+#if 0
 static void my63_cpu_report(void)
 {
     uint32_t idle = g_idle_count;
@@ -168,6 +171,7 @@ static void my63_cpu_report(void)
     osal_printk("[WS63_APP] cpu=%u%% (idle=%u/%u)\r\n",
         (unsigned int)cpu_pct, (unsigned int)idle, (unsigned int)total);
 }
+#endif
 
 static int my63_init_modules(void)
 {
@@ -213,8 +217,8 @@ static int my63_init_modules(void)
     cs_mqtt_register_state_cb(my63_mqtt_state_cb);
     cs_mqtt_register_msg_cb(my63_mqtt_msg_cb);
 
-    /* 注册 CPU 监控 idle hook */
-    LOS_IdleHandlerHookReg(my63_idle_hook);
+    /* 注册 CPU 监控 idle hook（暂时禁用，排查 NMI） */
+    /* LOS_IdleHandlerHookReg(my63_idle_hook); */
 
     business_logic_register_cloud_cb(my63_cloud_publish_cb);
     business_logic_register_wifi_cmd_cb(my63_wifi_cmd_cb);
@@ -255,7 +259,7 @@ static void my63_heartbeat(uint64_t now)
     }
     g_my63_last_heartbeat = now;
 
-    my63_cpu_report();
+    /* my63_cpu_report(); 暂时禁用，排查 NMI */
 
     osal_printk("[WS63_APP] hb sle=%d/%d/%d scan_tbl=%u wifi=%d mqtt=%d cache=%u uart_ring=%u\r\n",
         sle_network_is_target_found(),

@@ -54,18 +54,18 @@ static scan_result_t biz_scan_find_best(bool registered, int *out_idx)
 
 /* ========== Page1 入库命令处理 ========== */
 
-/* @in,start → 扫描未注册 → #TAG / #FULL / #ERR */
+/* @in,start → 扫描未注册 → #TAG / #FULL / #MSG */
 static void biz_screen_in_start(void)
 {
     int idx = 0;
     scan_result_t r = biz_scan_find_best(false, &idx);
 
     if (r == SCAN_EMPTY) {
-        biz_screen_reply("ERR", "ERR_NO_TAG,未找到标签");
+        biz_screen_reply("MSG", "未找到标签,请靠近后重试");
         return;
     }
     if (r == SCAN_ALL_REGISTERED) {
-        biz_screen_reply("FULL", "");
+        biz_screen_reply("MSG", "所有标签已注册");
         return;
     }
 
@@ -189,18 +189,14 @@ static void biz_screen_in_cancel(void)
 
 /* ========== Page2 出库命令处理 ========== */
 
-/* @out,start → 扫描已注册 → #TAG,name,area,total / #ERR */
+/* @out,start → 扫描已注册 → #TAG,name,area,total / #MSG */
 static void biz_screen_out_start(void)
 {
     int idx = 0;
     scan_result_t r = biz_scan_find_best(true, &idx);
 
-    if (r == SCAN_EMPTY) {
-        biz_screen_reply("ERR", "ERR_NO_TAG,未找到已注册标签");
-        return;
-    }
-    if (r == SCAN_ALL_REGISTERED) {
-        biz_screen_reply("ERR", "ERR_NO_TAG,未找到已注册标签");
+    if (r == SCAN_EMPTY || r == SCAN_ALL_REGISTERED) {
+        biz_screen_reply("MSG", "未找到已注册标签,请靠近后重试");
         return;
     }
 
