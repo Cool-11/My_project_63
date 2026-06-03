@@ -95,6 +95,31 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
             biz_clear_pending();
         }
 
+        /* handle @in,confirm BIND response */
+        if (g_biz_pending.active &&
+            strcmp(g_biz_pending.cmd, "in_confirm") == 0) {
+            if (bind->cmd == SSAP_RSP_BIND_OK) {
+                /* 绑定成功：更新状态 + NV + 上云 + 蜂鸣 */
+                biz_tag_entry_t *entry = biz_map_find_by_tag(g_biz_pending.tag_id);
+                if (entry != NULL) {
+                    entry->status = BIZ_TAG_BOUND;
+                    biz_map_save_nv();
+                    biz_publish_tag_update(entry);
+                }
+                /* 发送蜂鸣指令（5秒后自动停止由 main loop 处理） */
+                sle_network_send_cmd(SSAP_CMD_FIND, g_biz_pending.tag_id);
+                biz_screen_reply("MSG", "绑定成功");
+                osal_printk("[WS63_BIZ] in,confirm BIND_OK tag=%u\r\n",
+                    (unsigned int)g_biz_pending.tag_id);
+            } else {
+                /* 绑定失败：BS21E 不在范围 */
+                biz_screen_reply("ERR", "ERR_BIND_FAIL,绑定失败,请重新扫描");
+                osal_printk("[WS63_BIZ] in,confirm BIND_FAIL tag=%u cmd=0x%02x\r\n",
+                    (unsigned int)g_biz_pending.tag_id, bind->cmd);
+            }
+            biz_clear_pending();
+        }
+
         /* handle outbound unbind/update_qty response */
         if (g_biz_pending.active &&
             strcmp(g_biz_pending.cmd, "outbound") == 0) {

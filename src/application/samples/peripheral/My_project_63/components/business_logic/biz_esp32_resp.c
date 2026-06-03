@@ -88,7 +88,7 @@ static void biz_handle_asset_detail(cJSON *root)
     biz_screen_reply("TAG_INFO", "%s,%s,%s,%d", tag_display, name, area, qty);
 }
 
-/* ESP32响应处理: asset_list_page → #LIST + #ITEM×N */
+/* ESP32响应处理: asset_list_page → #LIST + #ITEM×N 或 全局盘点比对 */
 static void biz_handle_asset_list_page(cJSON *root)
 {
     cJSON *j_page = cJSON_GetObjectItem(root, "page");
@@ -100,6 +100,15 @@ static void biz_handle_asset_list_page(cJSON *root)
     int tp = (j_tp && cJSON_IsNumber(j_tp)) ? j_tp->valueint : 1;
     int tc = (j_tc && cJSON_IsNumber(j_tc)) ? j_tc->valueint : 0;
 
+    /* 全局盘点模式：收到 asset_list_page 后执行比对 */
+    if (g_biz_pending.active &&
+        strcmp(g_biz_pending.cmd, "check_global") == 0) {
+        biz_check_global_compare((uint16_t)tc);
+        biz_clear_pending();
+        return;
+    }
+
+    /* 普通列表模式：发送 #LIST + #ITEM */
     biz_screen_reply("LIST", "%d,%d,%d", page, tp, tc);
 
     if (j_assets && cJSON_IsArray(j_assets)) {

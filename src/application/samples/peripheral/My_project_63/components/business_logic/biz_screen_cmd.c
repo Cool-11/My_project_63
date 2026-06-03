@@ -3,18 +3,76 @@
 #include "soc_osal.h"
 #include "cJSON.h"
 #include "../uart_display/uart_display.h"
+#include "../sle_network/sle_network.h"
+#include "tcxo.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 /* ========== Page1 入库命令处理 ========== */
 
-/* @in,start → SLE扫描 + 查DB → #TAG/#VERIFY */
+/* @in,start → 读 scan_table → 过滤未注册 → 取 RSSI 最强 → #TAG / #FULL / #ERR */
 static void biz_screen_in_start(void)
 {
-    /* TODO: SLE扫描取最强标签 + 查biz_map */
-    /* 临时实现: 提示需要SLE扫描 */
-    biz_screen_reply("MSG", "请按匹配按钮扫描标签");
+    const sle_scan_entry_t *scan = sle_network_get_scan_table();
+    if (scan == NULL) {
+        biz_screen_reply("ERR", "ERR_SCAN_FAIL,扫描表不可用");
+        return;
+    }
+
+    int best_idx = -1;
+    uint64_t best_time = 0;
+    bool has_any_tag = false;
+    bool all_registered = true;
+
+    /* 遍历扫描表，找最近扫描到的未注册标签（last_seen_ms 最大 = 信号最强） */
+    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+        if (!scan[i].used) {
+            continue;
+        }
+        has_any_tag = true;
+
+        /* 检查是否已在 biz_map 中注册 */
+        biz_tag_entry_t *entry = biz_map_find_by_tag(scan[i].tag_id);
+        if (entry != NULL) {
+            continue;  /* 已注册，跳过 */
+        }
+
+        /* 未注册 */
+        all_registered = false;
+
+        /* 取最近扫描到的（信号最强） */
+        if (scan[i].last_seen_ms > best_time) {
+            best_time = scan[i].last_seen_ms;
+            best_idx = (int)i;
+        }
+    }
+
+    if (!has_any_tag) {
+        /* 扫描表为空，附近无标签 */
+        biz_screen_reply("ERR", "ERR_NO_TAG,未找到标签");
+        return;
+    }
+
+    if (all_registered) {
+        /* 所有标签都已注册 */
+        biz_screen_reply("FULL", "");
+        return;
+    }
+
+    if (best_idx >= 0) {
+        /* 找到最强未注册标签 */
+        char tag_str[8];
+        ud_tag_id_to_str(scan[best_idx].tag_id, tag_str, sizeof(tag_str));
+        biz_screen_reply("TAG", "%s", tag_str);
+
+        /* 记录到 pending（不连接 BS21E） */
+        biz_set_pending("in_start", 0, scan[best_idx].tag_id);
+
+        osal_printk("[WS63_BIZ] in,start found tag=%s\r\n", tag_str);
+    } else {
+        biz_screen_reply("ERR", "ERR_NO_TAG,未找到标签");
+    }
 }
 
 /* @in,capture,<id>,<qty>,<area>,<name>,<mode> → 拼register JSON */
@@ -62,7 +120,9 @@ static void biz_screen_in_capture(const char *params)
     }
 
     biz_raw_json_send(esp32_json);
-    biz_set_pending("register", 0, tag_id);
+
+    /* 记录 pending（不连接 BS21E，等 @in,confirm 时再连） */
+    biz_set_pending("in_capture", 0, tag_id);
     biz_screen_reply("PROG", "1,front,0");
     osal_printk("[WS63_BIZ] screen in,capture tag=%s qty=%d mode=%d\r\n",
         id_str, qty, mode);
@@ -77,11 +137,43 @@ static void biz_screen_in_photo(const char *view)
     biz_raw_json_send(esp32_json);
 }
 
-/* @in,confirm → 持久化+上云 */
+/* @in,confirm → 连接BS21E → BIND_TAG → 蜂鸣5s → NV+上云 */
 static void biz_screen_in_confirm(void)
 {
-    biz_screen_reply("MSG", "确认入库完成");
-    /* TODO: 持久化资产记录 */
+    if (!g_biz_pending.active) {
+        biz_screen_reply("ERR", "ERR_NO_PENDING,无待确认操作");
+        return;
+    }
+
+    /* 用 pending 中的 tag_id 查 biz_map 获取 MAC */
+    biz_tag_entry_t *entry = biz_map_find_by_tag(g_biz_pending.tag_id);
+    if (entry == NULL) {
+        biz_screen_reply("ERR", "ERR_NOT_REGISTERED,标签未注册");
+        biz_clear_pending();
+        return;
+    }
+
+    /* 连接 BS21E */
+    int ret = sle_network_connect_by_tag(g_biz_pending.tag_id);
+    if (ret != 0) {
+        biz_screen_reply("ERR", "ERR_CONNECT_FAIL,连接失败(%d)", ret);
+        biz_clear_pending();
+        return;
+    }
+
+    /* 发送 BIND_TAG */
+    ret = sle_network_send_cmd(SSAP_CMD_BIND_TAG, g_biz_pending.tag_id);
+    if (ret != 0) {
+        biz_screen_reply("ERR", "ERR_BIND_SEND_FAIL,绑定指令发送失败");
+        biz_clear_pending();
+        return;
+    }
+
+    /* 更新 pending 状态，等待 biz_sle_notify_cb 回调 */
+    biz_set_pending("in_confirm", 0, g_biz_pending.tag_id);
+    biz_screen_reply("MSG", "正在绑定...");
+    osal_printk("[WS63_BIZ] in,confirm tag=%u sent BIND_TAG\r\n",
+        (unsigned int)g_biz_pending.tag_id);
 }
 
 /* @in,cancel → 取消 */
@@ -96,11 +188,59 @@ static void biz_screen_in_cancel(void)
 
 /* ========== Page2 出库命令处理 ========== */
 
-/* @out,start → SLE扫描+查DB → #TAG,id,name,area,total */
+/* @out,start → 读 scan_table → 过滤已注册 → 取 RSSI 最强 → #TAG,name,area,total */
 static void biz_screen_out_start(void)
 {
-    /* TODO: SLE扫描取最强标签 + 查biz_map → #TAG */
-    biz_screen_reply("MSG", "请按匹配按钮扫描标签");
+    const sle_scan_entry_t *scan = sle_network_get_scan_table();
+    if (scan == NULL) {
+        biz_screen_reply("ERR", "ERR_SCAN_FAIL,扫描表不可用");
+        return;
+    }
+
+    int best_idx = -1;
+    uint64_t best_time = 0;
+    bool has_registered = false;
+
+    /* 遍历扫描表，找最近扫描到的已注册标签 */
+    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+        if (!scan[i].used) {
+            continue;
+        }
+
+        /* 检查是否在 biz_map 中已注册 */
+        biz_tag_entry_t *entry = biz_map_find_by_tag(scan[i].tag_id);
+        if (entry == NULL) {
+            continue;  /* 未注册，跳过 */
+        }
+
+        has_registered = true;
+
+        /* 取最近扫描到的（信号最强） */
+        if (scan[i].last_seen_ms > best_time) {
+            best_time = scan[i].last_seen_ms;
+            best_idx = (int)i;
+        }
+    }
+
+    if (!has_registered) {
+        biz_screen_reply("ERR", "ERR_NO_TAG,未找到已注册标签");
+        return;
+    }
+
+    if (best_idx >= 0) {
+        biz_tag_entry_t *entry = biz_map_find_by_tag(scan[best_idx].tag_id);
+        if (entry != NULL) {
+            char tag_str[8];
+            ud_tag_id_to_str(entry->tag_id, tag_str, sizeof(tag_str));
+            biz_screen_reply("TAG", "%s,%s,%s,%u",
+                tag_str, entry->item, entry->zone, (unsigned int)entry->qty);
+
+            /* 记录 pending */
+            biz_set_pending("out_start", 0, entry->tag_id);
+
+            osal_printk("[WS63_BIZ] out,start found tag=%s\r\n", tag_str);
+        }
+    }
 }
 
 /* @out,capture,<id>,<qty> → outbound JSON */
@@ -161,11 +301,76 @@ static void biz_screen_out_cancel(void)
 
 /* ========== Page3 盘点命令处理 ========== */
 
-/* @check,global → SLE组播 + list_assets_page → #INV */
+/* @check,global → SLE计数 + ESP32 list_assets_page → 比对 → #INV + #MSG */
+static uint16_t g_check_global_sle_count = 0;  /* 异步流程暂存 */
+
 static void biz_screen_check_global(void)
 {
-    /* TODO: SLE组播统计 + ESP32 list_assets_page */
+    /* 1. 统计 SLE 扫描表中的标签数 */
+    const sle_scan_entry_t *scan = sle_network_get_scan_table();
+    uint16_t sle_count = 0;
+    if (scan != NULL) {
+        for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+            if (scan[i].used) {
+                sle_count++;
+            }
+        }
+    }
+    g_check_global_sle_count = sle_count;
+
+    /* 2. 发 list_assets_page 给 ESP32（仅取 total_count） */
+    char esp32_json[64];
+    snprintf(esp32_json, sizeof(esp32_json),
+        "{\"cmd\":\"list_assets_page\",\"page\":1,\"page_size\":1}");
+    biz_raw_json_send(esp32_json);
+
+    /* 3. 设置 pending，等待 asset_list_page 响应 */
+    biz_set_pending("check_global", 0, 0);
     biz_screen_reply("MSG", "全局盘点中...");
+    osal_printk("[WS63_BIZ] check,global sle_count=%u\r\n", (unsigned int)sle_count);
+}
+
+/* 全局盘点：收到 asset_list_page 后执行比对（由 biz_esp32_resp.c 调用） */
+void biz_check_global_compare(uint16_t esp32_total)
+{
+    uint16_t sle_count = g_check_global_sle_count;
+    uint16_t match_count = 0;
+    uint16_t miss_count = 0;
+
+    /* 遍历 biz_map，逐个比对 */
+    const sle_scan_entry_t *scan = sle_network_get_scan_table();
+    for (uint16_t i = 0; i < g_biz_map.count; i++) {
+        biz_tag_entry_t *entry = &g_biz_map.entries[i];
+        bool found_in_sle = false;
+
+        /* 检查是否在 SLE 扫描表中 */
+        if (scan != NULL) {
+            for (uint16_t j = 0; j < SLE_SCAN_TABLE_MAX; j++) {
+                if (scan[j].used && scan[j].tag_id == entry->tag_id) {
+                    found_in_sle = true;
+                    break;
+                }
+            }
+        }
+
+        if (!found_in_sle) {
+            /* 未盘点到 */
+            char tag_str[8];
+            ud_tag_id_to_str(entry->tag_id, tag_str, sizeof(tag_str));
+            biz_screen_reply("MSG", "%s 未盘点到", tag_str);
+            miss_count++;
+        } else {
+            /* 盘点到，比对数据（item_name + quantity） */
+            /* 注意：ESP32 的详细数据需要逐页查询，这里只做 SLE 可见性检查 */
+            match_count++;
+        }
+    }
+
+    /* 返回概览 */
+    biz_screen_reply("INV", "%u,%u", (unsigned int)sle_count, (unsigned int)esp32_total);
+    osal_printk("[WS63_BIZ] check,global done: sle=%u esp32=%u match=%u miss=%u\r\n",
+        (unsigned int)sle_count, (unsigned int)esp32_total,
+        (unsigned int)match_count, (unsigned int)miss_count);
 }
 
 /* @check,specific,<id> → get_asset → #TAG_INFO */
@@ -218,6 +423,15 @@ static void biz_screen_check_photo(const char *view)
 
 /* ========== Page4 查找命令处理 ========== */
 
+#define LOCATE_MAX_TAGS    8
+#define LOCATE_BEEP_MS     5000
+
+static struct {
+    uint16_t tag_id;
+    uint64_t start_ms;
+} g_locate_tags[LOCATE_MAX_TAGS] = {0};
+static uint16_t g_locate_count = 0;
+
 /* @find,list,<page> → list_assets_page */
 static void biz_screen_find_list(const char *page_str)
 {
@@ -230,7 +444,7 @@ static void biz_screen_find_list(const char *page_str)
     biz_raw_json_send(esp32_json);
 }
 
-/* @find,locate,<id> → SLE蜂鸣(不经ESP32) */
+/* @find,locate,<id> → 连接BS21E + 蜂鸣（不经ESP32） */
 static void biz_screen_find_locate(const char *id_str)
 {
     uint16_t tag_id = 0;
@@ -239,16 +453,70 @@ static void biz_screen_find_locate(const char *id_str)
         return;
     }
 
-    /* TODO: WS63→SLE直接蜂鸣指令 */
+    if (g_locate_count >= LOCATE_MAX_TAGS) {
+        biz_screen_reply("ERR", "ERR_TOO_MANY,最多同时寻物8个标签");
+        return;
+    }
+
+    /* 连接 BS21E */
+    int ret = sle_network_connect_by_tag(tag_id);
+    if (ret != 0) {
+        biz_screen_reply("LOCATE", "timeout,%s", id_str);
+        osal_printk("[WS63_BIZ] find,locate connect fail tag=%s ret=%d\r\n", id_str, ret);
+        return;
+    }
+
+    /* 发送蜂鸣指令 */
+    ret = sle_network_send_cmd(SSAP_CMD_FIND, tag_id);
+    if (ret != 0) {
+        biz_screen_reply("LOCATE", "timeout,%s", id_str);
+        return;
+    }
+
+    /* 记录到活跃列表 */
+    g_locate_tags[g_locate_count].tag_id = tag_id;
+    g_locate_tags[g_locate_count].start_ms = uapi_tcxo_get_ms();
+    g_locate_count++;
+
     biz_screen_reply("LOCATE", "found,%s", id_str);
-    osal_printk("[WS63_BIZ] screen find,locate tag=%s (SLE蜂鸣)\r\n", id_str);
+    osal_printk("[WS63_BIZ] find,locate tag=%s beep started\r\n", id_str);
 }
 
-/* @find,stop → SLE停止蜂鸣 */
+/* @find,stop → 停止所有蜂鸣 */
 static void biz_screen_find_stop(void)
 {
-    /* TODO: WS63→SLE停止蜂鸣 */
+    for (uint16_t i = 0; i < g_locate_count; i++) {
+        sle_network_send_cmd(SSAP_CMD_STOP_FIND, g_locate_tags[i].tag_id);
+    }
+    g_locate_count = 0;
     biz_screen_reply("MSG", "已停止定位");
+    osal_printk("[WS63_BIZ] find,stop all beeps stopped\r\n");
+}
+
+/* 寻物超时检查：5秒后自动停止蜂鸣（由 business_logic_poll 调用） */
+void biz_locate_check_timeout(void)
+{
+    if (g_locate_count == 0) {
+        return;
+    }
+    uint64_t now = uapi_tcxo_get_ms();
+    uint16_t remaining = 0;
+
+    for (uint16_t i = 0; i < g_locate_count; i++) {
+        if (now - g_locate_tags[i].start_ms >= LOCATE_BEEP_MS) {
+            /* 超时，自动停止蜂鸣 */
+            sle_network_send_cmd(SSAP_CMD_STOP_FIND, g_locate_tags[i].tag_id);
+            osal_printk("[WS63_BIZ] locate auto-stop tag=%u\r\n",
+                (unsigned int)g_locate_tags[i].tag_id);
+        } else {
+            /* 未超时，保留 */
+            if (remaining != i) {
+                g_locate_tags[remaining] = g_locate_tags[i];
+            }
+            remaining++;
+        }
+    }
+    g_locate_count = remaining;
 }
 
 /* ========== Page5 设置命令处理 ========== */

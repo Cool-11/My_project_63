@@ -288,12 +288,16 @@ void business_logic_poll(void)
         if (strcmp(g_biz_pending.cmd, "inbound") == 0 ||
             strcmp(g_biz_pending.cmd, "inbound_bind") == 0 ||
             strcmp(g_biz_pending.cmd, "register") == 0 ||
-            strcmp(g_biz_pending.cmd, "register_bind") == 0) {
+            strcmp(g_biz_pending.cmd, "register_bind") == 0 ||
+            strcmp(g_biz_pending.cmd, "in_capture") == 0) {
             biz_map_remove(g_biz_pending.tag_id);
         }
         biz_reply(g_biz_pending.seq, g_biz_pending.cmd, -10, "timeout", NULL);
         biz_clear_pending();
     }
+
+    /* 寻物超时检查：5秒后自动停止蜂鸣 */
+    biz_locate_check_timeout();
 }
 
 static void biz_uart_send_wrapper(uint16_t seq, const char *cmd, int code,

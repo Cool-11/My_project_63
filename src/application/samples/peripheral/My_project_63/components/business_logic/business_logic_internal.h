@@ -64,6 +64,8 @@ void biz_handle_esp32_msg(const char *cmd, const char *data_json);
 
 /* ========== biz_screen_cmd.c ========== */
 void biz_handle_screen_cmd(const char *cmd, const char *params);
+void biz_check_global_compare(uint16_t esp32_total);
+void biz_locate_check_timeout(void);
 
 /* ========== biz_wifi_mqtt.c ========== */
 void biz_cmd_wifi_connect(uint16_t seq, const char *data_json);
