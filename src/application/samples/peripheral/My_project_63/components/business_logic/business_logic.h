@@ -14,7 +14,7 @@ extern "C" {
 #define BIZ_MAC_LEN             6
 #define BIZ_NV_KEY_TAG_MAP      0x5001
 #define BIZ_PENDING_TIMEOUT_SLE_MS   5000
-#define BIZ_PENDING_TIMEOUT_ESP32_MS 15000
+#define BIZ_PENDING_TIMEOUT_ESP32_MS 120000
 
 #define BIZ_MQTT_URI_MAX        128
 #define BIZ_MQTT_CID_MAX        64

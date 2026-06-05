@@ -1,0 +1,1 @@
+/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-ar rcD libpmp_cfg_ws63.a CMakeFiles/pmp_cfg_ws63.dir/riscv/pmp_cfg.c.obj

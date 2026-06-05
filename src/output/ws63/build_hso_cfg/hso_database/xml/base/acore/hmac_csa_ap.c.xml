@@ -1,0 +1,40 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] {hmac_csa_ap_switch_new_channel::announced_channel=%d,announced_bandwidth=%d csa_cnt=%d} @hmac_csa_ap.c(100),WARNING" ID="0x84960323" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_csa_ap_vht_set_bw_ie::param null.} @hmac_csa_ap.c(122),ERROR" ID="0x849603d2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_csa_ap_vht_set_bw_ie::invalid bandwidth[%d].} @hmac_csa_ap.c(169),ERROR" ID="0x8496054a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_cas_ap_set_sec_channel_offset_ie::param null.} @hmac_csa_ap.c(188),ERROR" ID="0x849605e2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_cas_ap_set_sec_channel_offset_ie::invalid bandwidth[%d].} @hmac_csa_ap.c(226),ERROR" ID="0x84960712" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_csa_ap_set_bw_ie::set_second_ch_ie failed} @hmac_csa_ap.c(291),ERROR" ID="0x8496091a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_csa_ap_set_bw_ie::set_11ac_wideband_ie failed} @hmac_csa_ap.c(302),ERROR" ID="0x84960972" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_ap_encap_csa_action: build csa ie failed! @hmac_csa_ap.c(421),ERROR" ID="0x84960d2a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_ap_encap_csa_action::LEN = %d.} @hmac_csa_ap.c(429),WARNING" ID="0x84960d6b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ap_send_csa_action::hmac_vap null.} @hmac_csa_ap.c(446),ERROR" ID="0x84960df2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_ap_send_csa_action::vap not in HT mode.} @hmac_csa_ap.c(454),ERROR" ID="0x84960e32" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_ap_send_csa_action::mgmt_buf null.} @hmac_csa_ap.c(463),WARNING" ID="0x84960e7b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ap_send_csa_action::encap csa action failed.} @hmac_csa_ap.c(475),ERROR" ID="0x84960eda" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_ap_send_csa_action::tx csa action failed.} @hmac_csa_ap.c(490),WARNING" ID="0x84960f53" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_csa_ap_vap_add mem already malloc! @hmac_csa_ap.c(552),WARNING" ID="0x84961143" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_csa_ap_vap_add malloc null! @hmac_csa_ap.c(558),ERROR" ID="0x84961172" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_csa_ap_vap_del mem already free! @hmac_csa_ap.c(582),WARNING" ID="0x84961233" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_csa_set_control_param::param is NULL!} @hmac_csa_ap.c(601),WARNING" ID="0x849612cb" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_csa_set_control_param::csa_mode=[%d],csa_channel=[%d],csa_cnt=[%d],debuf_flag=[%d]. @hmac_csa_ap.c(610),WARNING" ID="0x84961313" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_config_csa_channel_check::hmac_is_channel_num_valid_etc(%d),return. @hmac_csa_ap.c(643),WARNING" ID="0x8496141b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_config_csa_channel_check::hmac_is_channel_num_valid_etc(%d),return. @hmac_csa_ap.c(656),WARNING" ID="0x84961483" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_config_csa_channel_check::The channel is invalid or radar is detected.(%d),return. @hmac_csa_ap.c(664),WARNING" ID="0x849614c3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_config_csa_channel_check::The channel(%d) is a radar channel and dbac exists.  @hmac_csa_ap.c(671),WARNING" ID="0x849614fb" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {config_csa_param::not support this bw, new_bw=%d dot11_vap_max_bw=%d.} @hmac_csa_ap.c(692),WARNING" ID="0x849615a3" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="hmac_config_csa_bandwidth_check::csa_channel=%d bw=%d, vap bw=%d @hmac_csa_ap.c(702),INFO" ID="0x849615f5" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {config_csa_param::vap mode is not ap,return. @hmac_csa_ap.c(746),WARNING" ID="0x84961753" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {config_csa_param::cnt[%u] max bw[%u]} @hmac_csa_ap.c(763),WARNING" ID="0x849617db" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="config_csa_param::csa_new_bandwidth=%d adapt_new_bandwidth=%d @hmac_csa_ap.c(771),WARNING" ID="0x8496181b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="config_set_csa_param::csa_mode=%d csa_channel=%d csa_cnt=%d debug_flag=%d  @hmac_csa_ap.c(776),WARNING" ID="0x84961843" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{config_csa_param::hmac_csa_set_control_param fail[%d]. @hmac_csa_ap.c(790),WARNING" ID="0x849618b3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{wal_parse_csa_cmd::csa mode invalid.} @hmac_csa_ap.c(806),WARNING" ID="0x84961933" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{wal_parse_csa_cmd::get csa channel error.} @hmac_csa_ap.c(815),WARNING" ID="0x8496197b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{wal_parse_csa_cmd::get bandwidth error.} @hmac_csa_ap.c(824),WARNING" ID="0x849619c3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{wal_parse_csa_cmd::get csa cnt error.} @hmac_csa_ap.c(832),WARNING" ID="0x84961a03" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{wal_parse_csa_cmd::get debug flag error.} @hmac_csa_ap.c(840),WARNING" ID="0x84961a43" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{CMD format::sh ccpriv.sh 'wlan0 protocol_debug[csa 0(csa mode) 1(csa channel) 10(csa cnt) 1(debug  flag,0:normal channel channel,1:only include csa ie 2:cannel debug)]} @hmac_csa_ap.c(856),WARNING" ID="0x84961ac3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{uapi_ccpriv_csa_ctrl::cmd_bit_map: 0x%08x.} @hmac_csa_ap.c(875),WARNING" ID="0x84961b5b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_ccpriv_csa_ctrl::csa_mode=[%d],csa_channel=[%d],csa_cnt=[%d],debuf_flag=[%d]. @hmac_csa_ap.c(880),WARNING" ID="0x84961b83" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_csa_ctrl::invalid flag para[%d]} @hmac_csa_ap.c(885),WARNING" ID="0x84961bab" />
+			</MSG_LOG>

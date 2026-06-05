@@ -1,0 +1,23 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_double_chain_timeout_callback:: arg null} @hmac_btcoex_btsta.c(46),WARNING" ID="0x803a0173" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_double_chain_timeout_callback:: hal_chip null} @hmac_btcoex_btsta.c(54),WARNING" ID="0x803a01b3" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_double_chain_timeout_callback::hmac_user[%d] null.} @hmac_btcoex_btsta.c(61),WARNING" ID="0x803a01eb" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_btcoex_sco_rx_rate_statistics_flag_callback:: 6s change[%d] to [%d].} @hmac_btcoex_btsta.c(81),WARNING" ID="0x803a028b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_btcoex_wifi_and_bt_insulate_check::hmac_vap IS NULL. @hmac_btcoex_btsta.c(197),ERROR" ID="0x803a062a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_btcoex_sco_status_handler::hmac_vap[%d] NULL ! @hmac_btcoex_btsta.c(255),ERROR" ID="0x803a07fa" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_sco_status_handler::already siso m2s_mode[%d]!} @hmac_btcoex_btsta.c(359),WARNING" ID="0x803a0b3b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_sco_status_handler::already siso m2s_mode[%d]!} @hmac_btcoex_btsta.c(371),WARNING" ID="0x803a0b9b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_ldac_status_handler::already siso m2s_mode[%d]!} @hmac_btcoex_btsta.c(431),WARNING" ID="0x803a0d7b" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_btcoex_ldac_status_handler::ldac state[%d],m2s_bitmap[%d],s2m_bitmap[%d].} @hmac_btcoex_btsta.c(449),WARNING" ID="0x803a0e0b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_a2dp_status_handler::vap[%d] IS NULL.} @hmac_btcoex_btsta.c(499),ERROR" ID="0x803a0f9a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_a2dp_status_handler::hmac_btcoex_delba_event_process() fail!, ret=[%d]} @hmac_btcoex_btsta.c(507),WARNING" ID="0x803a0fdb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_page_scan_handler::hmac_vap[%d] IS NULL.} @hmac_btcoex_btsta.c(595),ERROR" ID="0x803a129a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_transfer_status_handler::hmac_vap[%d] IS NULL.} @hmac_btcoex_btsta.c(674),ERROR" ID="0x803a1512" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_transfer_status_handler::hmac_btcoex_delba_event_process() fail!, ret=[%d]} @hmac_btcoex_btsta.c(682),WARNING" ID="0x803a1553" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_status_dispatch::bt_ba change to %u} @hmac_btcoex_btsta.c(699),WARNING" ID="0x803a15db" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_status_dispatch::bt_ldac change to %u} @hmac_btcoex_btsta.c(706),WARNING" ID="0x803a1613" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_status_dispatch::bt_6slot change to %u} @hmac_btcoex_btsta.c(713),WARNING" ID="0x803a164b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_status_dispatch::bt_a2dp change to %u} @hmac_btcoex_btsta.c(720),WARNING" ID="0x803a1683" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_status_dispatch::bt_page change to %u} @hmac_btcoex_btsta.c(727),WARNING" ID="0x803a16bb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_status_dispatch::bt_inquiry change to %u} @hmac_btcoex_btsta.c(734),WARNING" ID="0x803a16f3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_status_dispatch::bt_transfer change to %u} @hmac_btcoex_btsta.c(741),WARNING" ID="0x803a172b" />
+			</MSG_LOG>

@@ -1,0 +1,37 @@
+driver/security_unified/CMakeFiles/drv_security_unified.dir/drv_flashboot_symc.c.obj: \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_flashboot_symc.c \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/mconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/include/common_include/crypto_errno.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_include/drv_flashboot_cipher.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/bits/alltypes.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdbool.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_include/drv_klad.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/native/td_type.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/include/hal_include/hal_klad.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/include/hal_include/hal_rkp.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/include/common_include/crypto_km_struct.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/include/hal_include/hal_rkp.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_include/drv_rom_cipher.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/include/common_include/crypto_common_def.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/crypto_osal/cfbb/boot/crypto_osal_lib.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/include/securec.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/include/securectype.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdio.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/sysroot/usr/include/features.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/sysroot/usr/include/bits/reg.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stddef.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/string.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/sysroot/usr/include/stdlib.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/alloca.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stddef.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdarg.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/errno.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/sysroot/usr/include/bits/errno.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/include/common_include/crypto_security.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/security_unified/security_unified_porting.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/include/common_include/crypto_common_macro.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/../commonboot/include/boot_delay.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/driver/tcxo.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/errcode.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/spacc/hal_spacc_reg.h

@@ -1,0 +1,10 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg1" NAME="[RADAR_LOG] {adl track fusion state state release wrong event[%d]} @radar_adl_track_fsm.c(464),ERROR" ID="0x855a0e82" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[RADAR_LOG] {adl track fusion state state release wrong event[%d]} @radar_adl_track_fsm.c(500),ERROR" ID="0x855a0fa2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[RADAR_LOG] {adl track fusion state state release wrong event[%d]} @radar_adl_track_fsm.c(538),ERROR" ID="0x855a10d2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[RADAR_LOG] adl track fusion state fsm attach point null. @radar_adl_track_fsm.c(551),ERROR" ID="0x855a113a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[RADAR_LOG] adl track fusion state fsm have attached @radar_adl_track_fsm.c(558),INFO" ID="0x855a1175" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[RADAR_LOG] adl track fusion state fsm have detached @radar_adl_track_fsm.c(585),INFO" ID="0x855a124d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[RADAR_LOG] adl track fusion state is null @radar_adl_track_fsm.c(604),ERROR" ID="0x855a12e2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[RADAR_LOG] adl track fusion state fsm not attached @radar_adl_track_fsm.c(610),ERROR" ID="0x855a1312" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="[RADAR_LOG] adl track fusion state fsm::state[%d]dispatch event[%d]not succ[%d] @radar_adl_track_fsm.c(620),ERROR" ID="0x855a1362" />
+			</MSG_LOG>

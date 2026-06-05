@@ -1,0 +1,4 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="achba_ops-&gt;achba_add_sle_link is null!! @sle_chba_netdev_link_mng.c(57),WARNING" ID="0x8fde01cb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="Failed to bind the sle link!! @sle_chba_netdev_link_mng.c(64),ERROR" ID="0x8fde0202" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="achba_ops-&gt;achba_del_sle_link is null!! @sle_chba_netdev_link_mng.c(143),ERROR" ID="0x8fde047a" />
+			</MSG_LOG>

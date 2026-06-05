@@ -1,0 +1,533 @@
+
+
+Symbols from loaderboot.elf:
+
+Name                  Value   Class        Type         Size     Line  Section
+
+__data_size__       |000000dc|   A  |            NOTYPE|        |     |*ABS*
+ccause              |00000fc2|   a  |            NOTYPE|        |     |*ABS*
+g_intheap_size      |00019560|   ?  |            NOTYPE|        |     |.heap
+g_system_stack_begin|00a00000|   B  |            NOTYPE|        |     |.stacks
+__stack_top__       |00a01c00|   B  |            NOTYPE|        |     |.stacks
+__irq_stack_top__   |00a02000|   B  |            NOTYPE|        |     |.stacks
+__data_begin__      |00a02400|   D  |            NOTYPE|        |     |.data
+__excp_stack_top__  |00a02400|   B  |            NOTYPE|        |     |.stacks
+g_efuse_clock_period|00a02400|   d  |            OBJECT|00000004|     |.data
+g_system_stack_end  |00a02400|   B  |            NOTYPE|        |     |.stacks
+g_hal_efuse_funcs   |00a02404|   D  |            OBJECT|0000002c|     |.data
+g_hal_uart_v51_funcs|00a02430|   d  |            OBJECT|00000018|     |.data
+g_hal_watchdog_v151_funcs|00a02448|   d  |            OBJECT|00000024|     |.data
+g_uart_clock_value  |00a0246c|   d  |            OBJECT|00000004|     |.data
+g_systick_clock     |00a02470|   d  |            OBJECT|00000004|     |.data
+g_tcxo_ticks_per_usec|00a02474|   d  |            OBJECT|00000004|     |.data
+g_watchdog_base_addr|00a02478|   D  |            OBJECT|00000004|     |.data
+g_watchdog_clock    |00a0247c|   d  |            OBJECT|00000004|     |.data
+g_sfc_delay_once_us |00a02480|   D  |            OBJECT|00000004|     |.data
+g_sfc_delay_times   |00a02484|   D  |            OBJECT|00000004|     |.data
+g_efuse_base_addr   |00a02488|   D  |            OBJECT|00000004|     |.data
+g_efuse_boot_done_addr|00a0248c|   D  |            OBJECT|00000004|     |.data
+g_efuse_region_read_address|00a02490|   D  |            OBJECT|00000004|     |.data
+g_hiburn_uart       |00a02494|   D  |            OBJECT|00000001|     |.data
+g_panic_deal        |00a02498|   d  |            OBJECT|00000004|     |.data
+strNullPointer.1869 |00a0249c|   d  |            OBJECT|00000008|     |.data
+strNullString.1791  |00a024a4|   d  |            OBJECT|00000008|     |.data
+wStrNullString.1801 |00a024ac|   d  |            OBJECT|00000020|     |.data
+_GLOBAL_OFFSET_TABLE_|00a024cc|   d  |            OBJECT|        |     |.data
+__data_end__        |00a024dc|   D  |            NOTYPE|        |     |.data
+g_preserve_data_lib |00a024dc|   D  |            OBJECT|000000fc|     |preserve
+__bss_begin__       |00a025d8|   B  |            NOTYPE|        |     |.bss
+g_flash_cmd_funcs   |00a025d8|   b  |            OBJECT|00000014|     |.bss
+g_upload_ctx        |00a025ec|   B  |            OBJECT|00000004|     |.bss
+g_ymodem            |00a025f0|   b  |            OBJECT|00002010|     |.bss
+_gp_                |00a02cdc|   D  |            NOTYPE|        |     |.data
+g_ymodem_buf        |00a04600|   b  |            OBJECT|00002000|     |.bss
+g_uart_param        |00a06600|   B  |            OBJECT|0000000c|     |.bss
+g_flash_all_erased  |00a0660c|   b  |            OBJECT|00000001|     |.bss
+g_cs_record_handler |00a06610|   b  |            OBJECT|00000004|     |.bss
+g_cs_stat_handler   |00a06614|   b  |            OBJECT|00000004|     |.bss
+g_lock_stat         |00a06618|   b  |            OBJECT|00000004|     |.bss
+g_non_os_critical_nesting|00a0661c|   b  |            OBJECT|00000002|     |.bss
+g_malloc_func       |00a06620|   B  |            OBJECT|0000000c|     |.bss
+g_st_dfx            |00a0662c|   B  |            OBJECT|00000018|     |.bss
+g_drv_func          |00a06644|   b  |            OBJECT|00000024|     |.bss
+g_systick_hw_inited |00a06668|   b  |            OBJECT|00000001|     |.bss
+g_tcxo_inited       |00a06669|   b  |            OBJECT|00000001|     |.bss
+g_uart_inited       |00a0666c|   b  |            OBJECT|00000003|     |.bss
+g_uart_rx_state_array|00a06670|   b  |            OBJECT|00000048|     |.bss
+g_uart_tx_state_array|00a066b8|   b  |            OBJECT|000000e4|     |.bss
+g_hal_funcs         |00a0679c|   b  |            OBJECT|00000004|     |.bss
+g_watchdog_enabled  |00a067a0|   b  |            OBJECT|00000001|     |.bss
+g_watchdog_inited   |00a067a1|   b  |            OBJECT|00000001|     |.bss
+g_hal_efuses_funcs  |00a067a4|   B  |            OBJECT|00000004|     |.bss
+g_efuse_is_init     |00a067a8|   b  |            OBJECT|00000001|     |.bss
+g_efuse_boot_done_regs|00a067ac|   B  |            OBJECT|00000004|     |.bss
+g_efuse_regs        |00a067b0|   B  |            OBJECT|00000004|     |.bss
+g_ecc_num           |00a067b4|   B  |            OBJECT|00000004|     |.bss
+g_ecc_params        |00a067b8|   B  |            OBJECT|00000004|     |.bss
+g_pke_initialize    |00a067bc|   B  |            OBJECT|00000004|     |.bss
+g_hal_hash_initialize|00a067c0|   b  |            OBJECT|00000001|     |.bss
+g_hash_hard_ctx     |00a067c4|   b  |            OBJECT|00000054|     |.bss
+g_node_buffer       |00a06818|   b  |            OBJECT|00000060|     |.bss
+g_hal_trng_init_flag|00a06878|   b  |            OBJECT|00000001|     |.bss
+g_tcxo_regs         |00a0687c|   B  |            OBJECT|00000004|     |.bss
+g_hal_uarts_funcs   |00a06880|   B  |            OBJECT|0000000c|     |.bss
+g_hal_uart_callback |00a0688c|   b  |            OBJECT|0000000c|     |.bss
+g_hal_uart_force_isr_flags|00a06898|   b  |            OBJECT|00000003|     |.bss
+g_hal_uart_reg      |00a0689c|   B  |            OBJECT|0000000c|     |.bss
+g_hal_uart_rx_fifo_level|00a068a8|   B  |            OBJECT|00000003|     |.bss
+g_hal_uart_tx_fifo_level|00a068ac|   B  |            OBJECT|00000003|     |.bss
+g_hal_watchdogs_funcs|00a068b0|   B  |            OBJECT|00000004|     |.bss
+g_watchdog_regs     |00a068b4|   B  |            OBJECT|00000004|     |.bss
+g_hal_watchdog_callback|00a068b8|   b  |            OBJECT|00000004|     |.bss
+g_timeout           |00a068bc|   b  |            OBJECT|00000004|     |.bss
+g_sfc_bus_dma_regs  |00a068c0|   B  |            OBJECT|00000004|     |.bss
+g_sfc_bus_regs      |00a068c4|   B  |            OBJECT|00000004|     |.bss
+g_sfc_cmd_databuf   |00a068c8|   B  |            OBJECT|00000004|     |.bss
+g_sfc_cmd_regs      |00a068cc|   B  |            OBJECT|00000004|     |.bss
+g_sfc_global_conf_regs|00a068d0|   B  |            OBJECT|00000004|     |.bss
+g_sw_debug_uart     |00a068d4|   b  |            OBJECT|00000001|     |.bss
+str_buf.3002        |00a068d8|   b  |            OBJECT|00000080|     |.bss
+g_flash_ctrl        |00a06958|   b  |            OBJECT|00000018|     |.bss
+g_sfc_inited        |00a06970|   b  |            OBJECT|00000001|     |.bss
+g_sfc_unknown_flash |00a06971|   b  |            OBJECT|00000001|     |.bss
+g_hiburn_uart_enabled|00a06972|   B  |            OBJECT|00000001|     |.bss
+g_uart_mute         |00a06973|   B  |            OBJECT|00000001|     |.bss
+g_interrupt_running |00a06974|   B  |            OBJECT|00000004|     |.bss
+g_exc_info          |00a06978|   B  |            OBJECT|00000014|     |.bss
+g_exception_dump_callback|00a0698c|   b  |            OBJECT|00000004|     |.bss
+g_already_panicking |00a06990|   b  |            OBJECT|00000001|     |.bss
+g_panic_dump_callback|00a06994|   b  |            OBJECT|00000004|     |.bss
+g_preserve_data_lib_ram|00a06998|   b  |            OBJECT|000000fc|     |.bss
+__boot_uart_begin__ |00a06a94|   B  |            NOTYPE|        |     |.preserve
+__bss_end__         |00a06a94|   B  |            NOTYPE|        |     |.bss
+g_uart_prag         |00a06a94|   B  |            OBJECT|0000000c|     |.preserve
+__boot_uart_end__   |00a06aa0|   B  |            NOTYPE|        |     |.preserve
+g_intheap_begin     |00a06aa0|   A  |            NOTYPE|        |     |*ABS*
+_start              |00a20380|   T  |            NOTYPE|        |     |.text.entry
+Reset_Handler       |00a20384|   t  |            NOTYPE|        |     |.text.entry
+set_arg_loop        |00a20394|   t  |            NOTYPE|        |     |.text.entry
+set_stack_loop      |00a203f0|   t  |            NOTYPE|        |     |.text.entry
+end_set_stack_loop  |00a203fc|   t  |            NOTYPE|        |     |.text.entry
+set_data_loop       |00a2047c|   t  |            NOTYPE|        |     |.text.entry
+end_set_data_loop   |00a20494|   t  |            NOTYPE|        |     |.text.entry
+clear_bss_loop      |00a204ac|   t  |            NOTYPE|        |     |.text.entry
+end_clear_bss_loop  |00a204b8|   t  |            NOTYPE|        |     |.text.entry
+g_ram_exception_table|00a204bc|   t  |            OBJECT|00000128|     |.text.entry
+exc_syscall         |00a205f0|   t  |            NOTYPE|        |     |.text
+handle_syscall      |00a205f2|   t  |            NOTYPE|        |     |.text
+__udivdi3           |00a2063c|   T  |              FUNC|00000004|     |.text
+__umoddi3           |00a20640|   T  |              FUNC|0000000c|     |.text
+__udivmoddi4        |00a2064c|   T  |              FUNC|000003f8|     |.text
+memset              |00a20a44|   T  |              FUNC|000000ae|     |.text
+memcpy              |00a20af2|   T  |              FUNC|0000029c|     |.text
+memcmp              |00a20d8e|   T  |              FUNC|0000001e|     |.text
+strlen              |00a20dac|   T  |              FUNC|0000003e|     |.text
+reset               |00a20dea|   T  |              FUNC|00000012|     |.text
+boot_get_flash_funcs|00a20dfc|   T  |              FUNC|00000008|     |.text
+boot_regist_flash_cmd|00a20e04|   T  |              FUNC|0000001c|     |.text
+upload_send_file_info|00a20e20|   t  |              FUNC|000000c0|     |.text
+upload_send_data    |00a20ee0|   t  |              FUNC|000000e2|     |.text
+upload_send_null_info|00a20fc2|   t  |              FUNC|00000054|     |.text
+download_image      |00a21016|   T  |              FUNC|0000006e|     |.text
+download_factory_image|00a21084|   T  |              FUNC|00000002|     |.text
+upload_data         |00a21086|   T  |              FUNC|00000136|     |.text
+loader_download_image|00a211bc|   T  |              FUNC|000000b4|     |.text
+loader_upload_data  |00a21270|   T  |              FUNC|00000042|     |.text
+loader_set_baudrate |00a212b2|   T  |              FUNC|00000012|     |.text
+loader_ack          |00a212c4|   T  |              FUNC|00000058|     |.text
+loader_reset        |00a2131c|   T  |              FUNC|0000001e|     |.text
+cmd_loop            |00a2133a|   T  |              FUNC|00000184|     |.text
+ymodem_flush        |00a214be|   t  |              FUNC|00000020|     |.text
+ymodem_get_packet   |00a214de|   t  |              FUNC|00000178|     |.text
+ymodem_open         |00a21656|   T  |              FUNC|0000014e|     |.text
+ymodem_close        |00a217a4|   T  |              FUNC|00000018|     |.text
+ymodem_read         |00a217bc|   T  |              FUNC|000000fa|     |.text
+ymodem_get_length   |00a218b6|   T  |              FUNC|0000000e|     |.text
+crc16_ccitt         |00a218c4|   T  |              FUNC|00000030|     |.text
+loader_serial_ymodem|00a218f4|   T  |              FUNC|000000b2|     |.text
+loader_burn_efuse   |00a219a6|   T  |              FUNC|00000188|     |.text
+loader_read_efuse   |00a21b2e|   T  |              FUNC|00000082|     |.text
+sfc_flash_read      |00a21bb0|   t  |              FUNC|0000000a|     |.text
+sfc_flash_init      |00a21bba|   t  |              FUNC|0000000a|     |.text
+sfc_flash_erase     |00a21bc4|   t  |              FUNC|00000012|     |.text
+sfc_flash_write     |00a21bd6|   t  |              FUNC|00000030|     |.text
+start_loaderboot    |00a21c06|   T  |              FUNC|000000f0|     |.text
+serial_port_set_baudrate|00a21cf6|   T  |              FUNC|00000058|     |.text
+uart_ack            |00a21d4e|   t  |              FUNC|00000040|     |.text
+uart_baudrate_rcv   |00a21d8e|   T  |              FUNC|00000052|     |.text
+loader_download_is_flash_all_erased|00a21de0|   T  |              FUNC|0000000a|     |.text
+loader_erase_all_process|00a21dea|   T  |              FUNC|0000004a|     |.text
+non_os_enter_critical|00a21e34|   T  |              FUNC|0000007a|     |.text
+non_os_exit_critical|00a21eae|   T  |              FUNC|0000006c|     |.text
+malloc_register_funcs|00a21f1a|   T  |              FUNC|00000016|     |.text
+rom_malloc_init     |00a21f30|   T  |              FUNC|0000003e|     |.text
+malloc_init         |00a21f6e|   T  |              FUNC|00000002|     |.text
+rom_malloc          |00a21f70|   T  |              FUNC|000000d8|     |.text
+malloc              |00a22048|   T  |              FUNC|00000008|     |.text
+rom_free            |00a22050|   T  |              FUNC|0000002e|     |.text
+free                |00a2207e|   T  |              FUNC|00000002|     |.text
+osal_irq_lock       |00a22080|   T  |              FUNC|00000008|     |.text
+osal_irq_restore    |00a22088|   T  |              FUNC|00000002|     |.text
+drv_rom_hash        |00a2208a|   T  |              FUNC|0000014e|     |.text
+crypto_get_phys_addr|00a221d8|   T  |              FUNC|00000012|     |.text
+drv_cipher_register_func|00a221ea|   T  |              FUNC|00000028|     |.text
+crypto_get_cpu_type |00a22212|   T  |              FUNC|00000014|     |.text
+crypto_curve_param_init|00a22226|   T  |              FUNC|0000000e|     |.text
+drv_cipher_pke_init_ecc_param|00a22234|   T  |              FUNC|00000012|     |.text
+drv_cipher_pke_init |00a22246|   T  |              FUNC|00000012|     |.text
+drv_cipher_pke_deinit|00a22258|   T  |              FUNC|00000012|     |.text
+inner_get_phys_addr |00a2226a|   t  |              FUNC|00000002|     |.text
+drv_rom_cipher_sha256|00a2226c|   T  |              FUNC|00000032|     |.text
+drv_rom_cipher_init |00a2229e|   T  |              FUNC|0000002a|     |.text
+drv_rom_cipher_deinit|00a222c8|   T  |              FUNC|00000010|     |.text
+uapi_systick_get_count|00a222d8|   T  |              FUNC|0000002a|     |.text
+uapi_systick_get_us |00a22302|   T  |              FUNC|0000002c|     |.text
+uapi_tcxo_init      |00a2232e|   T  |              FUNC|00000030|     |.text
+uapi_tcxo_get_count |00a2235e|   T  |              FUNC|0000002a|     |.text
+uapi_tcxo_delay_ms  |00a22388|   T  |              FUNC|00000050|     |.text
+uapi_tcxo_delay_us  |00a223d8|   T  |              FUNC|0000003e|     |.text
+uart_rx_buffer_report|00a22416|   t  |              FUNC|0000002a|     |.text
+uapi_uart_param_check|00a22440|   t  |              FUNC|00000028|     |.text
+uart_helper_invoke_current_fragment_callback|00a22468|   t  |              FUNC|0000001e|     |.text
+uart_helper_move_to_next_fragment|00a22486|   t  |              FUNC|0000003e|     |.text
+uart_helper_send_next_char|00a224c4|   t  |              FUNC|0000002e|     |.text
+uart_error_isr      |00a224f2|   t  |              FUNC|0000007e|     |.text
+uart_evt_callback   |00a22570|   t  |              FUNC|000001a8|     |.text
+uapi_uart_init      |00a22718|   T  |              FUNC|000000ce|     |.text
+uapi_uart_deinit    |00a227e6|   T  |              FUNC|00000060|     |.text
+uapi_uart_write     |00a22846|   T  |              FUNC|00000058|     |.text
+uapi_uart_read      |00a2289e|   T  |              FUNC|00000058|     |.text
+uapi_uart_rx_fifo_is_empty|00a228f6|   T  |              FUNC|0000002e|     |.text
+uapi_watchdog_init  |00a22924|   T  |              FUNC|00000052|     |.text
+uapi_watchdog_enable|00a22976|   T  |              FUNC|00000044|     |.text
+uapi_watchdog_disable|00a229ba|   T  |              FUNC|00000036|     |.text
+uapi_watchdog_deinit|00a229f0|   T  |              FUNC|0000003a|     |.text
+uapi_watchdog_kick  |00a22a2a|   T  |              FUNC|0000002c|     |.text
+uapi_efuse_init     |00a22a56|   T  |              FUNC|00000010|     |.text
+uapi_efuse_read_bit |00a22a66|   T  |              FUNC|00000056|     |.text
+uapi_efuse_read_buffer|00a22abc|   T  |              FUNC|0000005a|     |.text
+uapi_efuse_write_bit|00a22b16|   T  |              FUNC|0000007a|     |.text
+hal_efuse_register_funcs|00a22b90|   T  |              FUNC|00000016|     |.text
+hal_efuse_get_funcs |00a22ba6|   T  |              FUNC|0000000a|     |.text
+hal_efuse_deinit    |00a22bb0|   t  |              FUNC|0000000c|     |.text
+hal_efuse_get_writeread_addr|00a22bbc|   t  |              FUNC|00000026|     |.text
+hal_efuse_init      |00a22be2|   t  |              FUNC|0000002e|     |.text
+hal_efuse_read_byte |00a22c10|   t  |              FUNC|00000060|     |.text
+hal_efuse_get_die_id|00a22c70|   t  |              FUNC|00000034|     |.text
+hal_efuse_write_operation|00a22ca4|   t  |              FUNC|00000098|     |.text
+hal_efuse_write_buffer_operation|00a22d3c|   t  |              FUNC|0000003c|     |.text
+hal_efuse_set_clock_period|00a22d78|   T  |              FUNC|0000000a|     |.text
+hal_efuse_funcs_get |00a22d82|   T  |              FUNC|00000008|     |.text
+hal_efuse_regs_init |00a22d8a|   T  |              FUNC|00000032|     |.text
+hal_reboot_chip     |00a22dbc|   T  |              FUNC|00000010|     |.text
+crypto_cache_flush  |00a22dcc|   W  |              FUNC|00000002|     |.text
+crypto_wait_func_is_support|00a22dce|   T  |              FUNC|00000004|     |.text
+hal_pke_init        |00a22dd2|   T  |              FUNC|00000014|     |.text
+hal_pke_deinit      |00a22de6|   T  |              FUNC|0000001c|     |.text
+hal_pke_unlock      |00a22e02|   T  |              FUNC|00000016|     |.text
+hal_hash_condition  |00a22e18|   t  |              FUNC|0000001e|     |.text
+hal_cipher_hash_init|00a22e36|   T  |              FUNC|0000005a|     |.text
+hal_hash_unlock     |00a22e90|   T  |              FUNC|00000020|     |.text
+hal_cipher_hash_deinit|00a22eb0|   T  |              FUNC|00000038|     |.text
+hal_cipher_hash_config|00a22ee8|   T  |              FUNC|000000e2|     |.text
+hal_cipher_hash_add_in_node|00a22fca|   T  |              FUNC|00000074|     |.text
+hal_cipher_hash_start|00a2303e|   T  |              FUNC|000000a8|     |.text
+hal_cipher_hash_done_try|00a230e6|   T  |              FUNC|0000001a|     |.text
+hal_hash_lock       |00a23100|   T  |              FUNC|00000108|     |.text
+hal_hash_debug_chn  |00a23208|   T  |              FUNC|00000020|     |.text
+hal_cipher_hash_wait_done|00a23228|   T  |              FUNC|00000152|     |.text
+hal_cipher_trng_init|00a2337a|   T  |              FUNC|0000000e|     |.text
+hal_cipher_trng_deinit|00a23388|   T  |              FUNC|0000000e|     |.text
+hal_tcxo_init       |00a23396|   T  |              FUNC|0000002c|     |.text
+hal_tcxo_get        |00a233c2|   T  |              FUNC|00000030|     |.text
+hal_tcxo_v150_regs_init|00a233f2|   T  |              FUNC|00000020|     |.text
+hal_tcxo_reg_count_get|00a23412|   T  |              FUNC|0000000e|     |.text
+hal_uart_register_funcs|00a23420|   T  |              FUNC|0000001e|     |.text
+hal_uart_init       |00a2343e|   T  |              FUNC|0000003e|     |.text
+hal_uart_deinit     |00a2347c|   T  |              FUNC|00000012|     |.text
+hal_uart_write      |00a2348e|   T  |              FUNC|00000012|     |.text
+hal_uart_read       |00a234a0|   T  |              FUNC|00000012|     |.text
+hal_uart_ctrl       |00a234b2|   T  |              FUNC|0000001c|     |.text
+hal_uart_v151_ctrl_get_rxfifo_passnum|00a234ce|   t  |              FUNC|00000012|     |.text
+hal_uart_v151_get_uart_rxfifo_threshold|00a234e0|   t  |              FUNC|00000022|     |.text
+hal_uart_v151_deinit|00a23502|   t  |              FUNC|00000012|     |.text
+hal_uart_set_diven  |00a23514|   t  |              FUNC|00000018|     |.text
+hal_uart_is_tx_fifo_full|00a2352c|   t  |              FUNC|00000016|     |.text
+hal_uart_is_tx_fifo_empty|00a23542|   t  |              FUNC|00000018|     |.text
+hal_uart_is_busy    |00a2355a|   t  |              FUNC|0000001e|     |.text
+hal_uart_is_rx_fifo_empty|00a23578|   t  |              FUNC|00000018|     |.text
+hal_uart_v151_write |00a23590|   t  |              FUNC|00000026|     |.text
+hal_uart_v151_read  |00a235b6|   t  |              FUNC|00000028|     |.text
+hal_uart_v151_ctrl  |00a235de|   t  |              FUNC|0000001c|     |.text
+hal_uart_init_fifo  |00a235fa|   T  |              FUNC|0000003c|     |.text
+hal_uart_v151_ctrl_set_txfifo_int_level|00a23636|   t  |              FUNC|00000020|     |.text
+hal_uart_v151_ctrl_set_rxfifo_int_level|00a23656|   t  |              FUNC|00000022|     |.text
+hal_uart_set_baud_rate|00a23678|   T  |              FUNC|00000044|     |.text
+hal_uart_set_data_bits|00a236bc|   T  |              FUNC|0000001a|     |.text
+hal_uart_set_stop_bits|00a236d6|   T  |              FUNC|0000001c|     |.text
+hal_uart_auto_flow_ctl_en|00a236f2|   T  |              FUNC|0000001c|     |.text
+hal_uart_enable_interrupt|00a2370e|   T  |              FUNC|0000004a|     |.text
+hal_uart_en_para_err_int|00a23758|   t  |              FUNC|0000000e|     |.text
+hal_uart_en_idle_int|00a23766|   t  |              FUNC|0000000e|     |.text
+hal_uart_en_rx_int  |00a23774|   t  |              FUNC|0000000e|     |.text
+hal_uart_en_tx_int  |00a23782|   t  |              FUNC|0000000e|     |.text
+hal_uart_check_en   |00a23790|   T  |              FUNC|0000001c|     |.text
+hal_uart_parity_en  |00a237ac|   T  |              FUNC|0000001a|     |.text
+hal_uart_set_parity |00a237c6|   T  |              FUNC|00000026|     |.text
+hal_uart_v151_ctrl_set_attr|00a237ec|   t  |              FUNC|0000002e|     |.text
+hal_uart_tx_pause_en|00a2381a|   T  |              FUNC|00000018|     |.text
+hal_uart_v151_init  |00a23832|   t  |              FUNC|0000009e|     |.text
+hal_uart_v151_funcs_get|00a238d0|   T  |              FUNC|00000008|     |.text
+hal_watchdog_register_funcs|00a238d8|   T  |              FUNC|00000016|     |.text
+hal_watchdog_unregister_funcs|00a238ee|   T  |              FUNC|0000000e|     |.text
+hal_watchdog_get_funcs|00a238fc|   T  |              FUNC|0000000a|     |.text
+hal_watchdog_regs_init|00a23906|   T  |              FUNC|0000001e|     |.text
+hal_watchdog_regs_deinit|00a23924|   T  |              FUNC|0000000c|     |.text
+hal_watchdog_v151_kick|00a23930|   t  |              FUNC|00000012|     |.text
+hal_watchdog_v151_get_attr|00a23942|   t  |              FUNC|0000000a|     |.text
+hal_register_watchdog_v151_callback|00a2394c|   t  |              FUNC|0000000a|     |.text
+hal_watchdog_v151_deinit|00a23956|   t  |              FUNC|00000002|     |.text
+hal_watchdog_v151_init|00a23958|   t  |              FUNC|00000002|     |.text
+hal_watchdog_v151_get_left_time|00a2395a|   t  |              FUNC|00000050|     |.text
+hal_watchdog_v151_clear_interrupt|00a239aa|   t  |              FUNC|00000012|     |.text
+hal_watchdog_v151_disable|00a239bc|   t  |              FUNC|00000014|     |.text
+hal_watchdog_v151_set_attr|00a239d0|   t  |              FUNC|00000070|     |.text
+hal_watchdog_v151_enable|00a23a40|   t  |              FUNC|0000003e|     |.text
+hal_watchdog_v151_funcs_get|00a23a7e|   T  |              FUNC|00000008|     |.text
+hal_sfc_regs_init   |00a23a86|   T  |              FUNC|0000005a|     |.text
+hal_sfc_regs_set_cmd_addr|00a23ae0|   t  |              FUNC|0000001e|     |.text
+hal_sfc_regs_wait_ready.constprop.3|00a23afe|   t  |              FUNC|00000060|     |.text
+hal_sfc_execute_type_cmd|00a23b5e|   t  |              FUNC|0000005c|     |.text
+hal_sfc_write_enable|00a23bba|   t  |              FUNC|0000001a|     |.text
+hal_sfc_reg_write_once|00a23bd4|   t  |              FUNC|0000007c|     |.text
+hal_sfc_get_flash_id|00a23c50|   T  |              FUNC|00000044|     |.text
+hal_sfc_init        |00a23c94|   T  |              FUNC|000000e2|     |.text
+hal_sfc_reg_read    |00a23d76|   T  |              FUNC|0000008c|     |.text
+hal_sfc_reg_write   |00a23e02|   T  |              FUNC|00000060|     |.text
+hal_sfc_reg_erase   |00a23e62|   T  |              FUNC|00000032|     |.text
+hal_sfc_regs_set_opt|00a23e94|   T  |              FUNC|00000038|     |.text
+hal_sfc_regs_set_opt_attr|00a23ecc|   T  |              FUNC|0000002e|     |.text
+hal_sfc_regs_wait_config|00a23efa|   T  |              FUNC|00000010|     |.text
+hal_sfc_regs_set_bus_read|00a23f0a|   T  |              FUNC|0000003c|     |.text
+hal_sfc_regs_set_bus_write|00a23f46|   T  |              FUNC|00000036|     |.text
+print_str_inner     |00a23f7c|   t  |              FUNC|00000048|     |.text
+uart_port_register_hal_funcs|00a23fc4|   T  |              FUNC|00000012|     |.text
+uart_port_set_clock_value|00a23fd6|   T  |              FUNC|0000000a|     |.text
+uart_port_get_clock_value|00a23fe0|   T  |              FUNC|0000000a|     |.text
+uart_port_config_pinmux|00a23fea|   T  |              FUNC|00000010|     |.text
+uart_port_register_irq|00a23ffa|   T  |              FUNC|00000002|     |.text
+uart_port_unregister_irq|00a23ffc|   T  |              FUNC|00000002|     |.text
+print_str           |00a23ffe|   T  |              FUNC|00000030|     |.text
+uart_porting_lock   |00a2402e|   T  |              FUNC|00000004|     |.text
+uart_porting_unlock |00a24032|   T  |              FUNC|00000006|     |.text
+hal_systick_get_count|00a24038|   T  |              FUNC|00000010|     |.text
+systick_clock_get   |00a24048|   T  |              FUNC|0000000a|     |.text
+tcxo_porting_base_addr_get|00a24052|   T  |              FUNC|00000008|     |.text
+tcxo_porting_ticks_per_usec_get|00a2405a|   T  |              FUNC|0000000a|     |.text
+tcxo_porting_ticks_per_usec_set|00a24064|   T  |              FUNC|0000000a|     |.text
+watchdog_port_register_hal_funcs|00a2406e|   T  |              FUNC|0000000c|     |.text
+watchdog_port_unregister_hal_funcs|00a2407a|   T  |              FUNC|00000004|     |.text
+watchdog_port_register_irq|00a2407e|   T  |              FUNC|00000002|     |.text
+watchdog_port_set_clock|00a24080|   T  |              FUNC|00000016|     |.text
+watchdog_port_get_clock|00a24096|   T  |              FUNC|0000000a|     |.text
+sfc_port_get_flash_spi_infos|00a240a0|   T  |              FUNC|00000008|     |.text
+sfc_port_get_flash_num|00a240a8|   T  |              FUNC|00000004|     |.text
+sfc_port_get_unknown_flash_info|00a240ac|   T  |              FUNC|00000008|     |.text
+sfc_port_get_sfc_start_addr|00a240b4|   T  |              FUNC|00000006|     |.text
+sfc_port_get_sfc_end_addr|00a240ba|   T  |              FUNC|00000008|     |.text
+sfc_port_get_sfc_global_conf_base_addr|00a240c2|   T  |              FUNC|00000008|     |.text
+sfc_port_get_sfc_bus_regs_base_addr|00a240ca|   T  |              FUNC|00000008|     |.text
+sfc_port_get_sfc_bus_dma_regs_base_addr|00a240d2|   T  |              FUNC|00000008|     |.text
+sfc_port_get_sfc_cmd_regs_base_addr|00a240da|   T  |              FUNC|00000008|     |.text
+sfc_port_get_sfc_cmd_databuf_base_addr|00a240e2|   T  |              FUNC|00000008|     |.text
+sfc_port_get_delay_once_time|00a240ea|   T  |              FUNC|0000000a|     |.text
+sfc_port_get_delay_times|00a240f4|   T  |              FUNC|0000000a|     |.text
+sfc_port_lock_init  |00a240fe|   T  |              FUNC|00000002|     |.text
+sfc_port_lock       |00a24100|   T  |              FUNC|00000004|     |.text
+sfc_port_unlock     |00a24104|   T  |              FUNC|00000002|     |.text
+hal_sfc_regs_wait_ready.constprop.0|00a24106|   t  |              FUNC|0000005c|     |.text
+sfc_port_write_sr   |00a24162|   T  |              FUNC|00000076|     |.text
+sfc_port_read_sr    |00a241d8|   T  |              FUNC|00000032|     |.text
+sfc_port_write_lock |00a2420a|   T  |              FUNC|00000058|     |.text
+sfc_port_write_unlock|00a24262|   T  |              FUNC|0000001a|     |.text
+sfc_port_fix_sr     |00a2427c|   T  |              FUNC|00000024|     |.text
+sfc_port_gd25q32_read_sr|00a242a0|   t  |              FUNC|00000082|     |.text
+sfc_port_fix_sr_gd25q32|00a24322|   T  |              FUNC|0000007e|     |.text
+build_flash_ctrl    |00a243a0|   t  |              FUNC|00000052|     |.text
+check_opt_param     |00a243f2|   t  |              FUNC|00000036|     |.text
+check_init_param    |00a24428|   t  |              FUNC|00000046|     |.text
+uapi_sfc_init       |00a2446e|   T  |              FUNC|000000aa|     |.text
+uapi_sfc_reg_read   |00a24518|   T  |              FUNC|000000d4|     |.text
+uapi_sfc_reg_write  |00a245ec|   T  |              FUNC|000000fe|     |.text
+uapi_sfc_reg_erase  |00a246ea|   T  |              FUNC|000000be|     |.text
+uapi_sfc_reg_erase_chip|00a247a8|   T  |              FUNC|0000003e|     |.text
+efuse_read_item.part.1|00a247e6|   t  |              FUNC|00000098|     |.text
+efuse_port_register_hal_funcs|00a2487e|   T  |              FUNC|0000000c|     |.text
+hal_efuse_get_region|00a2488a|   T  |              FUNC|00000006|     |.text
+hal_efuse_get_byte_offset|00a24890|   T  |              FUNC|00000004|     |.text
+efuse_read_item     |00a24894|   T  |              FUNC|0000000e|     |.text
+set_efuse_period    |00a248a2|   T  |              FUNC|00000016|     |.text
+malloc_port         |00a248b8|   t  |              FUNC|00000004|     |.text
+malloc_port_init    |00a248bc|   T  |              FUNC|0000003a|     |.text
+reboot_port_reboot_chip|00a248f6|   T  |              FUNC|00000022|     |.text
+get_tcxo_freq       |00a24918|   T  |              FUNC|0000000a|     |.text
+boot_clock_adapt    |00a24922|   T  |              FUNC|00000044|     |.text
+switch_flash_clock_to_pll|00a24966|   T  |              FUNC|0000002c|     |.text
+config_sfc_ctrl_ds  |00a24992|   T  |              FUNC|00000066|     |.text
+udelay              |00a249f8|   T  |              FUNC|00000004|     |.text
+mdelay              |00a249fc|   T  |              FUNC|00000004|     |.text
+serial_putc         |00a24a00|   T  |              FUNC|00000020|     |.text
+serial_puts         |00a24a20|   T  |              FUNC|00000024|     |.text
+serial_put_buf      |00a24a44|   T  |              FUNC|0000001a|     |.text
+serial_getc         |00a24a5e|   T  |              FUNC|0000001a|     |.text
+serial_gets         |00a24a78|   T  |              FUNC|0000002c|     |.text
+serial_puthex       |00a24aa4|   T  |              FUNC|00000064|     |.text
+serial_getc_timeout |00a24b08|   T  |              FUNC|00000028|     |.text
+boot_put_errno      |00a24b30|   T  |              FUNC|0000002a|     |.text
+boot_msg0           |00a24b5a|   T  |              FUNC|00000012|     |.text
+boot_msg1           |00a24b6c|   T  |              FUNC|0000001c|     |.text
+boot_msg2           |00a24b88|   T  |              FUNC|00000032|     |.text
+hiburn_uart_init    |00a24bba|   T  |              FUNC|0000007c|     |.text
+hiburn_uart_deinit  |00a24c36|   T  |              FUNC|0000001a|     |.text
+boot_wdt_kick       |00a24c50|   T  |              FUNC|00000004|     |.text
+set_reset_count     |00a24c54|   T  |              FUNC|00000014|     |.text
+update_reset_count  |00a24c68|   T  |              FUNC|0000003a|     |.text
+check_chip_type     |00a24ca2|   T  |              FUNC|0000009a|     |.text
+boot_malloc_init    |00a24d3c|   T  |              FUNC|00000004|     |.text
+boot_malloc         |00a24d40|   T  |              FUNC|00000004|     |.text
+interrupt0_handler  |00a24d44|   T  |              FUNC|00000040|     |.text
+interrupt1_handler  |00a24d84|   T  |              FUNC|00000040|     |.text
+interrupt2_handler  |00a24dc4|   T  |              FUNC|00000040|     |.text
+interrupt3_handler  |00a24e04|   T  |              FUNC|00000040|     |.text
+interrupt4_handler  |00a24e44|   T  |              FUNC|00000040|     |.text
+interrupt5_handler  |00a24e84|   T  |              FUNC|00000040|     |.text
+local_interrupt_handler|00a24ec4|   T  |              FUNC|00000050|     |.text
+interrupt_number_get|00a24f14|   T  |              FUNC|0000000c|     |.text
+b_sub_monitor_handler|00a24f20|   W  |              FUNC|00000002|     |.text
+b_wdt_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+bt_int0_handler     |00a24f20|   W  |              FUNC|00000002|     |.text
+bt_int1_handler     |00a24f20|   W  |              FUNC|00000002|     |.text
+eflash_handler      |00a24f20|   W  |              FUNC|00000002|     |.text
+eh2h_brg_int_handler|00a24f20|   W  |              FUNC|00000002|     |.text
+hal_rtc_timer_isr   |00a24f20|   W  |              FUNC|00000002|     |.text
+hal_timer_isr       |00a24f20|   W  |              FUNC|00000002|     |.text
+i2c_0_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+i2c_1_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+i2c_2_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+irq_dma_handler     |00a24f20|   W  |              FUNC|00000002|     |.text
+irq_gpio_handler    |00a24f20|   W  |              FUNC|00000002|     |.text
+irq_sdma_handler    |00a24f20|   W  |              FUNC|00000002|     |.text
+irq_shareram_monitor_handler|00a24f20|   W  |              FUNC|00000002|     |.text
+irq_tsensor_handler |00a24f20|   W  |              FUNC|00000002|     |.text
+irq_uarth0_handler  |00a24f20|   W  |              FUNC|00000002|     |.text
+irq_uartl0_handler  |00a24f20|   W  |              FUNC|00000002|     |.text
+irq_uartl2_handler  |00a24f20|   W  |              FUNC|00000002|     |.text
+isr_not_implemented |00a24f20|   t  |              FUNC|00000002|     |.text
+key_scan_handler    |00a24f20|   W  |              FUNC|00000002|     |.text
+mcu_pclr_lock_handler|00a24f20|   W  |              FUNC|00000002|     |.text
+mem_sub_monitor_handler|00a24f20|   W  |              FUNC|00000002|     |.text
+pmu_32k_cali_handler|00a24f20|   W  |              FUNC|00000002|     |.text
+pmu_cmu_interrupt_handler|00a24f20|   W  |              FUNC|00000002|     |.text
+pmu_sleep_handler   |00a24f20|   W  |              FUNC|00000002|     |.text
+pmu_wakeup_handler  |00a24f20|   W  |              FUNC|00000002|     |.text
+pwm_0_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+pwm_1_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+pwm_2_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+pwm_3_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+pwm_4_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+pwm_5_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+qdec_handler        |00a24f20|   W  |              FUNC|00000002|     |.text
+qspi0_2cs_handler   |00a24f20|   W  |              FUNC|00000002|     |.text
+qspi1_2cs_handler   |00a24f20|   W  |              FUNC|00000002|     |.text
+reserve_handler     |00a24f20|   W  |              FUNC|00000002|     |.text
+sec_int_handler     |00a24f20|   W  |              FUNC|00000002|     |.text
+spi3_m_s_handler    |00a24f20|   W  |              FUNC|00000002|     |.text
+spi4_s_handler      |00a24f20|   W  |              FUNC|00000002|     |.text
+spi_m_handler       |00a24f20|   W  |              FUNC|00000002|     |.text
+spi_m_s_0_handler   |00a24f20|   W  |              FUNC|00000002|     |.text
+spi_m_s_1_handler   |00a24f20|   W  |              FUNC|00000002|     |.text
+usb_handler         |00a24f20|   W  |              FUNC|00000002|     |.text
+isr_get_ramexceptiontable_addr|00a24f22|   T  |              FUNC|00000008|     |.text
+do_hard_fault_handler|00a24f2a|   T  |              FUNC|00000058|     |.text
+exc_info_display.part.3|00a24f82|   t  |              FUNC|00000226|     |.text
+do_process_exception|00a251a8|   t  |              FUNC|00000016|     |.text
+do_trap_unknown     |00a251be|   T  |              FUNC|00000016|     |.text
+do_trap_insn_misaligned|00a251d4|   T  |              FUNC|00000016|     |.text
+do_trap_insn_fault  |00a251ea|   T  |              FUNC|00000016|     |.text
+do_trap_insn_illegal|00a25200|   T  |              FUNC|00000016|     |.text
+do_trap_load_misaligned|00a25216|   T  |              FUNC|00000016|     |.text
+do_trap_load_fault  |00a2522c|   T  |              FUNC|00000016|     |.text
+do_trap_store_misaligned|00a25242|   T  |              FUNC|00000016|     |.text
+do_trap_store_fault |00a25258|   T  |              FUNC|00000016|     |.text
+do_trap_ecall_u     |00a2526e|   T  |              FUNC|00000016|     |.text
+do_trap_ecall_s     |00a25284|   T  |              FUNC|00000016|     |.text
+do_trap_ecall_m     |00a2529a|   T  |              FUNC|00000016|     |.text
+do_trap_break       |00a252b0|   T  |              FUNC|00000016|     |.text
+do_insn_page_fault  |00a252c6|   T  |              FUNC|00000016|     |.text
+do_load_page_fault  |00a252dc|   T  |              FUNC|00000016|     |.text
+do_store_page_fault |00a252f2|   T  |              FUNC|00000016|     |.text
+do_hard_fault       |00a25308|   T  |              FUNC|00000016|     |.text
+do_lockup           |00a2531e|   T  |              FUNC|00000016|     |.text
+default_handler     |00a25334|   T  |              FUNC|00000014|     |.text
+nmi_handler         |00a25348|   T  |              FUNC|00000014|     |.text
+cpu_utils_set_system_status_by_cause|00a2535c|   T  |              FUNC|00000008|     |.text
+cpu_utils_reset_chip_with_log|00a25364|   T  |              FUNC|00000016|     |.text
+panic_deal          |00a2537a|   T  |              FUNC|00000084|     |.text
+panic               |00a253fe|   T  |              FUNC|00000026|     |.text
+duplicate_preserve_mem|00a25424|   t  |              FUNC|00000016|     |.text
+set_cpu_utils_system_boot_magic|00a2543a|   T  |              FUNC|00000050|     |.text
+set_cpu_utils_reset_cause|00a2548a|   T  |              FUNC|00000012|     |.text
+set_update_reset_cause_on_boot|00a2549c|   T  |              FUNC|0000000c|     |.text
+set_last_panic      |00a254a8|   T  |              FUNC|0000001a|     |.text
+set_exception_info_riscv|00a254c2|   T  |              FUNC|0000001a|     |.text
+set_exception_info  |00a254dc|   T  |              FUNC|0000001e|     |.text
+set_exception_stack_frame|00a254fa|   T  |              FUNC|00000014|     |.text
+SecMemcpyError      |00a2550e|   t  |              FUNC|0000005e|     |.text
+memcpy_s            |00a2556c|   T  |              FUNC|00000038|     |.text
+memset_s            |00a255a4|   T  |              FUNC|00000042|     |.text
+SecWriteMultiChar   |00a255e6|   t  |              FUNC|0000002c|     |.text
+SecOutput           |00a25612|   t  |              FUNC|00000892|     |.text
+SecVsnprintfImpl    |00a25ea4|   T  |              FUNC|00000042|     |.text
+vsnprintf_s         |00a25ee6|   T  |              FUNC|00000050|     |.text
+excp_vect_table     |00a25f50|   t  |            NOTYPE|        |     |.text
+excp_vect_table_end |00a25f98|   t  |            NOTYPE|        |     |.text
+trap_entry          |00a25fa0|   T  |            NOTYPE|        |     |.text
+trap_vector         |00a2609c|   T  |            NOTYPE|        |     |.text
+nmi_vector          |00a2623c|   T  |            NOTYPE|        |     |.text
+default_interrupt0_handler|00a26304|   t  |            NOTYPE|        |     |.text
+default_interrupt1_handler|00a263b0|   t  |            NOTYPE|        |     |.text
+default_interrupt2_handler|00a2645c|   t  |            NOTYPE|        |     |.text
+default_interrupt3_handler|00a26508|   t  |            NOTYPE|        |     |.text
+default_interrupt4_handler|00a265b4|   t  |            NOTYPE|        |     |.text
+default_interrupt5_handler|00a26660|   t  |            NOTYPE|        |     |.text
+default_local_interrupt_handler|00a2670c|   t  |            NOTYPE|        |     |.text
+global_interrupt_lock|00a267b8|   T  |            NOTYPE|        |     |.text
+global_interrupt_unlock|00a267c4|   T  |            NOTYPE|        |     |.text
+global_interrupt_restore|00a267d0|   T  |            NOTYPE|        |     |.text
+__clz_tab           |00a267d8|   t  |            OBJECT|00000100|     |.text
+g_loader_cmdtable   |00a26954|   T  |            OBJECT|00000038|     |.text
+g_crc16_tab         |00a26a3c|   T  |            OBJECT|00000200|     |.text
+sfc_cfg             |00a26dc0|   T  |            OBJECT|0000000c|     |.text
+g_sha256_ival       |00a26e5c|   t  |            OBJECT|00000020|     |.text
+g_sm3_ival          |00a26e7c|   t  |            OBJECT|00000020|     |.text
+g_crypto_ecc_num    |00a26e9c|   T  |            OBJECT|00000004|     |.text
+g_crypto_ecc_params |00a26ea0|   T  |            OBJECT|        |     |.text
+CSWTCH.8            |00a26f2c|   t  |            OBJECT|00000003|     |.text
+g_hal_uart_ctrl_func_array|00a26f30|   t  |            OBJECT|00000054|     |.text
+g_uart_base_addrs   |00a26f84|   T  |            OBJECT|0000000c|     |.text
+g_default_erase_cmds|00a26f90|   t  |            OBJECT|0000000c|     |.text
+g_default_quad_enable|00a26f9c|   t  |            OBJECT|00000006|     |.text
+g_default_read_cmds |00a26fa4|   t  |            OBJECT|00000004|     |.text
+g_default_write_cmds|00a26fa8|   t  |            OBJECT|00000008|     |.text
+g_flash_common_erase_cmds|00a26fb0|   t  |            OBJECT|00000010|     |.text
+g_flash_common_read_cmds|00a26fc0|   t  |            OBJECT|00000018|     |.text
+g_flash_common_write_cmds|00a26fd8|   t  |            OBJECT|00000018|     |.text
+g_flash_gd_bus_enable|00a26ff0|   t  |            OBJECT|00000012|     |.text
+g_flash_spi_info_list|00a27004|   t  |            OBJECT|0000001c|     |.text
+g_flash_spi_unknown_info|00a27020|   t  |            OBJECT|0000001c|     |.text
+g_sfc_protect_cfg   |00a2703c|   t  |            OBJECT|00000024|     |.text
+g_efuse_cfg         |00a270b0|   t  |            OBJECT|00000072|     |.text
+g_itoaLowerDigits   |00a278b8|   t  |            OBJECT|00000014|     |.text
+g_itoaUpperDigits   |00a278cc|   t  |            OBJECT|00000014|     |.text
+stateTable.1749     |00a278e0|   t  |            OBJECT|00000151|     |.text
+__data_load__       |00a27a34|   A  |            NOTYPE|        |     |*ABS*

@@ -1,0 +1,29 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_m2s_btcoex_need_switch_check::hmac_vap IS NULL. @hmac_btcoex_m2s.c(52),ERROR" ID="0x80d001a2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_s2m_allow_check::mac_temp_vap IS NULL.} @hmac_btcoex_m2s.c(114),ERROR" ID="0x80d00392" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_s2m_allow_check::up_vap_num[%d]resume to mimo!} @hmac_btcoex_m2s.c(127),WARNING" ID="0x80d003fb" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_s2m_resume_callback::succ to mimo, m2s_bitmap[%d] m2s_mode[%d]!} @hmac_btcoex_m2s.c(181),WARNING" ID="0x80d005ab" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_s2m_resume_callback::cannot to mimo, need all is ready s2m_bitmap[%d]m2s_bitmap[%d]!} @hmac_btcoex_m2s.c(189),WARNING" ID="0x80d005eb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_m2s_allow_check::MISO AP not support change to siso!} @hmac_btcoex_m2s.c(221),WARNING" ID="0x80d006eb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_m2s_allow_check::already c1 siso!} @hmac_btcoex_m2s.c(228),WARNING" ID="0x80d00723" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_m2s_allow_check::spec 2G chain[%d] restrain, not support c1 SISO.} @hmac_btcoex_m2s.c(237),WARNING" ID="0x80d0076b" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_btcoex_m2s_allow_check::m2s_need[%d]m2s_state[%d]m2s_mode[%d]!} @hmac_btcoex_m2s.c(259),WARNING" ID="0x80d0081b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_btcoex_m2s_allow_check::6slot[%d]ldac[%d]vap_band[%d]vap_mode[%d]!} @hmac_btcoex_m2s.c(261),WARNING" ID="0x80d0082b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_m2s_switch_other::cannot to siso, mode[%d]!} @hmac_btcoex_m2s.c(306),ERROR" ID="0x80d00992" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_m2s_switch_other::keep siso. m2s_bitmap[%d]!} @hmac_btcoex_m2s.c(314),WARNING" ID="0x80d009d3" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_btcoex_m2s_switch_other::error. m2s_state[%d]phy_chain[%d]phy2dscr_chain[%d]!} @hmac_btcoex_m2s.c(329),ERROR" ID="0x80d00a4a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_m2s_switch_apply:: m2s_stru[%d]m2s_state[%d]!} @hmac_btcoex_m2s.c(356),WARNING" ID="0x80d00b23" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_m2s_switch_apply:: AP not support change to siso!} @hmac_btcoex_m2s.c(361),WARNING" ID="0x80d00b4b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_m2s_switch_apply::2g5g dbac not support change to siso!} @hmac_btcoex_m2s.c(369),WARNING" ID="0x80d00b8b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_m2s_switch_apply:: excute c1 siso, m2s_event[%d]m2s_state[%d]!} @hmac_btcoex_m2s.c(381),WARNING" ID="0x80d00beb" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_btcoex_s2m_switch_apply::m2s_mode_bitmap[%d]s2m_mode_bitmap[%d]wait_bitmap[%d]!} @hmac_btcoex_m2s.c(424),WARNING" ID="0x80d00d43" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_s2m_siso_ap_resume_callback::succ to mimo, m2s_bitmap[%d] m2s_mode[%d]!} @hmac_btcoex_m2s.c(460),WARNING" ID="0x80d00e63" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_btcoex_s2m_siso_ap_resume_callback::a2dp[%d]sco[%d]transfer[%d]delay to mimo wait for next time!} @hmac_btcoex_m2s.c(465),WARNING" ID="0x80d00e8b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_assoc_ap_check_process:: already c1 siso mode_stru[%d].} @hmac_btcoex_m2s.c(500),WARNING" ID="0x80d00fa3" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_assoc_ap_check_process:: need to switch c1 siso of siso ap event[%d]mode_stru[%d].} @hmac_btcoex_m2s.c(514),WARNING" ID="0x80d01013" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_assoc_ap_check_process::hmac_vap[%d] IS NULL.} @hmac_btcoex_m2s.c(549),ERROR" ID="0x80d0112a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_assoc_ap_check_process::hmac_user null.} @hmac_btcoex_m2s.c(562),WARNING" ID="0x80d01193" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_m2s_back_to_mimo:: need to switch siso c1 because of btcoex!} @hmac_btcoex_m2s.c(598),WARNING" ID="0x80d012b3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_m2s_back_to_mimo:: btcoex apply but is already c1 siso, mode[%d]!} @hmac_btcoex_m2s.c(606),ERROR" ID="0x80d012f2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_m2s_spec_update_hal_device_proc:: need to switch siso c1 because of btcoex!} @hmac_btcoex_m2s.c(621),WARNING" ID="0x80d0136b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_m2s_spec_update_hal_device_proc:: btcoex apply but is already c1 siso, mode[%d]!} @hmac_btcoex_m2s.c(630),ERROR" ID="0x80d013b2" />
+			</MSG_LOG>

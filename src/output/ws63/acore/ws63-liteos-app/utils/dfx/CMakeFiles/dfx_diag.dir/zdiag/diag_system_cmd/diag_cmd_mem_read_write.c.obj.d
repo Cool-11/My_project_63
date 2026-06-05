@@ -1,0 +1,29 @@
+utils/dfx/CMakeFiles/dfx_diag.dir/zdiag/diag_system_cmd/diag_cmd_mem_read_write.c.obj: \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_mem_read_write.c \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/mconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/kernel/liteos/liteos_v208.5.0/menuconfig/include/menuconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/srv_tiot_host/tiot_driver/product_porting/ws63_w33_evb/tiot_autoconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/include/diag_cmd_mem_read_write.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/errcode.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/bits/alltypes.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/arch/riscv32/bits/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/middleware/utils/diag.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdbool.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/common_def.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/dfx_resource_id.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/platform/libsec/include/securec.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/platform/libsec/include/securectype.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdio.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/features.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/string.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/strings.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdlib.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/malloc.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/alloca.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stddef.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdarg.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/errno.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/arch/generic/bits/errno.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/dfx_include/diag_cmd_mem_read_write_st.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/soc_diag_cmd_id.h

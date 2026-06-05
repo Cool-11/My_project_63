@@ -1,0 +1,10 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="[UPG] progress callback regist failed @upg_common_porting.c(205),ERROR" ID="0xa07a066a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] get package header fail @upg_common_porting.c(403),ERROR" ID="0xa07a0c9a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] get msid fail,ret=0x%x @upg_common_porting.c(420),ERROR" ID="0xa07a0d22" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] msid wrong! @upg_common_porting.c(424),ERROR" ID="0xa07a0d42" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] get_package_header fail @upg_common_porting.c(496),ERROR" ID="0xa07a0f82" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] get_pkg_hash_table fail @upg_common_porting.c(501),ERROR" ID="0xa07a0faa" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] get_pkg_image_header fail @upg_common_porting.c(509),ERROR" ID="0xa07a0fea" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] init failed! @upg_common_porting.c(582),ERROR" ID="0xa07a1232" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] init OK! @upg_common_porting.c(589),INFO" ID="0xa07a126d" />
+			</MSG_LOG>

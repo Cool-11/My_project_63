@@ -1,0 +1,40 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_verify_hash: memcmp hash fail. @upg_verify.c(70),ERROR" ID="0xa06c0232" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="upg_verify_hash: memcmp hash fail. @upg_verify.c(87),ERROR" ID="0xa06c02ba" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="upg_verify_hash image table OK @upg_verify.c(91),ERROR" ID="0xa06c02da" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] hash_operation fail, no support hash_type = 0x%x @upg_verify.c(107),ERROR" ID="0xa06c035a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] hash_operation: drv_rom_cipher_hash fail ret_val = 0x%x @upg_verify.c(111),ERROR" ID="0xa06c037a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] uapi_drv_cipher_hash_start fail ret = 0x%x @upg_verify.c(118),ERROR" ID="0xa06c03b2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] uapi_drv_cipher_hash_update fail ret = 0x%x @upg_verify.c(128),ERROR" ID="0xa06c0402" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg_verify_hash: hash_operation fail ret_val = 0x%x @upg_verify.c(155),ERROR" ID="0xa06c04da" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_verify_hash: memcmp hash fail. @upg_verify.c(161),ERROR" ID="0xa06c050a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] sm3 calc_hash fail ret = 0x%x @upg_verify.c(218),ERROR" ID="0xa06c06d2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] calc_hash fail ret = 0x%x @upg_verify.c(230),ERROR" ID="0xa06c0732" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] sha 256 calc_hash fail ret = 0x%x @upg_verify.c(254),ERROR" ID="0xa06c07f2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] calc_hash fail ret = 0x%x @upg_verify.c(261),ERROR" ID="0xa06c082a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] calc_hash fail ret = 0x%x @upg_verify.c(291),ERROR" ID="0xa06c091a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] uapi_drv_cipher_pke_rsa_verify fail ret = 0x%x @upg_verify.c(310),ERROR" ID="0xa06c09b2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] verify_signature success @upg_verify.c(314),INFO" ID="0xa06c09d5" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] verify_signature is fail, ret = 0x%x @upg_verify.c(337),ERROR" ID="0xa06c0a8a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] verify_fota_key_area -&gt; verify SHA256 @upg_verify.c(347),INFO" ID="0xa06c0add" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] verify_fota_key_area -&gt; verify signed @upg_verify.c(351),INFO" ID="0xa06c0afd" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] verify_signature is fail, ret = 0x%x @upg_verify.c(382),ERROR" ID="0xa06c0bf2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] verify_fota_key_area -&gt; verify SHA256 @upg_verify.c(392),INFO" ID="0xa06c0c45" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] verify_fota_info -&gt; verify SHA256 @upg_verify.c(408),INFO" ID="0xa06c0cc5" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] verify_fota_info -&gt; verify signed @upg_verify.c(416),INFO" ID="0xa06c0d05" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg verify: image ID error @upg_verify.c(469),ERROR" ID="0xa06c0eaa" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg verify: key area error. ret = 0x%x @upg_verify.c(476),ERROR" ID="0xa06c0ee2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg verify: fota info error. ret = 0x%x @upg_verify.c(483),ERROR" ID="0xa06c0f1a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg verify: upg_check_fota_information. ret = 0x%x @upg_verify.c(489),ERROR" ID="0xa06c0f4a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_get_pkg_image_header fail @upg_verify.c(510),ERROR" ID="0xa06c0ff2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg verify head OK @upg_verify.c(559),INFO" ID="0xa06c117d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_get_pkg_image_hash_table fail @upg_verify.c(563),ERROR" ID="0xa06c119a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_verify_hash image table OK @upg_verify.c(577),INFO" ID="0xa06c120d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] uapi_drv_cipher_hash_start fail @upg_verify.c(602),ERROR" ID="0xa06c12d2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] uapi_drv_cipher_hash_start fail @upg_verify.c(714),ERROR" ID="0xa06c1652" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg verify: file image check error. header_magic = 0x%x @upg_verify.c(768),ERROR" ID="0xa06c1802" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg verify: image check OK. image_id = 0x%x @upg_verify.c(798),INFO" ID="0xa06c18f5" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg verify: image ID error @upg_verify.c(816),ERROR" ID="0xa06c1982" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg verify: fota info error. ret = 0x%x @upg_verify.c(823),ERROR" ID="0xa06c19ba" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_get_pkg_image_hash_table fail @upg_verify.c(829),ERROR" ID="0xa06c19ea" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg verify: verify hash table failed. ret = 0x%x @upg_verify.c(841),ERROR" ID="0xa06c1a4a" />
+			</MSG_LOG>

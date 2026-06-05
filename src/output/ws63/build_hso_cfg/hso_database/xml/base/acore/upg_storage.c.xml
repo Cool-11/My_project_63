@@ -1,0 +1,7 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_get_pkg_image_hash_table fail @upg_storage.c(280),ERROR" ID="0xa07808c2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_get_package_header fail @upg_storage.c(336),ERROR" ID="0xa0780a82" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] uapi_upg_verify_file fail, ret = 0x%x @upg_storage.c(344),ERROR" ID="0xa0780ac2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg_get_firmware_number_in_package fail, ret = 0x%x @upg_storage.c(352),ERROR" ID="0xa0780b02" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg_upgrade_request fail. ret = 0x%x @upg_storage.c(360),ERROR" ID="0xa0780b42" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] set file error : %d @upg_storage.c(398),ERROR" ID="0xa0780c72" />
+			</MSG_LOG>

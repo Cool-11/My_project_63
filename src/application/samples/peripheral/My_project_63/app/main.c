@@ -74,7 +74,8 @@ static void my63_cloud_publish_cb(const char *payload, uint16_t len)
 static int my63_wifi_cmd_cb(const char *ssid, const char *psk)
 {
     if (ssid == NULL && psk == NULL) {
-        return (int)cs_wifi_get_state();
+        /* 断开 WiFi */
+        return cs_wifi_disconnect();
     }
     if (ssid == NULL) {
         return -1;
@@ -261,11 +262,12 @@ static void my63_heartbeat(uint64_t now)
 
     /* my63_cpu_report(); 暂时禁用，排查 NMI */
 
-    osal_printk("[WS63_APP] hb sle=%d/%d/%d scan_tbl=%u wifi=%d mqtt=%d cache=%u uart_ring=%u\r\n",
+    osal_printk("[WS63_APP] hb sle=%d/%d/%d scan_tbl=%u scan_cnt=%u wifi=%d mqtt=%d cache=%u uart_ring=%u\r\n",
         sle_network_is_target_found(),
         sle_network_is_connected(),
         sle_network_is_ssap_ready(),
         (unsigned int)sle_network_get_scan_table_count(),
+        (unsigned int)sle_network_get_scan_count(),
         (int)cs_wifi_get_state(),
         (int)cs_mqtt_get_state(),
         (unsigned int)cs_cache_count(),
@@ -322,6 +324,10 @@ static void *my63_main_task(const char *arg)
         if (flags & EVENT_TIMER) {
             business_logic_poll();
         }
+
+        /* 防御性回退：即使事件标志丢失也能处理环形缓冲区的数据 */
+        uart_vision_poll();
+        uart_display_poll();
 
         /* 轮询类任务（无论什么事件都检查） */
         cloud_storage_poll();

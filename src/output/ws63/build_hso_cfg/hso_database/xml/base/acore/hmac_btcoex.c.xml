@@ -1,0 +1,82 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_btcoex_find_all_valid_sta_per_device::hmac_vap IS NULL. @hmac_btcoex.c(180),ERROR" ID="0x81d205a2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_btcoex_find_all_valid_ap_per_device::hmac_vap IS NULL. @hmac_btcoex.c(221),ERROR" ID="0x81d206ea" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_rx_rate_statistics_flag_callback::hmac_user[%d] null.} @hmac_btcoex.c(276),WARNING" ID="0x81d208a3" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_config_btcoex_assoc_state_syn::user_nss_num[%d].} @hmac_btcoex.c(340),WARNING" ID="0x81d20aa3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_config_btcoex_assoc_state_syn::bt not working, ba size to default.} @hmac_btcoex.c(379),WARNING" ID="0x81d20bdb" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_config_btcoex_assoc_state_syn::ba process skip! valid_sta[%d]m2s_on[%d]DBAC[%d].} @hmac_btcoex.c(387),WARNING" ID="0x81d20c1b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_set_wlan_priority:: hal_device null} @hmac_btcoex.c(418),WARNING" ID="0x81d20d13" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_wlan_priority_timeout_callback:: hmac_vap null} @hmac_btcoex.c(461),WARNING" ID="0x81d20e6b" />
+			<MSG STRUCTURE="diag_log_msg5" NAME="{hmac_btcoex_vap_up_handle::::status resv:%d, send:%d, data_transfer:%d, a2dp:%d, bt_on:%d.} @hmac_btcoex.c(509),WARNING" ID="0x81d20feb" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_btcoex_update_rx_rate_threshold::band %d, bw %d exceed scale!} @hmac_btcoex.c(540),ERROR" ID="0x81d210e2" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_btcoex_update_rx_rate_threshold:: min: %d, max: %d, band %d, bandwidth %d.} @hmac_btcoex.c(560),WARNING" ID="0x81d21183" />
+			<MSG STRUCTURE="diag_log_msg6" NAME="{hmac_btcoex_lower_rate_callback:change:%d,rate:%d,tendence:%d,indx:%d,threshMin:%d,threshMax:%d} @hmac_btcoex.c(611),WARNING" ID="0x81d2131b" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_btcoex_lower_rate_callback:keep at:%d, rate:%d} @hmac_btcoex.c(617),WARNING" ID="0x81d2134b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_init_preempt:: HAL_CHIP null} @hmac_btcoex.c(641),WARNING" ID="0x81d2140b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {DmacBtcoexLowerRateCallback:NULL%d @hmac_btcoex.c(648),WARNING" ID="0x81d21443" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_lower_rate_callback::hal_device null.} @hmac_btcoex.c(654),WARNING" ID="0x81d21473" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_lower_rate_callback:rece addba req before delba} @hmac_btcoex.c(668),WARNING" ID="0x81d214e3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_lower_rate_switch::KEEP at BTCOEX_RX_WINDOW_SIZE_INDEX_0.} @hmac_btcoex.c(717),WARNING" ID="0x81d2166b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_lower_rate_switch::ba_size_expect_index error:%d.} @hmac_btcoex.c(724),ERROR" ID="0x81d216a2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_lower_rate_process:: GET_HAL_CHIP null} @hmac_btcoex.c(737),WARNING" ID="0x81d2170b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] {hmac_btcoex_lower_rate_process::ba_size will change to:%d in 5s,rate:%d,count:%d.} @hmac_btcoex.c(771),WARNING" ID="0x81d2181b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_lower_rate_process::hmac_user[%d] null.} @hmac_btcoex.c(802),WARNING" ID="0x81d21913" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_release_rx_prot:: GET_HAL_CHIP null} @hmac_btcoex.c(841),WARNING" ID="0x81d21a4b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_tx_mgmt_frame:: null point, chip[%x]} @hmac_btcoex.c(871),WARNING" ID="0x81d21b3b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_tx_vip_frame:: GET_HAL_CHIP null} @hmac_btcoex.c(952),WARNING" ID="0x81d21dc3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_device_occupied:: 5G donot need to set occupied.} @hmac_btcoex.c(1038),WARNING" ID="0x81d22073" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_device_occupoed:: frw_send_msg [%d].} @hmac_btcoex.c(1046),ERROR" ID="0x81d220b2" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_btcoex_beacon_occupied_handler::TBTT interrupt miss: beacon cnt [%d] record[%d]!} @hmac_btcoex.c(1073),WARNING" ID="0x81d2218b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_beacon_miss_handler::hmac_vap IS NULL.} @hmac_btcoex.c(1115),ERROR" ID="0x81d222da" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_beacon_miss_handler:: miss cnt:%d} @hmac_btcoex.c(1123),WARNING" ID="0x81d2231b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_set_occupied_period:: 5G donot need to set occupied.} @hmac_btcoex.c(1137),WARNING" ID="0x81d2238b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] {hmac_btcoex_linkloss_occupied_process::occupied time=[%d], linkloss=[%d], threshold=[%d].} @hmac_btcoex.c(1180),WARNING" ID="0x81d224e3" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] {hmac_btcoex_linkloss_occupied_process::occupied time=[%d], linkloss=[%d], threshold=[%d].} @hmac_btcoex.c(1201),WARNING" ID="0x81d2258b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_roam_succ_handler::hmac_user[%d] null.} @hmac_btcoex.c(1236),ERROR" ID="0x81d226a2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_roam_succ_handler::wifi is on 2G, ba size to bt control.} @hmac_btcoex.c(1245),WARNING" ID="0x81d226eb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_roam_succ_handler::wifi is on 5G, ba size to default.} @hmac_btcoex.c(1257),WARNING" ID="0x81d2274b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_set_mgmt_priority::set timeout_us:%d} @hmac_btcoex.c(1274),WARNING" ID="0x81d227d3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_ble_action_req::req_ba change to %u} @hmac_btcoex.c(1300),WARNING" ID="0x81d228a3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_ble_action_req::req_ba change to %u} @hmac_btcoex.c(1307),WARNING" ID="0x81d228db" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_status_change_handler::msg invalid len=%d!} @hmac_btcoex.c(1359),ERROR" ID="0x81d22a7a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_blacklist_handle_init::blacklist_tpye[%d]!} @hmac_btcoex.c(1390),WARNING" ID="0x81d22b73" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_btcoex_check_exception_in_list_etc::Find in blacklist, addr-&gt;%02x:%02x:%02x:%02x:XX:XX.} @hmac_btcoex.c(1410),WARNING" ID="0x81d22c13" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_add_exception_to_list::already reach max num:%d.} @hmac_btcoex.c(1431),WARNING" ID="0x81d22cbb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_check_rx_same_baw_start_from_addba_req_etc::retry addba req.} @hmac_btcoex.c(1465),WARNING" ID="0x81d22dcb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_check_rx_same_baw_start_from_addba_req_etc::tid != 0.} @hmac_btcoex.c(1482),WARNING" ID="0x81d22e53" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_check_rx_same_baw_start_from_addba_req_etc::baw_start:%d, delba will forbidden.} @hmac_btcoex.c(1490),WARNING" ID="0x81d22e93" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_check_rx_same_baw_start_from_addba_req_etc::write down to file.} @hmac_btcoex.c(1497),WARNING" ID="0x81d22ecb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_btcoex_check_rx_same_baw_start_from_addba_req_etc:send DISASSOC,err code[%d] @hmac_btcoex.c(1506),WARNING" ID="0x81d22f13" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_btcoex_proc_user_add mem alloc fail @hmac_btcoex.c(1529),ERROR" ID="0x81d22fca" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_btcoex_proc_user_add register feature fail(%u) @hmac_btcoex.c(1537),ERROR" ID="0x81d2300a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_btcoex_proc_user_del get feature fail @hmac_btcoex.c(1554),ERROR" ID="0x81d23092" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_btcoex_proc_vap_add mem alloc fail @hmac_btcoex.c(1573),ERROR" ID="0x81d2312a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_btcoex_proc_vap_add register feature fail(%u) @hmac_btcoex.c(1581),ERROR" ID="0x81d2316a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_btcoex_proc_vap_del get feature fail @hmac_btcoex.c(1598),ERROR" ID="0x81d231f2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_btcoex_proc_device_add mem alloc fail @hmac_btcoex.c(1614),ERROR" ID="0x81d23272" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_btcoex_proc_device_del excute fail @hmac_btcoex.c(1627),ERROR" ID="0x81d232da" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_check_exception_in_list::mac_addr in blacklist.} @hmac_btcoex.c(1675),WARNING" ID="0x81d2345b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_mgmt_check_set_rx_ba_ok_etc::btcoex blacklist user, not addba! @hmac_btcoex.c(1725),WARNING" ID="0x81d235eb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_is_need_enqueue_fake::BT ps is working.} @hmac_btcoex.c(1755),WARNING" ID="0x81d236db" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_scan_prepare_end:: normal scan end delay by btcoex!} @hmac_btcoex.c(1775),WARNING" ID="0x81d2377b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_compability_ap_tpye_identify_etc: btcoex ps whitelist! @hmac_btcoex.c(1806),WARNING" ID="0x81d23873" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_vap_resume_tx_by_chl:: vap[%d] is up because powsave when connect!} @hmac_btcoex.c(1869),WARNING" ID="0x81d23a6b" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_vap_resume_tx_by_chl::vap id=%d, state[%d], preempt state[%d].} @hmac_btcoex.c(1873),WARNING" ID="0x81d23a8b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] bt_linkloss_info: bt_link_loss_cnt =%d, bt_linkloss_threshold = %d, bt state is bt_on/off =%d @hmac_btcoex.c(1898),WARNING" ID="0x81d23b53" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_m2s_switch::btcoex ps is working not need to switch end.} @hmac_btcoex.c(1905),WARNING" ID="0x81d23b8b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_set_dump send msg fail, flag=%u ret=%d} @hmac_btcoex.c(1955),ERROR" ID="0x81d23d1a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_btcoex_info::wal_get_cmd_one_arg err [%d]!} @hmac_btcoex.c(1972),WARNING" ID="0x81d23da3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_btcoex_info:msg is null} @hmac_btcoex.c(1980),WARNING" ID="0x81d23de3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_get_btcoex_mode_cfg::get ext_coex_mode err [%d]!} @hmac_btcoex.c(2040),WARNING" ID="0x81d23fc3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_get_btcoex_mode_cfg::get ext_coex_mode err [%d]!} @hmac_btcoex.c(2047),WARNING" ID="0x81d23ffb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_get_btcoex_mode_cfg::get ext_coex_mode err [%d]!} @hmac_btcoex.c(2054),WARNING" ID="0x81d24033" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_get_btcoex_mode_cfg::get ext_coex_mode err [%d]!} @hmac_btcoex.c(2061),WARNING" ID="0x81d2406b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_btcoex_mode_config:vap is null} @hmac_btcoex.c(2108),WARNING" ID="0x81d241e3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_btcoex_mode_config:vap info is null} @hmac_btcoex.c(2114),WARNING" ID="0x81d24213" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_btcoex_mode_config::get coex enable err [%d]!} @hmac_btcoex.c(2129),WARNING" ID="0x81d2428b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_btcoex_mode_config::get_extcoex_mode_cfg fail [%d]!} @hmac_btcoex.c(2141),ERROR" ID="0x81d242ea" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_btcoex_timer_config:vap is null} @hmac_btcoex.c(2160),WARNING" ID="0x81d24383" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_btcoex_timer_config::get t1_timer err [%d]!} @hmac_btcoex.c(2166),WARNING" ID="0x81d243b3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_btcoex_timer_config::get t2_timer err [%d]!} @hmac_btcoex.c(2172),WARNING" ID="0x81d243e3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_btcoex_coex_switch_config:vap is null} @hmac_btcoex.c(2194),WARNING" ID="0x81d24493" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_btcoex_coex_switch_config::get coex enable err [%d]!} @hmac_btcoex.c(2200),WARNING" ID="0x81d244c3" />
+			</MSG_LOG>

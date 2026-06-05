@@ -1,0 +1,509 @@
+
+  Memory Usage Summary...
+  Section             Start Addr        Size      Used
+  ------------------  ----------  ----------  --------
+  
+                      0x00A00000      0x2400    0x2400 = 9216
+    .stacks           0x00A00000                  9216                  
+  
+                      0x00A02400     0x1DC00    0x46A0 = 18080
+    .data             0x00A02400                   220 load address 0xA27A34
+    preserve          0x00A024DC                   252 load address 0xA27B10
+    .bss              0x00A025D8                 17596                  
+    .preserve         0x00A06A94                    12                  
+    .heap             0x00A06AA0                     0                  
+  
+                      0x00A20380      0xA000    0x788C = 30860
+    .text.entry       0x00A20380                   612                  
+    .text             0x00A205F0                 29764                  
+    .data             0x00A27A34                   220                  
+    preserve          0x00A27B10                   252                  
+
+  ====================================================
+
+
+  Memory Usage Details...
+
+  Section                            Total     Size
+
+  --------------------------------  --------  -----
+
+
+  .text.entry                            296
+
+    drivers                                 
+      chips                                 
+        ws63                                
+          vectors                           
+            vectors                                296
+
+
+  Section                            Total     Size
+
+  --------------------------------  --------  -----
+
+
+  .text                                24218
+
+    open_source                         2640
+      libboundscheck                        
+        src                                 
+          memcpy_s                                 150
+          output.inl                              2344
+          memset_s                                  66
+          vsnprintf_s                               80
+
+    devcloud                            1288
+      workspace                             
+        cc_source                           
+          open_source                       
+            cc_riscv32_musl_build_src       
+              gcc                           
+                libgcc                      
+                  libgcc2                         1288
+
+    drivers                            12502
+      chips                             4428
+        ws63                                
+          vectors                         96
+            vectors                                 96
+
+          porting                       3012
+            soc                          224
+              soc_porting                          224
+
+            sfc                         2066
+              driver                    1094
+                sfc                               1094
+
+              flash_config               188
+                flash_config_info                  188
+
+              porting                    784
+                sfc_protect                        446
+                sfc_protect_gd25q32                256
+                sfc_porting                         82
+
+            efuse                        324
+              efuse_porting                        324
+
+            uart                         198
+              uart_porting                         198
+
+            systick                       26
+              hal_systick_ws63                      16
+              systick_porting                       10
+
+            mem                           62
+              malloc_porting                        62
+
+            reboot                        34
+              reboot_porting                        34
+
+            tcxo                          28
+              tcxo_porting                          28
+
+            watchdog                      50
+              watchdog_porting                      50
+
+          boot                           844
+            boot_porting                    
+              malloc                       8
+                boot_malloc                          8
+
+              serial                     592
+                serial                             592
+
+              watchdog                     4
+                boot_watchdog                        4
+
+              validate_chip              154
+                validate_chip                      154
+
+              delay                        8
+                delay                                8
+
+              reset                       78
+                reset_porting                       78
+
+          arch                           476
+            riscv                           
+              riscv31                       
+                interrupt_handler                  476
+
+      drivers                           8074
+        hal                             5184
+          security_unified              1482
+            crypto_osal                    6
+              cfbb                          
+                boot                        
+                  crypto_osal_lib                    6
+
+            hal_cipher                  1476
+              spacc                     1378
+                hal_hash                          1378
+
+              trng                        28
+                hal_trng                            28
+
+              pke                         70
+                hal_pke                             70
+
+          uart                          1292
+            v151                        1118
+              hal_uart_v151                       1118
+
+            hal_uart                               174
+
+          efuse                          556
+            v151                         524
+              hal_efuse_v151                       474
+              hal_efuse_v151_reg_op                 50
+
+            hal_efuse                               32
+
+          reboot                          16
+            hal_reboot                              16
+
+          watchdog                       430
+            v151                         342
+              hal_watchdog_v151                    342
+
+            hal_watchdog                            88
+
+          sfc                           1270
+            hal_sfc_v150                           918
+            hal_sfc                                 90
+            hal_sfc_v150_regs_op                   232
+            hal_sfc_v150_regs_op.h                  30
+
+          tcxo                           138
+            hal_tcxo_v150                           92
+            hal_tcxo_v150_regs_op                   46
+
+        driver                          2890
+          security_unified               658
+            init                          18
+              cfbb                          
+                crypto_curve_param                  18
+
+            drv_cipher                   132
+              drv_code                    78
+                crypto_drv_common                   78
+
+              drv_pke_v5                  54
+                drv_pke_ecdsa                       54
+
+            drv_rom_cipher                         110
+            romable                      398
+              hash_romable                         398
+
+          efuse                          314
+            efuse                                  314
+
+          systick                         86
+            systick                                 86
+
+          tcxo                           232
+            tcxo                                   232
+
+          uart                          1294
+            uart                                  1294
+
+          watchdog                       306
+            watchdog                               306
+
+    bootloader                          5682
+      commonboot                        5256
+        src                             4322
+          boot_flash                                36
+          boot_cmd_loop                            826
+          boot_crc16                               560
+          boot_transfer                            922
+          boot_efuse_opt                           522
+          boot_erase                                84
+          boot_load                                178
+          boot_reset                                18
+          boot_uart_auth                           146
+          boot_ymodem                             1030
+
+        libc                             934
+          src                               
+            string                          
+              memcmp                                30
+              memcpy                               668
+              memset                               174
+              strlen                                62
+
+      provision_ws63                     426
+        startup                             
+          main                                     426
+
+    middleware                          1508
+      utils                              434
+        dfx                                 
+          dfx_reboot                      30
+            cpu_utils                       
+              private                       
+                cpu_utils                           30
+
+          preserve                       234
+            private                         
+              preserve                             234
+
+          panic                          170
+            private                         
+              panic_rom                             38
+              panic                                132
+
+      chips                             1074
+        ws63                                
+          exception                         
+            exception_riscv                       1074
+
+    tools                                 10
+      bin                                   
+        compiler                            
+          riscv                             
+            cc_riscv32_musl_105             
+              cc_riscv32_musl               
+                sysroot                     
+                  usr                       
+                    include                 
+                      stdlib.h                      10
+
+    kernel                               588
+      non_os                             578
+        malloc                           348
+          malloc                                   348
+
+        non_os                           230
+          non_os_utils                             230
+
+      osal                                10
+        src                                 
+          nonos                             
+            osal_interrupt                          10
+
+
+  Section                            Total     Size
+
+  --------------------------------  --------  -----
+
+
+  .preserve                               12
+
+    bootloader                              
+      provision_ws63                        
+        startup                             
+          main                                      12
+
+
+  Section                            Total     Size
+
+  --------------------------------  --------  -----
+
+
+  .bss                                 17440
+
+    middleware                           281
+      utils                              257
+        dfx                                 
+          panic                            5
+            private                         
+              panic                                  5
+
+          preserve                       252
+            private                         
+              preserve                             252
+
+      chips                               24
+        ws63                                
+          exception                         
+            exception_riscv                         24
+
+    kernel                                50
+      non_os                                
+        non_os                            14
+          non_os_utils                              14
+
+        malloc                            36
+          malloc                                    36
+
+    drivers                              672
+      drivers                            639
+        driver                           347
+          security_unified                36
+            drv_cipher                      
+              drv_code                      
+                crypto_drv_common                   36
+
+          watchdog                         6
+            watchdog                                 6
+
+          systick                          1
+            systick                                  1
+
+          tcxo                             1
+            tcxo                                     1
+
+          uart                           303
+            uart                                   303
+
+        hal                              292
+          security_unified               194
+            hal_cipher                      
+              pke                         12
+                alg                        8
+                  drv_common_pke                     8
+
+                hal_pke                              4
+
+              spacc                      181
+                hal_hash                           181
+
+              trng                         1
+                hal_trng                             1
+
+          efuse                           13
+            v151                           9
+              hal_efuse_v151_reg_op                  8
+              hal_efuse_v151                         1
+
+            hal_efuse                                4
+
+          uart                            45
+            v151                          33
+              hal_uart_v151                         33
+
+            hal_uart                                12
+
+          watchdog                        16
+            v151                           8
+              hal_watchdog_v151                      8
+
+            hal_watchdog                             8
+
+          sfc                             20
+            hal_sfc                                 20
+
+          tcxo                             4
+            hal_tcxo_v150_regs_op                    4
+
+      chips                               33
+        ws63                                
+          porting                         27
+            sfc                           26
+              driver                        
+                sfc                                 26
+
+            uart                           1
+              uart_porting                           1
+
+          boot                             2
+            boot_porting                    
+              serial                        
+                serial                               2
+
+          arch                             4
+            riscv                           
+              riscv31                       
+                interrupt_handler                    4
+
+    bootloader                         16437
+      commonboot                            
+        src                                 
+          boot_erase                                 1
+          boot_flash                                20
+          boot_uart_auth                            12
+          boot_transfer                              4
+          boot_ymodem                             8208
+          boot_load                               8192
+
+
+  Section                            Total     Size
+
+  --------------------------------  --------  -----
+
+
+  .data                                  153
+
+    drivers                              149
+      chips                               41
+        ws63                                
+          porting                         40
+            efuse                         12
+              efuse_porting                         12
+
+            sfc                            8
+              porting                       
+                sfc_porting                          8
+
+            systick                        4
+              systick_porting                        4
+
+            tcxo                           4
+              tcxo_porting                           4
+
+            uart                           4
+              uart_porting                           4
+
+            watchdog                       8
+              watchdog_porting                       8
+
+          boot                             1
+            boot_porting                    
+              serial                        
+                serial                               1
+
+      drivers                            108
+        hal                                 
+          efuse                           48
+            v151                            
+              hal_efuse_v151                        48
+
+          uart                            24
+            v151                            
+              hal_uart_v151                         24
+
+          watchdog                        36
+            v151                            
+              hal_watchdog_v151                     36
+
+    middleware                             4
+      utils                                 
+        dfx                                 
+          panic                             
+            private                         
+              panic_rom                              4
+
+
+  Section                            Total     Size
+
+  --------------------------------  --------  -----
+
+
+  preserve                               252
+
+    middleware                              
+      utils                                 
+        dfx                                 
+          preserve                          
+            private                         
+              preserve                             252
+
+  ====================================================
+
+  Mismatched section sizes...
+
+         .text  .lst file = 612 (0x264)
+                 .du file = 24218 (0x5E9A)
+
+         .data  .lst file = 220 (0xDC)
+                 .du file = 153 (0x99)
+
+          .bss  .lst file = 17596 (0x44BC)
+                 .du file = 17440 (0x4420)
+
+  ====================================================
+

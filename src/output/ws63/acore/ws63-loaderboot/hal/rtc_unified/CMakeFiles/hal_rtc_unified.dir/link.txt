@@ -1,0 +1,1 @@
+/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-ar rcD libhal_rtc_unified.a CMakeFiles/hal_rtc_unified.dir/hal_rtc.c.obj CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100.c.obj CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100_op.c.obj

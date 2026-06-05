@@ -13,7 +13,7 @@ extern "C" {
 #define UV_UART_RX_PIN      16
 #define UV_UART_TX_PIN_MODE 1
 #define UV_UART_RX_PIN_MODE 1
-#define UV_RING_SIZE        2048
+#define UV_RING_SIZE        8192
 #define UV_LINE_MAX         512
 #define UV_LINE_TIMEOUT_MS  100
 #define UV_SEQ_FIELD        "seq"

@@ -1,0 +1,32 @@
+utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.obj: \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/preserve/private/crash_data.c \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/mconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/preserve/public/crash_data.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/exception/exception.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/bits/alltypes.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/platform.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_definition.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_definitions.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core_rom.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/errcode.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/vectors/vectors.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/core.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_irq.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/std_def.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stddef.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdbool.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/memory_config/include/product/product.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/memory_config/include/product/product_fpga_standard.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/platform_types.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_definitions.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/arch/riscv/include/interrupt_porting.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/arch/riscv/arch_port.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_irq.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/linker/loaderboot_linker/memory_config.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/panic/public/panic.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/preserve/public/preserve.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_definition.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/dfx_reboot/reboot/shared/non_os_reboot.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/common_def.h

@@ -1,0 +1,22 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg2" NAME="{hmac_amsdu_prepare_to_send::, amsdu send fails. erro[%d], short_pkt_num=%d.} @hmac_tx_amsdu.c(70),WARNING" ID="0x81da0233" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_tx_amsdu_is_overflow::amsdu_size=%d framelen=%d msdu_num=%d .} @hmac_tx_amsdu.c(87),INFO" ID="0x81da02bd" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_amsdu_send::net_buf null} @hmac_tx_amsdu.c(111),ERROR" ID="0x81da037a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_amsdu_send::memmove_s fail} @hmac_tx_amsdu.c(125),ERROR" ID="0x81da03ea" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_amsdu_send::tx_encap failed[%d]} @hmac_tx_amsdu.c(153),ERROR" ID="0x81da04ca" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d]hmac_amsdu_send::frw_send_data fail[%d] @hmac_tx_amsdu.c(163),WARNING" ID="0x81da051b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_amsdu_tx_encap_mpdu::oal_netbuf_peek return NULL} @hmac_tx_amsdu.c(196),ERROR" ID="0x81da0622" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_amsdu_tx_encap_mpdu::Notify1,tailroom[%d],msdu[%d],frame[%d]} @hmac_tx_amsdu.c(204),ERROR" ID="0x81da0662" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_amsdu_tx_process_etc::failed to alloc netbuf.} @hmac_tx_amsdu.c(313),WARNING" ID="0x81da09cb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_amsdu_notify_etc::user is not qos in amsdu notify} @hmac_tx_amsdu.c(475),INFO" ID="0x81da0edd" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d]{hmac_amsdu_notify_etc::invalid tid from] asmdu notify} @hmac_tx_amsdu.c(481),ERROR" ID="0x81da0f0a" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_amsdu_notify_etc::VO TID NOT SUPPORT AMSDU tid_no=%d amsdu_supported=%d @hmac_tx_amsdu.c(488),INFO" ID="0x81da0f45" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_amsdu_notify_etc::UnQos Frame pass!!} @hmac_tx_amsdu.c(515),INFO" ID="0x81da101d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_amsdu_tx_timeout_process::input null} @hmac_tx_amsdu.c(569),ERROR" ID="0x81da11ca" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_amsdu_tx_timeout_process::pst_netbuf NULL. msdu_num[%d] @hmac_tx_amsdu.c(581),INFO" ID="0x81da122d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_amsdu_tx_timeout_process::hmac_vap null} @hmac_tx_amsdu.c(590),ERROR" ID="0x81da1272" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_amsdu_tx_timeout_process::user[%d] null} @hmac_tx_amsdu.c(598),ERROR" ID="0x81da12b2" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] hmac_amsdu_tx_timeout_process::hmac_amsdu_send fail[%d] @hmac_tx_amsdu.c(605),WARNING" ID="0x81da12eb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_amsdu_init_user_etc::hmac_user_sta null} @hmac_tx_amsdu.c(624),ERROR" ID="0x81da1382" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_amsdu_tx_on::get_cmd_one_arg return err_code [%d]!} @hmac_tx_amsdu.c(653),WARNING" ID="0x81da146b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_config_set_amsdu_tx_on_etc::ENABLE[%d].} @hmac_tx_amsdu.c(661),WARNING" ID="0x81da14ab" />
+			</MSG_LOG>

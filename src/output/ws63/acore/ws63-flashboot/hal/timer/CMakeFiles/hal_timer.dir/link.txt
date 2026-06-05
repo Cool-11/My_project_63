@@ -1,0 +1,1 @@
+/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-ar rcD libhal_timer.a CMakeFiles/hal_timer.dir/hal_drv_timer.c.obj CMakeFiles/hal_timer.dir/v150/hal_timer_v150.c.obj CMakeFiles/hal_timer.dir/v150/hal_timer_v150_regs_op.c.obj

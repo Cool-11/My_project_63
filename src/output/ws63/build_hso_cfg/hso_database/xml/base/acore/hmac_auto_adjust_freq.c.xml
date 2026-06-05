@@ -1,0 +1,23 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg2" NAME="{hmac_set_auto_freq_level:Wrong freq[%d] larger than max[%d].} @hmac_auto_adjust_freq.c(106),ERROR" ID="0x84720352" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_set_auto_freq_level: call pm_crg_svc_vote() fail, freq[%d] ret[%u].} @hmac_auto_adjust_freq.c(116),WARNING" ID="0x847203a3" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_set_auto_freq_level:change freq [%d] to [%d] current hcc_txrx_total(%d) pps_rate(%d).} @hmac_auto_adjust_freq.c(125),WARNING" ID="0x847203eb" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_auto_freq_init:set the freq to level[%d] timer-&gt;is_registerd[%d].} @hmac_auto_adjust_freq.c(265),WARNING" ID="0x8472084b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_auto_freq_deinit:timer-&gt;is_registerd[%d].} @hmac_auto_adjust_freq.c(290),WARNING" ID="0x84720913" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_auto_freq_deinit: timer exit.} @hmac_auto_adjust_freq.c(294),WARNING" ID="0x84720933" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_set_auto_freq_enable::enable_switch[%u] invalid.} @hmac_auto_adjust_freq.c(323),ERROR" ID="0x84720a1a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_set_auto_freq_enable::begin the hmac_auto_freq_deinit.} @hmac_auto_adjust_freq.c(327),WARNING" ID="0x84720a3b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_set_auto_freq_enable::begin the hmac_auto_freq_init.} @hmac_auto_adjust_freq.c(334),WARNING" ID="0x84720a73" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_set_flow_thershold:para error, the input is null.} @hmac_auto_adjust_freq.c(349),ERROR" ID="0x84720aea" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_set_flow_thershold:para error, the input length is %d.} @hmac_auto_adjust_freq.c(354),ERROR" ID="0x84720b12" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_ccpriv_set_flow_thershold::return err_code [%d] [%d]!} @hmac_auto_adjust_freq.c(398),WARNING" ID="0x84720c73" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_set_flow_thershold:  timer_period [%d] out of range.} @hmac_auto_adjust_freq.c(408),ERROR" ID="0x84720cc2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_set_flow_thershold: hmac_set_flow_thershold fail[%d].} @hmac_auto_adjust_freq.c(414),ERROR" ID="0x84720cf2" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_ccpriv_set_flow_thershold::timer_period[%d] has_pack_period[%d] no_pack_period[%d]} @hmac_auto_adjust_freq.c(420),WARNING" ID="0x84720d23" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_set_auto_freq_enable::get arg failed.} @hmac_auto_adjust_freq.c(432),WARNING" ID="0x84720d83" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_set_auto_freq_enable::enable mode[%u][1:enable,0:disable].} @hmac_auto_adjust_freq.c(439),WARNING" ID="0x84720dbb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_get_auto_freq_info::get arg failed.} @hmac_auto_adjust_freq.c(453),WARNING" ID="0x84720e2b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ccpriv_set_auto_freq_level::device_freq[%u].} @hmac_auto_adjust_freq.c(463),WARNING" ID="0x84720e7b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_get_auto_freq_info::get arg failed.} @hmac_auto_adjust_freq.c(475),WARNING" ID="0x84720edb" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_ccpriv_get_auto_freq_info::auto_freq_enable[%u] curr_freq_level[%u] req_freq_level[%u].} @hmac_auto_adjust_freq.c(484),WARNING" ID="0x84720f23" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_ccpriv_get_auto_freq_info::pps_rate[%u] hcc_rxtx_total[%u].} @hmac_auto_adjust_freq.c(490),WARNING" ID="0x84720f53" />
+			</MSG_LOG>

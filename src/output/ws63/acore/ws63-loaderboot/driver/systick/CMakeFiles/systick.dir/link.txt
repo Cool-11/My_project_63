@@ -1,0 +1,1 @@
+/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-ar rcD libsystick.a CMakeFiles/systick.dir/systick.c.obj
