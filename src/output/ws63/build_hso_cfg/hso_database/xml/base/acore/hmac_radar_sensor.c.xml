@@ -1,0 +1,43 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_get_work_chan:not exist vap @hmac_radar_sensor.c(209),WARNING" ID="0x84e2068b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_get_work_chan: vap is null @hmac_radar_sensor.c(215),WARNING" ID="0x84e206bb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_radar_sensor_param_check:enable[%d] @hmac_radar_sensor.c(328),ERROR" ID="0x84e20a42" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_radar_sensor_enable:rx_nss[%d] @hmac_radar_sensor.c(333),ERROR" ID="0x84e20a6a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_radar_sensor_param_check:data_len[%d] @hmac_radar_sensor.c(338),ERROR" ID="0x84e20a92" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_param_check:adc &gt; dac freq @hmac_radar_sensor.c(348),ERROR" ID="0x84e20ae2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_radar_sensor_param_check:rx data size large[%d] @hmac_radar_sensor.c(354),ERROR" ID="0x84e20b12" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_param_check:radar_data is null @hmac_radar_sensor.c(359),ERROR" ID="0x84e20b3a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_config_freq:not exist vap @hmac_radar_sensor.c(379),WARNING" ID="0x84e20bdb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_config_freq: vap is null @hmac_radar_sensor.c(385),WARNING" ID="0x84e20c0b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_config_freq:user already vap @hmac_radar_sensor.c(402),WARNING" ID="0x84e20c93" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_config_soc:adc &gt; dac freq @hmac_radar_sensor.c(440),ERROR" ID="0x84e20dc2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_radar_sensor_config_soc:memcpy_s fail[%d] @hmac_radar_sensor.c(446),ERROR" ID="0x84e20df2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_enable:freq set fail @hmac_radar_sensor.c(601),WARNING" ID="0x84e212cb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_enable:param check fail @hmac_radar_sensor.c(612),WARNING" ID="0x84e21323" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_enable:config waveform mem fail @hmac_radar_sensor.c(620),WARNING" ID="0x84e21363" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_disable:not exist vap @hmac_radar_sensor.c(643),WARNING" ID="0x84e2141b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_disable hmac_vap is null @hmac_radar_sensor.c(650),WARNING" ID="0x84e21453" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_disable succ @hmac_radar_sensor.c(669),INFO" ID="0x84e214ed" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_radar_sensor_del_vap:del the last one vap, disable radar @hmac_radar_sensor.c(703),WARNING" ID="0x84e215fb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_enable::enable value invalid.} @hmac_radar_sensor.c(815),ERROR" ID="0x84e2197a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_enable:: rx_nss value invalid.} @hmac_radar_sensor.c(823),ERROR" ID="0x84e219ba" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_enable:: radar_period value invalid.} @hmac_radar_sensor.c(830),ERROR" ID="0x84e219f2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_enable:: one_per_cnt value invalid.} @hmac_radar_sensor.c(837),ERROR" ID="0x84e21a2a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_enable:: period_cycle_cnt value invalid.} @hmac_radar_sensor.c(844),ERROR" ID="0x84e21a62" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::protocol_mode value invalid.} @hmac_radar_sensor.c(899),ERROR" ID="0x84e21c1a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::mcs value invalid.} @hmac_radar_sensor.c(906),ERROR" ID="0x84e21c52" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::set selfcts value invalid.} @hmac_radar_sensor.c(913),ERROR" ID="0x84e21c8a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::mcs value invalid.} @hmac_radar_sensor.c(920),ERROR" ID="0x84e21cc2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::lpf_gain value invalid.} @hmac_radar_sensor.c(937),ERROR" ID="0x84e21d4a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::dac_gain value invalid.} @hmac_radar_sensor.c(944),ERROR" ID="0x84e21d82" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::pa_gain value invalid.} @hmac_radar_sensor.c(951),ERROR" ID="0x84e21dba" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::ppa_gain value invalid.} @hmac_radar_sensor.c(958),ERROR" ID="0x84e21df2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::lna_gain value invalid.} @hmac_radar_sensor.c(975),ERROR" ID="0x84e21e7a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::vga_gain value invalid.} @hmac_radar_sensor.c(982),ERROR" ID="0x84e21eb2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::rx_dly_160m value invalid.} @hmac_radar_sensor.c(989),ERROR" ID="0x84e21eea" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::rx_dly_80m value invalid.} @hmac_radar_sensor.c(996),ERROR" ID="0x84e21f22" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_debug::ch_num value invalid.} @hmac_radar_sensor.c(1013),ERROR" ID="0x84e21faa" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_set_mac_t1_4::t1 invalid.} @hmac_radar_sensor.c(1030),ERROR" ID="0x84e22032" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_set_mac_t1_4::t2 invalid.} @hmac_radar_sensor.c(1037),ERROR" ID="0x84e2206a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_set_mac_t1_4::t3 invalid.} @hmac_radar_sensor.c(1044),ERROR" ID="0x84e220a2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_radar_sensor_set_mac_t1_4::t4 invalid.} @hmac_radar_sensor.c(1051),ERROR" ID="0x84e220da" />
+			</MSG_LOG>

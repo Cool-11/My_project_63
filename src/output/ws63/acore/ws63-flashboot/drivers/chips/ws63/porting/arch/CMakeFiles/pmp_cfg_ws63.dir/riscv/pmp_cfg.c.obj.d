@@ -1,0 +1,15 @@
+drivers/chips/ws63/porting/arch/CMakeFiles/pmp_cfg_ws63.dir/riscv/pmp_cfg.c.obj: \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/arch/riscv/pmp_cfg.c \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/mconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdbool.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/memory_config/include/memory_config_common.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/memory_config/include/share_mem_config.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/native/td_type.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/common_def.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/bits/alltypes.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/middleware/utils/partition.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/errcode.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition/include/partition_resource_id.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/driver/drv_pmp.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/arch/riscv/pmp_cfg.h

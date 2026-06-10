@@ -1,0 +1,13 @@
+hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj: \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/cpu_core/hal_cpu_core.c \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/mconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/cpu_core/hal_cpu_core.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdbool.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_definition.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_definitions.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core_rom.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_io.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/bits/alltypes.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stddef.h

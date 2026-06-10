@@ -70,7 +70,7 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
                     if (reg_entry != NULL) {
                         snprintf(esp32_cmd, sizeof(esp32_cmd),
                             "{\"cmd\":\"register\",\"tag_id\":\"%s\","
-                            "\"item_name\":\"%s\",\"storage_area\":\"%s\",\"qty\":%u}",
+                            "\"item_name\":\"%s\",\"storage_area\":\"%s\",\"quantity\":%u}",
                             tag_str,
                             reg_entry->item, reg_entry->zone,
                             (unsigned int)reg_entry->qty);
@@ -107,12 +107,12 @@ void biz_sle_notify_cb(const ssap_inventory_rsp_t *inv,
                 }
                 /* 发送蜂鸣指令（5秒后自动停止由 main loop 处理） */
                 sle_network_send_cmd(SSAP_CMD_FIND, g_biz_pending.tag_id);
-                biz_screen_reply("MSG", "绑定成功");
+                biz_screen_reply("MSG", "Bind OK");
                 osal_printk("[WS63_BIZ] in,confirm BIND_OK tag=%u\r\n",
                     (unsigned int)g_biz_pending.tag_id);
             } else {
                 /* 绑定失败：BS21E 不在范围 */
-                biz_screen_reply("ERR", "ERR_BIND_FAIL,绑定失败,请重新扫描");
+                biz_screen_reply("ERR", "ERR_BIND_FAIL,Retry scan");
                 osal_printk("[WS63_BIZ] in,confirm BIND_FAIL tag=%u\r\n",
                     (unsigned int)g_biz_pending.tag_id);
             }

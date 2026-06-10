@@ -1,0 +1,176 @@
+#include "base_datatype_def.txt"
+typedef unsigned int uintptr_t;
+typedef int intptr_t;
+typedef signed char int8_t;
+typedef signed short int16_t;
+typedef signed int int32_t;
+typedef signed long long int64_t;
+typedef signed long long intmax_t;
+typedef unsigned char uint8_t;
+typedef unsigned short uint16_t;
+typedef unsigned int uint32_t;
+typedef unsigned long long uint64_t;
+typedef unsigned long long uintmax_t;
+typedef int8_t int_fast8_t;
+typedef int64_t int_fast64_t;
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+typedef int32_t int_least32_t;
+typedef int64_t int_least64_t;
+typedef uint8_t uint_fast8_t;
+typedef uint64_t uint_fast64_t;
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+typedef uint32_t uint_least32_t;
+typedef uint64_t uint_least64_t;
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+typedef struct {
+    int8_t param1;
+    int8_t param2;
+    uint32_t param3;
+    uint32_t param4;
+    uint8_t param5;
+} sample1_type_t;
+typedef struct {
+    uint8_t mac[6];
+} mac_type_t;
+typedef struct {
+    uint8_t country[2];
+} country_type_t;
+typedef struct {
+    int8_t tpc[2];
+} tpc_type_t;
+typedef struct {
+    int8_t xo_trim_temp_fine_code[8];
+} xo_trim_temp_type_t;
+typedef struct {
+    uint32_t param1[6];
+    uint32_t param2;
+    uint8_t param3;
+    sample1_type_t param4;
+} sample3_type_t;
+typedef struct {
+    sample1_type_t param1;
+    mac_type_t param2;
+    sample3_type_t param3;
+} sample4_type_t;
+typedef struct {
+    uint8_t rx_insert_loss[3];
+} fe_rx_insert_loss_type_t;
+typedef struct {
+    uint8_t chip_max_power[1];
+    uint8_t target_power[33];
+    uint8_t limit_power[56];
+    uint8_t sar_power[3];
+} fe_tx_power_type_t;
+typedef struct {
+    uint8_t rx_rssi_comp[3];
+} fe_rx_rssi_comp_type_t;
+typedef struct {
+    uint16_t ref_power[6];
+} fe_tx_ref_power_type_t;
+typedef struct {
+    uint16_t power_curve[9];
+} fe_tx_power_curve_type_t;
+typedef struct {
+    uint16_t curve_factor[6];
+} fe_tx_curve_factor_type_t;
+typedef struct {
+    uint16_t cali_data_len;
+    uint8_t cali_data_received;
+    uint8_t data[1021];
+} fe_cali_data_type_t;
+typedef struct {
+    uint8_t btc_max_txpower;
+} btc_power_type_t;
+typedef struct {
+    uint8_t btc_srrc_channel[8];
+} btc_srrc_channel_type_t;
+typedef struct {
+    uint8_t btc_srrc_power[8];
+} btc_srrc_power_type_t;
+typedef struct {
+    uint8_t d_th_1m;
+    uint8_t d_th_2m;
+    uint8_t p_th;
+    uint8_t t_th_1m;
+    uint8_t t_th_2m;
+    uint8_t b_th_ratio;
+    uint8_t b_th_cnt;
+    uint8_t a_th;
+    uint8_t a_buf_cnt;
+    uint8_t f_win_time;
+    uint8_t pt_cld_para_1;
+    uint8_t pt_cld_para_2;
+    uint8_t pt_cld_para_3;
+    uint8_t pt_cld_para_4;
+    uint8_t rd_pwr_para_1;
+    uint8_t rd_pwr_para_2;
+    uint8_t rd_pwr_para_3;
+    uint8_t t_0_to_1;
+    uint8_t t_0_to_2;
+    uint8_t t_0_to_6;
+    uint8_t t_6_to_1_2;
+    uint8_t t_2_to_1;
+    uint8_t t_6_to_1_vel;
+    uint8_t t_6_to_2_vel;
+    uint8_t t_back_clear;
+    uint8_t res_0;
+    uint8_t res_1;
+    uint8_t res_2;
+} radar_alg_param_t;
+typedef struct {
+    uint16_t drop_sta_thres;
+    uint16_t mwo_sta_thres;
+    uint16_t drop_ap_thres;
+    uint16_t mwo_ap_thres;
+    uint8_t mwo_slide_win_len;
+    uint8_t mwo_slide_win_thres;
+    uint8_t mwo_timeout;
+    uint8_t mwo_dis_coef;
+    uint8_t mwo_duty_thres_ap;
+    uint8_t mwo_duty_thres_sta;
+} radar_mwo_mode_t;
+typedef struct {
+    uint32_t update_duration;
+    uint32_t check_duration;
+    uint8_t calc_duration_multiplier;
+    uint8_t is_thru_wall_adapt_en;
+    uint8_t use_pwr_sum;
+    uint32_t sensitivity;
+    uint8_t save_trained_thres;
+    uint8_t use_leakage_pwr_adjust_thres;
+} radar_thru_wall_mode_t;
+typedef struct {
+    uint16_t abn_frame_th;
+    uint16_t abn_frame_avg_th;
+    uint8_t abn_frame_ratio;
+    uint8_t chan_switch;
+} radar_chan_switch_t;
+typedef struct {
+    uint8_t height;
+    uint8_t scenario;
+    uint8_t wifi_mode;
+    uint8_t material;
+    uint8_t fusion_track;
+    uint8_t fusion_ai;
+    uint16_t quit_dly_time;
+} radar_alg_ctrl_t;
+typedef struct {
+    uint8_t delay_idx_arr[4];
+    int16_t phs_cali_i[2];
+    int16_t phs_cali_q[2];
+    uint16_t ant_space[2];
+} slp_radar_mfg_para_t;
+typedef struct {
+    uint8_t ssid[33];
+    uint8_t pwd[65];
+    uint8_t bssid[6];
+} hilink_connect_info_t;
+typedef struct {
+    uint8_t chba_mode;
+    uint8_t role_idx;
+} chba_cfg_t;

@@ -1,6 +1,7 @@
 #include "business_logic.h"
 #include "business_logic_internal.h"
 #include "soc_osal.h"
+#include "securec.h"
 #include "cJSON.h"
 #include "../uart_display/uart_display.h"
 #include "../sle_network/sle_network.h"
@@ -54,27 +55,66 @@ static scan_result_t biz_scan_find_best(bool registered, int *out_idx)
 
 /* ========== Page1 入库命令处理 ========== */
 
-/* @in,start → 扫描未注册 → #TAG / #MSG */
+/* @in,start → 扫描未注册 → #TAG；已注册 → #VERIFY */
 static void biz_screen_in_start(void)
 {
     int idx = 0;
     scan_result_t r = biz_scan_find_best(false, &idx);
 
     if (r == SCAN_EMPTY) {
-        /* 扫描表为空，屏端显示 t5 提示 */
         biz_screen_reply("MSG", "No tag nearby");
-        return;
-    }
-    if (r == SCAN_ALL_REGISTERED) {
-        biz_screen_reply("MSG", "All tags registered");
         return;
     }
 
     const sle_scan_entry_t *scan = sle_network_get_scan_table();
+
+    if (r == SCAN_ALL_REGISTERED) {
+        /* 所有标签已注册 → 取最强的已注册标签发 #VERIFY */
+        int ridx = 0;
+        scan_result_t rr = biz_scan_find_best(true, &ridx);
+        if (rr != SCAN_OK) {
+            biz_screen_reply("MSG", "No registered tag nearby");
+            return;
+        }
+        uint16_t rtag = scan[ridx].tag_id;
+        biz_tag_entry_t *entry = biz_map_find_by_tag(rtag);
+        if (entry == NULL) {
+            biz_screen_reply("MSG", "Tag not in database");
+            return;
+        }
+        char tag_str[8];
+        ud_tag_id_to_str(rtag, tag_str, sizeof(tag_str));
+        biz_screen_reply("VERIFY", "%s,%s,%s,%u",
+            tag_str, entry->item, entry->zone, (unsigned int)entry->qty);
+        biz_set_pending("in_start", 0, rtag);
+        osal_printk("[WS63_BIZ] in,start VERIFY tag=%s item=%s zone=%s qty=%u\r\n",
+            tag_str, entry->item, entry->zone, (unsigned int)entry->qty);
+        return;
+    }
+
+    uint16_t tag_id = scan[idx].tag_id;
+
+    /* 未注册标签（tag_id=0）：预分配新 ID */
+    if (tag_id == 0) {
+        tag_id = 1;
+        for (uint16_t i = 0; i < g_biz_map.count; i++) {
+            if (g_biz_map.entries[i].tag_id >= tag_id) {
+                tag_id = g_biz_map.entries[i].tag_id + 1;
+            }
+        }
+        biz_tag_entry_t *entry = biz_map_add(tag_id);
+        if (entry != NULL) {
+            (void)memcpy_s(entry->mac, BIZ_MAC_LEN, scan[idx].mac, BIZ_MAC_LEN);
+            sle_network_update_scan_tag_id(scan[idx].mac, tag_id);
+            osal_printk("[WS63_BIZ] in,start pre-assign tag_id=%u\r\n",
+                (unsigned int)tag_id);
+        }
+    }
+
     char tag_str[8];
-    ud_tag_id_to_str(scan[idx].tag_id, tag_str, sizeof(tag_str));
+    ud_tag_id_to_str(tag_id, tag_str, sizeof(tag_str));
     biz_screen_reply("TAG", "%s", tag_str);
-    biz_set_pending("in_start", 0, scan[idx].tag_id);
+    biz_set_pending("in_start", 0, tag_id);
 }
 
 /* @in,capture,<id>,<qty>,<area>,<name>,<mode> → 拼register JSON */
@@ -90,13 +130,13 @@ static void biz_screen_in_capture(const char *params)
     int parsed = sscanf(params, "%7[^,],%7[^,],%31[^,],%63[^,],%3[^,]",
         id_str, qty_str, area, name, mode_str);
     if (parsed < 2) {
-        biz_screen_reply("ERR", "INVALID_PARAMS,参数不足");
+        biz_screen_reply("ERR", "INVALID_PARAMS,Missing params");
         return;
     }
 
     uint16_t tag_id = 0;
     if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
-        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        biz_screen_reply("ERR", "INVALID_ID,Bad tag ID");
         return;
     }
 
@@ -126,8 +166,8 @@ static void biz_screen_in_capture(const char *params)
     /* 记录 pending（不连接 BS21E，等 @in,confirm 时再连） */
     biz_set_pending("in_capture", 0, tag_id);
     biz_screen_reply("PROG", "1,front,0");
-    osal_printk("[WS63_BIZ] screen in,capture tag=%s qty=%d mode=%d\r\n",
-        id_str, qty, mode);
+    osal_printk("[WS63_BIZ] screen in,capture tag=%s qty=%d mode=%d json=%s\r\n",
+        id_str, qty, mode, esp32_json);
 }
 
 /* @in,photo,<view> → capture JSON */
@@ -136,6 +176,7 @@ static void biz_screen_in_photo(const char *view)
     char esp32_json[64];
     snprintf(esp32_json, sizeof(esp32_json),
         "{\"cmd\":\"capture\",\"view\":\"%s\"}", view);
+    osal_printk("[WS63_BIZ] →ESP32 capture view=%s json=%s\r\n", view, esp32_json);
     biz_raw_json_send(esp32_json);
 }
 
@@ -143,7 +184,7 @@ static void biz_screen_in_photo(const char *view)
 static void biz_screen_in_confirm(void)
 {
     if (!g_biz_pending.active) {
-        biz_screen_reply("ERR", "ERR_NO_PENDING,无待确认操作");
+        biz_screen_reply("ERR", "ERR_NO_PENDING,No pending op");
         return;
     }
 
@@ -184,6 +225,16 @@ static void biz_screen_in_cancel(void)
     char esp32_json[32];
     snprintf(esp32_json, sizeof(esp32_json), "{\"cmd\":\"cancel\"}");
     biz_raw_json_send(esp32_json);
+
+    /* 清理预分配的 biz_map 条目（状态仍为 IDLE） */
+    if (g_biz_pending.active && g_biz_pending.tag_id != 0) {
+        biz_tag_entry_t *entry = biz_map_find_by_tag(g_biz_pending.tag_id);
+        if (entry != NULL && entry->status == BIZ_TAG_IDLE) {
+            biz_map_remove(g_biz_pending.tag_id);
+            osal_printk("[WS63_BIZ] in,cancel remove pre-assigned tag_id=%u\r\n",
+                (unsigned int)g_biz_pending.tag_id);
+        }
+    }
     biz_clear_pending();
     biz_screen_reply("MSG", "Inbound cancelled");
 }
@@ -222,13 +273,13 @@ static void biz_screen_out_capture(const char *params)
     char qty_str[8] = {0};
 
     if (sscanf(params, "%7[^,],%7[^,]", id_str, qty_str) < 2) {
-        biz_screen_reply("ERR", "INVALID_PARAMS,参数不足");
+        biz_screen_reply("ERR", "INVALID_PARAMS,Missing params");
         return;
     }
 
     uint16_t tag_id = 0;
     if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
-        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        biz_screen_reply("ERR", "INVALID_ID,Bad tag ID");
         return;
     }
 
@@ -257,8 +308,9 @@ static void biz_screen_out_photo(const char *view)
 /* @out,confirm → 持久化 */
 static void biz_screen_out_confirm(void)
 {
-    biz_screen_reply("MSG", "确认出库完成");
-    /* TODO: 持久化 */
+    biz_map_save_nv();
+    biz_screen_reply("MSG", "Outbound confirmed");
+    osal_printk("[WS63_BIZ] out,confirm saved NV\r\n");
 }
 
 /* @out,cancel → 取消 */
@@ -298,7 +350,7 @@ static void biz_screen_check_global(void)
 
     /* 3. 设置 pending，等待 asset_list_page 响应 */
     biz_set_pending("check_global", 0, 0);
-    biz_screen_reply("MSG", "全局盘点中...");
+    biz_screen_reply("MSG", "Global inventory...");
     osal_printk("[WS63_BIZ] check,global sle_count=%u\r\n", (unsigned int)sle_count);
 }
 
@@ -350,7 +402,7 @@ static void biz_screen_check_specific(const char *id_str)
 {
     uint16_t tag_id = 0;
     if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
-        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        biz_screen_reply("ERR", "INVALID_ID,Bad tag ID");
         return;
     }
 
@@ -369,7 +421,7 @@ static void biz_screen_check_capture(const char *id_str)
 {
     uint16_t tag_id = 0;
     if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
-        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        biz_screen_reply("ERR", "INVALID_ID,Bad tag ID");
         return;
     }
 
@@ -421,12 +473,12 @@ static void biz_screen_find_locate(const char *id_str)
 {
     uint16_t tag_id = 0;
     if (ud_str_to_tag_id(id_str, &tag_id) != 0) {
-        biz_screen_reply("ERR", "INVALID_ID,Tag ID格式错误");
+        biz_screen_reply("ERR", "INVALID_ID,Bad tag ID");
         return;
     }
 
     if (g_locate_count >= LOCATE_MAX_TAGS) {
-        biz_screen_reply("ERR", "ERR_TOO_MANY,最多同时寻物8个标签");
+        biz_screen_reply("ERR", "ERR_TOO_MANY,Max 8 tags");
         return;
     }
 
@@ -508,7 +560,7 @@ static void biz_screen_setting_wifi(const char *params)
             biz_screen_reply("WIFI", "fail");
         }
     } else {
-        biz_screen_reply("ERR", "WIFI_NOT_AVAILABLE,WiFi不可用");
+        biz_screen_reply("ERR", "WIFI_NOT_AVAILABLE,WiFi unavailable");
     }
 }
 
@@ -557,8 +609,17 @@ static void biz_screen_dispatch_check(const char *params)
 {
     if (params == NULL || strncmp(params, "global", 6) == 0) {
         biz_screen_check_global();
+    } else if (strncmp(params, "all", 3) == 0) {
+        /* @inv,all → 同全局盘点 */
+        biz_screen_check_global();
     } else if (strncmp(params, "specific", 8) == 0) {
         biz_screen_check_specific(params + 9);
+    } else if (strncmp(params, "tag", 3) == 0) {
+        /* @inv,tag,<id> → 单标签盘点 */
+        biz_screen_check_specific(params + 4);
+    } else if (strncmp(params, "zone", 4) == 0) {
+        /* @inv,zone,<zone> → 按区域盘点（暂降级为全局，待屏端支持区域筛选） */
+        biz_screen_check_global();
     } else if (strncmp(params, "capture", 7) == 0) {
         biz_screen_check_capture(params + 8);
     } else if (strncmp(params, "photo", 5) == 0) {
@@ -573,6 +634,9 @@ static void biz_screen_dispatch_find(const char *params)
 {
     if (strncmp(params, "list", 4) == 0) {
         biz_screen_find_list(params + 5);
+    } else if (strncmp(params, "start", 5) == 0) {
+        /* 屏端协议发送 @find,start,<id> 用于寻物，与 locate 行为一致 */
+        biz_screen_find_locate(params + 6);
     } else if (strncmp(params, "locate", 6) == 0) {
         biz_screen_find_locate(params + 7);
     } else if (strncmp(params, "stop", 4) == 0) {

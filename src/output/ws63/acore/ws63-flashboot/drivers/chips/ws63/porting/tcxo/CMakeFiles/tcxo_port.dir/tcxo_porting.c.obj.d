@@ -1,0 +1,17 @@
+drivers/chips/ws63/porting/tcxo/CMakeFiles/tcxo_port.dir/tcxo_porting.c.obj: \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/tcxo/tcxo_porting.c \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/mconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/tcxo/tcxo_porting.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/bits/alltypes.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/tcxo/hal_tcxo.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/errcode.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/tcxo/hal_tcxo_v150.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/tcxo/hal_tcxo.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/tcxo/hal_tcxo_v150_regs_op.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/tcxo/hal_tcxo_v150_regs_def.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/tcxo/tcxo_porting.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_definition.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_definitions.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core_rom.h

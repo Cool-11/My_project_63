@@ -1,0 +1,13 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="[ATT]gatt hdl value cbk memcpy error @att_gatt.c(68),ERROR" ID="0xdc4c0222" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="gatt reg service UUID[0x%04x] start hdl[0x%x], end hdl[0x%x] @att_gatt.c(951),INFO" ID="0xdc4c1dbd" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[ATT]gatt reg character memcpy error @att_gatt.c(1053),ERROR" ID="0xdc4c20ea" />
+			<MSG STRUCTURE="diag_log_msg5" NAME="gatt reg character UUID[0x%04x] hdl[0x%x], value hdl[0x%x], len[0x%x] properties[0x%x] @att_gatt.c(1061),INFO" ID="0xdc4c212d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[ATT]gatt reg descriptor memcpy error @att_gatt.c(1119),ERROR" ID="0xdc4c22fa" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[ATT]gatt reg descriptor memcpy error @att_gatt.c(1126),ERROR" ID="0xdc4c2332" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="gatt reg descriptor UUID[0x%04x], hdl[0x%x], len[0x%x] @att_gatt.c(1132),INFO" ID="0xdc4c2365" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[ATT]gatt server multiple variable notify send memcpy error @att_gatt.c(1422),ERROR" ID="0xdc4c2c72" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="gatt task write default memcpy error @att_gatt.c(2277),ERROR" ID="0xdc4c472a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[ATT]att uuid get memcpy error @att_gatt.c(2518),ERROR" ID="0xdc4c4eb2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[ATT]att uuid put memcpy ATT_UUID128_LEN error @att_gatt.c(2545),ERROR" ID="0xdc4c4f8a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[ATT]att uuid put memcpy error @att_gatt.c(2550),ERROR" ID="0xdc4c4fb2" />
+			</MSG_LOG>

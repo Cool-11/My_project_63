@@ -1,0 +1,1 @@
+####/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/src/boot_reset.c,/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/src/boot_flash.c,/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/src/boot_debug.c,/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/src/boot_jump.c

@@ -1,0 +1,74 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="sle discovery info find create info node fail. @sle_srv_dd.c(156),ERROR" ID="0xd8be04e2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="start discovery conn param alloc failed, length:%d @sle_srv_dd.c(215),ERROR" ID="0xd8be06ba" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="start discovery ext param alloc failed, length:%d @sle_srv_dd.c(237),ERROR" ID="0xd8be076a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="start discovery alloc failed, length:%d @sle_srv_dd.c(254),ERROR" ID="0xd8be07f2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="start discovery data memcpy failed @sle_srv_dd.c(259),ERROR" ID="0xd8be081a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="start discovery alloc failed, length:%d @sle_srv_dd.c(267),ERROR" ID="0xd8be085a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="start discovery data memcpy failed @sle_srv_dd.c(272),ERROR" ID="0xd8be0882" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle remove announce disc info is NULL. @sle_srv_dd.c(308),ERROR" ID="0xd8be09a2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle set public address pointer is null. @sle_srv_dd.c(395),ERROR" ID="0xd8be0c5a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle only can set public addr now. @sle_srv_dd.c(400),ERROR" ID="0xd8be0c82" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="uapi sle set public addr = %d failed @sle_srv_dd.c(406),ERROR" ID="0xd8be0cb2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle get public address pointer is null. @sle_srv_dd.c(419),ERROR" ID="0xd8be0d1a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle only can get public addr now. @sle_srv_dd.c(424),ERROR" ID="0xd8be0d42" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="uapi sle get public addr = %d failed @sle_srv_dd.c(431),ERROR" ID="0xd8be0d7a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle get public address memcpy fail. @sle_srv_dd.c(442),ERROR" ID="0xd8be0dd2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle get local name pointer is null. @sle_srv_dd.c(455),ERROR" ID="0xd8be0e3a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle get local name param error. @sle_srv_dd.c(460),ERROR" ID="0xd8be0e62" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle get local name param memcpy fail. @sle_srv_dd.c(468),ERROR" ID="0xd8be0ea2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle set local name pointer is null. @sle_srv_dd.c(484),ERROR" ID="0xd8be0f22" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle set local name param error. @sle_srv_dd.c(489),ERROR" ID="0xd8be0f4a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle set local name param memcpy fail. @sle_srv_dd.c(497),ERROR" ID="0xd8be0f8a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="set discovery data pointer is null. @sle_srv_dd.c(513),ERROR" ID="0xd8be100a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="discovery id is invalid. @sle_srv_dd.c(517),ERROR" ID="0xd8be102a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle set announce data disc info is NULL. @sle_srv_dd.c(526),ERROR" ID="0xd8be1072" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="set discovery data alloc failed, length:%d @sle_srv_dd.c(535),ERROR" ID="0xd8be10ba" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="set discovery data mem copy failed @sle_srv_dd.c(541),ERROR" ID="0xd8be10ea" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="set discovery data alloc failed, length:%d @sle_srv_dd.c(549),ERROR" ID="0xd8be112a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="set scan rsp data mem copy failed @sle_srv_dd.c(555),ERROR" ID="0xd8be115a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="discovery id is invalid. @sle_srv_dd.c(592),ERROR" ID="0xd8be1282" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="set discovery param pointer is null. @sle_srv_dd.c(610),ERROR" ID="0xd8be1312" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="discovery id is invalid. @sle_srv_dd.c(614),ERROR" ID="0xd8be1332" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="announce tx power id is error -127~20, 127 @sle_srv_dd.c(619),ERROR" ID="0xd8be135a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle set announce param disc info is NULL. @sle_srv_dd.c(633),ERROR" ID="0xd8be13ca" />
+			<MSG STRUCTURE="diag_log_msg1" NAME=" sle set announce param ext param alloc failed, length:%d @sle_srv_dd.c(658),ERROR" ID="0xd8be1492" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="discovery id is invalid. @sle_srv_dd.c(690),ERROR" ID="0xd8be1592" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="discovery id is not active, please set param first. @sle_srv_dd.c(696),ERROR" ID="0xd8be15c2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="discovery id is discoverying, please stop first. @sle_srv_dd.c(701),ERROR" ID="0xd8be15ea" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="start discovery alloc failed, length:%d @sle_srv_dd.c(708),ERROR" ID="0xd8be1622" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="uapi sle start discovery = %d failed @sle_srv_dd.c(724),ERROR" ID="0xd8be16a2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="discovery id is invalid. @sle_srv_dd.c(762),INFO" ID="0xd8be17d5" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="discovery id is not active, please set param first. @sle_srv_dd.c(768),INFO" ID="0xd8be1805" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="discovery id(%d) is stopped, please start first. @sle_srv_dd.c(773),INFO" ID="0xd8be182d" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="uapi sle stop discovery = %d failed @sle_srv_dd.c(782),ERROR" ID="0xd8be1872" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="discovery id(%d) disable. @sle_srv_dd.c(785),INFO" ID="0xd8be188d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="set scan param pointer is null. @sle_srv_dd.c(800),ERROR" ID="0xd8be1902" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="set scan param phys err. @sle_srv_dd.c(806),ERROR" ID="0xd8be1932" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="device is scaning, please stop first. @sle_srv_dd.c(835),ERROR" ID="0xd8be1a1a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="start device seek alloc failed, length:%d @sle_srv_dd.c(842),ERROR" ID="0xd8be1a52" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="uapi sle start device seek = %d failed @sle_srv_dd.c(858),ERROR" ID="0xd8be1ad2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="device is not scaning, please start first. @sle_srv_dd.c(876),INFO" ID="0xd8be1b65" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="uapi sle stop device seek = %d failed @sle_srv_dd.c(884),ERROR" ID="0xd8be1ba2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="uapi sle stop device seek failed ret: 0x%x @sle_srv_dd.c(901),ERROR" ID="0xd8be1c2a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="stop device seek. @sle_srv_dd.c(904),INFO" ID="0xd8be1c45" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle device discovery msg is null @sle_srv_dd.c(915),ERROR" ID="0xd8be1c9a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="unhandled msg id %x @sle_srv_dd.c(963),INFO" ID="0xd8be1e1d" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="dev disable ret:%d. @sle_srv_dd.c(976),INFO" ID="0xd8be1e85" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="uapi sle start discovery = %d failed @sle_srv_dd.c(989),ERROR" ID="0xd8be1eea" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="discovery id(%d) enable. @sle_srv_dd.c(992),INFO" ID="0xd8be1f05" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="cannot find discovery info, handle: 0x%02x. @sle_srv_dd.c(1003),ERROR" ID="0xd8be1f5a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[SLE ADV CBK] event: %d. @sle_srv_dd.c(1006),INFO" ID="0xd8be1f75" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="uapi sle start device seek = %d failed @sle_srv_dd.c(1055),ERROR" ID="0xd8be20fa" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="start device seek. @sle_srv_dd.c(1058),INFO" ID="0xd8be2115" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[SLE SCAN CBK] event: %d. @sle_srv_dd.c(1065),INFO" ID="0xd8be214d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sel srv adv_report_cbk result info new memory failed. @sle_srv_dd.c(1092),ERROR" ID="0xd8be2222" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle device dev init failed. @sle_srv_dd.c(1131),ERROR" ID="0xd8be235a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle device discovery init failed. @sle_srv_dd.c(1140),ERROR" ID="0xd8be23a2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="sle device discovery init failed. @sle_srv_dd.c(1151),ERROR" ID="0xd8be23fa" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[Error] sle already enabled! @sle_srv_dd.c(1169),ERROR" ID="0xd8be248a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[Error] sle gle init failed:0x%x! @sle_srv_dd.c(1175),ERROR" ID="0xd8be24ba" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[Error] sle gle enable failed:0x%x! @sle_srv_dd.c(1199),ERROR" ID="0xd8be257a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="btsrv sle stop adv id = %d failed @sle_srv_dd.c(1232),ERROR" ID="0xd8be2682" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[Error] sle already disabled! @sle_srv_dd.c(1242),ERROR" ID="0xd8be26d2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[Error] sle disable failed, reg 0x%x @sle_srv_dd.c(1263),ERROR" ID="0xd8be277a" />
+			</MSG_LOG>

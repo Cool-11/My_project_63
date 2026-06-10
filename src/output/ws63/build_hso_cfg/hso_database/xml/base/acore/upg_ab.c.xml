@@ -1,0 +1,13 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg1" NAME="[UPG] ab cfg init write failed, ret = 0x%x @upg_ab.c(85),ERROR" ID="0xa06602aa" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg ab config check failed, will init, check_num = 0x%x @upg_ab.c(108),ERROR" ID="0xa0660362" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg set config failed, ret = 0x%x @upg_ab.c(141),ERROR" ID="0xa066046a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg get region addr failed @upg_ab.c(187),ERROR" ID="0xa06605da" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] set the same region with the current,please check @upg_ab.c(279),ERROR" ID="0xa06608ba" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] set the config failed @upg_ab.c(285),ERROR" ID="0xa06608ea" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="[UPG] erase region addr:0x%08x, size:0x%08x @upg_ab.c(300),INFO" ID="0xa0660965" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="[UPG] region addr:0x%08x or size:0x%08x is not 4K aligned @upg_ab.c(303),ERROR" ID="0xa066097a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] erase region failed @upg_ab.c(307),ERROR" ID="0xa066099a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] verify region addr err @upg_ab.c(347),ERROR" ID="0xa0660ada" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] verify header err @upg_ab.c(353),ERROR" ID="0xa0660b0a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg_region_verify region %d succ. @upg_ab.c(366),ERROR" ID="0xa0660b72" />
+			</MSG_LOG>

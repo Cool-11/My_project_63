@@ -1,0 +1,7 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg3" NAME="[RADAR_LOG] isolation:%d, trxChain:%d, rxWave:%d @hal_radar_cali.c(66),INFO" ID="0x853e0215" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="[RADAR_LOG] wave_pwr:%u peak: %u @hal_radar_cali.c(72),INFO" ID="0x853e0245" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="[RADAR_LOG] res:%d, C:%u, L:%u, R:%u @hal_radar_cali.c(98),INFO" ID="0x853e0315" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="[RADAR_LOG] OK! final lna:%d, vga:%d, peak:%d, pwr:%u @hal_radar_cali.c(103),INFO" ID="0x853e033d" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="[RADAR_LOG] OKK! final lna:%d, vga:%d, peak:%d, pwr:%u @hal_radar_cali.c(123),INFO" ID="0x853e03dd" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[RADAR_LOG]agc confirm failed. peak diff:%d @hal_radar_cali.c(192),INFO" ID="0x853e0605" />
+			</MSG_LOG>

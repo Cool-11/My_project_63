@@ -1,0 +1,2 @@
+# Empty dependencies file for hal_sio.
+# This may be replaced when dependencies are built.

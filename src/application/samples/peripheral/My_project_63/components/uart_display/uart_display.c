@@ -3,6 +3,8 @@
 #include "uart.h"
 #include "pinctrl.h"
 #include "tcxo.h"
+#include "cmsis_os2.h"
+#include "../sle_network/sle_network.h"
 #include <string.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -103,6 +105,12 @@ static void ud_uart_rx_cb(const void *buffer, uint16_t length, bool error)
     }
     g_ud_last_recv_ms = uapi_tcxo_get_ms();
     ud_ring_push((const uint8_t *)buffer, length);
+
+    /* 通知主循环处理接收数据 */
+    extern osEventFlagsId_t g_my63_events;
+    if (g_my63_events != NULL) {
+        (void)osEventFlagsSet(g_my63_events, EVENT_UART2_RX);
+    }
 }
 
 static void ud_uart_init_pin(void)

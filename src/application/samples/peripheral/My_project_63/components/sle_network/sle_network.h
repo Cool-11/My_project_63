@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "cmsis_os2.h"
 #include "sle_device_discovery.h"
 #include "../shared_protocol/shared_protocol.h"
 
@@ -16,6 +17,9 @@ extern "C" {
 #define EVENT_UART2_RX    (1U << 2)   /* UART2 (串口屏) 接收完成 */
 #define EVENT_TIMER       (1U << 3)   /* 定时器事件（心跳/超时） */
 #define EVENT_ALL         (EVENT_SLE_ADV | EVENT_UART1_RX | EVENT_UART2_RX | EVENT_TIMER)
+
+/* 事件标志句柄（main.c 创建，各模块中断回调设置） */
+extern osEventFlagsId_t g_my63_events;
 
 #define SLE_SCAN_TABLE_MAX      32
 #define SLE_SCAN_ENTRY_TIMEOUT_MS   30000   /* 30s 未扫到标记为离线 */
@@ -53,6 +57,7 @@ void sle_network_register_notify_cb(sle_notify_callback cb);
 int sle_network_connect_by_tag(uint16_t tag_id);
 const sle_scan_entry_t *sle_network_get_scan_table(void);
 uint16_t sle_network_get_scan_table_count(void);
+void sle_network_update_scan_tag_id(const uint8_t *mac, uint16_t new_tag_id);
 void sle_network_poll(void);
 
 /* SLE 广播消息队列 API（事件驱动核心） */

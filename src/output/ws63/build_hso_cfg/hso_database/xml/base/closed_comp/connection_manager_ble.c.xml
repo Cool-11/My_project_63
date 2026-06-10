@@ -1,0 +1,24 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="addr memcpy_s fail @connection_manager_ble.c(46),ERROR" ID="0xd8960172" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[btsrv][ERROR] gatt client add conn node memcpy fail. @connection_manager_ble.c(88),ERROR" ID="0xd89602c2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="btsrv connect state change cbk arg NULL! @connection_manager_ble.c(100),ERROR" ID="0xd8960322" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="connect state update memcpy fail. @connection_manager_ble.c(105),ERROR" ID="0xd896034a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="connect state change cannot find conn node by handle: 0x%04x. @connection_manager_ble.c(125),ERROR" ID="0xd89603ea" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="ble smp paired keys cbk param error @connection_manager_ble.c(136),ERROR" ID="0xd8960442" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="paired keys malloc fail. @connection_manager_ble.c(142),ERROR" ID="0xd8960472" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="paired keys malloc fail. @connection_manager_ble.c(147),ERROR" ID="0xd896049a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="pair keys notify, keys addr memcpy fail. @connection_manager_ble.c(152),ERROR" ID="0xd89604c2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="pair keys notify, keys memcpy fail. @connection_manager_ble.c(159),ERROR" ID="0xd89604fa" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="ble smp paired keys cbk param error @connection_manager_ble.c(172),ERROR" ID="0xd8960562" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="connect param update incomes arg is NULL! @connection_manager_ble.c(186),ERROR" ID="0xd89605d2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="connect param update, conn_node not found. @connection_manager_ble.c(193),ERROR" ID="0xd896060a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="connect param update,connect_params NULL. @connection_manager_ble.c(199),ERROR" ID="0xd896063a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="connect param update, addr memcpy fail. @connection_manager_ble.c(206),ERROR" ID="0xd8960672" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="connect param update done ret:%d. @connection_manager_ble.c(215),WARNING" ID="0xd89606bb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="gap ble connect remote device param id null @connection_manager_ble.c(227),ERROR" ID="0xd896071a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[btsrv][INFO] addr memcpy to param fail. @connection_manager_ble.c(233),INFO" ID="0xd896074d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[btsrv]addr memcpy fail. @connection_manager_ble.c(254),ERROR" ID="0xd89607f2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[btsrv]conn node find fail. @connection_manager_ble.c(260),ERROR" ID="0xd8960822" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="read remote device rssi, conn_node not found. @connection_manager_ble.c(276),ERROR" ID="0xd89608a2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="read remote device rssi fail @connection_manager_ble.c(283),ERROR" ID="0xd89608da" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="create connection cancel fail @connection_manager_ble.c(294),ERROR" ID="0xd8960932" />
+			</MSG_LOG>

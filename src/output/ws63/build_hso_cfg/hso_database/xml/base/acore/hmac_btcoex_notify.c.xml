@@ -1,0 +1,8 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_update_ps_capability::Notify BT cancel AFH.} @hmac_btcoex_notify.c(99),WARNING" ID="0x820a031b" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_btcoex_update_ps_capability::conn:[%d] chan:[%d] bandwidth:[%d]} @hmac_btcoex_notify.c(127),INFO" ID="0x820a03fd" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_set_freq_and_work_state_hal_device::the vap is null!} @hmac_btcoex_notify.c(207),ERROR" ID="0x820a067a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_config_btcoex_asooc_bt_state_process::hmac_vap_btcoex is null. @hmac_btcoex_notify.c(243),ERROR" ID="0x820a079a" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_config_btcoex_assoc_state_proc::status 6slot:%d,a2dp:%d,data_transfer:%d.} @hmac_btcoex_notify.c(318),WARNING" ID="0x820a09f3" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{expect_ba_size:%d, ba_size:%d, need_delba:%d.} @hmac_btcoex_notify.c(320),WARNING" ID="0x820a0a03" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_m2s_siso_to_siso:: phy_chain[%d], cur state[%d].} @hmac_btcoex_notify.c(364),ERROR" ID="0x820a0b62" />
+			</MSG_LOG>

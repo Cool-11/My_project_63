@@ -1,0 +1,27 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] Could not find WMM IE in assoc req,user_id[%d] @hmac_uapsd.c(178),WARNING" ID="0x81080593" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_uapsd_update_user_para_etc::get mac_vap [%d] null.} @hmac_uapsd.c(189),ERROR" ID="0x810805ea" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_uapsd_update_user_para_etc::param null.} @hmac_uapsd.c(197),ERROR" ID="0x8108062a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_uapsd_update_user_para_etc::hmac_config_set_uapsd_update fail %u} @hmac_uapsd.c(214),WARNING" ID="0x810806b3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_uapsd_process_trigger::NOT_SEND_FRAME == uapsd_qdepth.} @hmac_uapsd.c(369),ERROR" ID="0x81080b8a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] hmac_uapsd_process_trigger:set PVB to 0,usr id = %d @hmac_uapsd.c(377),INFO" ID="0x81080bcd" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_uapsd_set_frame_hdr:: more data %d, type %02x, subtype %02x, eosp %d.} @hmac_uapsd.c(420),INFO" ID="0x81080d25" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_uapsd_tx_pkt::param is null}. @hmac_uapsd.c(452),ERROR" ID="0x81080e22" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_uapsd_tx_pkt::hmac_tx_process_data failed.} @hmac_uapsd.c(469),ERROR" ID="0x81080eaa" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_uapsd_tx_pkt::hmac_tx_mgmt failed.} @hmac_uapsd.c(479),ERROR" ID="0x81080efa" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_uapsd_process_queue::net_buf,mpdu_num=%d.} @hmac_uapsd.c(523),ERROR" ID="0x8108105a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_uapsd_process_queue::failed:assoc_id = %d.} @hmac_uapsd.c(535),ERROR" ID="0x810810ba" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_uapsd_flush_queue::tx_process_data failed.} @hmac_uapsd.c(556),ERROR" ID="0x81081162" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_uapsd_flush_queue::hmac_tx_mgmt failed.} @hmac_uapsd.c(564),ERROR" ID="0x810811a2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_uapsd_flush_queue::param is null}. @hmac_uapsd.c(583),ERROR" ID="0x8108123a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_uapsd_flush_queue::net_buf null, mpdu_num=%d.} @hmac_uapsd.c(601),ERROR" ID="0x810812ca" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_uapsd_send_qosnull::pnet_buf failed.} @hmac_uapsd.c(670),ERROR" ID="0x810814f2" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_uapsd_send_qosnull::tx_process_data failed[%d].} @hmac_uapsd.c(698),ERROR" ID="0x810815d2" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_uapsd_tx_enqueue::some mpdus are released due to queue full.} @hmac_uapsd.c(812),WARNING" ID="0x81081963" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_uapsd_enqueue_proc::param is null}. @hmac_uapsd.c(822),ERROR" ID="0x810819b2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_config_tx_comp_ps_handle:: input param invalid!!!} @hmac_uapsd.c(840),WARNING" ID="0x81081a43" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_config_tx_comp_ps_handle:: user[%d] is null!!!} @hmac_uapsd.c(847),WARNING" ID="0x81081a7b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_config_set_uapsd_update::hmac_user[%d] null.} @hmac_uapsd.c(878),WARNING" ID="0x81081b73" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_uapsd_ap_user_add mem already malloc! @hmac_uapsd.c(939),WARNING" ID="0x81081d5b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_uapsd_ap_user_add malloc null! @hmac_uapsd.c(945),ERROR" ID="0x81081d8a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_uapsd_ap_user_del mem already free! @hmac_uapsd.c(998),WARNING" ID="0x81081f33" />
+			</MSG_LOG>

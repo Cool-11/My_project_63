@@ -144,13 +144,12 @@ static int sle_adv_extract_and_update(const struct sle_adv_msg *msg)
                 /* 从偏移量 off+4 开始 unpack adv field（跳过 2B 厂商 ID） */
                 if (shared_protocol_unpack_adv(&data[off + 4],
                     SHARED_PROTO_ADV_FIELD_LEN, &s_adv) == SHARED_PROTO_OK) {
-                    if (s_adv.tag_id != 0) {
-                        scan_table_add_or_update(s_adv.tag_id, msg->addr,
-                            s_adv.battery, s_adv.qty, s_adv.status);
-                        return 1;  /* 解析成功 */
-                    }
+                    /* 允许 tag_id=0（未注册标签），入库流程靠 MAC 而非 tag_id 识别 */
+                    scan_table_add_or_update(s_adv.tag_id, msg->addr,
+                        s_adv.battery, s_adv.qty, s_adv.status);
+                    return 1;  /* 解析成功 */
                 }
-                return 0;  /* magic 不匹配或 tag_id=0 */
+                return 0;  /* magic 不匹配 */
             }
         }
         off = (uint16_t)(off + field_len + 1);
@@ -611,31 +610,51 @@ static void my63_connect_state_changed_cb(uint16_t conn_id, const sle_addr_t *ad
     }
 }
 
-/* 扫描表：添加或更新条目 */
+/* 扫描表：添加或更新条目（MAC 优先匹配） */
 static void scan_table_add_or_update(uint16_t tag_id, const uint8_t *mac,
     uint8_t battery, uint16_t qty, uint8_t status)
 {
-    /* 先查找已有条目 */
-    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
-        if (g_scan_table[i].used && g_scan_table[i].tag_id == tag_id) {
-            g_scan_table[i].battery = battery;
-            g_scan_table[i].qty = qty;
-            g_scan_table[i].status = status;
-            g_scan_table[i].last_seen_ms = uapi_tcxo_get_ms();
-            if (mac != NULL) {
-                (void)memcpy_s(g_scan_table[i].mac, 6, mac, 6);
+    uint64_t now = uapi_tcxo_get_ms();
+
+    /* 1. MAC 匹配优先（不同 BS21E 可能共享 tag_id=0） */
+    if (mac != NULL) {
+        for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+            if (g_scan_table[i].used && memcmp(g_scan_table[i].mac, mac, 6) == 0) {
+                g_scan_table[i].battery = battery;
+                g_scan_table[i].qty = qty;
+                g_scan_table[i].status = status;
+                g_scan_table[i].last_seen_ms = now;
+                /* 更新 tag_id（可能已从 0 预分配为新 ID） */
+                if (tag_id != 0) {
+                    g_scan_table[i].tag_id = tag_id;
+                }
+                return;
             }
-            return;
         }
     }
-    /* 新条目：找空位 */
+    /* 2. tag_id 匹配（已注册标签 / 无 MAC 回退） */
+    if (tag_id != 0) {
+        for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+            if (g_scan_table[i].used && g_scan_table[i].tag_id == tag_id) {
+                g_scan_table[i].battery = battery;
+                g_scan_table[i].qty = qty;
+                g_scan_table[i].status = status;
+                g_scan_table[i].last_seen_ms = now;
+                if (mac != NULL) {
+                    (void)memcpy_s(g_scan_table[i].mac, 6, mac, 6);
+                }
+                return;
+            }
+        }
+    }
+    /* 3. 新条目：找空位 */
     for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
         if (!g_scan_table[i].used) {
             g_scan_table[i].tag_id = tag_id;
             g_scan_table[i].battery = battery;
             g_scan_table[i].qty = qty;
             g_scan_table[i].status = status;
-            g_scan_table[i].last_seen_ms = uapi_tcxo_get_ms();
+            g_scan_table[i].last_seen_ms = now;
             g_scan_table[i].used = true;
             if (mac != NULL) {
                 (void)memcpy_s(g_scan_table[i].mac, 6, mac, 6);
@@ -647,6 +666,22 @@ static void scan_table_add_or_update(uint16_t tag_id, const uint8_t *mac,
         }
     }
     osal_printk("[WS63_NET] scan table FULL, drop tag_id=%u\r\n", (unsigned int)tag_id);
+}
+
+/* 扫描表：按 MAC 更新 tag_id（预分配后调用） */
+void sle_network_update_scan_tag_id(const uint8_t *mac, uint16_t new_tag_id)
+{
+    if (mac == NULL || new_tag_id == 0) {
+        return;
+    }
+    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+        if (g_scan_table[i].used && memcmp(g_scan_table[i].mac, mac, 6) == 0) {
+            osal_printk("[WS63_NET] scan tag_id update: %u -> %u\r\n",
+                (unsigned int)g_scan_table[i].tag_id, (unsigned int)new_tag_id);
+            g_scan_table[i].tag_id = new_tag_id;
+            return;
+        }
+    }
 }
 
 /* 扫描表：按 tag_id 查找 */
@@ -710,6 +745,11 @@ static void my63_seek_result_cb(sle_seek_result_info_t *seek_result_data)
     /* 入队（非阻塞，满则丢弃） */
     if (osMessageQueuePut(g_adv_queue, &msg, 0, 0) != osOK) {
         /* 队列满，丢弃此条（不做打印，避免阻塞） */
+    }
+
+    /* 通知主循环处理广播数据 */
+    if (g_my63_events != NULL) {
+        (void)osEventFlagsSet(g_my63_events, EVENT_SLE_ADV);
     }
 }
 

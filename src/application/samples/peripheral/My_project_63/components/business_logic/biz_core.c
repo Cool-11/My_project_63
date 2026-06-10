@@ -224,14 +224,18 @@ static void biz_uart_cmd_handler(const char *cmd, uint16_t seq, const char *data
     } else if (strcmp(cmd, "task_done") == 0 ||
                strcmp(cmd, "error") == 0 ||
                strcmp(cmd, "capture_progress") == 0 ||
+               strcmp(cmd, "asset_info") == 0 ||
+               strcmp(cmd, "asset_detail") == 0 ||
+               strcmp(cmd, "asset_list_page") == 0 ||
+               strcmp(cmd, "verification_start") == 0 ||
+               strcmp(cmd, "pong") == 0 ||
+               strcmp(cmd, "system_info") == 0 ||
                strcmp(cmd, "mqtt_connected") == 0 ||
                strcmp(cmd, "mqtt_error") == 0 ||
                strcmp(cmd, "mqtt_publish_result") == 0 ||
                strcmp(cmd, "l610_error") == 0 ||
                strcmp(cmd, "l610_at_result") == 0 ||
-               strcmp(cmd, "l610_status") == 0 ||
-               strcmp(cmd, "asset_list") == 0 ||
-               strcmp(cmd, "system_info") == 0) {
+               strcmp(cmd, "l610_status") == 0) {
         biz_handle_esp32_msg(cmd, data_json);
 
     /* === WiFi/MQTT commands (local to WS63) === */
@@ -297,7 +301,8 @@ void business_logic_poll(void)
             strcmp(g_biz_pending.cmd, "in_capture") == 0) {
             biz_map_remove(g_biz_pending.tag_id);
         }
-        biz_reply(g_biz_pending.seq, g_biz_pending.cmd, -10, "timeout", NULL);
+        /* 超时通知屏端，不发 ESP32（内部命令 ESP32 不认识） */
+        biz_screen_reply("ERR", "ERR_TIMEOUT,%s timeout", g_biz_pending.cmd);
         biz_clear_pending();
     }
 

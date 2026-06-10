@@ -1,0 +1,20 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_btcoex_update_ba_size::band %d, bandwidth %d exceed scope!} @hmac_btcoex_ba.c(54),ERROR" ID="0x82e801b2" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_update_ba_size::ba_size_expect_index %d exceed scope!} @hmac_btcoex_ba.c(65),ERROR" ID="0x82e8020a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_btcoex_delba_event_process::user IS NULL. @hmac_btcoex_ba.c(161),ERROR" ID="0x82e8050a" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_btcoex_delba_event_process:: a2dp status:%d, transfer status changed:%d, need_delba:%d,ba_size:%d.} @hmac_btcoex_ba.c(195),WARNING" ID="0x82e8061b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_config_tx_aggr_num:: frw_send_msg [%d].} @hmac_btcoex_ba.c(219),ERROR" ID="0x82e806da" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_mul_conn_status_handler::hmac_vap[%d] is NULL.} @hmac_btcoex_ba.c(261),ERROR" ID="0x82e8082a" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_btcoex_delba_foreach_tid::ul_ret: %d, tid: %d} @hmac_btcoex_ba.c(294),WARNING" ID="0x82e80933" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_delba_from_user::DO NOT DELBA.} @hmac_btcoex_ba.c(320),WARNING" ID="0x82e80a03" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_delba_from_user::need to reassoc to READDBA.} @hmac_btcoex_ba.c(322),WARNING" ID="0x82e80a13" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_rx_delba_trigger_etc::hmac_user is null! user_id is %d.} @hmac_btcoex_ba.c(359),WARNING" ID="0x82e80b3b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] {hmac_btcoex_rx_delba_trigger_etc:delba size:%d, need_delba:%d, delba_trigger:%d.} @hmac_btcoex_ba.c(373),WARNING" ID="0x82e80bab" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_rx_delba_trigger_etc:delba send failed:ul_ret: %d.} @hmac_btcoex_ba.c(380),WARNING" ID="0x82e80be3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_delba_send_timeout::hmac_user is null.} @hmac_btcoex_ba.c(403),ERROR" ID="0x82e80c9a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_delba_send_timeout::hmac_vap is null!} @hmac_btcoex_ba.c(418),ERROR" ID="0x82e80d12" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_delba_send_timeout::rx_pkt[%d]!} @hmac_btcoex_ba.c(425),WARNING" ID="0x82e80d4b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_delba_send_timeout::need to reassoc to resume.} @hmac_btcoex_ba.c(430),WARNING" ID="0x82e80d73" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_arp_fail_delba_process_etc::hmac_user is null!assoc_vap is %d.} @hmac_btcoex_ba.c(482),WARNING" ID="0x82e80f13" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_tx_addba_rsp_check::mac_payload is null!} @hmac_btcoex_ba.c(553),ERROR" ID="0x82e8114a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_arp_fail_delba_process:: MGMT RX IN register_netbuf_hooks error! @hmac_btcoex_ba.c(606),ERROR" ID="0x82e812f2" />
+			</MSG_LOG>

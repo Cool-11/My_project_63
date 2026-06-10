@@ -65,8 +65,8 @@ void biz_cmd_inbound(uint16_t seq, const char *data_json)
         }
     }
 
-    cJSON *j_zone = cJSON_GetObjectItem(root, "zone");
-    cJSON *j_item = cJSON_GetObjectItem(root, "item");
+    cJSON *j_zone = cJSON_GetObjectItem(root, "storage_area");
+    cJSON *j_item = cJSON_GetObjectItem(root, "item_name");
     if (j_zone != NULL && cJSON_IsString(j_zone)) {
         errno_t rc = strncpy_s(entry->zone, BIZ_ZONE_LEN,
             j_zone->valuestring, BIZ_ZONE_LEN - 1);

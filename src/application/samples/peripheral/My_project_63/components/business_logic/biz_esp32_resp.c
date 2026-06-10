@@ -20,10 +20,12 @@ static void biz_handle_capture_progress(cJSON *root)
 
     /* step "1/3" → 取分子 "1" */
     int step_num = atoi(step_str);
+    /* WS63 vsnprintf_s 不支持 %f，改用整数表示十分之一分 */
+    int score_tenth = (int)(score * 10.0 + 0.5);
 
-    biz_screen_reply("PROG", "%d,%s,%.1f", step_num, view, score);
-    osal_printk("[WS63_BIZ] capture_progress step=%d view=%s score=%.1f\r\n",
-        step_num, view, score);
+    biz_screen_reply("PROG", "%d,%s,%d", step_num, view, score_tenth);
+    osal_printk("[WS63_BIZ] capture_progress step=%d view=%s score=%d.%d\r\n",
+        step_num, view, score_tenth / 10, score_tenth % 10);
 }
 
 /* ESP32响应处理: asset_info → 按task区分outbound/inventory */
@@ -31,6 +33,7 @@ static void biz_handle_asset_info(cJSON *root)
 {
     cJSON *j_task = cJSON_GetObjectItem(root, "task");
     const char *task = (j_task && cJSON_IsString(j_task)) ? j_task->valuestring : "";
+    osal_printk("[WS63_BIZ] asset_info task=%s\r\n", task);
 
     if (strcmp(task, "outbound") == 0) {
         /* 出库分步: asset_info → #ASSET_INFO,id,name,qty,remove,remain */
@@ -41,7 +44,7 @@ static void biz_handle_asset_info(cJSON *root)
         cJSON *j_remain = cJSON_GetObjectItem(root, "remaining_qty");
 
         const char *tag_str = (j_tag && cJSON_IsString(j_tag)) ? j_tag->valuestring : "0";
-        const char *name = (j_name && cJSON_IsString(j_name)) ? j_name->valuestring : "?";
+        const char *name = (j_name && cJSON_IsString(j_name)) ? j_name->valuestring : NULL;
         int qty = (j_qty && cJSON_IsNumber(j_qty)) ? j_qty->valueint : 0;
         int remove = (j_remove && cJSON_IsNumber(j_remove)) ? j_remove->valueint : 0;
         int remain = (j_remain && cJSON_IsNumber(j_remain)) ? j_remain->valueint : 0;
@@ -51,6 +54,25 @@ static void biz_handle_asset_info(cJSON *root)
         biz_esp32_to_tag_id(tag_str, &tag_id);
         char tag_display[8];
         ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
+
+        /* 兜底: ESP32 可能未持久化资产，用本地 biz_map 数据补全 */
+        if (qty == 0 || name == NULL) {
+            biz_tag_entry_t *entry = biz_map_find_by_tag(tag_id);
+            if (entry != NULL) {
+                if (qty == 0) {
+                    qty = (int)entry->qty;
+                    remain = (qty > remove) ? (qty - remove) : 0;
+                }
+                if (name == NULL) {
+                    name = entry->item;
+                }
+                osal_printk("[WS63_BIZ] outbound asset_info fallback to biz_map: qty=%d name=%s\r\n",
+                    qty, name);
+            }
+        }
+        if (name == NULL) {
+            name = "?";
+        }
 
         biz_screen_reply("ASSET_INFO", "%s,%s,%d,%d,%d", tag_display, name, qty, remove, remain);
         osal_printk("[WS63_BIZ] outbound asset_info: %s qty=%d remove=%d remain=%d\r\n",
@@ -66,7 +88,7 @@ static void biz_handle_asset_detail(cJSON *root)
 {
     cJSON *j_found = cJSON_GetObjectItem(root, "found");
     if (j_found && cJSON_IsBool(j_found) && !cJSON_IsTrue(j_found)) {
-        biz_screen_reply("ERR", "ERR_ASSET_NOT_FOUND,标签未注册");
+        biz_screen_reply("ERR", "ERR_ASSET_NOT_FOUND,Not registered");
         return;
     }
 
@@ -163,7 +185,9 @@ static void biz_handle_task_done(cJSON *root, const char *data_json)
     } else if (strcmp(task, "outbound") == 0) {
         cJSON *j_match = cJSON_GetObjectItem(root, "is_match");
         bool is_match = (j_match && cJSON_IsBool(j_match)) ? cJSON_IsTrue(j_match) : false;
-        biz_screen_reply("DONE", "out,%s", is_match ? "success" : "fail");
+        cJSON *j_remain = cJSON_GetObjectItem(root, "remaining_qty");
+        int remain = (j_remain && cJSON_IsNumber(j_remain)) ? j_remain->valueint : 0;
+        biz_screen_reply("DONE", "out,%s,%d", is_match ? "success" : "fail", remain);
         if (g_biz_pending.active) {
             biz_clear_pending();
         }
@@ -171,7 +195,9 @@ static void biz_handle_task_done(cJSON *root, const char *data_json)
         cJSON *j_conf = cJSON_GetObjectItem(root, "weighted_confidence");
         double conf = (j_conf && cJSON_IsNumber(j_conf)) ? j_conf->valuedouble : 0.0;
         const char *result = (conf >= 0.75) ? "match" : "mismatch";
-        biz_screen_reply("DONE", "check,%s,%.2f", result, conf);
+        /* WS63 vsnprintf_s 不支持 %f，改用整数百分比 */
+        int conf_pct = (int)(conf * 100.0 + 0.5);
+        biz_screen_reply("DONE", "check,%s,%d", result, conf_pct);
         if (g_biz_pending.active) {
             biz_clear_pending();
         }
@@ -194,7 +220,7 @@ static void biz_handle_task_done(cJSON *root, const char *data_json)
 static void biz_handle_verification_start(cJSON *root)
 {
     cJSON *j_msg = cJSON_GetObjectItem(root, "message");
-    const char *msg = (j_msg && cJSON_IsString(j_msg)) ? j_msg->valuestring : "请拍摄正面视图验证";
+    const char *msg = (j_msg && cJSON_IsString(j_msg)) ? j_msg->valuestring : "Capture front view";
     biz_screen_reply("MSG", "%s", msg);
 }
 
@@ -209,6 +235,12 @@ static void biz_handle_pong(cJSON *root)
 void biz_handle_esp32_msg(const char *cmd, const char *data_json)
 {
     cJSON *root = (data_json != NULL) ? cJSON_Parse(data_json) : NULL;
+
+    if (root == NULL) {
+        osal_printk("[WS63_BIZ] esp32_msg cJSON_Parse FAILED cmd=%s\r\n",
+            cmd ? cmd : "null");
+        return;
+    }
 
     /* 按 cmd 分发到具体处理函数 */
     if (strcmp(cmd, "capture_progress") == 0) {
@@ -225,12 +257,15 @@ void biz_handle_esp32_msg(const char *cmd, const char *data_json)
         if (root != NULL) biz_handle_verification_start(root);
     } else if (strcmp(cmd, "pong") == 0) {
         if (root != NULL) biz_handle_pong(root);
+    } else if (strcmp(cmd, "system_info") == 0) {
+        /* 系统信息仅日志记录 */
+        osal_printk("[WS63_BIZ] esp32 system_info received\r\n");
     } else if (strcmp(cmd, "error") == 0) {
         if (root != NULL) {
             cJSON *j_msg = cJSON_GetObjectItem(root, "msg");
             cJSON *j_code = cJSON_GetObjectItem(root, "code");
             const char *msg = (j_msg && cJSON_IsString(j_msg)) ? j_msg->valuestring : "esp32 error";
-            const char *code = (j_code && cJSON_IsString(j_code)) ? j_code->valuestring : "UNKNOWN";
+            const char *code = (j_code && cJSON_IsString(j_code)) ? j_code->valuestring : "ERR_UNKNOWN";
             biz_screen_reply("ERR", "%s,%s", code, msg);
             if (g_biz_pending.active) {
                 biz_clear_pending();

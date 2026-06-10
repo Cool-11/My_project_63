@@ -1,0 +1,1 @@
+####/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/sfc/porting/sfc_porting.c,/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/sfc/porting/sfc_protect.c,/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/sfc/porting/sfc_protect_gd25q32.c

@@ -1,0 +1,27 @@
+utils/update/common/CMakeFiles/update_common.dir/upg_alloc.c.obj: \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/common/upg_alloc.c \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/mconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/kernel/liteos/liteos_v208.5.0/menuconfig/include/menuconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/srv_tiot_host/tiot_driver/product_porting/ws63_w33_evb/tiot_autoconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stddef.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/bits/alltypes.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/arch/riscv32/bits/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/common_def.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/inner_include/upg_common.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdbool.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/errcode.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/middleware/utils/partition.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition/include/partition_resource_id.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/middleware/utils/upg.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/update/common/../include/upg_definitions_porting.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/inner_include/upg_definitions.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/update/common/../include/upg_porting.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdio.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/features.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/inner_include/upg_definitions.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/update/common/../include/upg_common_porting.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/linker/ws63_liteos_app_linker/memory_config.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/memory_config/include/memory_config_common.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/update/common/../include/upg_definitions_porting.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/inner_include/upg_alloc.h

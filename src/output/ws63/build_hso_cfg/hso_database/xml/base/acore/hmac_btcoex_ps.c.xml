@@ -1,0 +1,44 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_btcoex_encap_preempt_frame:: HAL_DEVICE null} @hmac_btcoex_ps.c(38),WARNING" ID="0x82e60133" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_encap_preempt_frame::sw_preempt_type[%d] error} @hmac_btcoex_ps.c(92),ERROR" ID="0x82e602e2" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_encap_preempt_frame::sw_preempt_type[%d]!} @hmac_btcoex_ps.c(97),WARNING" ID="0x82e6030b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_btcoex_set_preempt_frame_param::sw_preempt_type[%d] error} @hmac_btcoex_ps.c(140),ERROR" ID="0x82e60462" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_btcoex_set_preempt_frame_param::SUCC sw_preempt_type[%d] preempt_param_val[%d]!} @hmac_btcoex_ps.c(155),WARNING" ID="0x82e604db" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_btcoex_init_preempt::hmac_vap_btcoex is null. @hmac_btcoex_ps.c(171),ERROR" ID="0x82e6055a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="hmac_btcoex_init_preempt:send btcoex abort null to device fail[%d] @hmac_btcoex_ps.c(201),WARNING" ID="0x82e6064b" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_btcoex_set_ps_flag:: enable=%d, cts=%d, rsp_ps=%d} @hmac_btcoex_ps.c(264),INFO" ID="0x82e60845" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_set_ps_flag send msg fail, ret=%d} @hmac_btcoex_ps.c(269),ERROR" ID="0x82e6086a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_set_vap_ps_frame:: null pointer} @hmac_btcoex_ps.c(291),ERROR" ID="0x82e6091a" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="{hmac_btcoex_set_vap_ps_frame:: valid=%d, vap_id=%d, lut_index=%d} @hmac_btcoex_ps.c(331),INFO" ID="0x82e60a5d" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_set_vap_ps_frame send msg fail, ret=%d} @hmac_btcoex_ps.c(336),ERROR" ID="0x82e60a82" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_set_dev_ps_frame:: coex_pri=%d duration=%d} @hmac_btcoex_ps.c(356),INFO" ID="0x82e60b25" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_set_dev_ps_frame send msg fail, ret=%d} @hmac_btcoex_ps.c(362),ERROR" ID="0x82e60b52" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_switch_ps send msg fail, status=%u ret=%d} @hmac_btcoex_ps.c(381),ERROR" ID="0x82e60bea" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_ps_timeout_update_time::ps_status[%d] error.} @hmac_btcoex_ps.c(437),WARNING" ID="0x82e60dab" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_stop_check_and_notify: hal_device is null ptr.} @hmac_btcoex_ps.c(459),WARNING" ID="0x82e60e5b" />
+			<MSG STRUCTURE="diag_log_msg9" NAME="{hmac_btcoex_ps_stop_check_and_notify::ap[%d]sta[%d]5g[%d]2g[%d]sco[%d]dbac[%d]chain[%d]m2s[%d] ps_stop[%d]!} @hmac_btcoex_ps.c(505),WARNING" ID="0x82e60fcb" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_btcoex_ps_pause_check_and_notify::ps_pause[%d]up_vap_num[%d]!} @hmac_btcoex_ps.c(542),WARNING" ID="0x82e610f3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_scan_state::hmac_scan_switch_home_channel_work start.} @hmac_btcoex_ps.c(559),WARNING" ID="0x82e6117b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_scan_state::hmac_scan_handle_switch_channel_back start.} @hmac_btcoex_ps.c(565),WARNING" ID="0x82e611ab" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_scan_state::scan is already abort and resume.} @hmac_btcoex_ps.c(572),WARNING" ID="0x82e611e3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_scan_state::HAL_BTCOEX_SW_POWSAVE_IDLE.} @hmac_btcoex_ps.c(577),WARNING" ID="0x82e6120b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_pow_save_scan_state::sw_preempt_type[%d] error.} @hmac_btcoex_ps.c(586),WARNING" ID="0x82e61253" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_other_state:: powerdown already resume.} @hmac_btcoex_ps.c(597),WARNING" ID="0x82e612ab" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_other_state:: current is normal!.} @hmac_btcoex_ps.c(604),WARNING" ID="0x82e612e3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_other_state:: work state scan abort already resume.} @hmac_btcoex_ps.c(610),WARNING" ID="0x82e61313" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_other_state:: work HAL_BTCOEX_SW_POWSAVE_SUB_IDLE.} @hmac_btcoex_ps.c(618),WARNING" ID="0x82e61353" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_other_state:: work HAL_BTCOEX_SW_POWSAVE_SUB_SCAN.} @hmac_btcoex_ps.c(622),WARNING" ID="0x82e61373" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_pow_save_other_state::sw_preempt_type[%d] error.} @hmac_btcoex_ps.c(628),WARNING" ID="0x82e613a3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_callback::h2d_device is null.} @hmac_btcoex_ps.c(644),WARNING" ID="0x82e61423" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_pow_save_callback::time is up.} @hmac_btcoex_ps.c(658),WARNING" ID="0x82e61493" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_off_scan_state_proc::hmac_scan_switch_home_channel_work start.} @hmac_btcoex_ps.c(712),WARNING" ID="0x82e61643" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_off_scan_state_proc::hmac_scan_handle_switch_channel_back start.} @hmac_btcoex_ps.c(718),WARNING" ID="0x82e61673" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_off_scan_state_proc::scan is already abort and resume.} @hmac_btcoex_ps.c(726),WARNING" ID="0x82e616b3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_off_scan_state_proc::HAL_BTCOEX_SW_POWSAVE_IDLE.} @hmac_btcoex_ps.c(735),WARNING" ID="0x82e616fb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_ps_off_scan_state_proc::sw_preempt_type[%d] error.} @hmac_btcoex_ps.c(748),WARNING" ID="0x82e61763" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_off_no_scan_state_proc:: powerdown has already resume.} @hmac_btcoex_ps.c(758),WARNING" ID="0x82e617b3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_off_no_scan_state_proc:: current is normal!.} @hmac_btcoex_ps.c(764),WARNING" ID="0x82e617e3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_off_no_scan_state_proc:: work state scan abort already resume.} @hmac_btcoex_ps.c(770),WARNING" ID="0x82e61813" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_off_no_scan_state_proc:: work HAL_BTCOEX_SW_POWSAVE_SUB_IDLE.} @hmac_btcoex_ps.c(778),WARNING" ID="0x82e61853" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_btcoex_ps_off_no_scan_state_proc:: work HAL_BTCOEX_SW_POWSAVE_SUB_SCAN.} @hmac_btcoex_ps.c(782),WARNING" ID="0x82e61873" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_btcoex_ps_off_no_scan_state_proc::sw_preempt_type[%d] error.} @hmac_btcoex_ps.c(793),WARNING" ID="0x82e618cb" />
+			</MSG_LOG>

@@ -1,0 +1,13 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg1" NAME="{hmac_config_frame_pn_enable:: g_frame_pn_enable[%d]} @hmac_frag.c(68),INFO" ID="0x84ca0225" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="hmac_config_frame_pn_enable:fail, vap_id[%d] ret[%d] @hmac_frag.c(73),ERROR" ID="0x84ca024a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_config_frag_threshold: frag_threshold[%d]!} @hmac_frag.c(89),ERROR" ID="0x84ca02ca" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="FragmentationThreshold:%d. @hmac_frag.c(100),WARNING" ID="0x84ca0323" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_frag_process::memcpy_s fail.} @hmac_frag.c(181),WARNING" ID="0x84ca05ab" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_frag_start::hmac_vap[%d] mib_info NULL.} @hmac_frag.c(223),ERROR" ID="0x84ca06fa" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_defrag_first_frag::user index[%d]} @hmac_frag.c(271),ERROR" ID="0x84ca087a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_defrag_first_frag::Alloc new_buf null,size[%d].} @hmac_frag.c(290),ERROR" ID="0x84ca0912" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] {hmac_defrag_process::The first frag_num is not Zero(%d), seq_num[%d], more_frag[%d].} @hmac_frag.c(327),INFO" ID="0x84ca0a3d" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_user_clear_defrag_res::hmac_user is null ptr.} @hmac_frag.c(445),ERROR" ID="0x84ca0dea" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="user_idx[%d] hmac_frag_add_user mem already malloc! @hmac_frag.c(485),WARNING" ID="0x84ca0f2b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="user_idx[%d] hmac_frag_add_user malloc null! @hmac_frag.c(490),ERROR" ID="0x84ca0f52" />
+			</MSG_LOG>

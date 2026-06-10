@@ -1,0 +1,16 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_get_upgrade_flag_flash_start_addr fail @upg_common.c(52),ERROR" ID="0xa06a01a2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_alloc_and_get_upgrade_flag upg_malloc fail @upg_common.c(58),ERROR" ID="0xa06a01d2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_alloc_and_get_upgrade_flag read flash fail @upg_common.c(64),ERROR" ID="0xa06a0202" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] The read_offset is more than file size! @upg_common.c(203),ERROR" ID="0xa06a065a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] read_fota_pkg_data failed @upg_common.c(219),ERROR" ID="0xa06a06da" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] statfs failed! Invalid argument! @upg_common.c(242),ERROR" ID="0xa06a0792" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] open %s fail! @upg_common.c(497),ERROR" ID="0xa06a0f8a" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] The read_offset is more than file size! @upg_common.c(502),ERROR" ID="0xa06a0fb2" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] seek file fail! @upg_common.c(511),ERROR" ID="0xa06a0ffa" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] read file fail! @upg_common.c(520),ERROR" ID="0xa06a1042" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg_flash_write upgrader flag fail. ret = 0x%x @upg_common.c(650),ERROR" ID="0xa06a1452" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] retry times all failed @upg_common.c(655),ERROR" ID="0xa06a147a" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] write complete: 0x%x @upg_common.c(768),INFO" ID="0xa06a1805" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="[UPG] upg_flash_read flag fail @upg_common.c(795),ERROR" ID="0xa06a18da" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="[UPG] upg verify: anti rollback version_verify ok. image_id = 0x%x @upg_common.c(968),INFO" ID="0xa06a1e45" />
+			</MSG_LOG>

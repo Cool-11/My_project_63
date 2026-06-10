@@ -1,0 +1,24 @@
+bootloader/commonboot/CMakeFiles/common_boot.dir/src/boot_reset.c.obj: \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/src/boot_reset.c \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/mconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/include/boot_reset.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/include/boot_def.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/common_def.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/bits/alltypes.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/boot/boot_config/boot_init.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stddef.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/non_os/non_os/non_os.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/core.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_definition.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_definitions.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_irq.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/std_def.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdbool.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/memory_config/include/product/product.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/memory_config/include/product/product_fpga_standard.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/platform_types.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core_rom.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_definitions.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/linker/flashboot_linker/memory_config.h

@@ -1,0 +1,75 @@
+<MSG_LOG><MSG STRUCTURE="diag_log_msg0" NAME="{hmac_trigger_csa_init_scan_params::scan total channel num is 0.} @hmac_csa_sta.c(174),ERROR" ID="0x83400572" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_trigger_csa_scan::param null.} @hmac_csa_sta.c(192),ERROR" ID="0x83400602" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_trigger_csa_scan::update csa scan params.} @hmac_csa_sta.c(202),WARNING" ID="0x83400653" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_trigger_csa_scan::hmac_scan_handle_scan_req_entry err.} @hmac_csa_sta.c(210),ERROR" ID="0x83400692" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_sta_csa_have_vap_is_in_assoc::vap_%d_state=[%d], Return OSAL_TRUE} @hmac_csa_sta.c(271),WARNING" ID="0x8340087b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_sta_csa_fsm_trans_to_state::now status = %d not need to change} @hmac_csa_sta.c(290),WARNING" ID="0x83400913" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_sta_csa_fsm_trans_to_state::csa status change from [%d] to [%d]} @hmac_csa_sta.c(295),WARNING" ID="0x8340093b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_sta_csa_timeout_fn:: To wait tbtt event} @hmac_csa_sta.c(323),WARNING" ID="0x83400a1b" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_sta_csa_start_timer::create timer,timeout = [%d](%d)} @hmac_csa_sta.c(349),WARNING" ID="0x83400aeb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_sta_csa_fsm_switch_event::event_data is null!!!} @hmac_csa_sta.c(466),WARNING" ID="0x83400e93" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_sta_csa_fsm_switch_event::switch channel from [%d] to [%d]} @hmac_csa_sta.c(479),WARNING" ID="0x83400efb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_sta_csa_fsm_switch_event::have vap in assoc, csa return INIT} @hmac_csa_sta.c(485),WARNING" ID="0x83400f2b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_sta_csa_stop_timeout_fn::timer timeout!} @hmac_csa_sta.c(507),WARNING" ID="0x83400fdb" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_sta_csa_fsm_scan_end:csa fail, from:%d to:%d} @hmac_csa_sta.c(548),WARNING" ID="0x83401123" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_sta_csa_fsm_wait_event::trigger_csa_scan} @hmac_csa_sta.c(578),WARNING" ID="0x83401213" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_sta_csa_fsm_wait_event:have vap assoc,return INIT @hmac_csa_sta.c(583),WARNING" ID="0x8340123b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_sta_csa_fsm_wait_event:assoc_ch=%d} @hmac_csa_sta.c(593),WARNING" ID="0x8340128b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_sta_csa_fsm_wait_event::hmac_sta_csa_fsm_scan_end() ret[%d]} @hmac_csa_sta.c(599),WARNING" ID="0x834012bb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_sta_csa_fsm_attach::csa_handle_timer registerd. @hmac_csa_sta.c(678),ERROR" ID="0x83401532" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_sta_csa_fsm_attach::oal_fsm_create fail. @hmac_csa_sta.c(700),ERROR" ID="0x834015e2" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] hmac_sta_csa_fsm_attach::vap_id = %d vap_mode=%d p2p_mode=%d attached succ. @hmac_csa_sta.c(707),WARNING" ID="0x8340161b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] hmac_sta_csa_fsm_detach::vap id[%d]pm fsm not attatched @hmac_csa_sta.c(719),WARNING" ID="0x8340167b" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="hmac_sta_csa_fsm_detach::vap_id = %d vap_mode=%d p2p_mode=%d detached succ. @hmac_csa_sta.c(727),WARNING" ID="0x834016bb" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] hmac_sta_csa_fsm_post_event:: event type[%d] error, NULL! @hmac_csa_sta.c(767),ERROR" ID="0x834017fa" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] hmac_sta_csa_fsm_post_event::csa_fsm_attached = %d! @hmac_csa_sta.c(774),WARNING" ID="0x83401833" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_csa_sta_switch_channel::channel[%d] is not support bw[%d],set 20MHz} @hmac_csa_sta.c(858),WARNING" ID="0x83401ad3" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_csa_sta_switch_channel:: csa Switching from chan[%d] BW[%d] mode To chan[%d] BW[%d].} @hmac_csa_sta.c(868),WARNING" ID="0x83401b23" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_ie_proc_wide_bandwidth_ie::not waiting shit channel,csa_status=%d} @hmac_csa_sta.c(910),WARNING" ID="0x83401c73" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_ie_proc_wide_bandwidth_ie::hmac_is_channel_num_valid_etc failed[%d], new_chan=%d.} @hmac_csa_sta.c(922),WARNING" ID="0x83401cd3" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_ie_proc_wide_bandwidth_ie::invalid wide bw ch switch ie len[%d]} @hmac_csa_sta.c(929),WARNING" ID="0x83401d0b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] {hmac_ie_proc_wide_bandwidth_ie:: channel_width=[%d] seg0=[%d] seg1=[%d]} @hmac_csa_sta.c(939),WARNING" ID="0x83401d5b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_ie_proc_wide_bandwidth_ie::csa get new_bw=[%d] from MAC_EID_WIDE_BW_CH_SWITCH(IE194)} @hmac_csa_sta.c(946),WARNING" ID="0x83401d93" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_ie_proc_wide_bandwidth_ie::unused vht channel with[%d]} @hmac_csa_sta.c(949),WARNING" ID="0x83401dab" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ie_proc_csa_bw_ie::param null.} @hmac_csa_sta.c(964),ERROR" ID="0x83401e22" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ie_proc_csa_bw_ie::param null, csa_vap_info[%p].} @hmac_csa_sta.c(971),ERROR" ID="0x83401e5a" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_ie_proc_csa_bw_ie::csa get new_bw=[%d] from MAC_EID_SEC_CH_OFFSET(IE62)} @hmac_csa_sta.c(985),WARNING" ID="0x83401ecb" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_do_ch_switch::VAP CURREN BW STATE[%d].} @hmac_csa_sta.c(1013),WARNING" ID="0x83401fab" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ie_proc_ch_switch_ie::param null.} @hmac_csa_sta.c(1030),ERROR" ID="0x83402032" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ie_proc_ch_switch_ie::invalid chan switch ann ie len[%d]} @hmac_csa_sta.c(1053),WARNING" ID="0x834020eb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_ie_proc_ch_switch_ie::invalid ext chan switch ann ie len[%d]} @hmac_csa_sta.c(1063),WARNING" ID="0x8340213b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="{hmac_ie_proc_ch_switch_ie::csa info  chan=%d mode=%d cnt=%d currt_channel=%d} @hmac_csa_sta.c(1079),WARNING" ID="0x834021bb" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_ie_proc_ch_switch_ie::ch valid failed[%d], new_chan=%d.} @hmac_csa_sta.c(1086),WARNING" ID="0x834021f3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_sta_up_rx_ch_switch::CSA no handle csa action!} @hmac_csa_sta.c(1149),WARNING" ID="0x834023eb" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_sta_up_rx_ch_switch::framebody_len[%d]} @hmac_csa_sta.c(1154),WARNING" ID="0x83402413" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_sta_up_rx_ext_ch_switch::CSA no handle csa action!} @hmac_csa_sta.c(1182),WARNING" ID="0x834024f3" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] {hmac_sta_up_rx_ext_ch_switch::Ignoring Spectrum Management frames.} @hmac_csa_sta.c(1188),INFO" ID="0x83402525" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_scan_check_assoc_ap_channel::[0x%02x].} @hmac_csa_sta.c(1232),INFO" ID="0x83402685" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="{hmac_scan_check_assoc_ap_channel:: len[%u] mib_len[%u].} @hmac_csa_sta.c(1242),INFO" ID="0x834026d5" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_scan_check_assoc_ap_channel::channel = 0.} @hmac_csa_sta.c(1250),INFO" ID="0x83402715" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_scan_check_assoc_ap_channel::Get channel idx failed, DISASSOC! ch[%d], frame=[%d].} @hmac_csa_sta.c(1259),WARNING" ID="0x8340275b" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_scan_check_assoc_ap_channel_event::channel=[%d],fram=[%d];sta in csa process.} @hmac_csa_sta.c(1287),WARNING" ID="0x8340283b" />
+			<MSG STRUCTURE="diag_log_msg4" NAME="vap_id[%d] {hmac_scan_check_assoc_ap_channel_event::Trig csa, switch ch from [%d] to [%d], bw=[%d]} @hmac_csa_sta.c(1299),WARNING" ID="0x8340289b" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_ie_proc_ch_switch_ie::VAP CURREN BW STATE[%d].} @hmac_csa_sta.c(1307),WARNING" ID="0x834028db" />
+			<MSG STRUCTURE="diag_log_msg2" NAME="vap_id[%d] {hmac_scan_check_assoc_ap_channel_event::csa scan probe_rsp_ch=[%d].} @hmac_csa_sta.c(1312),WARNING" ID="0x83402903" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_scan_check_assoc_ap_channel_event::current channel[%d], frame_channel=[%d]} @hmac_csa_sta.c(1318),WARNING" ID="0x83402933" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_csa_sta_vap_add mem already malloc! @hmac_csa_sta.c(1348),WARNING" ID="0x83402a23" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_csa_sta_vap_add mem alloc fail @hmac_csa_sta.c(1354),ERROR" ID="0x83402a52" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="hmac_csa_sta_vap_del get feature fail @hmac_csa_sta.c(1386),ERROR" ID="0x83402b52" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_csa_proc_users_del:vap[%d] is null.} @hmac_csa_sta.c(1416),WARNING" ID="0x83402c43" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="{hmac_csa_proc_users_del:vap[%d] is null.} @hmac_csa_sta.c(1439),WARNING" ID="0x83402cfb" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_csa_proc_users_del:back to init, resume MAC.} @hmac_csa_sta.c(1451),WARNING" ID="0x83402d5b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_csa_sta_vap_state_change: csa status to INIT  @hmac_csa_sta.c(1486),WARNING" ID="0x83402e73" />
+			<MSG STRUCTURE="diag_log_msg3" NAME="vap_id[%d] {hmac_csa_sta_rx_beacon_probe_rsp: msg_len[%d] &lt;= ie_offset[%d]. @hmac_csa_sta.c(1513),WARNING" ID="0x83402f4b" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_csa_sta_rx_beacon_probe_rsp::CSA no handle!} @hmac_csa_sta.c(1522),WARNING" ID="0x83402f93" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_csa_sta_scan_end::scan_mode BACKGROUND_CSA} @hmac_csa_sta.c(1612),WARNING" ID="0x83403263" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="vap_id[%d] hmac_config_roam_enable_active:vap_state into ROAMING, csa back to INIT @hmac_csa_sta.c(1628),WARNING" ID="0x834032e3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_ccpriv_get_channel::vap null}. @hmac_csa_sta.c(1640),WARNING" ID="0x83403343" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="   current channel: [%d] @hmac_csa_sta.c(1646),WARNING" ID="0x83403373" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="   current channel: [%d] @hmac_csa_sta.c(1648),WARNING" ID="0x83403383" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="   channel index  : [%d] @hmac_csa_sta.c(1650),WARNING" ID="0x83403393" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="   channel band   : [%d][0:2G 1:5G] @hmac_csa_sta.c(1651),WARNING" ID="0x8340339b" />
+			<MSG STRUCTURE="diag_log_msg1" NAME="   chan bandwidth : [%d] @hmac_csa_sta.c(1652),WARNING" ID="0x834033a3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="   chan bandwidth : [0:20M 1:40+ 2:40- 3:80++ 4:80+- 5:80-+ 6:80-- 7:5 8:10 9:40 10:80] @hmac_csa_sta.c(1654),WARNING" ID="0x834033b3" />
+			<MSG STRUCTURE="diag_log_msg0" NAME="{hmac_csa_sta_init:: MGMT RX IN register_netbuf_hooks error! @hmac_csa_sta.c(1681),ERROR" ID="0x8340348a" />
+			</MSG_LOG>

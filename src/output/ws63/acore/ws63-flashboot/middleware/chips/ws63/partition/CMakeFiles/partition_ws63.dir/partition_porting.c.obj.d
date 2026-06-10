@@ -1,0 +1,10 @@
+middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj: \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition/partition_porting.c \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/mconfig.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdint.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/bits/alltypes.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stddef.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/middleware/utils/partition.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/errcode.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition/include/partition_resource_id.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition/partition_porting.h
