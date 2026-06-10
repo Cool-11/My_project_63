@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/systick/hal_systick.c" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.obj" "gcc" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/systick/hal_systick_ws63.c" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.obj" "gcc" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/systick/systick_porting.c" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.obj" "gcc" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/chips/ws63/porting/systick/hal_systick.c" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.obj" "gcc" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/chips/ws63/porting/systick/hal_systick_ws63.c" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.obj" "gcc" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/chips/ws63/porting/systick/systick_porting.c" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.obj" "gcc" "drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

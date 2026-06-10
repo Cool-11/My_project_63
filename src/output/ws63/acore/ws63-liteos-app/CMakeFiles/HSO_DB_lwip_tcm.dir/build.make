@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for HSO_DB_lwip_tcm.
 
@@ -68,35 +68,35 @@ include CMakeFiles/HSO_DB_lwip_tcm.dir/progress.make
 
 CMakeFiles/HSO_DB_lwip_tcm: hso_temp/lwip_tcm.txt
 
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/api/sockets.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/inet_chksum.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/ip.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/udp.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/ipv4/etharp.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/ipv4/ip4.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/ipv4/ip4_addr.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/ipv4/ip4_frag.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/ip_addr.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/pbuf.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/mem.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/memp.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/netif.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/tcp.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/core/raw.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/netif/ethernet.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/netif/driverif.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/api/netbuf.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/api/tcpip.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/api/api_msg.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_v2.1.3/src/api/api_lib.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/lwip/lwip_adapter/liteos_207/src/arch/sys_arch.c
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_bt.h
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_pf.h
-hso_temp/lwip_tcm.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_lwip_tcm"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/lwip_tcm_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/lwip_tcm.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/lwip_tcm.txt
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/api/sockets.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/inet_chksum.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/ip.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/udp.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/ipv4/etharp.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/ipv4/ip4.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/ipv4/ip4_addr.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/ipv4/ip4_frag.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/ip_addr.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/pbuf.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/mem.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/memp.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/netif.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/tcp.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/core/raw.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/netif/ethernet.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/netif/driverif.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/api/netbuf.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/api/tcpip.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/api/api_msg.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_v2.1.3/src/api/api_lib.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/open_source/lwip/lwip_adapter/liteos_207/src/arch/sys_arch.c
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_bt.h
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_pf.h
+hso_temp/lwip_tcm.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_lwip_tcm"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/lwip_tcm_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/lwip_tcm.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/lwip_tcm.txt
 
 HSO_DB_lwip_tcm: CMakeFiles/HSO_DB_lwip_tcm
 HSO_DB_lwip_tcm: hso_temp/lwip_tcm.txt
@@ -112,6 +112,6 @@ CMakeFiles/HSO_DB_lwip_tcm.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_lwip_tcm.dir/clean
 
 CMakeFiles/HSO_DB_lwip_tcm.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_lwip_tcm.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_lwip_tcm.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_lwip_tcm.dir/depend
 

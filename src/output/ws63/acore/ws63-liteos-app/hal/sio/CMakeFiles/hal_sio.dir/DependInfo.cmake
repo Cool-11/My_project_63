@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/sio/hal_sio.c" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio.c.obj" "gcc" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/sio/hal_sio_v151/hal_sio_v151.c" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio_v151/hal_sio_v151.c.obj" "gcc" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio_v151/hal_sio_v151.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/sio/hal_sio_v151/hal_sio_v151_regs_op.c" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio_v151/hal_sio_v151_regs_op.c.obj" "gcc" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio_v151/hal_sio_v151_regs_op.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/drivers/hal/sio/hal_sio.c" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio.c.obj" "gcc" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/drivers/hal/sio/hal_sio_v151/hal_sio_v151.c" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio_v151/hal_sio_v151.c.obj" "gcc" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio_v151/hal_sio_v151.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/drivers/hal/sio/hal_sio_v151/hal_sio_v151_regs_op.c" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio_v151/hal_sio_v151_regs_op.c.obj" "gcc" "hal/sio/CMakeFiles/hal_sio.dir/hal_sio_v151/hal_sio_v151_regs_op.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

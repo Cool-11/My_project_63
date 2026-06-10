@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Include any dependencies generated for this target.
 include driver/systick/CMakeFiles/systick.dir/depend.make
@@ -70,18 +70,18 @@ include driver/systick/CMakeFiles/systick.dir/progress.make
 include driver/systick/CMakeFiles/systick.dir/flags.make
 
 driver/systick/CMakeFiles/systick.dir/systick.c.obj: driver/systick/CMakeFiles/systick.dir/flags.make
-driver/systick/CMakeFiles/systick.dir/systick.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/systick/systick.c
+driver/systick/CMakeFiles/systick.dir/systick.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/driver/systick/systick.c
 driver/systick/CMakeFiles/systick.dir/systick.c.obj: driver/systick/CMakeFiles/systick.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object driver/systick/CMakeFiles/systick.dir/systick.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/systick && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SYSTICK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT driver/systick/CMakeFiles/systick.dir/systick.c.obj -MF CMakeFiles/systick.dir/systick.c.obj.d -o CMakeFiles/systick.dir/systick.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/systick/systick.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object driver/systick/CMakeFiles/systick.dir/systick.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/systick && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SYSTICK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT driver/systick/CMakeFiles/systick.dir/systick.c.obj -MF CMakeFiles/systick.dir/systick.c.obj.d -o CMakeFiles/systick.dir/systick.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/driver/systick/systick.c
 
 driver/systick/CMakeFiles/systick.dir/systick.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/systick.dir/systick.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/systick && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SYSTICK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/systick/systick.c > CMakeFiles/systick.dir/systick.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/systick && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SYSTICK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/driver/systick/systick.c > CMakeFiles/systick.dir/systick.c.i
 
 driver/systick/CMakeFiles/systick.dir/systick.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/systick.dir/systick.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/systick && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SYSTICK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/systick/systick.c -o CMakeFiles/systick.dir/systick.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/systick && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SYSTICK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/driver/systick/systick.c -o CMakeFiles/systick.dir/systick.c.s
 
 # Object files for target systick
 systick_OBJECTS = \
@@ -93,19 +93,19 @@ systick_EXTERNAL_OBJECTS =
 driver/systick/libsystick.a: driver/systick/CMakeFiles/systick.dir/systick.c.obj
 driver/systick/libsystick.a: driver/systick/CMakeFiles/systick.dir/build.make
 driver/systick/libsystick.a: driver/systick/CMakeFiles/systick.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libsystick.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/systick && $(CMAKE_COMMAND) -P CMakeFiles/systick.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/systick && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/systick.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libsystick.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/systick && $(CMAKE_COMMAND) -P CMakeFiles/systick.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/systick && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/systick.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 driver/systick/CMakeFiles/systick.dir/build: driver/systick/libsystick.a
 .PHONY : driver/systick/CMakeFiles/systick.dir/build
 
 driver/systick/CMakeFiles/systick.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/systick && $(CMAKE_COMMAND) -P CMakeFiles/systick.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/systick && $(CMAKE_COMMAND) -P CMakeFiles/systick.dir/cmake_clean.cmake
 .PHONY : driver/systick/CMakeFiles/systick.dir/clean
 
 driver/systick/CMakeFiles/systick.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/systick /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/systick /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/systick/CMakeFiles/systick.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/drivers/driver/systick /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/systick /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/systick/CMakeFiles/systick.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : driver/systick/CMakeFiles/systick.dir/depend
 

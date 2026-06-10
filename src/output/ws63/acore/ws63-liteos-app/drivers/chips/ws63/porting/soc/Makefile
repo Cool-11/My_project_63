@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/soc//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/soc//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/rule
 .PHONY : drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ soc_port: drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/rule
 
 # fast build rule for target.
 soc_port/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build.make drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build.make drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build
 .PHONY : soc_port/fast
 
 soc_porting.obj: soc_porting.c.obj
@@ -135,7 +135,7 @@ soc_porting.obj: soc_porting.c.obj
 
 # target to build an object file
 soc_porting.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build.make drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/soc_porting.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build.make drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/soc_porting.c.obj
 .PHONY : soc_porting.c.obj
 
 soc_porting.i: soc_porting.c.i
@@ -143,7 +143,7 @@ soc_porting.i: soc_porting.c.i
 
 # target to preprocess a source file
 soc_porting.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build.make drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/soc_porting.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build.make drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/soc_porting.c.i
 .PHONY : soc_porting.c.i
 
 soc_porting.s: soc_porting.c.s
@@ -151,7 +151,7 @@ soc_porting.s: soc_porting.c.s
 
 # target to generate assembly for a file
 soc_porting.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build.make drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/soc_porting.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/build.make drivers/chips/ws63/porting/soc/CMakeFiles/soc_port.dir/soc_porting.c.s
 .PHONY : soc_porting.c.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

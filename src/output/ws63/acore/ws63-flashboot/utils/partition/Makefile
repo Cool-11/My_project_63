@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/partition//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/partition//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 utils/partition/CMakeFiles/partition.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/CMakeFiles/partition.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/partition/CMakeFiles/partition.dir/rule
 .PHONY : utils/partition/CMakeFiles/partition.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ partition: utils/partition/CMakeFiles/partition.dir/rule
 
 # fast build rule for target.
 partition/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/partition/CMakeFiles/partition.dir/build.make utils/partition/CMakeFiles/partition.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/partition/CMakeFiles/partition.dir/build.make utils/partition/CMakeFiles/partition.dir/build
 .PHONY : partition/fast
 
 partition.obj: partition.c.obj
@@ -135,7 +135,7 @@ partition.obj: partition.c.obj
 
 # target to build an object file
 partition.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/partition/CMakeFiles/partition.dir/build.make utils/partition/CMakeFiles/partition.dir/partition.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/partition/CMakeFiles/partition.dir/build.make utils/partition/CMakeFiles/partition.dir/partition.c.obj
 .PHONY : partition.c.obj
 
 partition.i: partition.c.i
@@ -143,7 +143,7 @@ partition.i: partition.c.i
 
 # target to preprocess a source file
 partition.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/partition/CMakeFiles/partition.dir/build.make utils/partition/CMakeFiles/partition.dir/partition.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/partition/CMakeFiles/partition.dir/build.make utils/partition/CMakeFiles/partition.dir/partition.c.i
 .PHONY : partition.c.i
 
 partition.s: partition.c.s
@@ -151,7 +151,7 @@ partition.s: partition.c.s
 
 # target to generate assembly for a file
 partition.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/partition/CMakeFiles/partition.dir/build.make utils/partition/CMakeFiles/partition.dir/partition.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/partition/CMakeFiles/partition.dir/build.make utils/partition/CMakeFiles/partition.dir/partition.c.s
 .PHONY : partition.c.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

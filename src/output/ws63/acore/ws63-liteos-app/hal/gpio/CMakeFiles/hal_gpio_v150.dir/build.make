@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include hal/gpio/CMakeFiles/hal_gpio_v150.dir/depend.make
@@ -70,60 +70,60 @@ include hal/gpio/CMakeFiles/hal_gpio_v150.dir/progress.make
 include hal/gpio/CMakeFiles/hal_gpio_v150.dir/flags.make
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj: hal/gpio/CMakeFiles/hal_gpio_v150.dir/flags.make
-hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/hal_gpio.c
+hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/hal_gpio.c
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj: hal/gpio/CMakeFiles/hal_gpio_v150.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj -MF CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj.d -o CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/hal_gpio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj -MF CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj.d -o CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/hal_gpio.c
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/hal_gpio.c > CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/hal_gpio.c > CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.i
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/hal_gpio.c -o CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/hal_gpio.c -o CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.s
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj: hal/gpio/CMakeFiles/hal_gpio_v150.dir/flags.make
-hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150.c
+hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150.c
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj: hal/gpio/CMakeFiles/hal_gpio_v150.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj -MF CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj.d -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj -MF CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj.d -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150.c
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150.c > CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150.c > CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.i
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150.c -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150.c -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.s
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj: hal/gpio/CMakeFiles/hal_gpio_v150.dir/flags.make
-hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_regs_op.c
+hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_regs_op.c
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj: hal/gpio/CMakeFiles/hal_gpio_v150.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj -MF CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj.d -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_regs_op.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj -MF CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj.d -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_regs_op.c
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_regs_op.c > CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_regs_op.c > CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.i
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_regs_op.c -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_regs_op.c -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.s
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj: hal/gpio/CMakeFiles/hal_gpio_v150.dir/flags.make
-hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_comm.c
+hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_comm.c
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj: hal/gpio/CMakeFiles/hal_gpio_v150.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_COMM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj -MF CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj.d -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_comm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_COMM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj -MF CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj.d -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_comm.c
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_COMM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_comm.c > CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_COMM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_comm.c > CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.i
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_COMM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_comm.c -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_GPIO_V150_COMM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio/v150/hal_gpio_v150_comm.c -o CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.s
 
 # Object files for target hal_gpio_v150
 hal_gpio_v150_OBJECTS = \
@@ -141,19 +141,19 @@ hal/gpio/libhal_gpio_v150.a: hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio
 hal/gpio/libhal_gpio_v150.a: hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj
 hal/gpio/libhal_gpio_v150.a: hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make
 hal/gpio/libhal_gpio_v150.a: hal/gpio/CMakeFiles/hal_gpio_v150.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libhal_gpio_v150.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && $(CMAKE_COMMAND) -P CMakeFiles/hal_gpio_v150.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_gpio_v150.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libhal_gpio_v150.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && $(CMAKE_COMMAND) -P CMakeFiles/hal_gpio_v150.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_gpio_v150.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/build: hal/gpio/libhal_gpio_v150.a
 .PHONY : hal/gpio/CMakeFiles/hal_gpio_v150.dir/build
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio && $(CMAKE_COMMAND) -P CMakeFiles/hal_gpio_v150.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio && $(CMAKE_COMMAND) -P CMakeFiles/hal_gpio_v150.dir/cmake_clean.cmake
 .PHONY : hal/gpio/CMakeFiles/hal_gpio_v150.dir/clean
 
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/gpio /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio/CMakeFiles/hal_gpio_v150.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/drivers/hal/gpio /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio/CMakeFiles/hal_gpio_v150.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : hal/gpio/CMakeFiles/hal_gpio_v150.dir/depend
 

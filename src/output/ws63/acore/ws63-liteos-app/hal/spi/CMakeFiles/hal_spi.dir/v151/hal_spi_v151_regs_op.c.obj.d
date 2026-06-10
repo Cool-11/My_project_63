@@ -1,21 +1,21 @@
 hal/spi/CMakeFiles/hal_spi.dir/v151/hal_spi_v151_regs_op.c.obj: \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/spi/v151/hal_spi_v151_regs_op.c \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/mconfig.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/kernel/liteos/liteos_v208.5.0/menuconfig/include/menuconfig.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/srv_tiot_host/tiot_driver/product_porting/ws63_w33_evb/tiot_autoconfig.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdint.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/bits/alltypes.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/arch/riscv32/bits/stdint.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/common_def.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/spi/v151/hal_spi_v151_regs_op.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/spi/v151/hal_spi_v151_regs_def.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/spi/spi_porting.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_definition.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_definitions.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core_rom.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/spi/v151/hal_spi_v151_regs_def.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/dma/dma_porting.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdbool.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/driver/dma.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/errcode.h
+ /home/cool/fbb_ws63/src/drivers/drivers/hal/spi/v151/hal_spi_v151_regs_op.c \
+ /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/mconfig.h \
+ /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/kernel/liteos/liteos_v208.5.0/menuconfig/include/menuconfig.h \
+ /home/cool/fbb_ws63/src/middleware/services/srv_tiot_host/tiot_driver/product_porting/ws63_w33_evb/tiot_autoconfig.h \
+ /home/cool/fbb_ws63/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdint.h \
+ /home/cool/fbb_ws63/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/bits/alltypes.h \
+ /home/cool/fbb_ws63/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/arch/riscv32/bits/stdint.h \
+ /home/cool/fbb_ws63/src/include/common_def.h \
+ /home/cool/fbb_ws63/src/drivers/drivers/hal/spi/v151/hal_spi_v151_regs_op.h \
+ /home/cool/fbb_ws63/src/drivers/drivers/hal/spi/v151/hal_spi_v151_regs_def.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/spi/spi_porting.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/include/platform_core.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/include/chip_core_definition.h \
+ /home/cool/fbb_ws63/src/middleware/utils/common_headers/chip_definitions.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/include/platform_core_rom.h \
+ /home/cool/fbb_ws63/src/drivers/drivers/hal/spi/v151/hal_spi_v151_regs_def.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/dma/dma_porting.h \
+ /home/cool/fbb_ws63/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdbool.h \
+ /home/cool/fbb_ws63/src/include/driver/dma.h \
+ /home/cool/fbb_ws63/src/include/errcode.h

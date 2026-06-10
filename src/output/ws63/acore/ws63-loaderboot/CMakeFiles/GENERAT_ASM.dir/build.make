@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Utility rule file for GENERAT_ASM.
 
@@ -67,7 +67,7 @@ include CMakeFiles/GENERAT_ASM.dir/compiler_depend.make
 include CMakeFiles/GENERAT_ASM.dir/progress.make
 
 CMakeFiles/GENERAT_ASM: loaderboot.elf
-	/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-objdump -d -m riscv loaderboot.elf > loaderboot.asm
+	/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-objdump -d -m riscv loaderboot.elf > loaderboot.asm
 
 GENERAT_ASM: CMakeFiles/GENERAT_ASM
 GENERAT_ASM: CMakeFiles/GENERAT_ASM.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/GENERAT_ASM.dir/clean:
 .PHONY : CMakeFiles/GENERAT_ASM.dir/clean
 
 CMakeFiles/GENERAT_ASM.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/GENERAT_ASM.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/GENERAT_ASM.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/GENERAT_ASM.dir/depend
 

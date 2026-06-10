@@ -1,1 +1,1 @@
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-ar rcD libupdate_common.a CMakeFiles/update_common.dir/upg_alloc.c.obj CMakeFiles/update_common.dir/upg_common.c.obj CMakeFiles/update_common.dir/upg_verify.c.obj
+/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-ar rcD libupdate_common.a CMakeFiles/update_common.dir/upg_alloc.c.obj CMakeFiles/update_common.dir/upg_common.c.obj CMakeFiles/update_common.dir/upg_verify.c.obj

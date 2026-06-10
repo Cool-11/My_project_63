@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/partition/partition.c" "utils/partition/CMakeFiles/partition.dir/partition.c.obj" "gcc" "utils/partition/CMakeFiles/partition.dir/partition.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/partition/partition.c" "utils/partition/CMakeFiles/partition.dir/partition.c.obj" "gcc" "utils/partition/CMakeFiles/partition.dir/partition.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 # Utility rule file for HSO_DB_MKDIR.
 
@@ -67,8 +67,8 @@ include CMakeFiles/HSO_DB_MKDIR.dir/compiler_depend.make
 include CMakeFiles/HSO_DB_MKDIR.dir/progress.make
 
 CMakeFiles/HSO_DB_MKDIR:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "HSO_DB Makedir"
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py mkdir /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "HSO_DB Makedir"
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py mkdir /home/cool/fbb_ws63/src/ ws63 acore
 
 HSO_DB_MKDIR: CMakeFiles/HSO_DB_MKDIR
 HSO_DB_MKDIR: CMakeFiles/HSO_DB_MKDIR.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/HSO_DB_MKDIR.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_MKDIR.dir/clean
 
 CMakeFiles/HSO_DB_MKDIR.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles/HSO_DB_MKDIR.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles/HSO_DB_MKDIR.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_MKDIR.dir/depend
 

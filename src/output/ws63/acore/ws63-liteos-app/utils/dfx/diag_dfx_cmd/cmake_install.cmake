@@ -1,4 +1,4 @@
-# Install script for directory: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/diag_dfx_cmd
+# Install script for directory: /home/cool/fbb_ws63/src/middleware/utils/dfx/diag_dfx_cmd
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,51 +34,51 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-objdump")
+  set(CMAKE_OBJDUMP "/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_audio_proc/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_audio_proc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_audio_dump/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_audio_dump/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_audio_probe/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_audio_probe/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_nv/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_nv/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_update/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_update/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_charger/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_charger/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_logfile/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_logfile/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_gpu_proc/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_gpu_proc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_audio_sample_data/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/diag_audio_sample_data/cmake_install.cmake")
 endif()
 

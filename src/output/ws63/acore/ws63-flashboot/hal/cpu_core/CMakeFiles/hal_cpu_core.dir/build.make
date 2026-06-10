@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 # Include any dependencies generated for this target.
 include hal/cpu_core/CMakeFiles/hal_cpu_core.dir/depend.make
@@ -70,18 +70,18 @@ include hal/cpu_core/CMakeFiles/hal_cpu_core.dir/progress.make
 include hal/cpu_core/CMakeFiles/hal_cpu_core.dir/flags.make
 
 hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj: hal/cpu_core/CMakeFiles/hal_cpu_core.dir/flags.make
-hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/cpu_core/hal_cpu_core.c
+hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/cpu_core/hal_cpu_core.c
 hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj: hal/cpu_core/CMakeFiles/hal_cpu_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_CPU_CORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj -MF CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj.d -o CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/cpu_core/hal_cpu_core.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_CPU_CORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj -MF CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj.d -o CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/cpu_core/hal_cpu_core.c
 
 hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_CPU_CORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/cpu_core/hal_cpu_core.c > CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_CPU_CORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/cpu_core/hal_cpu_core.c > CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.i
 
 hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_CPU_CORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/cpu_core/hal_cpu_core.c -o CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_CPU_CORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/cpu_core/hal_cpu_core.c -o CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.s
 
 # Object files for target hal_cpu_core
 hal_cpu_core_OBJECTS = \
@@ -93,19 +93,19 @@ hal_cpu_core_EXTERNAL_OBJECTS =
 hal/cpu_core/libhal_cpu_core.a: hal/cpu_core/CMakeFiles/hal_cpu_core.dir/hal_cpu_core.c.obj
 hal/cpu_core/libhal_cpu_core.a: hal/cpu_core/CMakeFiles/hal_cpu_core.dir/build.make
 hal/cpu_core/libhal_cpu_core.a: hal/cpu_core/CMakeFiles/hal_cpu_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libhal_cpu_core.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && $(CMAKE_COMMAND) -P CMakeFiles/hal_cpu_core.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_cpu_core.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libhal_cpu_core.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && $(CMAKE_COMMAND) -P CMakeFiles/hal_cpu_core.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_cpu_core.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 hal/cpu_core/CMakeFiles/hal_cpu_core.dir/build: hal/cpu_core/libhal_cpu_core.a
 .PHONY : hal/cpu_core/CMakeFiles/hal_cpu_core.dir/build
 
 hal/cpu_core/CMakeFiles/hal_cpu_core.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && $(CMAKE_COMMAND) -P CMakeFiles/hal_cpu_core.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/cpu_core && $(CMAKE_COMMAND) -P CMakeFiles/hal_cpu_core.dir/cmake_clean.cmake
 .PHONY : hal/cpu_core/CMakeFiles/hal_cpu_core.dir/clean
 
 hal/cpu_core/CMakeFiles/hal_cpu_core.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/cpu_core /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/cpu_core /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/cpu_core/CMakeFiles/hal_cpu_core.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/drivers/hal/cpu_core /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/cpu_core /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/cpu_core/CMakeFiles/hal_cpu_core.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : hal/cpu_core/CMakeFiles/hal_cpu_core.dir/depend
 

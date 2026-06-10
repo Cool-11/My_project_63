@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Utility rule file for HSO_DB_libboundscheck.
 
@@ -68,23 +68,23 @@ include CMakeFiles/HSO_DB_libboundscheck.dir/progress.make
 
 CMakeFiles/HSO_DB_libboundscheck: hso_temp/libboundscheck.txt
 
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/memcpy_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/memmove_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/memset_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/securecutil.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/secureprintoutput_a.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/snprintf_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/sprintf_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/strcat_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/strcpy_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/strncat_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/strncpy_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/vsnprintf_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/vsprintf_s.c
-hso_temp/libboundscheck.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/libboundscheck/src/strtok_s.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_libboundscheck"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/libboundscheck_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/libboundscheck.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/libboundscheck.txt
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/memcpy_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/memmove_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/memset_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/securecutil.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/secureprintoutput_a.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/snprintf_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/sprintf_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/strcat_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/strcpy_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/strncat_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/strncpy_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/vsnprintf_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/vsprintf_s.c
+hso_temp/libboundscheck.txt: /home/cool/fbb_ws63/src/open_source/libboundscheck/src/strtok_s.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_libboundscheck"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/libboundscheck_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/libboundscheck.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/libboundscheck.txt
 
 HSO_DB_libboundscheck: CMakeFiles/HSO_DB_libboundscheck
 HSO_DB_libboundscheck: hso_temp/libboundscheck.txt
@@ -100,6 +100,6 @@ CMakeFiles/HSO_DB_libboundscheck.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_libboundscheck.dir/clean
 
 CMakeFiles/HSO_DB_libboundscheck.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_libboundscheck.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_libboundscheck.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_libboundscheck.dir/depend
 

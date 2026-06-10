@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/services/srv_tiot_host//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/services/srv_tiot_host//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 services/srv_tiot_host/CMakeFiles/tiot_driver.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/CMakeFiles/tiot_driver.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 services/srv_tiot_host/CMakeFiles/tiot_driver.dir/rule
 .PHONY : services/srv_tiot_host/CMakeFiles/tiot_driver.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ tiot_driver: services/srv_tiot_host/CMakeFiles/tiot_driver.dir/rule
 
 # fast build rule for target.
 tiot_driver/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build
 .PHONY : tiot_driver/fast
 
 tiot_driver/common/controller/tiot_controller.obj: tiot_driver/common/controller/tiot_controller.c.obj
@@ -135,7 +135,7 @@ tiot_driver/common/controller/tiot_controller.obj: tiot_driver/common/controller
 
 # target to build an object file
 tiot_driver/common/controller/tiot_controller.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/controller/tiot_controller.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/controller/tiot_controller.c.obj
 .PHONY : tiot_driver/common/controller/tiot_controller.c.obj
 
 tiot_driver/common/controller/tiot_controller.i: tiot_driver/common/controller/tiot_controller.c.i
@@ -143,7 +143,7 @@ tiot_driver/common/controller/tiot_controller.i: tiot_driver/common/controller/t
 
 # target to preprocess a source file
 tiot_driver/common/controller/tiot_controller.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/controller/tiot_controller.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/controller/tiot_controller.c.i
 .PHONY : tiot_driver/common/controller/tiot_controller.c.i
 
 tiot_driver/common/controller/tiot_controller.s: tiot_driver/common/controller/tiot_controller.c.s
@@ -151,7 +151,7 @@ tiot_driver/common/controller/tiot_controller.s: tiot_driver/common/controller/t
 
 # target to generate assembly for a file
 tiot_driver/common/controller/tiot_controller.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/controller/tiot_controller.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/controller/tiot_controller.c.s
 .PHONY : tiot_driver/common/controller/tiot_controller.c.s
 
 tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.obj: tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.obj
@@ -159,7 +159,7 @@ tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.obj: tiot_driver
 
 # target to build an object file
 tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.obj
 .PHONY : tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.obj
 
 tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.i: tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.i
@@ -167,7 +167,7 @@ tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.i: tiot_driver/c
 
 # target to preprocess a source file
 tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.i
 .PHONY : tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.i
 
 tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.s: tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.s
@@ -175,7 +175,7 @@ tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.s: tiot_driver/c
 
 # target to generate assembly for a file
 tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.s
 .PHONY : tiot_driver/common/fw_load/cfg_handle_priv/tiot_cfg_handle_priv.c.s
 
 tiot_driver/common/fw_load/tiot_firmware.obj: tiot_driver/common/fw_load/tiot_firmware.c.obj
@@ -183,7 +183,7 @@ tiot_driver/common/fw_load/tiot_firmware.obj: tiot_driver/common/fw_load/tiot_fi
 
 # target to build an object file
 tiot_driver/common/fw_load/tiot_firmware.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/tiot_firmware.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/tiot_firmware.c.obj
 .PHONY : tiot_driver/common/fw_load/tiot_firmware.c.obj
 
 tiot_driver/common/fw_load/tiot_firmware.i: tiot_driver/common/fw_load/tiot_firmware.c.i
@@ -191,7 +191,7 @@ tiot_driver/common/fw_load/tiot_firmware.i: tiot_driver/common/fw_load/tiot_firm
 
 # target to preprocess a source file
 tiot_driver/common/fw_load/tiot_firmware.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/tiot_firmware.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/tiot_firmware.c.i
 .PHONY : tiot_driver/common/fw_load/tiot_firmware.c.i
 
 tiot_driver/common/fw_load/tiot_firmware.s: tiot_driver/common/fw_load/tiot_firmware.c.s
@@ -199,7 +199,7 @@ tiot_driver/common/fw_load/tiot_firmware.s: tiot_driver/common/fw_load/tiot_firm
 
 # target to generate assembly for a file
 tiot_driver/common/fw_load/tiot_firmware.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/tiot_firmware.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/fw_load/tiot_firmware.c.s
 .PHONY : tiot_driver/common/fw_load/tiot_firmware.c.s
 
 tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.obj: tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.obj
@@ -207,7 +207,7 @@ tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.
 
 # target to build an object file
 tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.obj
 .PHONY : tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.obj
 
 tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.i: tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.i
@@ -215,7 +215,7 @@ tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.
 
 # target to preprocess a source file
 tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.i
 .PHONY : tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.i
 
 tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.s: tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.s
@@ -223,7 +223,7 @@ tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.
 
 # target to generate assembly for a file
 tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.s
 .PHONY : tiot_driver/common/interface/board_interface/board_internal/tiot_board_xmit_ops.c.s
 
 tiot_driver/common/interface/device_interface/tiot_service_interface.obj: tiot_driver/common/interface/device_interface/tiot_service_interface.c.obj
@@ -231,7 +231,7 @@ tiot_driver/common/interface/device_interface/tiot_service_interface.obj: tiot_d
 
 # target to build an object file
 tiot_driver/common/interface/device_interface/tiot_service_interface.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/device_interface/tiot_service_interface.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/device_interface/tiot_service_interface.c.obj
 .PHONY : tiot_driver/common/interface/device_interface/tiot_service_interface.c.obj
 
 tiot_driver/common/interface/device_interface/tiot_service_interface.i: tiot_driver/common/interface/device_interface/tiot_service_interface.c.i
@@ -239,7 +239,7 @@ tiot_driver/common/interface/device_interface/tiot_service_interface.i: tiot_dri
 
 # target to preprocess a source file
 tiot_driver/common/interface/device_interface/tiot_service_interface.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/device_interface/tiot_service_interface.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/device_interface/tiot_service_interface.c.i
 .PHONY : tiot_driver/common/interface/device_interface/tiot_service_interface.c.i
 
 tiot_driver/common/interface/device_interface/tiot_service_interface.s: tiot_driver/common/interface/device_interface/tiot_service_interface.c.s
@@ -247,7 +247,7 @@ tiot_driver/common/interface/device_interface/tiot_service_interface.s: tiot_dri
 
 # target to generate assembly for a file
 tiot_driver/common/interface/device_interface/tiot_service_interface.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/device_interface/tiot_service_interface.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/interface/device_interface/tiot_service_interface.c.s
 .PHONY : tiot_driver/common/interface/device_interface/tiot_service_interface.c.s
 
 tiot_driver/common/pm/pm_default/tiot_pm_default.obj: tiot_driver/common/pm/pm_default/tiot_pm_default.c.obj
@@ -255,7 +255,7 @@ tiot_driver/common/pm/pm_default/tiot_pm_default.obj: tiot_driver/common/pm/pm_d
 
 # target to build an object file
 tiot_driver/common/pm/pm_default/tiot_pm_default.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/pm_default/tiot_pm_default.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/pm_default/tiot_pm_default.c.obj
 .PHONY : tiot_driver/common/pm/pm_default/tiot_pm_default.c.obj
 
 tiot_driver/common/pm/pm_default/tiot_pm_default.i: tiot_driver/common/pm/pm_default/tiot_pm_default.c.i
@@ -263,7 +263,7 @@ tiot_driver/common/pm/pm_default/tiot_pm_default.i: tiot_driver/common/pm/pm_def
 
 # target to preprocess a source file
 tiot_driver/common/pm/pm_default/tiot_pm_default.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/pm_default/tiot_pm_default.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/pm_default/tiot_pm_default.c.i
 .PHONY : tiot_driver/common/pm/pm_default/tiot_pm_default.c.i
 
 tiot_driver/common/pm/pm_default/tiot_pm_default.s: tiot_driver/common/pm/pm_default/tiot_pm_default.c.s
@@ -271,7 +271,7 @@ tiot_driver/common/pm/pm_default/tiot_pm_default.s: tiot_driver/common/pm/pm_def
 
 # target to generate assembly for a file
 tiot_driver/common/pm/pm_default/tiot_pm_default.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/pm_default/tiot_pm_default.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/pm_default/tiot_pm_default.c.s
 .PHONY : tiot_driver/common/pm/pm_default/tiot_pm_default.c.s
 
 tiot_driver/common/pm/tiot_pm.obj: tiot_driver/common/pm/tiot_pm.c.obj
@@ -279,7 +279,7 @@ tiot_driver/common/pm/tiot_pm.obj: tiot_driver/common/pm/tiot_pm.c.obj
 
 # target to build an object file
 tiot_driver/common/pm/tiot_pm.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm.c.obj
 .PHONY : tiot_driver/common/pm/tiot_pm.c.obj
 
 tiot_driver/common/pm/tiot_pm.i: tiot_driver/common/pm/tiot_pm.c.i
@@ -287,7 +287,7 @@ tiot_driver/common/pm/tiot_pm.i: tiot_driver/common/pm/tiot_pm.c.i
 
 # target to preprocess a source file
 tiot_driver/common/pm/tiot_pm.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm.c.i
 .PHONY : tiot_driver/common/pm/tiot_pm.c.i
 
 tiot_driver/common/pm/tiot_pm.s: tiot_driver/common/pm/tiot_pm.c.s
@@ -295,7 +295,7 @@ tiot_driver/common/pm/tiot_pm.s: tiot_driver/common/pm/tiot_pm.c.s
 
 # target to generate assembly for a file
 tiot_driver/common/pm/tiot_pm.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm.c.s
 .PHONY : tiot_driver/common/pm/tiot_pm.c.s
 
 tiot_driver/common/pm/tiot_pm_wakelock.obj: tiot_driver/common/pm/tiot_pm_wakelock.c.obj
@@ -303,7 +303,7 @@ tiot_driver/common/pm/tiot_pm_wakelock.obj: tiot_driver/common/pm/tiot_pm_wakelo
 
 # target to build an object file
 tiot_driver/common/pm/tiot_pm_wakelock.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm_wakelock.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm_wakelock.c.obj
 .PHONY : tiot_driver/common/pm/tiot_pm_wakelock.c.obj
 
 tiot_driver/common/pm/tiot_pm_wakelock.i: tiot_driver/common/pm/tiot_pm_wakelock.c.i
@@ -311,7 +311,7 @@ tiot_driver/common/pm/tiot_pm_wakelock.i: tiot_driver/common/pm/tiot_pm_wakelock
 
 # target to preprocess a source file
 tiot_driver/common/pm/tiot_pm_wakelock.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm_wakelock.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm_wakelock.c.i
 .PHONY : tiot_driver/common/pm/tiot_pm_wakelock.c.i
 
 tiot_driver/common/pm/tiot_pm_wakelock.s: tiot_driver/common/pm/tiot_pm_wakelock.c.s
@@ -319,7 +319,7 @@ tiot_driver/common/pm/tiot_pm_wakelock.s: tiot_driver/common/pm/tiot_pm_wakelock
 
 # target to generate assembly for a file
 tiot_driver/common/pm/tiot_pm_wakelock.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm_wakelock.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/pm/tiot_pm_wakelock.c.s
 .PHONY : tiot_driver/common/pm/tiot_pm_wakelock.c.s
 
 tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.obj: tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.obj
@@ -327,7 +327,7 @@ tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.obj: tiot_driver/common/s
 
 # target to build an object file
 tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.obj
 .PHONY : tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.obj
 
 tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.i: tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.i
@@ -335,7 +335,7 @@ tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.i: tiot_driver/common/sys
 
 # target to preprocess a source file
 tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.i
 .PHONY : tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.i
 
 tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.s: tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.s
@@ -343,7 +343,7 @@ tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.s: tiot_driver/common/sys
 
 # target to generate assembly for a file
 tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.s
 .PHONY : tiot_driver/common/sys_msg_handler/tiot_sys_msg_handle.c.s
 
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.obj: tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.obj
@@ -351,7 +351,7 @@ tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.obj: tiot_driv
 
 # target to build an object file
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.obj
 .PHONY : tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.obj
 
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.i: tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.i
@@ -359,7 +359,7 @@ tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.i: tiot_driver
 
 # target to preprocess a source file
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.i
 .PHONY : tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.i
 
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.s: tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.s
@@ -367,7 +367,7 @@ tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.s: tiot_driver
 
 # target to generate assembly for a file
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.s
 .PHONY : tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet.c.s
 
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.obj: tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.obj
@@ -375,7 +375,7 @@ tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.obj: t
 
 # target to build an object file
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.obj
 .PHONY : tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.obj
 
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.i: tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.i
@@ -383,7 +383,7 @@ tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.i: tio
 
 # target to preprocess a source file
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.i
 .PHONY : tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.i
 
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.s: tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.s
@@ -391,7 +391,7 @@ tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.s: tio
 
 # target to generate assembly for a file
 tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.s
 .PHONY : tiot_driver/common/transfer/packet_handle/tiot_packet/tiot_packet_manager.c.s
 
 tiot_driver/common/transfer/tiot_xfer.obj: tiot_driver/common/transfer/tiot_xfer.c.obj
@@ -399,7 +399,7 @@ tiot_driver/common/transfer/tiot_xfer.obj: tiot_driver/common/transfer/tiot_xfer
 
 # target to build an object file
 tiot_driver/common/transfer/tiot_xfer.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer.c.obj
 .PHONY : tiot_driver/common/transfer/tiot_xfer.c.obj
 
 tiot_driver/common/transfer/tiot_xfer.i: tiot_driver/common/transfer/tiot_xfer.c.i
@@ -407,7 +407,7 @@ tiot_driver/common/transfer/tiot_xfer.i: tiot_driver/common/transfer/tiot_xfer.c
 
 # target to preprocess a source file
 tiot_driver/common/transfer/tiot_xfer.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer.c.i
 .PHONY : tiot_driver/common/transfer/tiot_xfer.c.i
 
 tiot_driver/common/transfer/tiot_xfer.s: tiot_driver/common/transfer/tiot_xfer.c.s
@@ -415,7 +415,7 @@ tiot_driver/common/transfer/tiot_xfer.s: tiot_driver/common/transfer/tiot_xfer.c
 
 # target to generate assembly for a file
 tiot_driver/common/transfer/tiot_xfer.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer.c.s
 .PHONY : tiot_driver/common/transfer/tiot_xfer.c.s
 
 tiot_driver/common/transfer/tiot_xfer_utils.obj: tiot_driver/common/transfer/tiot_xfer_utils.c.obj
@@ -423,7 +423,7 @@ tiot_driver/common/transfer/tiot_xfer_utils.obj: tiot_driver/common/transfer/tio
 
 # target to build an object file
 tiot_driver/common/transfer/tiot_xfer_utils.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer_utils.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer_utils.c.obj
 .PHONY : tiot_driver/common/transfer/tiot_xfer_utils.c.obj
 
 tiot_driver/common/transfer/tiot_xfer_utils.i: tiot_driver/common/transfer/tiot_xfer_utils.c.i
@@ -431,7 +431,7 @@ tiot_driver/common/transfer/tiot_xfer_utils.i: tiot_driver/common/transfer/tiot_
 
 # target to preprocess a source file
 tiot_driver/common/transfer/tiot_xfer_utils.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer_utils.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer_utils.c.i
 .PHONY : tiot_driver/common/transfer/tiot_xfer_utils.c.i
 
 tiot_driver/common/transfer/tiot_xfer_utils.s: tiot_driver/common/transfer/tiot_xfer_utils.c.s
@@ -439,7 +439,7 @@ tiot_driver/common/transfer/tiot_xfer_utils.s: tiot_driver/common/transfer/tiot_
 
 # target to generate assembly for a file
 tiot_driver/common/transfer/tiot_xfer_utils.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer_utils.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/transfer/tiot_xfer_utils.c.s
 .PHONY : tiot_driver/common/transfer/tiot_xfer_utils.c.s
 
 tiot_driver/common/utils/circ_queue/tiot_circ_queue.obj: tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.obj
@@ -447,7 +447,7 @@ tiot_driver/common/utils/circ_queue/tiot_circ_queue.obj: tiot_driver/common/util
 
 # target to build an object file
 tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.obj
 .PHONY : tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.obj
 
 tiot_driver/common/utils/circ_queue/tiot_circ_queue.i: tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.i
@@ -455,7 +455,7 @@ tiot_driver/common/utils/circ_queue/tiot_circ_queue.i: tiot_driver/common/utils/
 
 # target to preprocess a source file
 tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.i
 .PHONY : tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.i
 
 tiot_driver/common/utils/circ_queue/tiot_circ_queue.s: tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.s
@@ -463,7 +463,7 @@ tiot_driver/common/utils/circ_queue/tiot_circ_queue.s: tiot_driver/common/utils/
 
 # target to generate assembly for a file
 tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.s
 .PHONY : tiot_driver/common/utils/circ_queue/tiot_circ_queue.c.s
 
 tiot_driver/common/utils/fileops/tiot_fileops.obj: tiot_driver/common/utils/fileops/tiot_fileops.c.obj
@@ -471,7 +471,7 @@ tiot_driver/common/utils/fileops/tiot_fileops.obj: tiot_driver/common/utils/file
 
 # target to build an object file
 tiot_driver/common/utils/fileops/tiot_fileops.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/fileops/tiot_fileops.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/fileops/tiot_fileops.c.obj
 .PHONY : tiot_driver/common/utils/fileops/tiot_fileops.c.obj
 
 tiot_driver/common/utils/fileops/tiot_fileops.i: tiot_driver/common/utils/fileops/tiot_fileops.c.i
@@ -479,7 +479,7 @@ tiot_driver/common/utils/fileops/tiot_fileops.i: tiot_driver/common/utils/fileop
 
 # target to preprocess a source file
 tiot_driver/common/utils/fileops/tiot_fileops.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/fileops/tiot_fileops.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/fileops/tiot_fileops.c.i
 .PHONY : tiot_driver/common/utils/fileops/tiot_fileops.c.i
 
 tiot_driver/common/utils/fileops/tiot_fileops.s: tiot_driver/common/utils/fileops/tiot_fileops.c.s
@@ -487,7 +487,7 @@ tiot_driver/common/utils/fileops/tiot_fileops.s: tiot_driver/common/utils/fileop
 
 # target to generate assembly for a file
 tiot_driver/common/utils/fileops/tiot_fileops.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/fileops/tiot_fileops.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/fileops/tiot_fileops.c.s
 .PHONY : tiot_driver/common/utils/fileops/tiot_fileops.c.s
 
 tiot_driver/common/utils/misc/tiot_misc.obj: tiot_driver/common/utils/misc/tiot_misc.c.obj
@@ -495,7 +495,7 @@ tiot_driver/common/utils/misc/tiot_misc.obj: tiot_driver/common/utils/misc/tiot_
 
 # target to build an object file
 tiot_driver/common/utils/misc/tiot_misc.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/misc/tiot_misc.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/misc/tiot_misc.c.obj
 .PHONY : tiot_driver/common/utils/misc/tiot_misc.c.obj
 
 tiot_driver/common/utils/misc/tiot_misc.i: tiot_driver/common/utils/misc/tiot_misc.c.i
@@ -503,7 +503,7 @@ tiot_driver/common/utils/misc/tiot_misc.i: tiot_driver/common/utils/misc/tiot_mi
 
 # target to preprocess a source file
 tiot_driver/common/utils/misc/tiot_misc.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/misc/tiot_misc.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/misc/tiot_misc.c.i
 .PHONY : tiot_driver/common/utils/misc/tiot_misc.c.i
 
 tiot_driver/common/utils/misc/tiot_misc.s: tiot_driver/common/utils/misc/tiot_misc.c.s
@@ -511,7 +511,7 @@ tiot_driver/common/utils/misc/tiot_misc.s: tiot_driver/common/utils/misc/tiot_mi
 
 # target to generate assembly for a file
 tiot_driver/common/utils/misc/tiot_misc.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/misc/tiot_misc.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/common/utils/misc/tiot_misc.c.s
 .PHONY : tiot_driver/common/utils/misc/tiot_misc.c.s
 
 tiot_driver/device/w33/w33_dev_customize.obj: tiot_driver/device/w33/w33_dev_customize.c.obj
@@ -519,7 +519,7 @@ tiot_driver/device/w33/w33_dev_customize.obj: tiot_driver/device/w33/w33_dev_cus
 
 # target to build an object file
 tiot_driver/device/w33/w33_dev_customize.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_dev_customize.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_dev_customize.c.obj
 .PHONY : tiot_driver/device/w33/w33_dev_customize.c.obj
 
 tiot_driver/device/w33/w33_dev_customize.i: tiot_driver/device/w33/w33_dev_customize.c.i
@@ -527,7 +527,7 @@ tiot_driver/device/w33/w33_dev_customize.i: tiot_driver/device/w33/w33_dev_custo
 
 # target to preprocess a source file
 tiot_driver/device/w33/w33_dev_customize.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_dev_customize.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_dev_customize.c.i
 .PHONY : tiot_driver/device/w33/w33_dev_customize.c.i
 
 tiot_driver/device/w33/w33_dev_customize.s: tiot_driver/device/w33/w33_dev_customize.c.s
@@ -535,7 +535,7 @@ tiot_driver/device/w33/w33_dev_customize.s: tiot_driver/device/w33/w33_dev_custo
 
 # target to generate assembly for a file
 tiot_driver/device/w33/w33_dev_customize.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_dev_customize.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_dev_customize.c.s
 .PHONY : tiot_driver/device/w33/w33_dev_customize.c.s
 
 tiot_driver/device/w33/w33_device_info.obj: tiot_driver/device/w33/w33_device_info.c.obj
@@ -543,7 +543,7 @@ tiot_driver/device/w33/w33_device_info.obj: tiot_driver/device/w33/w33_device_in
 
 # target to build an object file
 tiot_driver/device/w33/w33_device_info.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_device_info.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_device_info.c.obj
 .PHONY : tiot_driver/device/w33/w33_device_info.c.obj
 
 tiot_driver/device/w33/w33_device_info.i: tiot_driver/device/w33/w33_device_info.c.i
@@ -551,7 +551,7 @@ tiot_driver/device/w33/w33_device_info.i: tiot_driver/device/w33/w33_device_info
 
 # target to preprocess a source file
 tiot_driver/device/w33/w33_device_info.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_device_info.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_device_info.c.i
 .PHONY : tiot_driver/device/w33/w33_device_info.c.i
 
 tiot_driver/device/w33/w33_device_info.s: tiot_driver/device/w33/w33_device_info.c.s
@@ -559,7 +559,7 @@ tiot_driver/device/w33/w33_device_info.s: tiot_driver/device/w33/w33_device_info
 
 # target to generate assembly for a file
 tiot_driver/device/w33/w33_device_info.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_device_info.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_device_info.c.s
 .PHONY : tiot_driver/device/w33/w33_device_info.c.s
 
 tiot_driver/device/w33/w33_service.obj: tiot_driver/device/w33/w33_service.c.obj
@@ -567,7 +567,7 @@ tiot_driver/device/w33/w33_service.obj: tiot_driver/device/w33/w33_service.c.obj
 
 # target to build an object file
 tiot_driver/device/w33/w33_service.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_service.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_service.c.obj
 .PHONY : tiot_driver/device/w33/w33_service.c.obj
 
 tiot_driver/device/w33/w33_service.i: tiot_driver/device/w33/w33_service.c.i
@@ -575,7 +575,7 @@ tiot_driver/device/w33/w33_service.i: tiot_driver/device/w33/w33_service.c.i
 
 # target to preprocess a source file
 tiot_driver/device/w33/w33_service.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_service.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_service.c.i
 .PHONY : tiot_driver/device/w33/w33_service.c.i
 
 tiot_driver/device/w33/w33_service.s: tiot_driver/device/w33/w33_service.c.s
@@ -583,7 +583,7 @@ tiot_driver/device/w33/w33_service.s: tiot_driver/device/w33/w33_service.c.s
 
 # target to generate assembly for a file
 tiot_driver/device/w33/w33_service.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_service.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/device/w33/w33_service.c.s
 .PHONY : tiot_driver/device/w33/w33_service.c.s
 
 tiot_driver/product_porting/common/tiot_board_misc_port.obj: tiot_driver/product_porting/common/tiot_board_misc_port.c.obj
@@ -591,7 +591,7 @@ tiot_driver/product_porting/common/tiot_board_misc_port.obj: tiot_driver/product
 
 # target to build an object file
 tiot_driver/product_porting/common/tiot_board_misc_port.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_misc_port.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_misc_port.c.obj
 .PHONY : tiot_driver/product_porting/common/tiot_board_misc_port.c.obj
 
 tiot_driver/product_porting/common/tiot_board_misc_port.i: tiot_driver/product_porting/common/tiot_board_misc_port.c.i
@@ -599,7 +599,7 @@ tiot_driver/product_porting/common/tiot_board_misc_port.i: tiot_driver/product_p
 
 # target to preprocess a source file
 tiot_driver/product_porting/common/tiot_board_misc_port.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_misc_port.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_misc_port.c.i
 .PHONY : tiot_driver/product_porting/common/tiot_board_misc_port.c.i
 
 tiot_driver/product_porting/common/tiot_board_misc_port.s: tiot_driver/product_porting/common/tiot_board_misc_port.c.s
@@ -607,7 +607,7 @@ tiot_driver/product_porting/common/tiot_board_misc_port.s: tiot_driver/product_p
 
 # target to generate assembly for a file
 tiot_driver/product_porting/common/tiot_board_misc_port.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_misc_port.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_misc_port.c.s
 .PHONY : tiot_driver/product_porting/common/tiot_board_misc_port.c.s
 
 tiot_driver/product_porting/common/tiot_board_pin_port.obj: tiot_driver/product_porting/common/tiot_board_pin_port.c.obj
@@ -615,7 +615,7 @@ tiot_driver/product_porting/common/tiot_board_pin_port.obj: tiot_driver/product_
 
 # target to build an object file
 tiot_driver/product_porting/common/tiot_board_pin_port.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_pin_port.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_pin_port.c.obj
 .PHONY : tiot_driver/product_porting/common/tiot_board_pin_port.c.obj
 
 tiot_driver/product_porting/common/tiot_board_pin_port.i: tiot_driver/product_porting/common/tiot_board_pin_port.c.i
@@ -623,7 +623,7 @@ tiot_driver/product_porting/common/tiot_board_pin_port.i: tiot_driver/product_po
 
 # target to preprocess a source file
 tiot_driver/product_porting/common/tiot_board_pin_port.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_pin_port.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_pin_port.c.i
 .PHONY : tiot_driver/product_porting/common/tiot_board_pin_port.c.i
 
 tiot_driver/product_porting/common/tiot_board_pin_port.s: tiot_driver/product_porting/common/tiot_board_pin_port.c.s
@@ -631,7 +631,7 @@ tiot_driver/product_porting/common/tiot_board_pin_port.s: tiot_driver/product_po
 
 # target to generate assembly for a file
 tiot_driver/product_porting/common/tiot_board_pin_port.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_pin_port.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_pin_port.c.s
 .PHONY : tiot_driver/product_porting/common/tiot_board_pin_port.c.s
 
 tiot_driver/product_porting/common/tiot_board_uart_port.obj: tiot_driver/product_porting/common/tiot_board_uart_port.c.obj
@@ -639,7 +639,7 @@ tiot_driver/product_porting/common/tiot_board_uart_port.obj: tiot_driver/product
 
 # target to build an object file
 tiot_driver/product_porting/common/tiot_board_uart_port.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_uart_port.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_uart_port.c.obj
 .PHONY : tiot_driver/product_porting/common/tiot_board_uart_port.c.obj
 
 tiot_driver/product_porting/common/tiot_board_uart_port.i: tiot_driver/product_porting/common/tiot_board_uart_port.c.i
@@ -647,7 +647,7 @@ tiot_driver/product_porting/common/tiot_board_uart_port.i: tiot_driver/product_p
 
 # target to preprocess a source file
 tiot_driver/product_porting/common/tiot_board_uart_port.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_uart_port.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_uart_port.c.i
 .PHONY : tiot_driver/product_porting/common/tiot_board_uart_port.c.i
 
 tiot_driver/product_porting/common/tiot_board_uart_port.s: tiot_driver/product_porting/common/tiot_board_uart_port.c.s
@@ -655,7 +655,7 @@ tiot_driver/product_porting/common/tiot_board_uart_port.s: tiot_driver/product_p
 
 # target to generate assembly for a file
 tiot_driver/product_porting/common/tiot_board_uart_port.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_uart_port.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/tiot_board_uart_port.c.s
 .PHONY : tiot_driver/product_porting/common/tiot_board_uart_port.c.s
 
 tiot_driver/product_porting/common/w33_board_port.obj: tiot_driver/product_porting/common/w33_board_port.c.obj
@@ -663,7 +663,7 @@ tiot_driver/product_porting/common/w33_board_port.obj: tiot_driver/product_porti
 
 # target to build an object file
 tiot_driver/product_porting/common/w33_board_port.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/w33_board_port.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/w33_board_port.c.obj
 .PHONY : tiot_driver/product_porting/common/w33_board_port.c.obj
 
 tiot_driver/product_porting/common/w33_board_port.i: tiot_driver/product_porting/common/w33_board_port.c.i
@@ -671,7 +671,7 @@ tiot_driver/product_porting/common/w33_board_port.i: tiot_driver/product_porting
 
 # target to preprocess a source file
 tiot_driver/product_porting/common/w33_board_port.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/w33_board_port.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/w33_board_port.c.i
 .PHONY : tiot_driver/product_porting/common/w33_board_port.c.i
 
 tiot_driver/product_porting/common/w33_board_port.s: tiot_driver/product_porting/common/w33_board_port.c.s
@@ -679,7 +679,7 @@ tiot_driver/product_porting/common/w33_board_port.s: tiot_driver/product_porting
 
 # target to generate assembly for a file
 tiot_driver/product_porting/common/w33_board_port.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/w33_board_port.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/common/w33_board_port.c.s
 .PHONY : tiot_driver/product_porting/common/w33_board_port.c.s
 
 tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.obj: tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.obj
@@ -687,7 +687,7 @@ tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.obj: tiot_dr
 
 # target to build an object file
 tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.obj
 .PHONY : tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.obj
 
 tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.i: tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.i
@@ -695,7 +695,7 @@ tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.i: tiot_driv
 
 # target to preprocess a source file
 tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.i
 .PHONY : tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.i
 
 tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.s: tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.s
@@ -703,7 +703,7 @@ tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.s: tiot_driv
 
 # target to generate assembly for a file
 tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f services/srv_tiot_host/CMakeFiles/tiot_driver.dir/build.make services/srv_tiot_host/CMakeFiles/tiot_driver.dir/tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.s
 .PHONY : tiot_driver/product_porting/ws63_w33_evb/firmware/w33_fw_file_array.c.s
 
 # Help Target
@@ -798,6 +798,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

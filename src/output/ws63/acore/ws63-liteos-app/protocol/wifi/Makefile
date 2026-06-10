@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 protocol/wifi/CMakeFiles/wifi_csa.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_csa.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_csa.dir/rule
 .PHONY : protocol/wifi/CMakeFiles/wifi_csa.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ wifi_csa: protocol/wifi/CMakeFiles/wifi_csa.dir/rule
 
 # fast build rule for target.
 wifi_csa/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/build
 .PHONY : wifi_csa/fast
 
 # Convenience name for target.
 protocol/wifi/CMakeFiles/wifi_frag.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_frag.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_frag.dir/rule
 .PHONY : protocol/wifi/CMakeFiles/wifi_frag.dir/rule
 
 # Convenience name for target.
@@ -141,12 +141,12 @@ wifi_frag: protocol/wifi/CMakeFiles/wifi_frag.dir/rule
 
 # fast build rule for target.
 wifi_frag/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_frag.dir/build.make protocol/wifi/CMakeFiles/wifi_frag.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_frag.dir/build.make protocol/wifi/CMakeFiles/wifi_frag.dir/build
 .PHONY : wifi_frag/fast
 
 # Convenience name for target.
 protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/rule
 .PHONY : protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/rule
 
 # Convenience name for target.
@@ -155,12 +155,12 @@ wifi_radar_sensor: protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/rule
 
 # fast build rule for target.
 wifi_radar_sensor/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build
 .PHONY : wifi_radar_sensor/fast
 
 # Convenience name for target.
 protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/rule
 .PHONY : protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/rule
 
 # Convenience name for target.
@@ -169,12 +169,12 @@ wifi_auto_adjust_freq: protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/rule
 
 # fast build rule for target.
 wifi_auto_adjust_freq/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build
 .PHONY : wifi_auto_adjust_freq/fast
 
 # Convenience name for target.
 protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/rule
 .PHONY : protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/rule
 
 # Convenience name for target.
@@ -183,12 +183,12 @@ wifi_tx_amsdu: protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/rule
 
 # fast build rule for target.
 wifi_tx_amsdu/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build.make protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build.make protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build
 .PHONY : wifi_tx_amsdu/fast
 
 # Convenience name for target.
 protocol/wifi/CMakeFiles/wifi_btcoex.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_btcoex.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_btcoex.dir/rule
 .PHONY : protocol/wifi/CMakeFiles/wifi_btcoex.dir/rule
 
 # Convenience name for target.
@@ -197,12 +197,12 @@ wifi_btcoex: protocol/wifi/CMakeFiles/wifi_btcoex.dir/rule
 
 # fast build rule for target.
 wifi_btcoex/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/build
 .PHONY : wifi_btcoex/fast
 
 # Convenience name for target.
 protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/rule
 .PHONY : protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/rule
 
 # Convenience name for target.
@@ -211,7 +211,7 @@ wifi_uapsd_ap: protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/rule
 
 # fast build rule for target.
 wifi_uapsd_ap/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build.make protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build.make protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build
 .PHONY : wifi_uapsd_ap/fast
 
 source/host/feature/hmac_auto_adjust_freq.obj: source/host/feature/hmac_auto_adjust_freq.c.obj
@@ -219,7 +219,7 @@ source/host/feature/hmac_auto_adjust_freq.obj: source/host/feature/hmac_auto_adj
 
 # target to build an object file
 source/host/feature/hmac_auto_adjust_freq.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj
 .PHONY : source/host/feature/hmac_auto_adjust_freq.c.obj
 
 source/host/feature/hmac_auto_adjust_freq.i: source/host/feature/hmac_auto_adjust_freq.c.i
@@ -227,7 +227,7 @@ source/host/feature/hmac_auto_adjust_freq.i: source/host/feature/hmac_auto_adjus
 
 # target to preprocess a source file
 source/host/feature/hmac_auto_adjust_freq.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.i
 .PHONY : source/host/feature/hmac_auto_adjust_freq.c.i
 
 source/host/feature/hmac_auto_adjust_freq.s: source/host/feature/hmac_auto_adjust_freq.c.s
@@ -235,7 +235,7 @@ source/host/feature/hmac_auto_adjust_freq.s: source/host/feature/hmac_auto_adjus
 
 # target to generate assembly for a file
 source/host/feature/hmac_auto_adjust_freq.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.s
 .PHONY : source/host/feature/hmac_auto_adjust_freq.c.s
 
 source/host/feature/hmac_btcoex.obj: source/host/feature/hmac_btcoex.c.obj
@@ -243,7 +243,7 @@ source/host/feature/hmac_btcoex.obj: source/host/feature/hmac_btcoex.c.obj
 
 # target to build an object file
 source/host/feature/hmac_btcoex.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex.c.obj
 .PHONY : source/host/feature/hmac_btcoex.c.obj
 
 source/host/feature/hmac_btcoex.i: source/host/feature/hmac_btcoex.c.i
@@ -251,7 +251,7 @@ source/host/feature/hmac_btcoex.i: source/host/feature/hmac_btcoex.c.i
 
 # target to preprocess a source file
 source/host/feature/hmac_btcoex.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex.c.i
 .PHONY : source/host/feature/hmac_btcoex.c.i
 
 source/host/feature/hmac_btcoex.s: source/host/feature/hmac_btcoex.c.s
@@ -259,7 +259,7 @@ source/host/feature/hmac_btcoex.s: source/host/feature/hmac_btcoex.c.s
 
 # target to generate assembly for a file
 source/host/feature/hmac_btcoex.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex.c.s
 .PHONY : source/host/feature/hmac_btcoex.c.s
 
 source/host/feature/hmac_btcoex_ba.obj: source/host/feature/hmac_btcoex_ba.c.obj
@@ -267,7 +267,7 @@ source/host/feature/hmac_btcoex_ba.obj: source/host/feature/hmac_btcoex_ba.c.obj
 
 # target to build an object file
 source/host/feature/hmac_btcoex_ba.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ba.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ba.c.obj
 .PHONY : source/host/feature/hmac_btcoex_ba.c.obj
 
 source/host/feature/hmac_btcoex_ba.i: source/host/feature/hmac_btcoex_ba.c.i
@@ -275,7 +275,7 @@ source/host/feature/hmac_btcoex_ba.i: source/host/feature/hmac_btcoex_ba.c.i
 
 # target to preprocess a source file
 source/host/feature/hmac_btcoex_ba.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ba.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ba.c.i
 .PHONY : source/host/feature/hmac_btcoex_ba.c.i
 
 source/host/feature/hmac_btcoex_ba.s: source/host/feature/hmac_btcoex_ba.c.s
@@ -283,7 +283,7 @@ source/host/feature/hmac_btcoex_ba.s: source/host/feature/hmac_btcoex_ba.c.s
 
 # target to generate assembly for a file
 source/host/feature/hmac_btcoex_ba.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ba.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ba.c.s
 .PHONY : source/host/feature/hmac_btcoex_ba.c.s
 
 source/host/feature/hmac_btcoex_btsta.obj: source/host/feature/hmac_btcoex_btsta.c.obj
@@ -291,7 +291,7 @@ source/host/feature/hmac_btcoex_btsta.obj: source/host/feature/hmac_btcoex_btsta
 
 # target to build an object file
 source/host/feature/hmac_btcoex_btsta.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_btsta.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_btsta.c.obj
 .PHONY : source/host/feature/hmac_btcoex_btsta.c.obj
 
 source/host/feature/hmac_btcoex_btsta.i: source/host/feature/hmac_btcoex_btsta.c.i
@@ -299,7 +299,7 @@ source/host/feature/hmac_btcoex_btsta.i: source/host/feature/hmac_btcoex_btsta.c
 
 # target to preprocess a source file
 source/host/feature/hmac_btcoex_btsta.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_btsta.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_btsta.c.i
 .PHONY : source/host/feature/hmac_btcoex_btsta.c.i
 
 source/host/feature/hmac_btcoex_btsta.s: source/host/feature/hmac_btcoex_btsta.c.s
@@ -307,7 +307,7 @@ source/host/feature/hmac_btcoex_btsta.s: source/host/feature/hmac_btcoex_btsta.c
 
 # target to generate assembly for a file
 source/host/feature/hmac_btcoex_btsta.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_btsta.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_btsta.c.s
 .PHONY : source/host/feature/hmac_btcoex_btsta.c.s
 
 source/host/feature/hmac_btcoex_m2s.obj: source/host/feature/hmac_btcoex_m2s.c.obj
@@ -315,7 +315,7 @@ source/host/feature/hmac_btcoex_m2s.obj: source/host/feature/hmac_btcoex_m2s.c.o
 
 # target to build an object file
 source/host/feature/hmac_btcoex_m2s.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_m2s.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_m2s.c.obj
 .PHONY : source/host/feature/hmac_btcoex_m2s.c.obj
 
 source/host/feature/hmac_btcoex_m2s.i: source/host/feature/hmac_btcoex_m2s.c.i
@@ -323,7 +323,7 @@ source/host/feature/hmac_btcoex_m2s.i: source/host/feature/hmac_btcoex_m2s.c.i
 
 # target to preprocess a source file
 source/host/feature/hmac_btcoex_m2s.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_m2s.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_m2s.c.i
 .PHONY : source/host/feature/hmac_btcoex_m2s.c.i
 
 source/host/feature/hmac_btcoex_m2s.s: source/host/feature/hmac_btcoex_m2s.c.s
@@ -331,7 +331,7 @@ source/host/feature/hmac_btcoex_m2s.s: source/host/feature/hmac_btcoex_m2s.c.s
 
 # target to generate assembly for a file
 source/host/feature/hmac_btcoex_m2s.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_m2s.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_m2s.c.s
 .PHONY : source/host/feature/hmac_btcoex_m2s.c.s
 
 source/host/feature/hmac_btcoex_notify.obj: source/host/feature/hmac_btcoex_notify.c.obj
@@ -339,7 +339,7 @@ source/host/feature/hmac_btcoex_notify.obj: source/host/feature/hmac_btcoex_noti
 
 # target to build an object file
 source/host/feature/hmac_btcoex_notify.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_notify.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_notify.c.obj
 .PHONY : source/host/feature/hmac_btcoex_notify.c.obj
 
 source/host/feature/hmac_btcoex_notify.i: source/host/feature/hmac_btcoex_notify.c.i
@@ -347,7 +347,7 @@ source/host/feature/hmac_btcoex_notify.i: source/host/feature/hmac_btcoex_notify
 
 # target to preprocess a source file
 source/host/feature/hmac_btcoex_notify.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_notify.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_notify.c.i
 .PHONY : source/host/feature/hmac_btcoex_notify.c.i
 
 source/host/feature/hmac_btcoex_notify.s: source/host/feature/hmac_btcoex_notify.c.s
@@ -355,7 +355,7 @@ source/host/feature/hmac_btcoex_notify.s: source/host/feature/hmac_btcoex_notify
 
 # target to generate assembly for a file
 source/host/feature/hmac_btcoex_notify.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_notify.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_notify.c.s
 .PHONY : source/host/feature/hmac_btcoex_notify.c.s
 
 source/host/feature/hmac_btcoex_ps.obj: source/host/feature/hmac_btcoex_ps.c.obj
@@ -363,7 +363,7 @@ source/host/feature/hmac_btcoex_ps.obj: source/host/feature/hmac_btcoex_ps.c.obj
 
 # target to build an object file
 source/host/feature/hmac_btcoex_ps.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ps.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ps.c.obj
 .PHONY : source/host/feature/hmac_btcoex_ps.c.obj
 
 source/host/feature/hmac_btcoex_ps.i: source/host/feature/hmac_btcoex_ps.c.i
@@ -371,7 +371,7 @@ source/host/feature/hmac_btcoex_ps.i: source/host/feature/hmac_btcoex_ps.c.i
 
 # target to preprocess a source file
 source/host/feature/hmac_btcoex_ps.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ps.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ps.c.i
 .PHONY : source/host/feature/hmac_btcoex_ps.c.i
 
 source/host/feature/hmac_btcoex_ps.s: source/host/feature/hmac_btcoex_ps.c.s
@@ -379,7 +379,7 @@ source/host/feature/hmac_btcoex_ps.s: source/host/feature/hmac_btcoex_ps.c.s
 
 # target to generate assembly for a file
 source/host/feature/hmac_btcoex_ps.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ps.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_btcoex.dir/build.make protocol/wifi/CMakeFiles/wifi_btcoex.dir/source/host/feature/hmac_btcoex_ps.c.s
 .PHONY : source/host/feature/hmac_btcoex_ps.c.s
 
 source/host/feature/hmac_csa_ap.obj: source/host/feature/hmac_csa_ap.c.obj
@@ -387,7 +387,7 @@ source/host/feature/hmac_csa_ap.obj: source/host/feature/hmac_csa_ap.c.obj
 
 # target to build an object file
 source/host/feature/hmac_csa_ap.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_ap.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_ap.c.obj
 .PHONY : source/host/feature/hmac_csa_ap.c.obj
 
 source/host/feature/hmac_csa_ap.i: source/host/feature/hmac_csa_ap.c.i
@@ -395,7 +395,7 @@ source/host/feature/hmac_csa_ap.i: source/host/feature/hmac_csa_ap.c.i
 
 # target to preprocess a source file
 source/host/feature/hmac_csa_ap.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_ap.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_ap.c.i
 .PHONY : source/host/feature/hmac_csa_ap.c.i
 
 source/host/feature/hmac_csa_ap.s: source/host/feature/hmac_csa_ap.c.s
@@ -403,7 +403,7 @@ source/host/feature/hmac_csa_ap.s: source/host/feature/hmac_csa_ap.c.s
 
 # target to generate assembly for a file
 source/host/feature/hmac_csa_ap.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_ap.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_ap.c.s
 .PHONY : source/host/feature/hmac_csa_ap.c.s
 
 source/host/feature/hmac_csa_sta.obj: source/host/feature/hmac_csa_sta.c.obj
@@ -411,7 +411,7 @@ source/host/feature/hmac_csa_sta.obj: source/host/feature/hmac_csa_sta.c.obj
 
 # target to build an object file
 source/host/feature/hmac_csa_sta.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_sta.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_sta.c.obj
 .PHONY : source/host/feature/hmac_csa_sta.c.obj
 
 source/host/feature/hmac_csa_sta.i: source/host/feature/hmac_csa_sta.c.i
@@ -419,7 +419,7 @@ source/host/feature/hmac_csa_sta.i: source/host/feature/hmac_csa_sta.c.i
 
 # target to preprocess a source file
 source/host/feature/hmac_csa_sta.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_sta.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_sta.c.i
 .PHONY : source/host/feature/hmac_csa_sta.c.i
 
 source/host/feature/hmac_csa_sta.s: source/host/feature/hmac_csa_sta.c.s
@@ -427,7 +427,7 @@ source/host/feature/hmac_csa_sta.s: source/host/feature/hmac_csa_sta.c.s
 
 # target to generate assembly for a file
 source/host/feature/hmac_csa_sta.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_sta.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_csa.dir/build.make protocol/wifi/CMakeFiles/wifi_csa.dir/source/host/feature/hmac_csa_sta.c.s
 .PHONY : source/host/feature/hmac_csa_sta.c.s
 
 source/host/feature/hmac_frag.obj: source/host/feature/hmac_frag.c.obj
@@ -435,7 +435,7 @@ source/host/feature/hmac_frag.obj: source/host/feature/hmac_frag.c.obj
 
 # target to build an object file
 source/host/feature/hmac_frag.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_frag.dir/build.make protocol/wifi/CMakeFiles/wifi_frag.dir/source/host/feature/hmac_frag.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_frag.dir/build.make protocol/wifi/CMakeFiles/wifi_frag.dir/source/host/feature/hmac_frag.c.obj
 .PHONY : source/host/feature/hmac_frag.c.obj
 
 source/host/feature/hmac_frag.i: source/host/feature/hmac_frag.c.i
@@ -443,7 +443,7 @@ source/host/feature/hmac_frag.i: source/host/feature/hmac_frag.c.i
 
 # target to preprocess a source file
 source/host/feature/hmac_frag.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_frag.dir/build.make protocol/wifi/CMakeFiles/wifi_frag.dir/source/host/feature/hmac_frag.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_frag.dir/build.make protocol/wifi/CMakeFiles/wifi_frag.dir/source/host/feature/hmac_frag.c.i
 .PHONY : source/host/feature/hmac_frag.c.i
 
 source/host/feature/hmac_frag.s: source/host/feature/hmac_frag.c.s
@@ -451,7 +451,7 @@ source/host/feature/hmac_frag.s: source/host/feature/hmac_frag.c.s
 
 # target to generate assembly for a file
 source/host/feature/hmac_frag.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_frag.dir/build.make protocol/wifi/CMakeFiles/wifi_frag.dir/source/host/feature/hmac_frag.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_frag.dir/build.make protocol/wifi/CMakeFiles/wifi_frag.dir/source/host/feature/hmac_frag.c.s
 .PHONY : source/host/feature/hmac_frag.c.s
 
 source/host/feature/hmac_radar_sensor.obj: source/host/feature/hmac_radar_sensor.c.obj
@@ -459,7 +459,7 @@ source/host/feature/hmac_radar_sensor.obj: source/host/feature/hmac_radar_sensor
 
 # target to build an object file
 source/host/feature/hmac_radar_sensor.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj
 .PHONY : source/host/feature/hmac_radar_sensor.c.obj
 
 source/host/feature/hmac_radar_sensor.i: source/host/feature/hmac_radar_sensor.c.i
@@ -467,7 +467,7 @@ source/host/feature/hmac_radar_sensor.i: source/host/feature/hmac_radar_sensor.c
 
 # target to preprocess a source file
 source/host/feature/hmac_radar_sensor.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.i
 .PHONY : source/host/feature/hmac_radar_sensor.c.i
 
 source/host/feature/hmac_radar_sensor.s: source/host/feature/hmac_radar_sensor.c.s
@@ -475,7 +475,7 @@ source/host/feature/hmac_radar_sensor.s: source/host/feature/hmac_radar_sensor.c
 
 # target to generate assembly for a file
 source/host/feature/hmac_radar_sensor.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.s
 .PHONY : source/host/feature/hmac_radar_sensor.c.s
 
 source/host/feature/hmac_tx_amsdu.obj: source/host/feature/hmac_tx_amsdu.c.obj
@@ -483,7 +483,7 @@ source/host/feature/hmac_tx_amsdu.obj: source/host/feature/hmac_tx_amsdu.c.obj
 
 # target to build an object file
 source/host/feature/hmac_tx_amsdu.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build.make protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/source/host/feature/hmac_tx_amsdu.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build.make protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/source/host/feature/hmac_tx_amsdu.c.obj
 .PHONY : source/host/feature/hmac_tx_amsdu.c.obj
 
 source/host/feature/hmac_tx_amsdu.i: source/host/feature/hmac_tx_amsdu.c.i
@@ -491,7 +491,7 @@ source/host/feature/hmac_tx_amsdu.i: source/host/feature/hmac_tx_amsdu.c.i
 
 # target to preprocess a source file
 source/host/feature/hmac_tx_amsdu.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build.make protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/source/host/feature/hmac_tx_amsdu.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build.make protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/source/host/feature/hmac_tx_amsdu.c.i
 .PHONY : source/host/feature/hmac_tx_amsdu.c.i
 
 source/host/feature/hmac_tx_amsdu.s: source/host/feature/hmac_tx_amsdu.c.s
@@ -499,7 +499,7 @@ source/host/feature/hmac_tx_amsdu.s: source/host/feature/hmac_tx_amsdu.c.s
 
 # target to generate assembly for a file
 source/host/feature/hmac_tx_amsdu.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build.make protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/source/host/feature/hmac_tx_amsdu.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/build.make protocol/wifi/CMakeFiles/wifi_tx_amsdu.dir/source/host/feature/hmac_tx_amsdu.c.s
 .PHONY : source/host/feature/hmac_tx_amsdu.c.s
 
 source/host/feature/hmac_uapsd.obj: source/host/feature/hmac_uapsd.c.obj
@@ -507,7 +507,7 @@ source/host/feature/hmac_uapsd.obj: source/host/feature/hmac_uapsd.c.obj
 
 # target to build an object file
 source/host/feature/hmac_uapsd.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build.make protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/source/host/feature/hmac_uapsd.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build.make protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/source/host/feature/hmac_uapsd.c.obj
 .PHONY : source/host/feature/hmac_uapsd.c.obj
 
 source/host/feature/hmac_uapsd.i: source/host/feature/hmac_uapsd.c.i
@@ -515,7 +515,7 @@ source/host/feature/hmac_uapsd.i: source/host/feature/hmac_uapsd.c.i
 
 # target to preprocess a source file
 source/host/feature/hmac_uapsd.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build.make protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/source/host/feature/hmac_uapsd.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build.make protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/source/host/feature/hmac_uapsd.c.i
 .PHONY : source/host/feature/hmac_uapsd.c.i
 
 source/host/feature/hmac_uapsd.s: source/host/feature/hmac_uapsd.c.s
@@ -523,7 +523,7 @@ source/host/feature/hmac_uapsd.s: source/host/feature/hmac_uapsd.c.s
 
 # target to generate assembly for a file
 source/host/feature/hmac_uapsd.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build.make protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/source/host/feature/hmac_uapsd.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/build.make protocol/wifi/CMakeFiles/wifi_uapsd_ap.dir/source/host/feature/hmac_uapsd.c.s
 .PHONY : source/host/feature/hmac_uapsd.c.s
 
 # Help Target
@@ -591,6 +591,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

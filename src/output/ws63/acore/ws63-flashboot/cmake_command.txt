@@ -29,9 +29,9 @@ Unix Makefiles
 -DBUILD_PLATFORM=linux
 -DTARGET_COMMAND=ws63-flashboot
 -DBUILD_LEVEL=normal
--DCMAKE_TOOLCHAIN_FILE=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/toolchains/riscv32_musl_105.cmake
+-DCMAKE_TOOLCHAIN_FILE=/home/cool/fbb_ws63/src/build/toolchains/riscv32_musl_105.cmake
 -DPY_PATH=/usr/bin/python3
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+/home/cool/fbb_ws63/src
 -DPRODUCT_TYPE=default
 -DROM_CHECK=False
 -DPKG_TARGET_NAME=ws63-flashboot

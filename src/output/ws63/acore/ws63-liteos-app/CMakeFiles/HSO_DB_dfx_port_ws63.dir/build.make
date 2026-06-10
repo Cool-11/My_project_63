@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for HSO_DB_dfx_port_ws63.
 
@@ -68,21 +68,21 @@ include CMakeFiles/HSO_DB_dfx_port_ws63.dir/progress.make
 
 CMakeFiles/HSO_DB_dfx_port_ws63: hso_temp/dfx_port_ws63.txt
 
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/dfx_channel.c
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/dfx_system_init.c
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/diag_adapt_cmd_mem.c
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/last_dump_adapt.c
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/sample_data_adapt.c
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/diag_adapt_sdt.c
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/diag_adapt_psd.c
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/diag_sample_data.c
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_bt.h
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_pf.h
-hso_temp/dfx_port_ws63.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_dfx_port_ws63"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_port_ws63_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_port_ws63.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_port_ws63.txt
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/dfx_channel.c
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/dfx_system_init.c
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/diag_adapt_cmd_mem.c
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/last_dump_adapt.c
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/sample_data_adapt.c
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/diag_adapt_sdt.c
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/diag_adapt_psd.c
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/diag_sample_data.c
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_bt.h
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_pf.h
+hso_temp/dfx_port_ws63.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_dfx_port_ws63"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_port_ws63_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_port_ws63.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_port_ws63.txt
 
 HSO_DB_dfx_port_ws63: CMakeFiles/HSO_DB_dfx_port_ws63
 HSO_DB_dfx_port_ws63: hso_temp/dfx_port_ws63.txt
@@ -98,6 +98,6 @@ CMakeFiles/HSO_DB_dfx_port_ws63.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_dfx_port_ws63.dir/clean
 
 CMakeFiles/HSO_DB_dfx_port_ws63.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_dfx_port_ws63.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_dfx_port_ws63.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_dfx_port_ws63.dir/depend
 

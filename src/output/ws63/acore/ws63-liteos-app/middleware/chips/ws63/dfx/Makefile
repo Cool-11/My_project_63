@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/dfx//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/dfx//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/rule
 .PHONY : middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ dfx_port_ws63: middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/rule
 
 # fast build rule for target.
 dfx_port_ws63/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build
 .PHONY : dfx_port_ws63/fast
 
 dfx_channel.obj: dfx_channel.c.obj
@@ -135,7 +135,7 @@ dfx_channel.obj: dfx_channel.c.obj
 
 # target to build an object file
 dfx_channel.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_channel.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_channel.c.obj
 .PHONY : dfx_channel.c.obj
 
 dfx_channel.i: dfx_channel.c.i
@@ -143,7 +143,7 @@ dfx_channel.i: dfx_channel.c.i
 
 # target to preprocess a source file
 dfx_channel.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_channel.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_channel.c.i
 .PHONY : dfx_channel.c.i
 
 dfx_channel.s: dfx_channel.c.s
@@ -151,7 +151,7 @@ dfx_channel.s: dfx_channel.c.s
 
 # target to generate assembly for a file
 dfx_channel.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_channel.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_channel.c.s
 .PHONY : dfx_channel.c.s
 
 dfx_system_init.obj: dfx_system_init.c.obj
@@ -159,7 +159,7 @@ dfx_system_init.obj: dfx_system_init.c.obj
 
 # target to build an object file
 dfx_system_init.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_system_init.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_system_init.c.obj
 .PHONY : dfx_system_init.c.obj
 
 dfx_system_init.i: dfx_system_init.c.i
@@ -167,7 +167,7 @@ dfx_system_init.i: dfx_system_init.c.i
 
 # target to preprocess a source file
 dfx_system_init.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_system_init.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_system_init.c.i
 .PHONY : dfx_system_init.c.i
 
 dfx_system_init.s: dfx_system_init.c.s
@@ -175,7 +175,7 @@ dfx_system_init.s: dfx_system_init.c.s
 
 # target to generate assembly for a file
 dfx_system_init.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_system_init.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/dfx_system_init.c.s
 .PHONY : dfx_system_init.c.s
 
 diag_adapt_cmd_mem.obj: diag_adapt_cmd_mem.c.obj
@@ -183,7 +183,7 @@ diag_adapt_cmd_mem.obj: diag_adapt_cmd_mem.c.obj
 
 # target to build an object file
 diag_adapt_cmd_mem.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_cmd_mem.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_cmd_mem.c.obj
 .PHONY : diag_adapt_cmd_mem.c.obj
 
 diag_adapt_cmd_mem.i: diag_adapt_cmd_mem.c.i
@@ -191,7 +191,7 @@ diag_adapt_cmd_mem.i: diag_adapt_cmd_mem.c.i
 
 # target to preprocess a source file
 diag_adapt_cmd_mem.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_cmd_mem.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_cmd_mem.c.i
 .PHONY : diag_adapt_cmd_mem.c.i
 
 diag_adapt_cmd_mem.s: diag_adapt_cmd_mem.c.s
@@ -199,7 +199,7 @@ diag_adapt_cmd_mem.s: diag_adapt_cmd_mem.c.s
 
 # target to generate assembly for a file
 diag_adapt_cmd_mem.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_cmd_mem.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_cmd_mem.c.s
 .PHONY : diag_adapt_cmd_mem.c.s
 
 diag_adapt_psd.obj: diag_adapt_psd.c.obj
@@ -207,7 +207,7 @@ diag_adapt_psd.obj: diag_adapt_psd.c.obj
 
 # target to build an object file
 diag_adapt_psd.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_psd.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_psd.c.obj
 .PHONY : diag_adapt_psd.c.obj
 
 diag_adapt_psd.i: diag_adapt_psd.c.i
@@ -215,7 +215,7 @@ diag_adapt_psd.i: diag_adapt_psd.c.i
 
 # target to preprocess a source file
 diag_adapt_psd.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_psd.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_psd.c.i
 .PHONY : diag_adapt_psd.c.i
 
 diag_adapt_psd.s: diag_adapt_psd.c.s
@@ -223,7 +223,7 @@ diag_adapt_psd.s: diag_adapt_psd.c.s
 
 # target to generate assembly for a file
 diag_adapt_psd.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_psd.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_psd.c.s
 .PHONY : diag_adapt_psd.c.s
 
 diag_adapt_sdt.obj: diag_adapt_sdt.c.obj
@@ -231,7 +231,7 @@ diag_adapt_sdt.obj: diag_adapt_sdt.c.obj
 
 # target to build an object file
 diag_adapt_sdt.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_sdt.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_sdt.c.obj
 .PHONY : diag_adapt_sdt.c.obj
 
 diag_adapt_sdt.i: diag_adapt_sdt.c.i
@@ -239,7 +239,7 @@ diag_adapt_sdt.i: diag_adapt_sdt.c.i
 
 # target to preprocess a source file
 diag_adapt_sdt.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_sdt.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_sdt.c.i
 .PHONY : diag_adapt_sdt.c.i
 
 diag_adapt_sdt.s: diag_adapt_sdt.c.s
@@ -247,7 +247,7 @@ diag_adapt_sdt.s: diag_adapt_sdt.c.s
 
 # target to generate assembly for a file
 diag_adapt_sdt.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_sdt.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_adapt_sdt.c.s
 .PHONY : diag_adapt_sdt.c.s
 
 diag_sample_data.obj: diag_sample_data.c.obj
@@ -255,7 +255,7 @@ diag_sample_data.obj: diag_sample_data.c.obj
 
 # target to build an object file
 diag_sample_data.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_sample_data.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_sample_data.c.obj
 .PHONY : diag_sample_data.c.obj
 
 diag_sample_data.i: diag_sample_data.c.i
@@ -263,7 +263,7 @@ diag_sample_data.i: diag_sample_data.c.i
 
 # target to preprocess a source file
 diag_sample_data.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_sample_data.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_sample_data.c.i
 .PHONY : diag_sample_data.c.i
 
 diag_sample_data.s: diag_sample_data.c.s
@@ -271,7 +271,7 @@ diag_sample_data.s: diag_sample_data.c.s
 
 # target to generate assembly for a file
 diag_sample_data.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_sample_data.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/diag_sample_data.c.s
 .PHONY : diag_sample_data.c.s
 
 last_dump_adapt.obj: last_dump_adapt.c.obj
@@ -279,7 +279,7 @@ last_dump_adapt.obj: last_dump_adapt.c.obj
 
 # target to build an object file
 last_dump_adapt.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/last_dump_adapt.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/last_dump_adapt.c.obj
 .PHONY : last_dump_adapt.c.obj
 
 last_dump_adapt.i: last_dump_adapt.c.i
@@ -287,7 +287,7 @@ last_dump_adapt.i: last_dump_adapt.c.i
 
 # target to preprocess a source file
 last_dump_adapt.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/last_dump_adapt.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/last_dump_adapt.c.i
 .PHONY : last_dump_adapt.c.i
 
 last_dump_adapt.s: last_dump_adapt.c.s
@@ -295,7 +295,7 @@ last_dump_adapt.s: last_dump_adapt.c.s
 
 # target to generate assembly for a file
 last_dump_adapt.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/last_dump_adapt.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/last_dump_adapt.c.s
 .PHONY : last_dump_adapt.c.s
 
 sample_data_adapt.obj: sample_data_adapt.c.obj
@@ -303,7 +303,7 @@ sample_data_adapt.obj: sample_data_adapt.c.obj
 
 # target to build an object file
 sample_data_adapt.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/sample_data_adapt.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/sample_data_adapt.c.obj
 .PHONY : sample_data_adapt.c.obj
 
 sample_data_adapt.i: sample_data_adapt.c.i
@@ -311,7 +311,7 @@ sample_data_adapt.i: sample_data_adapt.c.i
 
 # target to preprocess a source file
 sample_data_adapt.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/sample_data_adapt.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/sample_data_adapt.c.i
 .PHONY : sample_data_adapt.c.i
 
 sample_data_adapt.s: sample_data_adapt.c.s
@@ -319,7 +319,7 @@ sample_data_adapt.s: sample_data_adapt.c.s
 
 # target to generate assembly for a file
 sample_data_adapt.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/sample_data_adapt.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/build.make middleware/chips/ws63/dfx/CMakeFiles/dfx_port_ws63.dir/sample_data_adapt.c.s
 .PHONY : sample_data_adapt.c.s
 
 # Help Target
@@ -366,6 +366,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include hal/mips/CMakeFiles/hal_mips.dir/depend.make
@@ -70,18 +70,18 @@ include hal/mips/CMakeFiles/hal_mips.dir/progress.make
 include hal/mips/CMakeFiles/hal_mips.dir/flags.make
 
 hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.obj: hal/mips/CMakeFiles/hal_mips.dir/flags.make
-hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/mips/hal_mips.c
+hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/mips/hal_mips.c
 hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.obj: hal/mips/CMakeFiles/hal_mips.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/mips && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_MIPS_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.obj -MF CMakeFiles/hal_mips.dir/hal_mips.c.obj.d -o CMakeFiles/hal_mips.dir/hal_mips.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/mips/hal_mips.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/mips && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_MIPS_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.obj -MF CMakeFiles/hal_mips.dir/hal_mips.c.obj.d -o CMakeFiles/hal_mips.dir/hal_mips.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/mips/hal_mips.c
 
 hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_mips.dir/hal_mips.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/mips && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_MIPS_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/mips/hal_mips.c > CMakeFiles/hal_mips.dir/hal_mips.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/mips && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_MIPS_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/mips/hal_mips.c > CMakeFiles/hal_mips.dir/hal_mips.c.i
 
 hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_mips.dir/hal_mips.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/mips && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_MIPS_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/mips/hal_mips.c -o CMakeFiles/hal_mips.dir/hal_mips.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/mips && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_MIPS_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/mips/hal_mips.c -o CMakeFiles/hal_mips.dir/hal_mips.c.s
 
 # Object files for target hal_mips
 hal_mips_OBJECTS = \
@@ -93,19 +93,19 @@ hal_mips_EXTERNAL_OBJECTS =
 hal/mips/libhal_mips.a: hal/mips/CMakeFiles/hal_mips.dir/hal_mips.c.obj
 hal/mips/libhal_mips.a: hal/mips/CMakeFiles/hal_mips.dir/build.make
 hal/mips/libhal_mips.a: hal/mips/CMakeFiles/hal_mips.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libhal_mips.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/mips && $(CMAKE_COMMAND) -P CMakeFiles/hal_mips.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/mips && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_mips.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libhal_mips.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/mips && $(CMAKE_COMMAND) -P CMakeFiles/hal_mips.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/mips && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_mips.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 hal/mips/CMakeFiles/hal_mips.dir/build: hal/mips/libhal_mips.a
 .PHONY : hal/mips/CMakeFiles/hal_mips.dir/build
 
 hal/mips/CMakeFiles/hal_mips.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/mips && $(CMAKE_COMMAND) -P CMakeFiles/hal_mips.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/mips && $(CMAKE_COMMAND) -P CMakeFiles/hal_mips.dir/cmake_clean.cmake
 .PHONY : hal/mips/CMakeFiles/hal_mips.dir/clean
 
 hal/mips/CMakeFiles/hal_mips.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/mips /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/mips /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/mips/CMakeFiles/hal_mips.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/drivers/hal/mips /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/mips /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/mips/CMakeFiles/hal_mips.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : hal/mips/CMakeFiles/hal_mips.dir/depend
 

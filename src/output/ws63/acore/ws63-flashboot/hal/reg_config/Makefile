@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/reg_config//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/reg_config//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hal/reg_config/CMakeFiles/hal_reg_config.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/CMakeFiles/hal_reg_config.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/reg_config/CMakeFiles/hal_reg_config.dir/rule
 .PHONY : hal/reg_config/CMakeFiles/hal_reg_config.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ hal_reg_config: hal/reg_config/CMakeFiles/hal_reg_config.dir/rule
 
 # fast build rule for target.
 hal_reg_config/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/reg_config/CMakeFiles/hal_reg_config.dir/build.make hal/reg_config/CMakeFiles/hal_reg_config.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/reg_config/CMakeFiles/hal_reg_config.dir/build.make hal/reg_config/CMakeFiles/hal_reg_config.dir/build
 .PHONY : hal_reg_config/fast
 
 hal_reg_config.obj: hal_reg_config.c.obj
@@ -135,7 +135,7 @@ hal_reg_config.obj: hal_reg_config.c.obj
 
 # target to build an object file
 hal_reg_config.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/reg_config/CMakeFiles/hal_reg_config.dir/build.make hal/reg_config/CMakeFiles/hal_reg_config.dir/hal_reg_config.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/reg_config/CMakeFiles/hal_reg_config.dir/build.make hal/reg_config/CMakeFiles/hal_reg_config.dir/hal_reg_config.c.obj
 .PHONY : hal_reg_config.c.obj
 
 hal_reg_config.i: hal_reg_config.c.i
@@ -143,7 +143,7 @@ hal_reg_config.i: hal_reg_config.c.i
 
 # target to preprocess a source file
 hal_reg_config.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/reg_config/CMakeFiles/hal_reg_config.dir/build.make hal/reg_config/CMakeFiles/hal_reg_config.dir/hal_reg_config.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/reg_config/CMakeFiles/hal_reg_config.dir/build.make hal/reg_config/CMakeFiles/hal_reg_config.dir/hal_reg_config.c.i
 .PHONY : hal_reg_config.c.i
 
 hal_reg_config.s: hal_reg_config.c.s
@@ -151,7 +151,7 @@ hal_reg_config.s: hal_reg_config.c.s
 
 # target to generate assembly for a file
 hal_reg_config.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/reg_config/CMakeFiles/hal_reg_config.dir/build.make hal/reg_config/CMakeFiles/hal_reg_config.dir/hal_reg_config.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/reg_config/CMakeFiles/hal_reg_config.dir/build.make hal/reg_config/CMakeFiles/hal_reg_config.dir/hal_reg_config.c.s
 .PHONY : hal_reg_config.c.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 # Include any dependencies generated for this target.
 include kernel/osal/CMakeFiles/osal.dir/depend.make
@@ -70,116 +70,116 @@ include kernel/osal/CMakeFiles/osal.dir/progress.make
 include kernel/osal/CMakeFiles/osal.dir/flags.make
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj: kernel/osal/CMakeFiles/osal.dir/flags.make
-kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_atomic.c
+kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_atomic.c
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj: kernel/osal/CMakeFiles/osal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_ATOMIC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_atomic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_ATOMIC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj -c /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_atomic.c
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/osal.dir/src/nonos/osal_atomic.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_ATOMIC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_atomic.c > CMakeFiles/osal.dir/src/nonos/osal_atomic.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_ATOMIC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_atomic.c > CMakeFiles/osal.dir/src/nonos/osal_atomic.c.i
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/osal.dir/src/nonos/osal_atomic.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_ATOMIC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_atomic.c -o CMakeFiles/osal.dir/src/nonos/osal_atomic.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_ATOMIC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_atomic.c -o CMakeFiles/osal.dir/src/nonos/osal_atomic.c.s
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj: kernel/osal/CMakeFiles/osal.dir/flags.make
-kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_debug.c
+kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_debug.c
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj: kernel/osal/CMakeFiles/osal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_DEBUG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_debug.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_DEBUG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj -c /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_debug.c
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/osal.dir/src/nonos/osal_debug.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_DEBUG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_debug.c > CMakeFiles/osal.dir/src/nonos/osal_debug.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_DEBUG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_debug.c > CMakeFiles/osal.dir/src/nonos/osal_debug.c.i
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/osal.dir/src/nonos/osal_debug.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_DEBUG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_debug.c -o CMakeFiles/osal.dir/src/nonos/osal_debug.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_DEBUG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_debug.c -o CMakeFiles/osal.dir/src/nonos/osal_debug.c.s
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj: kernel/osal/CMakeFiles/osal.dir/flags.make
-kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_interrupt.c
+kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_interrupt.c
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj: kernel/osal/CMakeFiles/osal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_INTERRUPT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_interrupt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_INTERRUPT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj -c /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_interrupt.c
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_INTERRUPT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_interrupt.c > CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_INTERRUPT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_interrupt.c > CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.i
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_INTERRUPT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_interrupt.c -o CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_INTERRUPT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_interrupt.c -o CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.s
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj: kernel/osal/CMakeFiles/osal.dir/flags.make
-kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_mutex.c
+kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_mutex.c
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj: kernel/osal/CMakeFiles/osal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_MUTEX_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_mutex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_MUTEX_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj -c /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_mutex.c
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/osal.dir/src/nonos/osal_mutex.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_MUTEX_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_mutex.c > CMakeFiles/osal.dir/src/nonos/osal_mutex.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_MUTEX_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_mutex.c > CMakeFiles/osal.dir/src/nonos/osal_mutex.c.i
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/osal.dir/src/nonos/osal_mutex.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_MUTEX_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_mutex.c -o CMakeFiles/osal.dir/src/nonos/osal_mutex.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_MUTEX_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_mutex.c -o CMakeFiles/osal.dir/src/nonos/osal_mutex.c.s
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj: kernel/osal/CMakeFiles/osal.dir/flags.make
-kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_semaphore.c
+kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_semaphore.c
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj: kernel/osal/CMakeFiles/osal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SEMAPHORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_semaphore.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SEMAPHORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj -c /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_semaphore.c
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SEMAPHORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_semaphore.c > CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SEMAPHORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_semaphore.c > CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.i
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SEMAPHORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_semaphore.c -o CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SEMAPHORE_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_semaphore.c -o CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.s
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj: kernel/osal/CMakeFiles/osal.dir/flags.make
-kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_spinlock.c
+kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_spinlock.c
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj: kernel/osal/CMakeFiles/osal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SPINLOCK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_spinlock.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SPINLOCK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj -c /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_spinlock.c
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SPINLOCK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_spinlock.c > CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SPINLOCK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_spinlock.c > CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.i
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SPINLOCK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_spinlock.c -o CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_SPINLOCK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_spinlock.c -o CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.s
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj: kernel/osal/CMakeFiles/osal.dir/flags.make
-kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_wait.c
+kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_wait.c
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj: kernel/osal/CMakeFiles/osal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_WAIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_wait.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_WAIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj -c /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_wait.c
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/osal.dir/src/nonos/osal_wait.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_WAIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_wait.c > CMakeFiles/osal.dir/src/nonos/osal_wait.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_WAIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_wait.c > CMakeFiles/osal.dir/src/nonos/osal_wait.c.i
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/osal.dir/src/nonos/osal_wait.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_WAIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_wait.c -o CMakeFiles/osal.dir/src/nonos/osal_wait.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_WAIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_wait.c -o CMakeFiles/osal.dir/src/nonos/osal_wait.c.s
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj: kernel/osal/CMakeFiles/osal.dir/flags.make
-kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_task.c
+kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_task.c
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj: kernel/osal/CMakeFiles/osal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_TASK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_task.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_task.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_task.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_TASK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj -MF CMakeFiles/osal.dir/src/nonos/osal_task.c.obj.d -o CMakeFiles/osal.dir/src/nonos/osal_task.c.obj -c /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_task.c
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/osal.dir/src/nonos/osal_task.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_TASK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_task.c > CMakeFiles/osal.dir/src/nonos/osal_task.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_TASK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_task.c > CMakeFiles/osal.dir/src/nonos/osal_task.c.i
 
 kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/osal.dir/src/nonos/osal_task.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_TASK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_task.c -o CMakeFiles/osal.dir/src/nonos/osal_task.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=OSAL_TASK_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_task.c -o CMakeFiles/osal.dir/src/nonos/osal_task.c.s
 
 # Object files for target osal
 osal_OBJECTS = \
@@ -205,19 +205,19 @@ kernel/osal/libosal.a: kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj
 kernel/osal/libosal.a: kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj
 kernel/osal/libosal.a: kernel/osal/CMakeFiles/osal.dir/build.make
 kernel/osal/libosal.a: kernel/osal/CMakeFiles/osal.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C static library libosal.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && $(CMAKE_COMMAND) -P CMakeFiles/osal.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/osal.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C static library libosal.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && $(CMAKE_COMMAND) -P CMakeFiles/osal.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/osal.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 kernel/osal/CMakeFiles/osal.dir/build: kernel/osal/libosal.a
 .PHONY : kernel/osal/CMakeFiles/osal.dir/build
 
 kernel/osal/CMakeFiles/osal.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal && $(CMAKE_COMMAND) -P CMakeFiles/osal.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal && $(CMAKE_COMMAND) -P CMakeFiles/osal.dir/cmake_clean.cmake
 .PHONY : kernel/osal/CMakeFiles/osal.dir/clean
 
 kernel/osal/CMakeFiles/osal.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/kernel/osal/CMakeFiles/osal.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/kernel/osal /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/kernel/osal/CMakeFiles/osal.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : kernel/osal/CMakeFiles/osal.dir/depend
 

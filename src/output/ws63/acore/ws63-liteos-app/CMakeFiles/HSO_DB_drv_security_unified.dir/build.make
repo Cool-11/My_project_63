@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for HSO_DB_drv_security_unified.
 
@@ -68,53 +68,53 @@ include CMakeFiles/HSO_DB_drv_security_unified.dir/progress.make
 
 CMakeFiles/HSO_DB_drv_security_unified: hso_temp/drv_security_unified.txt
 
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_symc.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_symc_mac_hard.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/crypto_drv_common.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_hash.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_pbkdf2_hard.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_trng.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_fapc/drv_fapc.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_km/drv_keyslot.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_km/drv_klad.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/init/cfbb/crypto_curve_param.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecdsa.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_pke_weak_func.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/kapi/source/kapi_hash.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/kapi/source/kapi_hash_simple.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/kapi/source/kapi_init.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/kapi/source/kapi_pke.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/kapi/source/kapi_symc.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/kapi/source/kapi_trng.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/kapi/source/kapi_km.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/service_layer/sl_common.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/service_layer/trng.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/service_layer/cipher.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/service_layer/pke.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/service_layer/km.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/service_layer/security_init.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/service_layer/security_sha256.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/init/cfbb/os/crypto_drv_init.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/init/cfbb/os/crypto_drv_irq.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecc_cal.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/kapi/source/kapi_pke_ecc_cal.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_cal.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_rsa.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/ecc/drv_pke_ecc_sign.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/ecc/drv_pke_ecc_verify.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecc_ecdh.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecc_gen_key.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/mbedtls_harden_adapt/mbedtls_harden_adapt.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/mbedtls_harden_adapt/ecp_harden_impl.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/mbedtls_harden_adapt/hash_harden_impl_long_term.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/mbedtls_harden_adapt/aes_harden_impl_long_term.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_bt.h
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_pf.h
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_drv_security_unified"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/drv_security_unified_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/drv_security_unified.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/drv_security_unified.txt
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_symc.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_symc_mac_hard.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/crypto_drv_common.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_hash.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_pbkdf2_hard.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/drv_trng.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_fapc/drv_fapc.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_km/drv_keyslot.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_km/drv_klad.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/init/cfbb/crypto_curve_param.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecdsa.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_pke_weak_func.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/kapi/source/kapi_hash.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/kapi/source/kapi_hash_simple.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/kapi/source/kapi_init.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/kapi/source/kapi_pke.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/kapi/source/kapi_symc.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/kapi/source/kapi_trng.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/kapi/source/kapi_km.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/service_layer/sl_common.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/service_layer/trng.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/service_layer/cipher.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/service_layer/pke.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/service_layer/km.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/service_layer/security_init.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/service_layer/security_sha256.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/init/cfbb/os/crypto_drv_init.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/init/cfbb/os/crypto_drv_irq.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecc_cal.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/kapi/source/kapi_pke_ecc_cal.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_cal.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_rsa.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/ecc/drv_pke_ecc_sign.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/ecc/drv_pke_ecc_verify.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecc_ecdh.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecc_gen_key.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/mbedtls_harden_adapt/mbedtls_harden_adapt.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/mbedtls_harden_adapt/ecp_harden_impl.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/mbedtls_harden_adapt/hash_harden_impl_long_term.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/mbedtls_harden_adapt/aes_harden_impl_long_term.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_bt.h
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_pf.h
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_drv_security_unified"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/drv_security_unified_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/drv_security_unified.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/drv_security_unified.txt
 
 HSO_DB_drv_security_unified: CMakeFiles/HSO_DB_drv_security_unified
 HSO_DB_drv_security_unified: hso_temp/drv_security_unified.txt
@@ -130,6 +130,6 @@ CMakeFiles/HSO_DB_drv_security_unified.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_drv_security_unified.dir/clean
 
 CMakeFiles/HSO_DB_drv_security_unified.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_drv_security_unified.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_drv_security_unified.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_drv_security_unified.dir/depend
 

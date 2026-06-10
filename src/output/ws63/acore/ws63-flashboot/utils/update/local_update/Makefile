@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/update/local_update//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/update/local_update//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 utils/update/local_update/CMakeFiles/update_local.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/CMakeFiles/update_local.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/local_update/CMakeFiles/update_local.dir/rule
 .PHONY : utils/update/local_update/CMakeFiles/update_local.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ update_local: utils/update/local_update/CMakeFiles/update_local.dir/rule
 
 # fast build rule for target.
 update_local/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/build
 .PHONY : update_local/fast
 
 upg_encry.obj: upg_encry.c.obj
@@ -135,7 +135,7 @@ upg_encry.obj: upg_encry.c.obj
 
 # target to build an object file
 upg_encry.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_encry.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_encry.c.obj
 .PHONY : upg_encry.c.obj
 
 upg_encry.i: upg_encry.c.i
@@ -143,7 +143,7 @@ upg_encry.i: upg_encry.c.i
 
 # target to preprocess a source file
 upg_encry.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_encry.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_encry.c.i
 .PHONY : upg_encry.c.i
 
 upg_encry.s: upg_encry.c.s
@@ -151,7 +151,7 @@ upg_encry.s: upg_encry.c.s
 
 # target to generate assembly for a file
 upg_encry.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_encry.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_encry.c.s
 .PHONY : upg_encry.c.s
 
 upg_lzmadec.obj: upg_lzmadec.c.obj
@@ -159,7 +159,7 @@ upg_lzmadec.obj: upg_lzmadec.c.obj
 
 # target to build an object file
 upg_lzmadec.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_lzmadec.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_lzmadec.c.obj
 .PHONY : upg_lzmadec.c.obj
 
 upg_lzmadec.i: upg_lzmadec.c.i
@@ -167,7 +167,7 @@ upg_lzmadec.i: upg_lzmadec.c.i
 
 # target to preprocess a source file
 upg_lzmadec.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_lzmadec.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_lzmadec.c.i
 .PHONY : upg_lzmadec.c.i
 
 upg_lzmadec.s: upg_lzmadec.c.s
@@ -175,7 +175,7 @@ upg_lzmadec.s: upg_lzmadec.c.s
 
 # target to generate assembly for a file
 upg_lzmadec.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_lzmadec.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_lzmadec.c.s
 .PHONY : upg_lzmadec.c.s
 
 upg_patch.obj: upg_patch.c.obj
@@ -183,7 +183,7 @@ upg_patch.obj: upg_patch.c.obj
 
 # target to build an object file
 upg_patch.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_patch.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_patch.c.obj
 .PHONY : upg_patch.c.obj
 
 upg_patch.i: upg_patch.c.i
@@ -191,7 +191,7 @@ upg_patch.i: upg_patch.c.i
 
 # target to preprocess a source file
 upg_patch.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_patch.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_patch.c.i
 .PHONY : upg_patch.c.i
 
 upg_patch.s: upg_patch.c.s
@@ -199,7 +199,7 @@ upg_patch.s: upg_patch.c.s
 
 # target to generate assembly for a file
 upg_patch.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_patch.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_patch.c.s
 .PHONY : upg_patch.c.s
 
 upg_process.obj: upg_process.c.obj
@@ -207,7 +207,7 @@ upg_process.obj: upg_process.c.obj
 
 # target to build an object file
 upg_process.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_process.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_process.c.obj
 .PHONY : upg_process.c.obj
 
 upg_process.i: upg_process.c.i
@@ -215,7 +215,7 @@ upg_process.i: upg_process.c.i
 
 # target to preprocess a source file
 upg_process.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_process.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_process.c.i
 .PHONY : upg_process.c.i
 
 upg_process.s: upg_process.c.s
@@ -223,7 +223,7 @@ upg_process.s: upg_process.c.s
 
 # target to generate assembly for a file
 upg_process.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_process.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_process.c.s
 .PHONY : upg_process.c.s
 
 upg_resource.obj: upg_resource.c.obj
@@ -231,7 +231,7 @@ upg_resource.obj: upg_resource.c.obj
 
 # target to build an object file
 upg_resource.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_resource.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_resource.c.obj
 .PHONY : upg_resource.c.obj
 
 upg_resource.i: upg_resource.c.i
@@ -239,7 +239,7 @@ upg_resource.i: upg_resource.c.i
 
 # target to preprocess a source file
 upg_resource.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_resource.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_resource.c.i
 .PHONY : upg_resource.c.i
 
 upg_resource.s: upg_resource.c.s
@@ -247,7 +247,7 @@ upg_resource.s: upg_resource.c.s
 
 # target to generate assembly for a file
 upg_resource.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_resource.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_resource.c.s
 .PHONY : upg_resource.c.s
 
 upg_upgrade.obj: upg_upgrade.c.obj
@@ -255,7 +255,7 @@ upg_upgrade.obj: upg_upgrade.c.obj
 
 # target to build an object file
 upg_upgrade.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_upgrade.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_upgrade.c.obj
 .PHONY : upg_upgrade.c.obj
 
 upg_upgrade.i: upg_upgrade.c.i
@@ -263,7 +263,7 @@ upg_upgrade.i: upg_upgrade.c.i
 
 # target to preprocess a source file
 upg_upgrade.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_upgrade.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_upgrade.c.i
 .PHONY : upg_upgrade.c.i
 
 upg_upgrade.s: upg_upgrade.c.s
@@ -271,7 +271,7 @@ upg_upgrade.s: upg_upgrade.c.s
 
 # target to generate assembly for a file
 upg_upgrade.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_upgrade.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f utils/update/local_update/CMakeFiles/update_local.dir/build.make utils/update/local_update/CMakeFiles/update_local.dir/upg_upgrade.c.s
 .PHONY : upg_upgrade.c.s
 
 # Help Target
@@ -312,6 +312,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

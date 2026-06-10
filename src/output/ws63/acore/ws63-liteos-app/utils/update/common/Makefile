@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/update/common//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/update/common//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 utils/update/common/CMakeFiles/update_common.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/CMakeFiles/update_common.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/update/common/CMakeFiles/update_common.dir/rule
 .PHONY : utils/update/common/CMakeFiles/update_common.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ update_common: utils/update/common/CMakeFiles/update_common.dir/rule
 
 # fast build rule for target.
 update_common/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/build
 .PHONY : update_common/fast
 
 upg_alloc.obj: upg_alloc.c.obj
@@ -135,7 +135,7 @@ upg_alloc.obj: upg_alloc.c.obj
 
 # target to build an object file
 upg_alloc.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_alloc.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_alloc.c.obj
 .PHONY : upg_alloc.c.obj
 
 upg_alloc.i: upg_alloc.c.i
@@ -143,7 +143,7 @@ upg_alloc.i: upg_alloc.c.i
 
 # target to preprocess a source file
 upg_alloc.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_alloc.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_alloc.c.i
 .PHONY : upg_alloc.c.i
 
 upg_alloc.s: upg_alloc.c.s
@@ -151,7 +151,7 @@ upg_alloc.s: upg_alloc.c.s
 
 # target to generate assembly for a file
 upg_alloc.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_alloc.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_alloc.c.s
 .PHONY : upg_alloc.c.s
 
 upg_common.obj: upg_common.c.obj
@@ -159,7 +159,7 @@ upg_common.obj: upg_common.c.obj
 
 # target to build an object file
 upg_common.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_common.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_common.c.obj
 .PHONY : upg_common.c.obj
 
 upg_common.i: upg_common.c.i
@@ -167,7 +167,7 @@ upg_common.i: upg_common.c.i
 
 # target to preprocess a source file
 upg_common.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_common.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_common.c.i
 .PHONY : upg_common.c.i
 
 upg_common.s: upg_common.c.s
@@ -175,7 +175,7 @@ upg_common.s: upg_common.c.s
 
 # target to generate assembly for a file
 upg_common.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_common.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_common.c.s
 .PHONY : upg_common.c.s
 
 upg_verify.obj: upg_verify.c.obj
@@ -183,7 +183,7 @@ upg_verify.obj: upg_verify.c.obj
 
 # target to build an object file
 upg_verify.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_verify.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_verify.c.obj
 .PHONY : upg_verify.c.obj
 
 upg_verify.i: upg_verify.c.i
@@ -191,7 +191,7 @@ upg_verify.i: upg_verify.c.i
 
 # target to preprocess a source file
 upg_verify.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_verify.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_verify.c.i
 .PHONY : upg_verify.c.i
 
 upg_verify.s: upg_verify.c.s
@@ -199,7 +199,7 @@ upg_verify.s: upg_verify.c.s
 
 # target to generate assembly for a file
 upg_verify.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_verify.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/update/common/CMakeFiles/update_common.dir/build.make utils/update/common/CMakeFiles/update_common.dir/upg_verify.c.s
 .PHONY : upg_verify.c.s
 
 # Help Target
@@ -231,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

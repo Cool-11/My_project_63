@@ -1,1 +1,1 @@
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-ar rcD libsfc_flash_config_ws63.a CMakeFiles/sfc_flash_config_ws63.dir/flash_config_info.c.obj
+/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-ar rcD libsfc_flash_config_ws63.a CMakeFiles/sfc_flash_config_ws63.dir/flash_config_info.c.obj

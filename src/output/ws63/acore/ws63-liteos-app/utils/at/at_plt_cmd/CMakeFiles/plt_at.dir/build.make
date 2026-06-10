@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/depend.make
@@ -70,32 +70,32 @@ include utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/progress.make
 include utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/flags.make
 
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.obj: utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/flags.make
-utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/at/at_plt_cmd/at/at_plt.c
+utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.obj: /home/cool/fbb_ws63/src/middleware/utils/at/at_plt_cmd/at/at_plt.c
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.obj: utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.obj -MF CMakeFiles/plt_at.dir/at/at_plt.c.obj.d -o CMakeFiles/plt_at.dir/at/at_plt.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/at/at_plt_cmd/at/at_plt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.obj -MF CMakeFiles/plt_at.dir/at/at_plt.c.obj.d -o CMakeFiles/plt_at.dir/at/at_plt.c.obj -c /home/cool/fbb_ws63/src/middleware/utils/at/at_plt_cmd/at/at_plt.c
 
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/plt_at.dir/at/at_plt.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/at/at_plt_cmd/at/at_plt.c > CMakeFiles/plt_at.dir/at/at_plt.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/middleware/utils/at/at_plt_cmd/at/at_plt.c > CMakeFiles/plt_at.dir/at/at_plt.c.i
 
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at_plt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/plt_at.dir/at/at_plt.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/at/at_plt_cmd/at/at_plt.c -o CMakeFiles/plt_at.dir/at/at_plt.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/middleware/utils/at/at_plt_cmd/at/at_plt.c -o CMakeFiles/plt_at.dir/at/at_plt.c.s
 
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj: utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/flags.make
-utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/at/at_plt_cmd/src/at_plt_cmd_register.c
+utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj: /home/cool/fbb_ws63/src/middleware/utils/at/at_plt_cmd/src/at_plt_cmd_register.c
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj: utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_CMD_REGISTER_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj -MF CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj.d -o CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/at/at_plt_cmd/src/at_plt_cmd_register.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_CMD_REGISTER_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj -MF CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj.d -o CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj -c /home/cool/fbb_ws63/src/middleware/utils/at/at_plt_cmd/src/at_plt_cmd_register.c
 
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_CMD_REGISTER_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/at/at_plt_cmd/src/at_plt_cmd_register.c > CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_CMD_REGISTER_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/middleware/utils/at/at_plt_cmd/src/at_plt_cmd_register.c > CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.i
 
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_CMD_REGISTER_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/at/at_plt_cmd/src/at_plt_cmd_register.c -o CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=AT_PLT_CMD_REGISTER_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/middleware/utils/at/at_plt_cmd/src/at_plt_cmd_register.c -o CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.s
 
 # Object files for target plt_at
 plt_at_OBJECTS = \
@@ -109,19 +109,19 @@ utils/at/at_plt_cmd/libplt_at.a: utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/at/at
 utils/at/at_plt_cmd/libplt_at.a: utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/src/at_plt_cmd_register.c.obj
 utils/at/at_plt_cmd/libplt_at.a: utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/build.make
 utils/at/at_plt_cmd/libplt_at.a: utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libplt_at.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && $(CMAKE_COMMAND) -P CMakeFiles/plt_at.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/plt_at.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libplt_at.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && $(CMAKE_COMMAND) -P CMakeFiles/plt_at.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/plt_at.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/build: utils/at/at_plt_cmd/libplt_at.a
 .PHONY : utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/build
 
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && $(CMAKE_COMMAND) -P CMakeFiles/plt_at.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd && $(CMAKE_COMMAND) -P CMakeFiles/plt_at.dir/cmake_clean.cmake
 .PHONY : utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/clean
 
 utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/at/at_plt_cmd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/middleware/utils/at/at_plt_cmd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : utils/at/at_plt_cmd/CMakeFiles/plt_at.dir/depend
 

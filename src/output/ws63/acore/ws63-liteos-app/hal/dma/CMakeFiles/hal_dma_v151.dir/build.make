@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include hal/dma/CMakeFiles/hal_dma_v151.dir/depend.make
@@ -70,60 +70,60 @@ include hal/dma/CMakeFiles/hal_dma_v151.dir/progress.make
 include hal/dma/CMakeFiles/hal_dma_v151.dir/flags.make
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj: hal/dma/CMakeFiles/hal_dma_v151.dir/flags.make
-hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/hal_dma.c
+hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/hal_dma.c
 hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj: hal/dma/CMakeFiles/hal_dma_v151.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj -MF CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj.d -o CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/hal_dma.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj -MF CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj.d -o CMakeFiles/hal_dma_v151.dir/hal_dma.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/hal_dma.c
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_dma_v151.dir/hal_dma.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/hal_dma.c > CMakeFiles/hal_dma_v151.dir/hal_dma.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/hal_dma.c > CMakeFiles/hal_dma_v151.dir/hal_dma.c.i
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_dma_v151.dir/hal_dma.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/hal_dma.c -o CMakeFiles/hal_dma_v151.dir/hal_dma.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/hal_dma.c -o CMakeFiles/hal_dma_v151.dir/hal_dma.c.s
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj: hal/dma/CMakeFiles/hal_dma_v151.dir/flags.make
-hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/hal_dma_mem.c
+hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/hal_dma_mem.c
 hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj: hal/dma/CMakeFiles/hal_dma_v151.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_MEM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj -MF CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj.d -o CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/hal_dma_mem.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_MEM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj -MF CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj.d -o CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/hal_dma_mem.c
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_MEM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/hal_dma_mem.c > CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_MEM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/hal_dma_mem.c > CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.i
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_MEM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/hal_dma_mem.c -o CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMA_MEM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/hal_dma_mem.c -o CMakeFiles/hal_dma_v151.dir/hal_dma_mem.c.s
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj: hal/dma/CMakeFiles/hal_dma_v151.dir/flags.make
-hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/v151/hal_dmac_v151.c
+hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/v151/hal_dmac_v151.c
 hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj: hal/dma/CMakeFiles/hal_dma_v151.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj -MF CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj.d -o CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/v151/hal_dmac_v151.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj -MF CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj.d -o CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/v151/hal_dmac_v151.c
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/v151/hal_dmac_v151.c > CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/v151/hal_dmac_v151.c > CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.i
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/v151/hal_dmac_v151.c -o CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/v151/hal_dmac_v151.c -o CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151.c.s
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj: hal/dma/CMakeFiles/hal_dma_v151.dir/flags.make
-hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/v151/hal_dmac_v151_regs_op.c
+hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/v151/hal_dmac_v151_regs_op.c
 hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj: hal/dma/CMakeFiles/hal_dma_v151.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj -MF CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj.d -o CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/v151/hal_dmac_v151_regs_op.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj -MF CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj.d -o CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/v151/hal_dmac_v151_regs_op.c
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/v151/hal_dmac_v151_regs_op.c > CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/v151/hal_dmac_v151_regs_op.c > CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.i
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma/v151/hal_dmac_v151_regs_op.c -o CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_DMAC_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/dma/v151/hal_dmac_v151_regs_op.c -o CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.s
 
 # Object files for target hal_dma_v151
 hal_dma_v151_OBJECTS = \
@@ -141,19 +141,19 @@ hal/dma/libhal_dma_v151.a: hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v15
 hal/dma/libhal_dma_v151.a: hal/dma/CMakeFiles/hal_dma_v151.dir/v151/hal_dmac_v151_regs_op.c.obj
 hal/dma/libhal_dma_v151.a: hal/dma/CMakeFiles/hal_dma_v151.dir/build.make
 hal/dma/libhal_dma_v151.a: hal/dma/CMakeFiles/hal_dma_v151.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libhal_dma_v151.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && $(CMAKE_COMMAND) -P CMakeFiles/hal_dma_v151.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_dma_v151.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libhal_dma_v151.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && $(CMAKE_COMMAND) -P CMakeFiles/hal_dma_v151.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_dma_v151.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 hal/dma/CMakeFiles/hal_dma_v151.dir/build: hal/dma/libhal_dma_v151.a
 .PHONY : hal/dma/CMakeFiles/hal_dma_v151.dir/build
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma && $(CMAKE_COMMAND) -P CMakeFiles/hal_dma_v151.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma && $(CMAKE_COMMAND) -P CMakeFiles/hal_dma_v151.dir/cmake_clean.cmake
 .PHONY : hal/dma/CMakeFiles/hal_dma_v151.dir/clean
 
 hal/dma/CMakeFiles/hal_dma_v151.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/dma /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/dma/CMakeFiles/hal_dma_v151.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/drivers/hal/dma /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/dma/CMakeFiles/hal_dma_v151.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : hal/dma/CMakeFiles/hal_dma_v151.dir/depend
 

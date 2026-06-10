@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for WS63_GENERAT_SIGNBIN.
 
@@ -67,8 +67,8 @@ include CMakeFiles/WS63_GENERAT_SIGNBIN.dir/compiler_depend.make
 include CMakeFiles/WS63_GENERAT_SIGNBIN.dir/progress.make
 
 CMakeFiles/WS63_GENERAT_SIGNBIN:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "ws63 image sign"
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/config/target_config/ws63/sign_config/params_and_bin_sign.py ws63-liteos-app
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "ws63 image sign"
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/config/target_config/ws63/sign_config/params_and_bin_sign.py ws63-liteos-app
 
 WS63_GENERAT_SIGNBIN: CMakeFiles/WS63_GENERAT_SIGNBIN
 WS63_GENERAT_SIGNBIN: CMakeFiles/WS63_GENERAT_SIGNBIN.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/WS63_GENERAT_SIGNBIN.dir/clean:
 .PHONY : CMakeFiles/WS63_GENERAT_SIGNBIN.dir/clean
 
 CMakeFiles/WS63_GENERAT_SIGNBIN.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/WS63_GENERAT_SIGNBIN.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/WS63_GENERAT_SIGNBIN.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/WS63_GENERAT_SIGNBIN.dir/depend
 

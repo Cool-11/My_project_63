@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/depend.make
@@ -70,18 +70,18 @@ include drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/progress.make
 include drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/flags.make
 
 drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.obj: drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/flags.make
-drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/i2c/i2c_porting.c
+drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.obj: /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/i2c/i2c_porting.c
 drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.obj: drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=I2C_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.obj -MF CMakeFiles/i2c_porting.dir/i2c_porting.c.obj.d -o CMakeFiles/i2c_porting.dir/i2c_porting.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/i2c/i2c_porting.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=I2C_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.obj -MF CMakeFiles/i2c_porting.dir/i2c_porting.c.obj.d -o CMakeFiles/i2c_porting.dir/i2c_porting.c.obj -c /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/i2c/i2c_porting.c
 
 drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/i2c_porting.dir/i2c_porting.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=I2C_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/i2c/i2c_porting.c > CMakeFiles/i2c_porting.dir/i2c_porting.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=I2C_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/i2c/i2c_porting.c > CMakeFiles/i2c_porting.dir/i2c_porting.c.i
 
 drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/i2c_porting.dir/i2c_porting.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=I2C_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/i2c/i2c_porting.c -o CMakeFiles/i2c_porting.dir/i2c_porting.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=I2C_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/i2c/i2c_porting.c -o CMakeFiles/i2c_porting.dir/i2c_porting.c.s
 
 # Object files for target i2c_porting
 i2c_porting_OBJECTS = \
@@ -93,19 +93,19 @@ i2c_porting_EXTERNAL_OBJECTS =
 drivers/chips/ws63/porting/i2c/libi2c_porting.a: drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/i2c_porting.c.obj
 drivers/chips/ws63/porting/i2c/libi2c_porting.a: drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/build.make
 drivers/chips/ws63/porting/i2c/libi2c_porting.a: drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libi2c_porting.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && $(CMAKE_COMMAND) -P CMakeFiles/i2c_porting.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/i2c_porting.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libi2c_porting.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && $(CMAKE_COMMAND) -P CMakeFiles/i2c_porting.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/i2c_porting.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/build: drivers/chips/ws63/porting/i2c/libi2c_porting.a
 .PHONY : drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/build
 
 drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && $(CMAKE_COMMAND) -P CMakeFiles/i2c_porting.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c && $(CMAKE_COMMAND) -P CMakeFiles/i2c_porting.dir/cmake_clean.cmake
 .PHONY : drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/clean
 
 drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/i2c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/i2c /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : drivers/chips/ws63/porting/i2c/CMakeFiles/i2c_porting.dir/depend
 

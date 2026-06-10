@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Include any dependencies generated for this target.
 include drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/depend.make
@@ -70,18 +70,18 @@ include drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/progress.m
 include drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/flags.make
 
 drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.obj: drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/flags.make
-drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/sfc/driver/sfc.c
+drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.obj: /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/sfc/driver/sfc.c
 drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.obj: drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SFC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.obj -MF CMakeFiles/sfc_boot.dir/sfc.c.obj.d -o CMakeFiles/sfc_boot.dir/sfc.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/sfc/driver/sfc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SFC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.obj -MF CMakeFiles/sfc_boot.dir/sfc.c.obj.d -o CMakeFiles/sfc_boot.dir/sfc.c.obj -c /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/sfc/driver/sfc.c
 
 drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/sfc_boot.dir/sfc.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SFC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/sfc/driver/sfc.c > CMakeFiles/sfc_boot.dir/sfc.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SFC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/sfc/driver/sfc.c > CMakeFiles/sfc_boot.dir/sfc.c.i
 
 drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/sfc_boot.dir/sfc.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SFC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/sfc/driver/sfc.c -o CMakeFiles/sfc_boot.dir/sfc.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SFC_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/sfc/driver/sfc.c -o CMakeFiles/sfc_boot.dir/sfc.c.s
 
 # Object files for target sfc_boot
 sfc_boot_OBJECTS = \
@@ -93,19 +93,19 @@ sfc_boot_EXTERNAL_OBJECTS =
 drivers/chips/ws63/porting/sfc/driver/libsfc_boot.a: drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/sfc.c.obj
 drivers/chips/ws63/porting/sfc/driver/libsfc_boot.a: drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/build.make
 drivers/chips/ws63/porting/sfc/driver/libsfc_boot.a: drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libsfc_boot.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && $(CMAKE_COMMAND) -P CMakeFiles/sfc_boot.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sfc_boot.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libsfc_boot.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && $(CMAKE_COMMAND) -P CMakeFiles/sfc_boot.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sfc_boot.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/build: drivers/chips/ws63/porting/sfc/driver/libsfc_boot.a
 .PHONY : drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/build
 
 drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && $(CMAKE_COMMAND) -P CMakeFiles/sfc_boot.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver && $(CMAKE_COMMAND) -P CMakeFiles/sfc_boot.dir/cmake_clean.cmake
 .PHONY : drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/clean
 
 drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/sfc/driver /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/sfc/driver /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : drivers/chips/ws63/porting/sfc/driver/CMakeFiles/sfc_boot.dir/depend
 

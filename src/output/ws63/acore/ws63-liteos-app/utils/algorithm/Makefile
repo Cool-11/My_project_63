@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/algorithm//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/algorithm//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 utils/algorithm/CMakeFiles/algorithm.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/CMakeFiles/algorithm.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/algorithm/CMakeFiles/algorithm.dir/rule
 .PHONY : utils/algorithm/CMakeFiles/algorithm.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ algorithm: utils/algorithm/CMakeFiles/algorithm.dir/rule
 
 # fast build rule for target.
 algorithm/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/build
 .PHONY : algorithm/fast
 
 crc/uapi_crc16.obj: crc/uapi_crc16.c.obj
@@ -135,7 +135,7 @@ crc/uapi_crc16.obj: crc/uapi_crc16.c.obj
 
 # target to build an object file
 crc/uapi_crc16.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc16.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc16.c.obj
 .PHONY : crc/uapi_crc16.c.obj
 
 crc/uapi_crc16.i: crc/uapi_crc16.c.i
@@ -143,7 +143,7 @@ crc/uapi_crc16.i: crc/uapi_crc16.c.i
 
 # target to preprocess a source file
 crc/uapi_crc16.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc16.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc16.c.i
 .PHONY : crc/uapi_crc16.c.i
 
 crc/uapi_crc16.s: crc/uapi_crc16.c.s
@@ -151,7 +151,7 @@ crc/uapi_crc16.s: crc/uapi_crc16.c.s
 
 # target to generate assembly for a file
 crc/uapi_crc16.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc16.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc16.c.s
 .PHONY : crc/uapi_crc16.c.s
 
 crc/uapi_crc32.obj: crc/uapi_crc32.c.obj
@@ -159,7 +159,7 @@ crc/uapi_crc32.obj: crc/uapi_crc32.c.obj
 
 # target to build an object file
 crc/uapi_crc32.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc32.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc32.c.obj
 .PHONY : crc/uapi_crc32.c.obj
 
 crc/uapi_crc32.i: crc/uapi_crc32.c.i
@@ -167,7 +167,7 @@ crc/uapi_crc32.i: crc/uapi_crc32.c.i
 
 # target to preprocess a source file
 crc/uapi_crc32.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc32.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc32.c.i
 .PHONY : crc/uapi_crc32.c.i
 
 crc/uapi_crc32.s: crc/uapi_crc32.c.s
@@ -175,7 +175,7 @@ crc/uapi_crc32.s: crc/uapi_crc32.c.s
 
 # target to generate assembly for a file
 crc/uapi_crc32.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc32.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/crc/uapi_crc32.c.s
 .PHONY : crc/uapi_crc32.c.s
 
 cstl/cstl_hash.obj: cstl/cstl_hash.c.obj
@@ -183,7 +183,7 @@ cstl/cstl_hash.obj: cstl/cstl_hash.c.obj
 
 # target to build an object file
 cstl/cstl_hash.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_hash.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_hash.c.obj
 .PHONY : cstl/cstl_hash.c.obj
 
 cstl/cstl_hash.i: cstl/cstl_hash.c.i
@@ -191,7 +191,7 @@ cstl/cstl_hash.i: cstl/cstl_hash.c.i
 
 # target to preprocess a source file
 cstl/cstl_hash.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_hash.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_hash.c.i
 .PHONY : cstl/cstl_hash.c.i
 
 cstl/cstl_hash.s: cstl/cstl_hash.c.s
@@ -199,7 +199,7 @@ cstl/cstl_hash.s: cstl/cstl_hash.c.s
 
 # target to generate assembly for a file
 cstl/cstl_hash.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_hash.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_hash.c.s
 .PHONY : cstl/cstl_hash.c.s
 
 cstl/cstl_public.obj: cstl/cstl_public.c.obj
@@ -207,7 +207,7 @@ cstl/cstl_public.obj: cstl/cstl_public.c.obj
 
 # target to build an object file
 cstl/cstl_public.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_public.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_public.c.obj
 .PHONY : cstl/cstl_public.c.obj
 
 cstl/cstl_public.i: cstl/cstl_public.c.i
@@ -215,7 +215,7 @@ cstl/cstl_public.i: cstl/cstl_public.c.i
 
 # target to preprocess a source file
 cstl/cstl_public.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_public.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_public.c.i
 .PHONY : cstl/cstl_public.c.i
 
 cstl/cstl_public.s: cstl/cstl_public.c.s
@@ -223,7 +223,7 @@ cstl/cstl_public.s: cstl/cstl_public.c.s
 
 # target to generate assembly for a file
 cstl/cstl_public.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_public.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_public.c.s
 .PHONY : cstl/cstl_public.c.s
 
 cstl/cstl_rawlist.obj: cstl/cstl_rawlist.c.obj
@@ -231,7 +231,7 @@ cstl/cstl_rawlist.obj: cstl/cstl_rawlist.c.obj
 
 # target to build an object file
 cstl/cstl_rawlist.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_rawlist.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_rawlist.c.obj
 .PHONY : cstl/cstl_rawlist.c.obj
 
 cstl/cstl_rawlist.i: cstl/cstl_rawlist.c.i
@@ -239,7 +239,7 @@ cstl/cstl_rawlist.i: cstl/cstl_rawlist.c.i
 
 # target to preprocess a source file
 cstl/cstl_rawlist.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_rawlist.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_rawlist.c.i
 .PHONY : cstl/cstl_rawlist.c.i
 
 cstl/cstl_rawlist.s: cstl/cstl_rawlist.c.s
@@ -247,7 +247,7 @@ cstl/cstl_rawlist.s: cstl/cstl_rawlist.c.s
 
 # target to generate assembly for a file
 cstl/cstl_rawlist.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_rawlist.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/cstl/cstl_rawlist.c.s
 .PHONY : cstl/cstl_rawlist.c.s
 
 sec_random/sec_random.obj: sec_random/sec_random.c.obj
@@ -255,7 +255,7 @@ sec_random/sec_random.obj: sec_random/sec_random.c.obj
 
 # target to build an object file
 sec_random/sec_random.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sec_random/sec_random.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sec_random/sec_random.c.obj
 .PHONY : sec_random/sec_random.c.obj
 
 sec_random/sec_random.i: sec_random/sec_random.c.i
@@ -263,7 +263,7 @@ sec_random/sec_random.i: sec_random/sec_random.c.i
 
 # target to preprocess a source file
 sec_random/sec_random.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sec_random/sec_random.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sec_random/sec_random.c.i
 .PHONY : sec_random/sec_random.c.i
 
 sec_random/sec_random.s: sec_random/sec_random.c.s
@@ -271,7 +271,7 @@ sec_random/sec_random.s: sec_random/sec_random.c.s
 
 # target to generate assembly for a file
 sec_random/sec_random.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sec_random/sec_random.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sec_random/sec_random.c.s
 .PHONY : sec_random/sec_random.c.s
 
 sha256/sha256.obj: sha256/sha256.c.obj
@@ -279,7 +279,7 @@ sha256/sha256.obj: sha256/sha256.c.obj
 
 # target to build an object file
 sha256/sha256.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sha256/sha256.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sha256/sha256.c.obj
 .PHONY : sha256/sha256.c.obj
 
 sha256/sha256.i: sha256/sha256.c.i
@@ -287,7 +287,7 @@ sha256/sha256.i: sha256/sha256.c.i
 
 # target to preprocess a source file
 sha256/sha256.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sha256/sha256.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sha256/sha256.c.i
 .PHONY : sha256/sha256.c.i
 
 sha256/sha256.s: sha256/sha256.c.s
@@ -295,7 +295,7 @@ sha256/sha256.s: sha256/sha256.c.s
 
 # target to generate assembly for a file
 sha256/sha256.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sha256/sha256.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/algorithm/CMakeFiles/algorithm.dir/build.make utils/algorithm/CMakeFiles/algorithm.dir/sha256/sha256.c.s
 .PHONY : sha256/sha256.c.s
 
 # Help Target
@@ -339,6 +339,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

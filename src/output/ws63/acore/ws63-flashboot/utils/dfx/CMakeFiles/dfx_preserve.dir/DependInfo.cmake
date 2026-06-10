@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/preserve/private/crash_data.c" "utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.obj" "gcc" "utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/preserve/private/preserve.c" "utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.obj" "gcc" "utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/dfx/preserve/private/crash_data.c" "utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.obj" "gcc" "utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/dfx/preserve/private/preserve.c" "utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.obj" "gcc" "utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

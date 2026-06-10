@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/depend.make
@@ -70,18 +70,18 @@ include utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/progress.make
 include utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/flags.make
 
 utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj: utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/flags.make
-utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/diag_dfx_cmd/diag_dfx_cmd_init.c
+utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj: /home/cool/fbb_ws63/src/middleware/utils/dfx/diag_dfx_cmd/diag_dfx_cmd_init.c
 utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj: utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=DIAG_DFX_CMD_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj -MF CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj.d -o CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/diag_dfx_cmd/diag_dfx_cmd_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=DIAG_DFX_CMD_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj -MF CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj.d -o CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj -c /home/cool/fbb_ws63/src/middleware/utils/dfx/diag_dfx_cmd/diag_dfx_cmd_init.c
 
 utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=DIAG_DFX_CMD_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/diag_dfx_cmd/diag_dfx_cmd_init.c > CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=DIAG_DFX_CMD_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/middleware/utils/dfx/diag_dfx_cmd/diag_dfx_cmd_init.c > CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.i
 
 utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=DIAG_DFX_CMD_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/diag_dfx_cmd/diag_dfx_cmd_init.c -o CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=DIAG_DFX_CMD_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/middleware/utils/dfx/diag_dfx_cmd/diag_dfx_cmd_init.c -o CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.s
 
 # Object files for target diag_dfx_cmd
 diag_dfx_cmd_OBJECTS = \
@@ -93,19 +93,19 @@ diag_dfx_cmd_EXTERNAL_OBJECTS =
 utils/dfx/diag_dfx_cmd/libdiag_dfx_cmd.a: utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/diag_dfx_cmd_init.c.obj
 utils/dfx/diag_dfx_cmd/libdiag_dfx_cmd.a: utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/build.make
 utils/dfx/diag_dfx_cmd/libdiag_dfx_cmd.a: utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libdiag_dfx_cmd.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && $(CMAKE_COMMAND) -P CMakeFiles/diag_dfx_cmd.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/diag_dfx_cmd.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libdiag_dfx_cmd.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && $(CMAKE_COMMAND) -P CMakeFiles/diag_dfx_cmd.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/diag_dfx_cmd.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/build: utils/dfx/diag_dfx_cmd/libdiag_dfx_cmd.a
 .PHONY : utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/build
 
 utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && $(CMAKE_COMMAND) -P CMakeFiles/diag_dfx_cmd.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd && $(CMAKE_COMMAND) -P CMakeFiles/diag_dfx_cmd.dir/cmake_clean.cmake
 .PHONY : utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/clean
 
 utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/diag_dfx_cmd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/middleware/utils/dfx/diag_dfx_cmd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : utils/dfx/diag_dfx_cmd/CMakeFiles/diag_dfx_cmd.dir/depend
 

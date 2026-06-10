@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Include any dependencies generated for this target.
 include CMakeFiles/loaderboot.dir/depend.make
@@ -72,16 +72,16 @@ include CMakeFiles/loaderboot.dir/flags.make
 CMakeFiles/loaderboot.dir/temp/__null___.c.obj: CMakeFiles/loaderboot.dir/flags.make
 CMakeFiles/loaderboot.dir/temp/__null___.c.obj: temp/__null___.c
 CMakeFiles/loaderboot.dir/temp/__null___.c.obj: CMakeFiles/loaderboot.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/loaderboot.dir/temp/__null___.c.obj"
-	/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/loaderboot.dir/temp/__null___.c.obj -MF CMakeFiles/loaderboot.dir/temp/__null___.c.obj.d -o CMakeFiles/loaderboot.dir/temp/__null___.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/temp/__null___.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/loaderboot.dir/temp/__null___.c.obj"
+	/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/loaderboot.dir/temp/__null___.c.obj -MF CMakeFiles/loaderboot.dir/temp/__null___.c.obj.d -o CMakeFiles/loaderboot.dir/temp/__null___.c.obj -c /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/temp/__null___.c
 
 CMakeFiles/loaderboot.dir/temp/__null___.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/loaderboot.dir/temp/__null___.c.i"
-	/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/temp/__null___.c > CMakeFiles/loaderboot.dir/temp/__null___.c.i
+	/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/temp/__null___.c > CMakeFiles/loaderboot.dir/temp/__null___.c.i
 
 CMakeFiles/loaderboot.dir/temp/__null___.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/loaderboot.dir/temp/__null___.c.s"
-	/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/temp/__null___.c -o CMakeFiles/loaderboot.dir/temp/__null___.c.s
+	/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/temp/__null___.c -o CMakeFiles/loaderboot.dir/temp/__null___.c.s
 
 # Object files for target loaderboot
 loaderboot_OBJECTS = \
@@ -144,9 +144,9 @@ loaderboot.elf: utils/dfx/libdfx_preserve.a
 loaderboot.elf: utils/error_code/liberror_code.a
 loaderboot.elf: open_source/libboundscheck/liblibboundscheck.a
 loaderboot.elf: CMakeFiles/loaderboot.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable loaderboot.elf"
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Generating /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/linker/loaderboot_linker/linker.prelds -> /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/linker.lds"
-	/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc -P -xc -E -o linker.lds @/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/linker_header.srp -DSDK_VERSION=\"1.10.106\" -DCHIP_WS63=1 -DCONFIG_UART_FIFO_DEPTH=64 -DOSAL_NO_PAL -DCONFIG_TIMER_MAX_NUM=3 -DCONFIG_TIMER_MAX_TIMERS_NUM_0=0 -DCONFIG_TIMER_MAX_TIMERS_NUM_1=6 -DCONFIG_TIMER_MAX_TIMERS_NUM_2=4 -DCONFIG_TCXO_WITH_TWO_DATA_REGS -DWS63_PRODUCT_NONE -DCONFIG_TIMER_CLOCK_VALUE=24000000 -DCONFIG_TIMER_0_WIDTH_64=0 -DSW_UART_DEBUG -DCONFIG_UART_SUPPORT_RX -DCONFIG_UART_SUPPORT_TX -DBUILD_APPLICATION_ROM -DEFUSE_BIT_OPERATION -DPROVISION_WRITE_WITH_INTERFACE -DFLASH_REGION_CFG_LOADERBOOT -DBUILD_NOOSAL -DCONFIG_LOADERBOOT -DSECUREC_HAVE_WCTOMB=0 -DSECUREC_HAVE_MBTOWC=0 -DSECUREC_ENABLE_SCANF_FLOAT=0 -DSECUREC_ENABLE_SPRINTF_FLOAT=0 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/linker/loaderboot_linker/linker.prelds
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable loaderboot.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Generating /home/cool/fbb_ws63/src/drivers/boards/ws63/evb/linker/loaderboot_linker/linker.prelds -> /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/linker.lds"
+	/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc -P -xc -E -o linker.lds @/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/linker_header.srp -DSDK_VERSION=\"1.10.106\" -DCHIP_WS63=1 -DCONFIG_UART_FIFO_DEPTH=64 -DOSAL_NO_PAL -DCONFIG_TIMER_MAX_NUM=3 -DCONFIG_TIMER_MAX_TIMERS_NUM_0=0 -DCONFIG_TIMER_MAX_TIMERS_NUM_1=6 -DCONFIG_TIMER_MAX_TIMERS_NUM_2=4 -DCONFIG_TCXO_WITH_TWO_DATA_REGS -DWS63_PRODUCT_NONE -DCONFIG_TIMER_CLOCK_VALUE=24000000 -DCONFIG_TIMER_0_WIDTH_64=0 -DSW_UART_DEBUG -DCONFIG_UART_SUPPORT_RX -DCONFIG_UART_SUPPORT_TX -DBUILD_APPLICATION_ROM -DEFUSE_BIT_OPERATION -DPROVISION_WRITE_WITH_INTERFACE -DFLASH_REGION_CFG_LOADERBOOT -DBUILD_NOOSAL -DCONFIG_LOADERBOOT -DSECUREC_HAVE_WCTOMB=0 -DSECUREC_HAVE_MBTOWC=0 -DSECUREC_ENABLE_SCANF_FLOAT=0 -DSECUREC_ENABLE_SPRINTF_FLOAT=0 /home/cool/fbb_ws63/src/drivers/boards/ws63/evb/linker/loaderboot_linker/linker.prelds
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/loaderboot.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -158,6 +158,6 @@ CMakeFiles/loaderboot.dir/clean:
 .PHONY : CMakeFiles/loaderboot.dir/clean
 
 CMakeFiles/loaderboot.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/loaderboot.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/loaderboot.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/loaderboot.dir/depend
 

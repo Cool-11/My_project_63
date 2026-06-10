@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 # Utility rule file for HSO_DB_update_local.
 
@@ -68,15 +68,15 @@ include CMakeFiles/HSO_DB_update_local.dir/progress.make
 
 CMakeFiles/HSO_DB_update_local: hso_temp/update_local.txt
 
-hso_temp/update_local.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/local_update/upg_encry.c
-hso_temp/update_local.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/local_update/upg_lzmadec.c
-hso_temp/update_local.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/local_update/upg_patch.c
-hso_temp/update_local.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/local_update/upg_process.c
-hso_temp/update_local.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/local_update/upg_resource.c
-hso_temp/update_local.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/update/local_update/upg_upgrade.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_update_local"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hso_temp/update_local_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hso_temp/update_local.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hso_temp/update_local.txt
+hso_temp/update_local.txt: /home/cool/fbb_ws63/src/middleware/utils/update/local_update/upg_encry.c
+hso_temp/update_local.txt: /home/cool/fbb_ws63/src/middleware/utils/update/local_update/upg_lzmadec.c
+hso_temp/update_local.txt: /home/cool/fbb_ws63/src/middleware/utils/update/local_update/upg_patch.c
+hso_temp/update_local.txt: /home/cool/fbb_ws63/src/middleware/utils/update/local_update/upg_process.c
+hso_temp/update_local.txt: /home/cool/fbb_ws63/src/middleware/utils/update/local_update/upg_resource.c
+hso_temp/update_local.txt: /home/cool/fbb_ws63/src/middleware/utils/update/local_update/upg_upgrade.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_update_local"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hso_temp/update_local_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hso_temp/update_local.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hso_temp/update_local.txt
 
 HSO_DB_update_local: CMakeFiles/HSO_DB_update_local
 HSO_DB_update_local: hso_temp/update_local.txt
@@ -92,6 +92,6 @@ CMakeFiles/HSO_DB_update_local.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_update_local.dir/clean
 
 CMakeFiles/HSO_DB_update_local.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles/HSO_DB_update_local.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles/HSO_DB_update_local.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_update_local.dir/depend
 

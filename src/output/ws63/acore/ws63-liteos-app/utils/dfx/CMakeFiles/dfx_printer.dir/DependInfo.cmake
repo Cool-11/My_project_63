@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/dfx_print/dfx_print.c" "utils/dfx/CMakeFiles/dfx_printer.dir/dfx_print/dfx_print.c.obj" "gcc" "utils/dfx/CMakeFiles/dfx_printer.dir/dfx_print/dfx_print.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/dfx/dfx_print/dfx_print.c" "utils/dfx/CMakeFiles/dfx_printer.dir/dfx_print/dfx_print.c.obj" "gcc" "utils/dfx/CMakeFiles/dfx_printer.dir/dfx_print/dfx_print.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

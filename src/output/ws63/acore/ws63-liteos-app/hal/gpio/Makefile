@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/gpio//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/gpio//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hal/gpio/CMakeFiles/hal_gpio_v150.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/CMakeFiles/hal_gpio_v150.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/gpio/CMakeFiles/hal_gpio_v150.dir/rule
 .PHONY : hal/gpio/CMakeFiles/hal_gpio_v150.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ hal_gpio_v150: hal/gpio/CMakeFiles/hal_gpio_v150.dir/rule
 
 # fast build rule for target.
 hal_gpio_v150/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/build
 .PHONY : hal_gpio_v150/fast
 
 hal_gpio.obj: hal_gpio.c.obj
@@ -135,7 +135,7 @@ hal_gpio.obj: hal_gpio.c.obj
 
 # target to build an object file
 hal_gpio.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.obj
 .PHONY : hal_gpio.c.obj
 
 hal_gpio.i: hal_gpio.c.i
@@ -143,7 +143,7 @@ hal_gpio.i: hal_gpio.c.i
 
 # target to preprocess a source file
 hal_gpio.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.i
 .PHONY : hal_gpio.c.i
 
 hal_gpio.s: hal_gpio.c.s
@@ -151,7 +151,7 @@ hal_gpio.s: hal_gpio.c.s
 
 # target to generate assembly for a file
 hal_gpio.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/hal_gpio.c.s
 .PHONY : hal_gpio.c.s
 
 v150/hal_gpio_v150.obj: v150/hal_gpio_v150.c.obj
@@ -159,7 +159,7 @@ v150/hal_gpio_v150.obj: v150/hal_gpio_v150.c.obj
 
 # target to build an object file
 v150/hal_gpio_v150.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.obj
 .PHONY : v150/hal_gpio_v150.c.obj
 
 v150/hal_gpio_v150.i: v150/hal_gpio_v150.c.i
@@ -167,7 +167,7 @@ v150/hal_gpio_v150.i: v150/hal_gpio_v150.c.i
 
 # target to preprocess a source file
 v150/hal_gpio_v150.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.i
 .PHONY : v150/hal_gpio_v150.c.i
 
 v150/hal_gpio_v150.s: v150/hal_gpio_v150.c.s
@@ -175,7 +175,7 @@ v150/hal_gpio_v150.s: v150/hal_gpio_v150.c.s
 
 # target to generate assembly for a file
 v150/hal_gpio_v150.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150.c.s
 .PHONY : v150/hal_gpio_v150.c.s
 
 v150/hal_gpio_v150_comm.obj: v150/hal_gpio_v150_comm.c.obj
@@ -183,7 +183,7 @@ v150/hal_gpio_v150_comm.obj: v150/hal_gpio_v150_comm.c.obj
 
 # target to build an object file
 v150/hal_gpio_v150_comm.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.obj
 .PHONY : v150/hal_gpio_v150_comm.c.obj
 
 v150/hal_gpio_v150_comm.i: v150/hal_gpio_v150_comm.c.i
@@ -191,7 +191,7 @@ v150/hal_gpio_v150_comm.i: v150/hal_gpio_v150_comm.c.i
 
 # target to preprocess a source file
 v150/hal_gpio_v150_comm.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.i
 .PHONY : v150/hal_gpio_v150_comm.c.i
 
 v150/hal_gpio_v150_comm.s: v150/hal_gpio_v150_comm.c.s
@@ -199,7 +199,7 @@ v150/hal_gpio_v150_comm.s: v150/hal_gpio_v150_comm.c.s
 
 # target to generate assembly for a file
 v150/hal_gpio_v150_comm.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_comm.c.s
 .PHONY : v150/hal_gpio_v150_comm.c.s
 
 v150/hal_gpio_v150_regs_op.obj: v150/hal_gpio_v150_regs_op.c.obj
@@ -207,7 +207,7 @@ v150/hal_gpio_v150_regs_op.obj: v150/hal_gpio_v150_regs_op.c.obj
 
 # target to build an object file
 v150/hal_gpio_v150_regs_op.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.obj
 .PHONY : v150/hal_gpio_v150_regs_op.c.obj
 
 v150/hal_gpio_v150_regs_op.i: v150/hal_gpio_v150_regs_op.c.i
@@ -215,7 +215,7 @@ v150/hal_gpio_v150_regs_op.i: v150/hal_gpio_v150_regs_op.c.i
 
 # target to preprocess a source file
 v150/hal_gpio_v150_regs_op.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.i
 .PHONY : v150/hal_gpio_v150_regs_op.c.i
 
 v150/hal_gpio_v150_regs_op.s: v150/hal_gpio_v150_regs_op.c.s
@@ -223,7 +223,7 @@ v150/hal_gpio_v150_regs_op.s: v150/hal_gpio_v150_regs_op.c.s
 
 # target to generate assembly for a file
 v150/hal_gpio_v150_regs_op.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/gpio/CMakeFiles/hal_gpio_v150.dir/build.make hal/gpio/CMakeFiles/hal_gpio_v150.dir/v150/hal_gpio_v150_regs_op.c.s
 .PHONY : v150/hal_gpio_v150_regs_op.c.s
 
 # Help Target
@@ -258,6 +258,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

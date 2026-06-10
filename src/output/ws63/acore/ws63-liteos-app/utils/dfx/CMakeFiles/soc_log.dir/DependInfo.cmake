@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/soc_log/soc_log.c" "utils/dfx/CMakeFiles/soc_log.dir/soc_log/soc_log.c.obj" "gcc" "utils/dfx/CMakeFiles/soc_log.dir/soc_log/soc_log.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/soc_log/soc_log_uart_instance.c" "utils/dfx/CMakeFiles/soc_log.dir/soc_log/soc_log_uart_instance.c.obj" "gcc" "utils/dfx/CMakeFiles/soc_log.dir/soc_log/soc_log_uart_instance.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/dfx/soc_log/soc_log.c" "utils/dfx/CMakeFiles/soc_log.dir/soc_log/soc_log.c.obj" "gcc" "utils/dfx/CMakeFiles/soc_log.dir/soc_log/soc_log.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/dfx/soc_log/soc_log_uart_instance.c" "utils/dfx/CMakeFiles/soc_log.dir/soc_log/soc_log_uart_instance.c.obj" "gcc" "utils/dfx/CMakeFiles/soc_log.dir/soc_log/soc_log_uart_instance.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

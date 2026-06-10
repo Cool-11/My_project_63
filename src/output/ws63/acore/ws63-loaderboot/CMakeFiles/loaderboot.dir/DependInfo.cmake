@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/temp/__null___.c" "CMakeFiles/loaderboot.dir/temp/__null___.c.obj" "gcc" "CMakeFiles/loaderboot.dir/temp/__null___.c.obj.d"
+  "/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/temp/__null___.c" "CMakeFiles/loaderboot.dir/temp/__null___.c.obj" "gcc" "CMakeFiles/loaderboot.dir/temp/__null___.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

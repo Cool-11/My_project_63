@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/bootloader/provision_ws63//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/bootloader/provision_ws63//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/rule
 .PHONY : bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ loaderboot_common: bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/ru
 
 # fast build rule for target.
 loaderboot_common/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build
 .PHONY : loaderboot_common/fast
 
 __/commonboot/src/boot_erase.obj: __/commonboot/src/boot_erase.c.obj
@@ -135,7 +135,7 @@ __/commonboot/src/boot_erase.obj: __/commonboot/src/boot_erase.c.obj
 
 # target to build an object file
 __/commonboot/src/boot_erase.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_erase.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_erase.c.obj
 .PHONY : __/commonboot/src/boot_erase.c.obj
 
 __/commonboot/src/boot_erase.i: __/commonboot/src/boot_erase.c.i
@@ -143,7 +143,7 @@ __/commonboot/src/boot_erase.i: __/commonboot/src/boot_erase.c.i
 
 # target to preprocess a source file
 __/commonboot/src/boot_erase.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_erase.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_erase.c.i
 .PHONY : __/commonboot/src/boot_erase.c.i
 
 __/commonboot/src/boot_erase.s: __/commonboot/src/boot_erase.c.s
@@ -151,7 +151,7 @@ __/commonboot/src/boot_erase.s: __/commonboot/src/boot_erase.c.s
 
 # target to generate assembly for a file
 __/commonboot/src/boot_erase.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_erase.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_erase.c.s
 .PHONY : __/commonboot/src/boot_erase.c.s
 
 __/commonboot/src/boot_uart_auth.obj: __/commonboot/src/boot_uart_auth.c.obj
@@ -159,7 +159,7 @@ __/commonboot/src/boot_uart_auth.obj: __/commonboot/src/boot_uart_auth.c.obj
 
 # target to build an object file
 __/commonboot/src/boot_uart_auth.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_uart_auth.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_uart_auth.c.obj
 .PHONY : __/commonboot/src/boot_uart_auth.c.obj
 
 __/commonboot/src/boot_uart_auth.i: __/commonboot/src/boot_uart_auth.c.i
@@ -167,7 +167,7 @@ __/commonboot/src/boot_uart_auth.i: __/commonboot/src/boot_uart_auth.c.i
 
 # target to preprocess a source file
 __/commonboot/src/boot_uart_auth.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_uart_auth.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_uart_auth.c.i
 .PHONY : __/commonboot/src/boot_uart_auth.c.i
 
 __/commonboot/src/boot_uart_auth.s: __/commonboot/src/boot_uart_auth.c.s
@@ -175,7 +175,7 @@ __/commonboot/src/boot_uart_auth.s: __/commonboot/src/boot_uart_auth.c.s
 
 # target to generate assembly for a file
 __/commonboot/src/boot_uart_auth.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_uart_auth.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/__/commonboot/src/boot_uart_auth.c.s
 .PHONY : __/commonboot/src/boot_uart_auth.c.s
 
 startup/main.obj: startup/main.c.obj
@@ -183,7 +183,7 @@ startup/main.obj: startup/main.c.obj
 
 # target to build an object file
 startup/main.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/startup/main.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/startup/main.c.obj
 .PHONY : startup/main.c.obj
 
 startup/main.i: startup/main.c.i
@@ -191,7 +191,7 @@ startup/main.i: startup/main.c.i
 
 # target to preprocess a source file
 startup/main.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/startup/main.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/startup/main.c.i
 .PHONY : startup/main.c.i
 
 startup/main.s: startup/main.c.s
@@ -199,7 +199,7 @@ startup/main.s: startup/main.c.s
 
 # target to generate assembly for a file
 startup/main.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/startup/main.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/startup/main.c.s
 .PHONY : startup/main.c.s
 
 startup/riscv_init.obj: startup/riscv_init.S.obj
@@ -207,7 +207,7 @@ startup/riscv_init.obj: startup/riscv_init.S.obj
 
 # target to build an object file
 startup/riscv_init.S.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/startup/riscv_init.S.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/build.make bootloader/provision_ws63/CMakeFiles/loaderboot_common.dir/startup/riscv_init.S.obj
 .PHONY : startup/riscv_init.S.obj
 
 # Help Target
@@ -240,6 +240,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

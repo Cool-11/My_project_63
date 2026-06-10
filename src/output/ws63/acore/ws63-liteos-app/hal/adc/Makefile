@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/adc//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/adc//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hal/adc/CMakeFiles/hal_adc.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/CMakeFiles/hal_adc.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/adc/CMakeFiles/hal_adc.dir/rule
 .PHONY : hal/adc/CMakeFiles/hal_adc.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ hal_adc: hal/adc/CMakeFiles/hal_adc.dir/rule
 
 # fast build rule for target.
 hal_adc/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/build
 .PHONY : hal_adc/fast
 
 hal_adc.obj: hal_adc.c.obj
@@ -135,7 +135,7 @@ hal_adc.obj: hal_adc.c.obj
 
 # target to build an object file
 hal_adc.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/hal_adc.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/hal_adc.c.obj
 .PHONY : hal_adc.c.obj
 
 hal_adc.i: hal_adc.c.i
@@ -143,7 +143,7 @@ hal_adc.i: hal_adc.c.i
 
 # target to preprocess a source file
 hal_adc.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/hal_adc.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/hal_adc.c.i
 .PHONY : hal_adc.c.i
 
 hal_adc.s: hal_adc.c.s
@@ -151,7 +151,7 @@ hal_adc.s: hal_adc.c.s
 
 # target to generate assembly for a file
 hal_adc.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/hal_adc.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/hal_adc.c.s
 .PHONY : hal_adc.c.s
 
 v154/hal_adc_v154.obj: v154/hal_adc_v154.c.obj
@@ -159,7 +159,7 @@ v154/hal_adc_v154.obj: v154/hal_adc_v154.c.obj
 
 # target to build an object file
 v154/hal_adc_v154.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154.c.obj
 .PHONY : v154/hal_adc_v154.c.obj
 
 v154/hal_adc_v154.i: v154/hal_adc_v154.c.i
@@ -167,7 +167,7 @@ v154/hal_adc_v154.i: v154/hal_adc_v154.c.i
 
 # target to preprocess a source file
 v154/hal_adc_v154.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154.c.i
 .PHONY : v154/hal_adc_v154.c.i
 
 v154/hal_adc_v154.s: v154/hal_adc_v154.c.s
@@ -175,7 +175,7 @@ v154/hal_adc_v154.s: v154/hal_adc_v154.c.s
 
 # target to generate assembly for a file
 v154/hal_adc_v154.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154.c.s
 .PHONY : v154/hal_adc_v154.c.s
 
 v154/hal_adc_v154_regs_op.obj: v154/hal_adc_v154_regs_op.c.obj
@@ -183,7 +183,7 @@ v154/hal_adc_v154_regs_op.obj: v154/hal_adc_v154_regs_op.c.obj
 
 # target to build an object file
 v154/hal_adc_v154_regs_op.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154_regs_op.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154_regs_op.c.obj
 .PHONY : v154/hal_adc_v154_regs_op.c.obj
 
 v154/hal_adc_v154_regs_op.i: v154/hal_adc_v154_regs_op.c.i
@@ -191,7 +191,7 @@ v154/hal_adc_v154_regs_op.i: v154/hal_adc_v154_regs_op.c.i
 
 # target to preprocess a source file
 v154/hal_adc_v154_regs_op.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154_regs_op.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154_regs_op.c.i
 .PHONY : v154/hal_adc_v154_regs_op.c.i
 
 v154/hal_adc_v154_regs_op.s: v154/hal_adc_v154_regs_op.c.s
@@ -199,7 +199,7 @@ v154/hal_adc_v154_regs_op.s: v154/hal_adc_v154_regs_op.c.s
 
 # target to generate assembly for a file
 v154/hal_adc_v154_regs_op.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154_regs_op.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f hal/adc/CMakeFiles/hal_adc.dir/build.make hal/adc/CMakeFiles/hal_adc.dir/v154/hal_adc_v154_regs_op.c.s
 .PHONY : v154/hal_adc_v154_regs_op.c.s
 
 # Help Target
@@ -231,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

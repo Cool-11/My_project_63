@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/drivers/chips/ws63//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/drivers/chips/ws63//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 drivers/chips/ws63/CMakeFiles/chip_ws63.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/CMakeFiles/chip_ws63.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/CMakeFiles/chip_ws63.dir/rule
 .PHONY : drivers/chips/ws63/CMakeFiles/chip_ws63.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ chip_ws63: drivers/chips/ws63/CMakeFiles/chip_ws63.dir/rule
 
 # fast build rule for target.
 chip_ws63/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build
 .PHONY : chip_ws63/fast
 
 arch/riscv/riscv31/flash_patch.obj: arch/riscv/riscv31/flash_patch.c.obj
@@ -135,7 +135,7 @@ arch/riscv/riscv31/flash_patch.obj: arch/riscv/riscv31/flash_patch.c.obj
 
 # target to build an object file
 arch/riscv/riscv31/flash_patch.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/flash_patch.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/flash_patch.c.obj
 .PHONY : arch/riscv/riscv31/flash_patch.c.obj
 
 arch/riscv/riscv31/flash_patch.i: arch/riscv/riscv31/flash_patch.c.i
@@ -143,7 +143,7 @@ arch/riscv/riscv31/flash_patch.i: arch/riscv/riscv31/flash_patch.c.i
 
 # target to preprocess a source file
 arch/riscv/riscv31/flash_patch.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/flash_patch.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/flash_patch.c.i
 .PHONY : arch/riscv/riscv31/flash_patch.c.i
 
 arch/riscv/riscv31/flash_patch.s: arch/riscv/riscv31/flash_patch.c.s
@@ -151,7 +151,7 @@ arch/riscv/riscv31/flash_patch.s: arch/riscv/riscv31/flash_patch.c.s
 
 # target to generate assembly for a file
 arch/riscv/riscv31/flash_patch.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/flash_patch.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/flash_patch.c.s
 .PHONY : arch/riscv/riscv31/flash_patch.c.s
 
 arch/riscv/riscv31/interrupt.obj: arch/riscv/riscv31/interrupt.c.obj
@@ -159,7 +159,7 @@ arch/riscv/riscv31/interrupt.obj: arch/riscv/riscv31/interrupt.c.obj
 
 # target to build an object file
 arch/riscv/riscv31/interrupt.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt.c.obj
 .PHONY : arch/riscv/riscv31/interrupt.c.obj
 
 arch/riscv/riscv31/interrupt.i: arch/riscv/riscv31/interrupt.c.i
@@ -167,7 +167,7 @@ arch/riscv/riscv31/interrupt.i: arch/riscv/riscv31/interrupt.c.i
 
 # target to preprocess a source file
 arch/riscv/riscv31/interrupt.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt.c.i
 .PHONY : arch/riscv/riscv31/interrupt.c.i
 
 arch/riscv/riscv31/interrupt.s: arch/riscv/riscv31/interrupt.c.s
@@ -175,7 +175,7 @@ arch/riscv/riscv31/interrupt.s: arch/riscv/riscv31/interrupt.c.s
 
 # target to generate assembly for a file
 arch/riscv/riscv31/interrupt.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt.c.s
 .PHONY : arch/riscv/riscv31/interrupt.c.s
 
 arch/riscv/riscv31/interrupt_handler.obj: arch/riscv/riscv31/interrupt_handler.c.obj
@@ -183,7 +183,7 @@ arch/riscv/riscv31/interrupt_handler.obj: arch/riscv/riscv31/interrupt_handler.c
 
 # target to build an object file
 arch/riscv/riscv31/interrupt_handler.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt_handler.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt_handler.c.obj
 .PHONY : arch/riscv/riscv31/interrupt_handler.c.obj
 
 arch/riscv/riscv31/interrupt_handler.i: arch/riscv/riscv31/interrupt_handler.c.i
@@ -191,7 +191,7 @@ arch/riscv/riscv31/interrupt_handler.i: arch/riscv/riscv31/interrupt_handler.c.i
 
 # target to preprocess a source file
 arch/riscv/riscv31/interrupt_handler.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt_handler.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt_handler.c.i
 .PHONY : arch/riscv/riscv31/interrupt_handler.c.i
 
 arch/riscv/riscv31/interrupt_handler.s: arch/riscv/riscv31/interrupt_handler.c.s
@@ -199,7 +199,7 @@ arch/riscv/riscv31/interrupt_handler.s: arch/riscv/riscv31/interrupt_handler.c.s
 
 # target to generate assembly for a file
 arch/riscv/riscv31/interrupt_handler.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt_handler.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/interrupt_handler.c.s
 .PHONY : arch/riscv/riscv31/interrupt_handler.c.s
 
 arch/riscv/riscv31/vectors.obj: arch/riscv/riscv31/vectors.s.obj
@@ -207,7 +207,7 @@ arch/riscv/riscv31/vectors.obj: arch/riscv/riscv31/vectors.s.obj
 
 # target to build an object file
 arch/riscv/riscv31/vectors.s.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/vectors.s.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/arch/riscv/riscv31/vectors.s.obj
 .PHONY : arch/riscv/riscv31/vectors.s.obj
 
 interrupt/interrupt_adapter.obj: interrupt/interrupt_adapter.c.obj
@@ -215,7 +215,7 @@ interrupt/interrupt_adapter.obj: interrupt/interrupt_adapter.c.obj
 
 # target to build an object file
 interrupt/interrupt_adapter.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/interrupt/interrupt_adapter.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/interrupt/interrupt_adapter.c.obj
 .PHONY : interrupt/interrupt_adapter.c.obj
 
 interrupt/interrupt_adapter.i: interrupt/interrupt_adapter.c.i
@@ -223,7 +223,7 @@ interrupt/interrupt_adapter.i: interrupt/interrupt_adapter.c.i
 
 # target to preprocess a source file
 interrupt/interrupt_adapter.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/interrupt/interrupt_adapter.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/interrupt/interrupt_adapter.c.i
 .PHONY : interrupt/interrupt_adapter.c.i
 
 interrupt/interrupt_adapter.s: interrupt/interrupt_adapter.c.s
@@ -231,7 +231,7 @@ interrupt/interrupt_adapter.s: interrupt/interrupt_adapter.c.s
 
 # target to generate assembly for a file
 interrupt/interrupt_adapter.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/interrupt/interrupt_adapter.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/interrupt/interrupt_adapter.c.s
 .PHONY : interrupt/interrupt_adapter.c.s
 
 vectors/vectors.obj: vectors/vectors.c.obj
@@ -239,7 +239,7 @@ vectors/vectors.obj: vectors/vectors.c.obj
 
 # target to build an object file
 vectors/vectors.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/vectors/vectors.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/vectors/vectors.c.obj
 .PHONY : vectors/vectors.c.obj
 
 vectors/vectors.i: vectors/vectors.c.i
@@ -247,7 +247,7 @@ vectors/vectors.i: vectors/vectors.c.i
 
 # target to preprocess a source file
 vectors/vectors.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/vectors/vectors.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/vectors/vectors.c.i
 .PHONY : vectors/vectors.c.i
 
 vectors/vectors.s: vectors/vectors.c.s
@@ -255,7 +255,7 @@ vectors/vectors.s: vectors/vectors.c.s
 
 # target to generate assembly for a file
 vectors/vectors.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/vectors/vectors.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/CMakeFiles/chip_ws63.dir/build.make drivers/chips/ws63/CMakeFiles/chip_ws63.dir/vectors/vectors.c.s
 .PHONY : vectors/vectors.c.s
 
 # Help Target
@@ -294,6 +294,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

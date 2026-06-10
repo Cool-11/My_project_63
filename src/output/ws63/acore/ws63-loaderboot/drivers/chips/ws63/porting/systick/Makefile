@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/systick//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/systick//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/rule
 .PHONY : drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ systick_port: drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/rul
 
 # fast build rule for target.
 systick_port/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build
 .PHONY : systick_port/fast
 
 hal_systick.obj: hal_systick.c.obj
@@ -135,7 +135,7 @@ hal_systick.obj: hal_systick.c.obj
 
 # target to build an object file
 hal_systick.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.obj
 .PHONY : hal_systick.c.obj
 
 hal_systick.i: hal_systick.c.i
@@ -143,7 +143,7 @@ hal_systick.i: hal_systick.c.i
 
 # target to preprocess a source file
 hal_systick.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.i
 .PHONY : hal_systick.c.i
 
 hal_systick.s: hal_systick.c.s
@@ -151,7 +151,7 @@ hal_systick.s: hal_systick.c.s
 
 # target to generate assembly for a file
 hal_systick.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick.c.s
 .PHONY : hal_systick.c.s
 
 hal_systick_ws63.obj: hal_systick_ws63.c.obj
@@ -159,7 +159,7 @@ hal_systick_ws63.obj: hal_systick_ws63.c.obj
 
 # target to build an object file
 hal_systick_ws63.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.obj
 .PHONY : hal_systick_ws63.c.obj
 
 hal_systick_ws63.i: hal_systick_ws63.c.i
@@ -167,7 +167,7 @@ hal_systick_ws63.i: hal_systick_ws63.c.i
 
 # target to preprocess a source file
 hal_systick_ws63.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.i
 .PHONY : hal_systick_ws63.c.i
 
 hal_systick_ws63.s: hal_systick_ws63.c.s
@@ -175,7 +175,7 @@ hal_systick_ws63.s: hal_systick_ws63.c.s
 
 # target to generate assembly for a file
 hal_systick_ws63.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/hal_systick_ws63.c.s
 .PHONY : hal_systick_ws63.c.s
 
 systick_porting.obj: systick_porting.c.obj
@@ -183,7 +183,7 @@ systick_porting.obj: systick_porting.c.obj
 
 # target to build an object file
 systick_porting.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.obj
 .PHONY : systick_porting.c.obj
 
 systick_porting.i: systick_porting.c.i
@@ -191,7 +191,7 @@ systick_porting.i: systick_porting.c.i
 
 # target to preprocess a source file
 systick_porting.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.i
 .PHONY : systick_porting.c.i
 
 systick_porting.s: systick_porting.c.s
@@ -199,7 +199,7 @@ systick_porting.s: systick_porting.c.s
 
 # target to generate assembly for a file
 systick_porting.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/build.make drivers/chips/ws63/porting/systick/CMakeFiles/systick_port.dir/systick_porting.c.s
 .PHONY : systick_porting.c.s
 
 # Help Target
@@ -231,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

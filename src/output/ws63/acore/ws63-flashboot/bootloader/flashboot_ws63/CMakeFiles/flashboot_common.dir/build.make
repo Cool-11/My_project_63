@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 # Include any dependencies generated for this target.
 include bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/depend.make
@@ -70,45 +70,45 @@ include bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/progress.make
 include bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/flags.make
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.obj: bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/flags.make
-bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/startup/main.c
+bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.obj: /home/cool/fbb_ws63/src/bootloader/flashboot_ws63/startup/main.c
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.obj: bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.obj -MF CMakeFiles/flashboot_common.dir/startup/main.c.obj.d -o CMakeFiles/flashboot_common.dir/startup/main.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/startup/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.obj -MF CMakeFiles/flashboot_common.dir/startup/main.c.obj.d -o CMakeFiles/flashboot_common.dir/startup/main.c.obj -c /home/cool/fbb_ws63/src/bootloader/flashboot_ws63/startup/main.c
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/flashboot_common.dir/startup/main.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/startup/main.c > CMakeFiles/flashboot_common.dir/startup/main.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/bootloader/flashboot_ws63/startup/main.c > CMakeFiles/flashboot_common.dir/startup/main.c.i
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/flashboot_common.dir/startup/main.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/startup/main.c -o CMakeFiles/flashboot_common.dir/startup/main.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/bootloader/flashboot_ws63/startup/main.c -o CMakeFiles/flashboot_common.dir/startup/main.c.s
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/riscv_init.S.obj: bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/flags.make
-bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/riscv_init.S.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/startup/riscv_init.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building ASM object bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/riscv_init.S.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RISCV_INIT_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/flashboot_common.dir/startup/riscv_init.S.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/startup/riscv_init.S
+bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/riscv_init.S.obj: /home/cool/fbb_ws63/src/bootloader/flashboot_ws63/startup/riscv_init.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building ASM object bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/riscv_init.S.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RISCV_INIT_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/flashboot_common.dir/startup/riscv_init.S.obj -c /home/cool/fbb_ws63/src/bootloader/flashboot_ws63/startup/riscv_init.S
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/riscv_init.S.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing ASM source to CMakeFiles/flashboot_common.dir/startup/riscv_init.S.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RISCV_INIT_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/startup/riscv_init.S > CMakeFiles/flashboot_common.dir/startup/riscv_init.S.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RISCV_INIT_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -E /home/cool/fbb_ws63/src/bootloader/flashboot_ws63/startup/riscv_init.S > CMakeFiles/flashboot_common.dir/startup/riscv_init.S.i
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/startup/riscv_init.S.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling ASM source to assembly CMakeFiles/flashboot_common.dir/startup/riscv_init.S.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RISCV_INIT_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/startup/riscv_init.S -o CMakeFiles/flashboot_common.dir/startup/riscv_init.S.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RISCV_INIT_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -S /home/cool/fbb_ws63/src/bootloader/flashboot_ws63/startup/riscv_init.S -o CMakeFiles/flashboot_common.dir/startup/riscv_init.S.s
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj: bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/flags.make
-bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/src/secure_verify_boot.c
+bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj: /home/cool/fbb_ws63/src/bootloader/commonboot/src/secure_verify_boot.c
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj: bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SECURE_VERIFY_BOOT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj -MF CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj.d -o CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/src/secure_verify_boot.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SECURE_VERIFY_BOOT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj -MF CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj.d -o CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj -c /home/cool/fbb_ws63/src/bootloader/commonboot/src/secure_verify_boot.c
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SECURE_VERIFY_BOOT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/src/secure_verify_boot.c > CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SECURE_VERIFY_BOOT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/bootloader/commonboot/src/secure_verify_boot.c > CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.i
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SECURE_VERIFY_BOOT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/src/secure_verify_boot.c -o CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SECURE_VERIFY_BOOT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/bootloader/commonboot/src/secure_verify_boot.c -o CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.s
 
 # Object files for target flashboot_common
 flashboot_common_OBJECTS = \
@@ -124,19 +124,19 @@ bootloader/flashboot_ws63/libflashboot_common.a: bootloader/flashboot_ws63/CMake
 bootloader/flashboot_ws63/libflashboot_common.a: bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/__/commonboot/src/secure_verify_boot.c.obj
 bootloader/flashboot_ws63/libflashboot_common.a: bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/build.make
 bootloader/flashboot_ws63/libflashboot_common.a: bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libflashboot_common.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && $(CMAKE_COMMAND) -P CMakeFiles/flashboot_common.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/flashboot_common.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libflashboot_common.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && $(CMAKE_COMMAND) -P CMakeFiles/flashboot_common.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/flashboot_common.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/build: bootloader/flashboot_ws63/libflashboot_common.a
 .PHONY : bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/build
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && $(CMAKE_COMMAND) -P CMakeFiles/flashboot_common.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 && $(CMAKE_COMMAND) -P CMakeFiles/flashboot_common.dir/cmake_clean.cmake
 .PHONY : bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/clean
 
 bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/bootloader/flashboot_ws63 /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63 /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : bootloader/flashboot_ws63/CMakeFiles/flashboot_common.dir/depend
 

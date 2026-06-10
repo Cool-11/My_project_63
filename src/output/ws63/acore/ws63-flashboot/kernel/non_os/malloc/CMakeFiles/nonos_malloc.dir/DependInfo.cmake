@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/non_os/malloc/malloc.c" "kernel/non_os/malloc/CMakeFiles/nonos_malloc.dir/malloc.c.obj" "gcc" "kernel/non_os/malloc/CMakeFiles/nonos_malloc.dir/malloc.c.obj.d"
+  "/home/cool/fbb_ws63/src/kernel/non_os/malloc/malloc.c" "kernel/non_os/malloc/CMakeFiles/nonos_malloc.dir/malloc.c.obj" "gcc" "kernel/non_os/malloc/CMakeFiles/nonos_malloc.dir/malloc.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

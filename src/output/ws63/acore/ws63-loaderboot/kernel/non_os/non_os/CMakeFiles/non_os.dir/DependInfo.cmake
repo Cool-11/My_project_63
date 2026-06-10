@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/non_os/non_os/non_os_nmi.c" "kernel/non_os/non_os/CMakeFiles/non_os.dir/non_os_nmi.c.obj" "gcc" "kernel/non_os/non_os/CMakeFiles/non_os.dir/non_os_nmi.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/non_os/non_os/non_os_utils.c" "kernel/non_os/non_os/CMakeFiles/non_os.dir/non_os_utils.c.obj" "gcc" "kernel/non_os/non_os/CMakeFiles/non_os.dir/non_os_utils.c.obj.d"
+  "/home/cool/fbb_ws63/src/kernel/non_os/non_os/non_os_nmi.c" "kernel/non_os/non_os/CMakeFiles/non_os.dir/non_os_nmi.c.obj" "gcc" "kernel/non_os/non_os/CMakeFiles/non_os.dir/non_os_nmi.c.obj.d"
+  "/home/cool/fbb_ws63/src/kernel/non_os/non_os/non_os_utils.c" "kernel/non_os/non_os/CMakeFiles/non_os.dir/non_os_utils.c.obj" "gcc" "kernel/non_os/non_os/CMakeFiles/non_os.dir/non_os_utils.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

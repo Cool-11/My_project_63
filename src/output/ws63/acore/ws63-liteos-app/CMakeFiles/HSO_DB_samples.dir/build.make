@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for HSO_DB_samples.
 
@@ -68,26 +68,26 @@ include CMakeFiles/HSO_DB_samples.dir/progress.make
 
 CMakeFiles/HSO_DB_samples: hso_temp/samples.txt
 
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/app/main.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/uart_vision/uart_vision.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/uart_display/uart_display.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/biz_tag_map.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/biz_sle.c
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_bt.h
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_pf.h
-hso_temp/samples.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_samples"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/samples_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/samples.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/samples.txt
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/app/main.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/uart_vision/uart_vision.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/uart_display/uart_display.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/business_logic/biz_tag_map.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/application/samples/peripheral/My_project_63/components/business_logic/biz_sle.c
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_bt.h
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_pf.h
+hso_temp/samples.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_samples"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/samples_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/samples.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/samples.txt
 
 HSO_DB_samples: CMakeFiles/HSO_DB_samples
 HSO_DB_samples: hso_temp/samples.txt
@@ -103,6 +103,6 @@ CMakeFiles/HSO_DB_samples.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_samples.dir/clean
 
 CMakeFiles/HSO_DB_samples.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_samples.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_samples.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_samples.dir/depend
 

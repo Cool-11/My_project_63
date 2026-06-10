@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for HSO_DB_dfx_diag.
 
@@ -68,52 +68,52 @@ include CMakeFiles/HSO_DB_dfx_diag.dir/progress.make
 
 CMakeFiles/HSO_DB_dfx_diag: hso_temp/dfx_diag.txt
 
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/romable/diag_oam_log.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/romable/diag_rom_api.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_channel.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_cmd_dst.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_cmd_src.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_debug.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_dfx.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_filter.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_ind_dst.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_ind_src.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_mem.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_msg.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_pkt.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_pkt_router.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_rx_api.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_stat.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/zdiag_tx.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_beat_heart.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_connect.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_filter.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_mem_info.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_task_info.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_res_info.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_init_info.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_cpup.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_log_level.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_mem_read_write.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_offline_log.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_password.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_trace_info.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_stat.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_mocked_shell.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/last_dump.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_bt_sample_data.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_mem.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_task.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_res.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_cpup.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_trace.c
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_bt.h
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_pf.h
-hso_temp/dfx_diag.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_dfx_diag"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_diag_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_diag.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_diag.txt
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/romable/diag_oam_log.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/romable/diag_rom_api.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_channel.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_cmd_dst.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_cmd_src.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_debug.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_dfx.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_filter.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_ind_dst.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_ind_src.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_mem.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_msg.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_pkt.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_pkt_router.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_rx_api.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_stat.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/zdiag_tx.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_beat_heart.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_connect.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_filter.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_mem_info.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_task_info.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_res_info.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_init_info.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_get_cpup.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_log_level.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_mem_read_write.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_offline_log.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_password.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_trace_info.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_cmd_stat.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_mocked_shell.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/last_dump.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/zdiag/diag_system_cmd/diag_bt_sample_data.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_mem.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_task.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_res.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_cpup.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/utils/dfx/dfx_os/liteos_v1/dfx_trace.c
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_bt.h
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_pf.h
+hso_temp/dfx_diag.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_dfx_diag"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_diag_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_diag.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/dfx_diag.txt
 
 HSO_DB_dfx_diag: CMakeFiles/HSO_DB_dfx_diag
 HSO_DB_dfx_diag: hso_temp/dfx_diag.txt
@@ -129,6 +129,6 @@ CMakeFiles/HSO_DB_dfx_diag.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_dfx_diag.dir/clean
 
 CMakeFiles/HSO_DB_dfx_diag.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_dfx_diag.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_dfx_diag.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_dfx_diag.dir/depend
 

@@ -1,1 +1,1 @@
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-ar rcD libhal_uart.a CMakeFiles/hal_uart.dir/hal_uart.c.obj CMakeFiles/hal_uart.dir/v151/hal_uart_v151.c.obj CMakeFiles/hal_uart.dir/v151/hal_uart_v151_regs_op.c.obj
+/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-ar rcD libhal_uart.a CMakeFiles/hal_uart.dir/hal_uart.c.obj CMakeFiles/hal_uart.dir/v151/hal_uart_v151.c.obj CMakeFiles/hal_uart.dir/v151/hal_uart_v151_regs_op.c.obj

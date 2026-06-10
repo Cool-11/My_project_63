@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/dyn_mem/dyn_mem.c" "drivers/chips/ws63/dyn_mem/CMakeFiles/dyn_mem.dir/dyn_mem.c.obj" "gcc" "drivers/chips/ws63/dyn_mem/CMakeFiles/dyn_mem.dir/dyn_mem.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/chips/ws63/dyn_mem/dyn_mem.c" "drivers/chips/ws63/dyn_mem/CMakeFiles/dyn_mem.dir/dyn_mem.c.obj" "gcc" "drivers/chips/ws63/dyn_mem/CMakeFiles/dyn_mem.dir/dyn_mem.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

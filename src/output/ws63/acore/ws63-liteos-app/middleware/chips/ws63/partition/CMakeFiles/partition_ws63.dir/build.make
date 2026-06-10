@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/depend.make
@@ -70,18 +70,18 @@ include middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/progress.m
 include middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/flags.make
 
 middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj: middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/flags.make
-middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition/partition_porting.c
+middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj: /home/cool/fbb_ws63/src/middleware/chips/ws63/partition/partition_porting.c
 middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj: middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PARTITION_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj -MF CMakeFiles/partition_ws63.dir/partition_porting.c.obj.d -o CMakeFiles/partition_ws63.dir/partition_porting.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition/partition_porting.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PARTITION_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj -MF CMakeFiles/partition_ws63.dir/partition_porting.c.obj.d -o CMakeFiles/partition_ws63.dir/partition_porting.c.obj -c /home/cool/fbb_ws63/src/middleware/chips/ws63/partition/partition_porting.c
 
 middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/partition_ws63.dir/partition_porting.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PARTITION_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition/partition_porting.c > CMakeFiles/partition_ws63.dir/partition_porting.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PARTITION_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/middleware/chips/ws63/partition/partition_porting.c > CMakeFiles/partition_ws63.dir/partition_porting.c.i
 
 middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/partition_ws63.dir/partition_porting.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PARTITION_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition/partition_porting.c -o CMakeFiles/partition_ws63.dir/partition_porting.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PARTITION_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/middleware/chips/ws63/partition/partition_porting.c -o CMakeFiles/partition_ws63.dir/partition_porting.c.s
 
 # Object files for target partition_ws63
 partition_ws63_OBJECTS = \
@@ -93,19 +93,19 @@ partition_ws63_EXTERNAL_OBJECTS =
 middleware/chips/ws63/partition/libpartition_ws63.a: middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/partition_porting.c.obj
 middleware/chips/ws63/partition/libpartition_ws63.a: middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/build.make
 middleware/chips/ws63/partition/libpartition_ws63.a: middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libpartition_ws63.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && $(CMAKE_COMMAND) -P CMakeFiles/partition_ws63.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/partition_ws63.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libpartition_ws63.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && $(CMAKE_COMMAND) -P CMakeFiles/partition_ws63.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/partition_ws63.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/build: middleware/chips/ws63/partition/libpartition_ws63.a
 .PHONY : middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/build
 
 middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && $(CMAKE_COMMAND) -P CMakeFiles/partition_ws63.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition && $(CMAKE_COMMAND) -P CMakeFiles/partition_ws63.dir/cmake_clean.cmake
 .PHONY : middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/clean
 
 middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/partition /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/middleware/chips/ws63/partition /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : middleware/chips/ws63/partition/CMakeFiles/partition_ws63.dir/depend
 

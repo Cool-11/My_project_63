@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Utility rule file for GENERAT_MEM_LIMIT.
 
@@ -67,8 +67,8 @@ include CMakeFiles/GENERAT_MEM_LIMIT.dir/compiler_depend.make
 include CMakeFiles/GENERAT_MEM_LIMIT.dir/progress.make
 
 CMakeFiles/GENERAT_MEM_LIMIT: loaderboot.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) MEM_LIMIT
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/utils/parse_map_size_info.py loaderboot.lst loaderboot.map
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) MEM_LIMIT
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/utils/parse_map_size_info.py loaderboot.lst loaderboot.map
 
 GENERAT_MEM_LIMIT: CMakeFiles/GENERAT_MEM_LIMIT
 GENERAT_MEM_LIMIT: CMakeFiles/GENERAT_MEM_LIMIT.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/GENERAT_MEM_LIMIT.dir/clean:
 .PHONY : CMakeFiles/GENERAT_MEM_LIMIT.dir/clean
 
 CMakeFiles/GENERAT_MEM_LIMIT.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/GENERAT_MEM_LIMIT.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/GENERAT_MEM_LIMIT.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/GENERAT_MEM_LIMIT.dir/depend
 

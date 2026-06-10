@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Utility rule file for HSO_DB_hal_efuse_v151.
 
@@ -68,12 +68,12 @@ include CMakeFiles/HSO_DB_hal_efuse_v151.dir/progress.make
 
 CMakeFiles/HSO_DB_hal_efuse_v151: hso_temp/hal_efuse_v151.txt
 
-hso_temp/hal_efuse_v151.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/efuse/hal_efuse.c
-hso_temp/hal_efuse_v151.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/efuse/v151/hal_efuse_v151.c
-hso_temp/hal_efuse_v151.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/efuse/v151/hal_efuse_v151_reg_op.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_hal_efuse_v151"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/hal_efuse_v151_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/hal_efuse_v151.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/hal_efuse_v151.txt
+hso_temp/hal_efuse_v151.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/efuse/hal_efuse.c
+hso_temp/hal_efuse_v151.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/efuse/v151/hal_efuse_v151.c
+hso_temp/hal_efuse_v151.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/efuse/v151/hal_efuse_v151_reg_op.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_hal_efuse_v151"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/hal_efuse_v151_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/hal_efuse_v151.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/hal_efuse_v151.txt
 
 HSO_DB_hal_efuse_v151: CMakeFiles/HSO_DB_hal_efuse_v151
 HSO_DB_hal_efuse_v151: hso_temp/hal_efuse_v151.txt
@@ -89,6 +89,6 @@ CMakeFiles/HSO_DB_hal_efuse_v151.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_hal_efuse_v151.dir/clean
 
 CMakeFiles/HSO_DB_hal_efuse_v151.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_hal_efuse_v151.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_hal_efuse_v151.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_hal_efuse_v151.dir/depend
 

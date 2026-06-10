@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/uart//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/uart//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hal/uart/CMakeFiles/hal_uart.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/CMakeFiles/hal_uart.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/uart/CMakeFiles/hal_uart.dir/rule
 .PHONY : hal/uart/CMakeFiles/hal_uart.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ hal_uart: hal/uart/CMakeFiles/hal_uart.dir/rule
 
 # fast build rule for target.
 hal_uart/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/build
 .PHONY : hal_uart/fast
 
 hal_uart.obj: hal_uart.c.obj
@@ -135,7 +135,7 @@ hal_uart.obj: hal_uart.c.obj
 
 # target to build an object file
 hal_uart.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/hal_uart.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/hal_uart.c.obj
 .PHONY : hal_uart.c.obj
 
 hal_uart.i: hal_uart.c.i
@@ -143,7 +143,7 @@ hal_uart.i: hal_uart.c.i
 
 # target to preprocess a source file
 hal_uart.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/hal_uart.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/hal_uart.c.i
 .PHONY : hal_uart.c.i
 
 hal_uart.s: hal_uart.c.s
@@ -151,7 +151,7 @@ hal_uart.s: hal_uart.c.s
 
 # target to generate assembly for a file
 hal_uart.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/hal_uart.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/hal_uart.c.s
 .PHONY : hal_uart.c.s
 
 v151/hal_uart_v151.obj: v151/hal_uart_v151.c.obj
@@ -159,7 +159,7 @@ v151/hal_uart_v151.obj: v151/hal_uart_v151.c.obj
 
 # target to build an object file
 v151/hal_uart_v151.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151.c.obj
 .PHONY : v151/hal_uart_v151.c.obj
 
 v151/hal_uart_v151.i: v151/hal_uart_v151.c.i
@@ -167,7 +167,7 @@ v151/hal_uart_v151.i: v151/hal_uart_v151.c.i
 
 # target to preprocess a source file
 v151/hal_uart_v151.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151.c.i
 .PHONY : v151/hal_uart_v151.c.i
 
 v151/hal_uart_v151.s: v151/hal_uart_v151.c.s
@@ -175,7 +175,7 @@ v151/hal_uart_v151.s: v151/hal_uart_v151.c.s
 
 # target to generate assembly for a file
 v151/hal_uart_v151.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151.c.s
 .PHONY : v151/hal_uart_v151.c.s
 
 v151/hal_uart_v151_regs_op.obj: v151/hal_uart_v151_regs_op.c.obj
@@ -183,7 +183,7 @@ v151/hal_uart_v151_regs_op.obj: v151/hal_uart_v151_regs_op.c.obj
 
 # target to build an object file
 v151/hal_uart_v151_regs_op.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151_regs_op.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151_regs_op.c.obj
 .PHONY : v151/hal_uart_v151_regs_op.c.obj
 
 v151/hal_uart_v151_regs_op.i: v151/hal_uart_v151_regs_op.c.i
@@ -191,7 +191,7 @@ v151/hal_uart_v151_regs_op.i: v151/hal_uart_v151_regs_op.c.i
 
 # target to preprocess a source file
 v151/hal_uart_v151_regs_op.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151_regs_op.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151_regs_op.c.i
 .PHONY : v151/hal_uart_v151_regs_op.c.i
 
 v151/hal_uart_v151_regs_op.s: v151/hal_uart_v151_regs_op.c.s
@@ -199,7 +199,7 @@ v151/hal_uart_v151_regs_op.s: v151/hal_uart_v151_regs_op.c.s
 
 # target to generate assembly for a file
 v151/hal_uart_v151_regs_op.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151_regs_op.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f hal/uart/CMakeFiles/hal_uart.dir/build.make hal/uart/CMakeFiles/hal_uart.dir/v151/hal_uart_v151_regs_op.c.s
 .PHONY : v151/hal_uart_v151_regs_op.c.s
 
 # Help Target
@@ -231,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

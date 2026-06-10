@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/liteos/riscv31/idle_config.c" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/idle_config.c.obj" "gcc" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/idle_config.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/liteos/riscv31/memory_info.c" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/memory_info.c.obj" "gcc" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/memory_info.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/liteos/riscv31/tick_timer.c" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/tick_timer.c.obj" "gcc" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/tick_timer.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/chips/ws63/porting/liteos/riscv31/idle_config.c" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/idle_config.c.obj" "gcc" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/idle_config.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/chips/ws63/porting/liteos/riscv31/memory_info.c" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/memory_info.c.obj" "gcc" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/memory_info.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/chips/ws63/porting/liteos/riscv31/tick_timer.c" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/tick_timer.c.obj" "gcc" "drivers/chips/ws63/porting/liteos/CMakeFiles/liteos_port.dir/riscv31/tick_timer.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

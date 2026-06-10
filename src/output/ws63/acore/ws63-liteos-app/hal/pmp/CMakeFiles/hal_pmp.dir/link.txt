@@ -1,1 +1,1 @@
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-ar rcD libhal_pmp.a CMakeFiles/hal_pmp.dir/hal_pmp.c.obj CMakeFiles/hal_pmp.dir/v31/hal_pmp_riscv31.c.obj CMakeFiles/hal_pmp.dir/v31/hal_pmp_riscv31_regs_op.c.obj
+/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-ar rcD libhal_pmp.a CMakeFiles/hal_pmp.dir/hal_pmp.c.obj CMakeFiles/hal_pmp.dir/v31/hal_pmp_riscv31.c.obj CMakeFiles/hal_pmp.dir/v31/hal_pmp_riscv31_regs_op.c.obj

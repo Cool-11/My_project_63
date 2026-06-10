@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/porting//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/sfc/porting//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/rule
 .PHONY : drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ sfc_port_ws63: drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.d
 
 # fast build rule for target.
 sfc_port_ws63/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build
 .PHONY : sfc_port_ws63/fast
 
 sfc_porting.obj: sfc_porting.c.obj
@@ -135,7 +135,7 @@ sfc_porting.obj: sfc_porting.c.obj
 
 # target to build an object file
 sfc_porting.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_porting.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_porting.c.obj
 .PHONY : sfc_porting.c.obj
 
 sfc_porting.i: sfc_porting.c.i
@@ -143,7 +143,7 @@ sfc_porting.i: sfc_porting.c.i
 
 # target to preprocess a source file
 sfc_porting.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_porting.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_porting.c.i
 .PHONY : sfc_porting.c.i
 
 sfc_porting.s: sfc_porting.c.s
@@ -151,7 +151,7 @@ sfc_porting.s: sfc_porting.c.s
 
 # target to generate assembly for a file
 sfc_porting.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_porting.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_porting.c.s
 .PHONY : sfc_porting.c.s
 
 sfc_protect.obj: sfc_protect.c.obj
@@ -159,7 +159,7 @@ sfc_protect.obj: sfc_protect.c.obj
 
 # target to build an object file
 sfc_protect.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect.c.obj
 .PHONY : sfc_protect.c.obj
 
 sfc_protect.i: sfc_protect.c.i
@@ -167,7 +167,7 @@ sfc_protect.i: sfc_protect.c.i
 
 # target to preprocess a source file
 sfc_protect.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect.c.i
 .PHONY : sfc_protect.c.i
 
 sfc_protect.s: sfc_protect.c.s
@@ -175,7 +175,7 @@ sfc_protect.s: sfc_protect.c.s
 
 # target to generate assembly for a file
 sfc_protect.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect.c.s
 .PHONY : sfc_protect.c.s
 
 sfc_protect_gd25q32.obj: sfc_protect_gd25q32.c.obj
@@ -183,7 +183,7 @@ sfc_protect_gd25q32.obj: sfc_protect_gd25q32.c.obj
 
 # target to build an object file
 sfc_protect_gd25q32.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect_gd25q32.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect_gd25q32.c.obj
 .PHONY : sfc_protect_gd25q32.c.obj
 
 sfc_protect_gd25q32.i: sfc_protect_gd25q32.c.i
@@ -191,7 +191,7 @@ sfc_protect_gd25q32.i: sfc_protect_gd25q32.c.i
 
 # target to preprocess a source file
 sfc_protect_gd25q32.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect_gd25q32.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect_gd25q32.c.i
 .PHONY : sfc_protect_gd25q32.c.i
 
 sfc_protect_gd25q32.s: sfc_protect_gd25q32.c.s
@@ -199,7 +199,7 @@ sfc_protect_gd25q32.s: sfc_protect_gd25q32.c.s
 
 # target to generate assembly for a file
 sfc_protect_gd25q32.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect_gd25q32.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/build.make drivers/chips/ws63/porting/sfc/porting/CMakeFiles/sfc_port_ws63.dir/sfc_protect_gd25q32.c.s
 .PHONY : sfc_protect_gd25q32.c.s
 
 # Help Target
@@ -231,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

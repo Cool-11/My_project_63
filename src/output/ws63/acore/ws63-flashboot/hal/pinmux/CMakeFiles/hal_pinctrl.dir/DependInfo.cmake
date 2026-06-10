@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c" "hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj" "gcc" "hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c" "hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj" "gcc" "hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c" "hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj" "gcc" "hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c" "hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj" "gcc" "hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

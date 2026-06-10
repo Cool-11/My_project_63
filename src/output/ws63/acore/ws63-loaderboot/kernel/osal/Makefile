@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/kernel/osal//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/kernel/osal//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 kernel/osal/CMakeFiles/osal.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/CMakeFiles/osal.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kernel/osal/CMakeFiles/osal.dir/rule
 .PHONY : kernel/osal/CMakeFiles/osal.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ osal: kernel/osal/CMakeFiles/osal.dir/rule
 
 # fast build rule for target.
 osal/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/build
 .PHONY : osal/fast
 
 src/nonos/osal_atomic.obj: src/nonos/osal_atomic.c.obj
@@ -135,7 +135,7 @@ src/nonos/osal_atomic.obj: src/nonos/osal_atomic.c.obj
 
 # target to build an object file
 src/nonos/osal_atomic.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.obj
 .PHONY : src/nonos/osal_atomic.c.obj
 
 src/nonos/osal_atomic.i: src/nonos/osal_atomic.c.i
@@ -143,7 +143,7 @@ src/nonos/osal_atomic.i: src/nonos/osal_atomic.c.i
 
 # target to preprocess a source file
 src/nonos/osal_atomic.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.i
 .PHONY : src/nonos/osal_atomic.c.i
 
 src/nonos/osal_atomic.s: src/nonos/osal_atomic.c.s
@@ -151,7 +151,7 @@ src/nonos/osal_atomic.s: src/nonos/osal_atomic.c.s
 
 # target to generate assembly for a file
 src/nonos/osal_atomic.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_atomic.c.s
 .PHONY : src/nonos/osal_atomic.c.s
 
 src/nonos/osal_debug.obj: src/nonos/osal_debug.c.obj
@@ -159,7 +159,7 @@ src/nonos/osal_debug.obj: src/nonos/osal_debug.c.obj
 
 # target to build an object file
 src/nonos/osal_debug.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.obj
 .PHONY : src/nonos/osal_debug.c.obj
 
 src/nonos/osal_debug.i: src/nonos/osal_debug.c.i
@@ -167,7 +167,7 @@ src/nonos/osal_debug.i: src/nonos/osal_debug.c.i
 
 # target to preprocess a source file
 src/nonos/osal_debug.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.i
 .PHONY : src/nonos/osal_debug.c.i
 
 src/nonos/osal_debug.s: src/nonos/osal_debug.c.s
@@ -175,7 +175,7 @@ src/nonos/osal_debug.s: src/nonos/osal_debug.c.s
 
 # target to generate assembly for a file
 src/nonos/osal_debug.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_debug.c.s
 .PHONY : src/nonos/osal_debug.c.s
 
 src/nonos/osal_interrupt.obj: src/nonos/osal_interrupt.c.obj
@@ -183,7 +183,7 @@ src/nonos/osal_interrupt.obj: src/nonos/osal_interrupt.c.obj
 
 # target to build an object file
 src/nonos/osal_interrupt.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.obj
 .PHONY : src/nonos/osal_interrupt.c.obj
 
 src/nonos/osal_interrupt.i: src/nonos/osal_interrupt.c.i
@@ -191,7 +191,7 @@ src/nonos/osal_interrupt.i: src/nonos/osal_interrupt.c.i
 
 # target to preprocess a source file
 src/nonos/osal_interrupt.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.i
 .PHONY : src/nonos/osal_interrupt.c.i
 
 src/nonos/osal_interrupt.s: src/nonos/osal_interrupt.c.s
@@ -199,7 +199,7 @@ src/nonos/osal_interrupt.s: src/nonos/osal_interrupt.c.s
 
 # target to generate assembly for a file
 src/nonos/osal_interrupt.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_interrupt.c.s
 .PHONY : src/nonos/osal_interrupt.c.s
 
 src/nonos/osal_mutex.obj: src/nonos/osal_mutex.c.obj
@@ -207,7 +207,7 @@ src/nonos/osal_mutex.obj: src/nonos/osal_mutex.c.obj
 
 # target to build an object file
 src/nonos/osal_mutex.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.obj
 .PHONY : src/nonos/osal_mutex.c.obj
 
 src/nonos/osal_mutex.i: src/nonos/osal_mutex.c.i
@@ -215,7 +215,7 @@ src/nonos/osal_mutex.i: src/nonos/osal_mutex.c.i
 
 # target to preprocess a source file
 src/nonos/osal_mutex.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.i
 .PHONY : src/nonos/osal_mutex.c.i
 
 src/nonos/osal_mutex.s: src/nonos/osal_mutex.c.s
@@ -223,7 +223,7 @@ src/nonos/osal_mutex.s: src/nonos/osal_mutex.c.s
 
 # target to generate assembly for a file
 src/nonos/osal_mutex.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_mutex.c.s
 .PHONY : src/nonos/osal_mutex.c.s
 
 src/nonos/osal_semaphore.obj: src/nonos/osal_semaphore.c.obj
@@ -231,7 +231,7 @@ src/nonos/osal_semaphore.obj: src/nonos/osal_semaphore.c.obj
 
 # target to build an object file
 src/nonos/osal_semaphore.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.obj
 .PHONY : src/nonos/osal_semaphore.c.obj
 
 src/nonos/osal_semaphore.i: src/nonos/osal_semaphore.c.i
@@ -239,7 +239,7 @@ src/nonos/osal_semaphore.i: src/nonos/osal_semaphore.c.i
 
 # target to preprocess a source file
 src/nonos/osal_semaphore.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.i
 .PHONY : src/nonos/osal_semaphore.c.i
 
 src/nonos/osal_semaphore.s: src/nonos/osal_semaphore.c.s
@@ -247,7 +247,7 @@ src/nonos/osal_semaphore.s: src/nonos/osal_semaphore.c.s
 
 # target to generate assembly for a file
 src/nonos/osal_semaphore.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_semaphore.c.s
 .PHONY : src/nonos/osal_semaphore.c.s
 
 src/nonos/osal_spinlock.obj: src/nonos/osal_spinlock.c.obj
@@ -255,7 +255,7 @@ src/nonos/osal_spinlock.obj: src/nonos/osal_spinlock.c.obj
 
 # target to build an object file
 src/nonos/osal_spinlock.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.obj
 .PHONY : src/nonos/osal_spinlock.c.obj
 
 src/nonos/osal_spinlock.i: src/nonos/osal_spinlock.c.i
@@ -263,7 +263,7 @@ src/nonos/osal_spinlock.i: src/nonos/osal_spinlock.c.i
 
 # target to preprocess a source file
 src/nonos/osal_spinlock.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.i
 .PHONY : src/nonos/osal_spinlock.c.i
 
 src/nonos/osal_spinlock.s: src/nonos/osal_spinlock.c.s
@@ -271,7 +271,7 @@ src/nonos/osal_spinlock.s: src/nonos/osal_spinlock.c.s
 
 # target to generate assembly for a file
 src/nonos/osal_spinlock.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_spinlock.c.s
 .PHONY : src/nonos/osal_spinlock.c.s
 
 src/nonos/osal_task.obj: src/nonos/osal_task.c.obj
@@ -279,7 +279,7 @@ src/nonos/osal_task.obj: src/nonos/osal_task.c.obj
 
 # target to build an object file
 src/nonos/osal_task.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.obj
 .PHONY : src/nonos/osal_task.c.obj
 
 src/nonos/osal_task.i: src/nonos/osal_task.c.i
@@ -287,7 +287,7 @@ src/nonos/osal_task.i: src/nonos/osal_task.c.i
 
 # target to preprocess a source file
 src/nonos/osal_task.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.i
 .PHONY : src/nonos/osal_task.c.i
 
 src/nonos/osal_task.s: src/nonos/osal_task.c.s
@@ -295,7 +295,7 @@ src/nonos/osal_task.s: src/nonos/osal_task.c.s
 
 # target to generate assembly for a file
 src/nonos/osal_task.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_task.c.s
 .PHONY : src/nonos/osal_task.c.s
 
 src/nonos/osal_wait.obj: src/nonos/osal_wait.c.obj
@@ -303,7 +303,7 @@ src/nonos/osal_wait.obj: src/nonos/osal_wait.c.obj
 
 # target to build an object file
 src/nonos/osal_wait.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.obj
 .PHONY : src/nonos/osal_wait.c.obj
 
 src/nonos/osal_wait.i: src/nonos/osal_wait.c.i
@@ -311,7 +311,7 @@ src/nonos/osal_wait.i: src/nonos/osal_wait.c.i
 
 # target to preprocess a source file
 src/nonos/osal_wait.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.i
 .PHONY : src/nonos/osal_wait.c.i
 
 src/nonos/osal_wait.s: src/nonos/osal_wait.c.s
@@ -319,7 +319,7 @@ src/nonos/osal_wait.s: src/nonos/osal_wait.c.s
 
 # target to generate assembly for a file
 src/nonos/osal_wait.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f kernel/osal/CMakeFiles/osal.dir/build.make kernel/osal/CMakeFiles/osal.dir/src/nonos/osal_wait.c.s
 .PHONY : src/nonos/osal_wait.c.s
 
 # Help Target
@@ -366,6 +366,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

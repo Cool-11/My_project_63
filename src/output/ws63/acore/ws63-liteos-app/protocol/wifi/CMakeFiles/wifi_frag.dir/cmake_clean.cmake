@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_frag.a"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_frag.pdb"
+  "/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_frag.a"
+  "/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_frag.pdb"
   "CMakeFiles/wifi_frag.dir/source/host/feature/hmac_frag.c.obj"
   "CMakeFiles/wifi_frag.dir/source/host/feature/hmac_frag.c.obj.d"
 )

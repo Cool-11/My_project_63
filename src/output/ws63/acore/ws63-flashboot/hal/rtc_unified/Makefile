@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/hal/rtc_unified//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/hal/rtc_unified//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/rule
 .PHONY : hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ hal_rtc_unified: hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/rule
 
 # fast build rule for target.
 hal_rtc_unified/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build
 .PHONY : hal_rtc_unified/fast
 
 hal_rtc.obj: hal_rtc.c.obj
@@ -135,7 +135,7 @@ hal_rtc.obj: hal_rtc.c.obj
 
 # target to build an object file
 hal_rtc.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/hal_rtc.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/hal_rtc.c.obj
 .PHONY : hal_rtc.c.obj
 
 hal_rtc.i: hal_rtc.c.i
@@ -143,7 +143,7 @@ hal_rtc.i: hal_rtc.c.i
 
 # target to preprocess a source file
 hal_rtc.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/hal_rtc.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/hal_rtc.c.i
 .PHONY : hal_rtc.c.i
 
 hal_rtc.s: hal_rtc.c.s
@@ -151,7 +151,7 @@ hal_rtc.s: hal_rtc.c.s
 
 # target to generate assembly for a file
 hal_rtc.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/hal_rtc.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/hal_rtc.c.s
 .PHONY : hal_rtc.c.s
 
 v100/hal_rtc_v100.obj: v100/hal_rtc_v100.c.obj
@@ -159,7 +159,7 @@ v100/hal_rtc_v100.obj: v100/hal_rtc_v100.c.obj
 
 # target to build an object file
 v100/hal_rtc_v100.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100.c.obj
 .PHONY : v100/hal_rtc_v100.c.obj
 
 v100/hal_rtc_v100.i: v100/hal_rtc_v100.c.i
@@ -167,7 +167,7 @@ v100/hal_rtc_v100.i: v100/hal_rtc_v100.c.i
 
 # target to preprocess a source file
 v100/hal_rtc_v100.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100.c.i
 .PHONY : v100/hal_rtc_v100.c.i
 
 v100/hal_rtc_v100.s: v100/hal_rtc_v100.c.s
@@ -175,7 +175,7 @@ v100/hal_rtc_v100.s: v100/hal_rtc_v100.c.s
 
 # target to generate assembly for a file
 v100/hal_rtc_v100.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100.c.s
 .PHONY : v100/hal_rtc_v100.c.s
 
 v100/hal_rtc_v100_op.obj: v100/hal_rtc_v100_op.c.obj
@@ -183,7 +183,7 @@ v100/hal_rtc_v100_op.obj: v100/hal_rtc_v100_op.c.obj
 
 # target to build an object file
 v100/hal_rtc_v100_op.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100_op.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100_op.c.obj
 .PHONY : v100/hal_rtc_v100_op.c.obj
 
 v100/hal_rtc_v100_op.i: v100/hal_rtc_v100_op.c.i
@@ -191,7 +191,7 @@ v100/hal_rtc_v100_op.i: v100/hal_rtc_v100_op.c.i
 
 # target to preprocess a source file
 v100/hal_rtc_v100_op.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100_op.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100_op.c.i
 .PHONY : v100/hal_rtc_v100_op.c.i
 
 v100/hal_rtc_v100_op.s: v100/hal_rtc_v100_op.c.s
@@ -199,7 +199,7 @@ v100/hal_rtc_v100_op.s: v100/hal_rtc_v100_op.c.s
 
 # target to generate assembly for a file
 v100/hal_rtc_v100_op.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100_op.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(MAKE) $(MAKESILENT) -f hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/build.make hal/rtc_unified/CMakeFiles/hal_rtc_unified.dir/v100/hal_rtc_v100_op.c.s
 .PHONY : v100/hal_rtc_v100_op.c.s
 
 # Help Target
@@ -231,6 +231,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

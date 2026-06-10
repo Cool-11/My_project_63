@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for HSO_DB_wpa_supplicant.
 
@@ -68,103 +68,103 @@ include CMakeFiles/HSO_DB_wpa_supplicant.dir/progress.make
 
 CMakeFiles/HSO_DB_wpa_supplicant: hso_temp/wpa_supplicant.txt
 
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/bss.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/config.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/ctrl_iface.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/eap_register.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/events.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/scan.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/wpa_supplicant.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/wpas_glue.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/ap.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/wifi_service/hostapd/liteos_hostapd_src/hostapd_main_rtos.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/wifi_service/hostapd/liteos_hostapd_src/hostapd_ctrl_iface_rtos.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/liteos_wpa_src/crypto_mbedtls.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/liteos_wpa_src/ctrl_iface_rtos.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/liteos_wpa_src/eloop_rtos.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/liteos_wpa_src/l2_packet_rtos.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/liteos_wpa_src/main_rtos.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/liteos_wpa_src/os_rtos.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/liteos_wpa_src/wpa_cli_rtos.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/wifi_service/wpa/liteos_wpa_api/wifi_api.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/wifi_service/wpa/liteos_wpa_api/wifi_softap_api.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/common/ieee802_11_common.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/common/wpa_common.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/common/hw_features_common.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/aes-internal.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/aes-unwrap.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/aes-wrap.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/aes-omac1.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/crypto_internal-modexp.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/dh_groups.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/md5.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/random.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/rc4.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/sha1-prf.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/sha256-prf.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/drivers/drivers.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/drivers/driver_common.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/eapol_supp/eapol_supp_sm.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/eap_peer/eap.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/eap_peer/eap_methods.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/eap_common/eap_common.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/eapol_auth/eapol_auth_sm.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/eap_server/eap_server.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/eap_server/eap_server_identity.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/eap_server/eap_server_methods.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/rsn_supp/wpa.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/rsn_supp/wpa_ie.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/utils/base64.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/utils/common.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/utils/uuid.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/utils/wpa_debug.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/utils/wpabuf.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/tls/bignum.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/hostapd.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/bss_load.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/wpa_auth_glue.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/utils.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/ap_config.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/sta_info.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/ap_mlme.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/drv_callbacks.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/ap_drv_ops.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/ieee802_11_ht.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/ieee802_11.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/hw_features.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/wpa_auth.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/wpa_auth_ie.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/ieee802_1x.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/ieee802_11_he.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/eap_user_db.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/beacon.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/acs.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/pmksa_cache_auth.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/sme.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/common/sae.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/common/dragonfly.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/rsn_supp/pmksa_cache.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/wifi_service/wpa/ltos_src/eloop_ltos.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/wifi_service/wpa/osdep/osdep_osal.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/wifi_service/wpa/driver_soc/driver_soc.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/wifi_service/wpa/driver_soc/driver_soc_ioctl.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/ap/ieee802_11_shared.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/sha256-kdf.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/utils/crc32.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/sha384-prf.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/sha384-kdf.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/sha512-kdf.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/crypto/sha512-prf.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/wpa_supplicant/notify.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/wpa_supplicant/src/eap_peer/eap_methods.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/services/wifi_service/wpa/scan_list_adapt/scan_list_adapt.c
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_bt.h
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_pf.h
-hso_temp/wpa_supplicant.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_wpa_supplicant"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/wpa_supplicant_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/wpa_supplicant.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/wpa_supplicant.txt
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/bss.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/config.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/ctrl_iface.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/eap_register.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/events.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/scan.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/wpa_supplicant.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/wpas_glue.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/ap.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/services/wifi_service/hostapd/liteos_hostapd_src/hostapd_main_rtos.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/services/wifi_service/hostapd/liteos_hostapd_src/hostapd_ctrl_iface_rtos.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/liteos_wpa_src/crypto_mbedtls.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/liteos_wpa_src/ctrl_iface_rtos.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/liteos_wpa_src/eloop_rtos.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/liteos_wpa_src/l2_packet_rtos.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/liteos_wpa_src/main_rtos.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/liteos_wpa_src/os_rtos.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/liteos_wpa_src/wpa_cli_rtos.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/services/wifi_service/wpa/liteos_wpa_api/wifi_api.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/services/wifi_service/wpa/liteos_wpa_api/wifi_softap_api.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/common/ieee802_11_common.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/common/wpa_common.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/common/hw_features_common.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/aes-internal.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/aes-unwrap.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/aes-wrap.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/aes-omac1.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/crypto_internal-modexp.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/dh_groups.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/md5.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/random.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/rc4.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/sha1-prf.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/sha256-prf.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/drivers/drivers.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/drivers/driver_common.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/eapol_supp/eapol_supp_sm.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/eap_peer/eap.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/eap_peer/eap_methods.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/eap_common/eap_common.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/eapol_auth/eapol_auth_sm.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/eap_server/eap_server.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/eap_server/eap_server_identity.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/eap_server/eap_server_methods.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/rsn_supp/wpa.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/rsn_supp/wpa_ie.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/utils/base64.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/utils/common.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/utils/uuid.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/utils/wpa_debug.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/utils/wpabuf.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/tls/bignum.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/hostapd.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/bss_load.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/wpa_auth_glue.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/utils.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/ap_config.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/sta_info.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/ap_mlme.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/drv_callbacks.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/ap_drv_ops.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/ieee802_11_ht.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/ieee802_11.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/hw_features.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/wpa_auth.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/wpa_auth_ie.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/ieee802_1x.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/ieee802_11_he.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/eap_user_db.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/beacon.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/acs.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/pmksa_cache_auth.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/sme.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/common/sae.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/common/dragonfly.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/rsn_supp/pmksa_cache.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/services/wifi_service/wpa/ltos_src/eloop_ltos.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/services/wifi_service/wpa/osdep/osdep_osal.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/services/wifi_service/wpa/driver_soc/driver_soc.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/services/wifi_service/wpa/driver_soc/driver_soc_ioctl.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/ap/ieee802_11_shared.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/sha256-kdf.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/utils/crc32.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/sha384-prf.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/sha384-kdf.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/sha512-kdf.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/crypto/sha512-prf.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/wpa_supplicant/notify.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/open_source/wpa_supplicant/src/eap_peer/eap_methods.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/services/wifi_service/wpa/scan_list_adapt/scan_list_adapt.c
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_bt.h
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_pf.h
+hso_temp/wpa_supplicant.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_wpa_supplicant"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/wpa_supplicant_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/wpa_supplicant.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/wpa_supplicant.txt
 
 HSO_DB_wpa_supplicant: CMakeFiles/HSO_DB_wpa_supplicant
 HSO_DB_wpa_supplicant: hso_temp/wpa_supplicant.txt
@@ -180,6 +180,6 @@ CMakeFiles/HSO_DB_wpa_supplicant.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_wpa_supplicant.dir/clean
 
 CMakeFiles/HSO_DB_wpa_supplicant.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_wpa_supplicant.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_wpa_supplicant.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_wpa_supplicant.dir/depend
 

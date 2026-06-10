@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Include any dependencies generated for this target.
 include hal/pinmux/CMakeFiles/hal_pinctrl.dir/depend.make
@@ -70,32 +70,32 @@ include hal/pinmux/CMakeFiles/hal_pinctrl.dir/progress.make
 include hal/pinmux/CMakeFiles/hal_pinctrl.dir/flags.make
 
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj: hal/pinmux/CMakeFiles/hal_pinctrl.dir/flags.make
-hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c
+hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj: hal/pinmux/CMakeFiles/hal_pinctrl.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj -MF CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj.d -o CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj -MF CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj.d -o CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c
 
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c > CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c > CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.i
 
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c -o CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/common/hal_pinctrl.c -o CMakeFiles/hal_pinctrl.dir/common/hal_pinctrl.c.s
 
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj: hal/pinmux/CMakeFiles/hal_pinctrl.dir/flags.make
-hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c
+hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj: hal/pinmux/CMakeFiles/hal_pinctrl.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_WS63_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj -MF CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj.d -o CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_WS63_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj -MF CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj.d -o CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c
 
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_WS63_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c > CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_WS63_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c > CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.i
 
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_WS63_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c -o CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PINCTRL_WS63_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux/ws63/hal_pinctrl_ws63.c -o CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.s
 
 # Object files for target hal_pinctrl
 hal_pinctrl_OBJECTS = \
@@ -109,19 +109,19 @@ hal/pinmux/libhal_pinctrl.a: hal/pinmux/CMakeFiles/hal_pinctrl.dir/common/hal_pi
 hal/pinmux/libhal_pinctrl.a: hal/pinmux/CMakeFiles/hal_pinctrl.dir/ws63/hal_pinctrl_ws63.c.obj
 hal/pinmux/libhal_pinctrl.a: hal/pinmux/CMakeFiles/hal_pinctrl.dir/build.make
 hal/pinmux/libhal_pinctrl.a: hal/pinmux/CMakeFiles/hal_pinctrl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libhal_pinctrl.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && $(CMAKE_COMMAND) -P CMakeFiles/hal_pinctrl.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_pinctrl.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libhal_pinctrl.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && $(CMAKE_COMMAND) -P CMakeFiles/hal_pinctrl.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_pinctrl.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/build: hal/pinmux/libhal_pinctrl.a
 .PHONY : hal/pinmux/CMakeFiles/hal_pinctrl.dir/build
 
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && $(CMAKE_COMMAND) -P CMakeFiles/hal_pinctrl.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux && $(CMAKE_COMMAND) -P CMakeFiles/hal_pinctrl.dir/cmake_clean.cmake
 .PHONY : hal/pinmux/CMakeFiles/hal_pinctrl.dir/clean
 
 hal/pinmux/CMakeFiles/hal_pinctrl.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pinmux /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hal/pinmux/CMakeFiles/hal_pinctrl.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/drivers/hal/pinmux /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hal/pinmux/CMakeFiles/hal_pinctrl.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : hal/pinmux/CMakeFiles/hal_pinctrl.dir/depend
 

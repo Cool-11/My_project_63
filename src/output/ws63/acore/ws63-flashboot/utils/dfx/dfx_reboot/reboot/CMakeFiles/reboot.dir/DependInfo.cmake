@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/dfx_reboot/reboot/shared/non_os_reboot.c" "utils/dfx/dfx_reboot/reboot/CMakeFiles/reboot.dir/shared/non_os_reboot.c.obj" "gcc" "utils/dfx/dfx_reboot/reboot/CMakeFiles/reboot.dir/shared/non_os_reboot.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/dfx/dfx_reboot/reboot/shared/non_os_reboot.c" "utils/dfx/dfx_reboot/reboot/CMakeFiles/reboot.dir/shared/non_os_reboot.c.obj" "gcc" "utils/dfx/dfx_reboot/reboot/CMakeFiles/reboot.dir/shared/non_os_reboot.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

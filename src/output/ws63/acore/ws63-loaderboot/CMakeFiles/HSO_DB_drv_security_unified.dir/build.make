@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Utility rule file for HSO_DB_drv_security_unified.
 
@@ -68,21 +68,21 @@ include CMakeFiles/HSO_DB_drv_security_unified.dir/progress.make
 
 CMakeFiles/HSO_DB_drv_security_unified: hso_temp/drv_security_unified.txt
 
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/romable/hash_romable.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_flashboot_cipher.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_flashboot_symc.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/crypto_drv_common.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_km/drv_keyslot.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_km/drv_klad.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_fapc/drv_fapc.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/init/cfbb/crypto_curve_param.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/sm2/drv_pke_sm2_verify.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecdsa.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_pke_weak_func.c
-hso_temp/drv_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/security_unified/drv_rom_cipher.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_drv_security_unified"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/drv_security_unified_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/drv_security_unified.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/drv_security_unified.txt
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/romable/hash_romable.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_flashboot_cipher.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_flashboot_symc.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_code/crypto_drv_common.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_km/drv_keyslot.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_km/drv_klad.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_fapc/drv_fapc.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/init/cfbb/crypto_curve_param.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/sm2/drv_pke_sm2_verify.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_cipher/drv_pke_v5/drv_pke_ecdsa.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_pke_weak_func.c
+hso_temp/drv_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/driver/security_unified/drv_rom_cipher.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_drv_security_unified"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/drv_security_unified_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/drv_security_unified.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/drv_security_unified.txt
 
 HSO_DB_drv_security_unified: CMakeFiles/HSO_DB_drv_security_unified
 HSO_DB_drv_security_unified: hso_temp/drv_security_unified.txt
@@ -98,6 +98,6 @@ CMakeFiles/HSO_DB_drv_security_unified.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_drv_security_unified.dir/clean
 
 CMakeFiles/HSO_DB_drv_security_unified.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_drv_security_unified.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_drv_security_unified.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_drv_security_unified.dir/depend
 

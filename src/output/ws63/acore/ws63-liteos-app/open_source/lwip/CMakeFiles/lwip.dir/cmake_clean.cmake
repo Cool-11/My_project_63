@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/liblwip.a"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/liblwip.pdb"
+  "/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/liblwip.a"
+  "/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/liblwip.pdb"
   "CMakeFiles/lwip.dir/lwip_v2.1.3/src/api/err.c.obj"
   "CMakeFiles/lwip.dir/lwip_v2.1.3/src/api/err.c.obj.d"
   "CMakeFiles/lwip.dir/lwip_v2.1.3/src/api/ethtool.c.obj"

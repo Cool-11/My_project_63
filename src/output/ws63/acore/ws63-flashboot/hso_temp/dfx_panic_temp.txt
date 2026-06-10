@@ -1,1 +1,1 @@
-####/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/panic/private/panic.c,/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/panic/private/panic_rom.c
+####/home/cool/fbb_ws63/src/middleware/utils/dfx/panic/private/panic.c,/home/cool/fbb_ws63/src/middleware/utils/dfx/panic/private/panic_rom.c

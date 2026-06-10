@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Utility rule file for HSO_DB_osal.
 
@@ -68,17 +68,17 @@ include CMakeFiles/HSO_DB_osal.dir/progress.make
 
 CMakeFiles/HSO_DB_osal: hso_temp/osal.txt
 
-hso_temp/osal.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_atomic.c
-hso_temp/osal.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_debug.c
-hso_temp/osal.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_interrupt.c
-hso_temp/osal.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_mutex.c
-hso_temp/osal.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_semaphore.c
-hso_temp/osal.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_spinlock.c
-hso_temp/osal.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_wait.c
-hso_temp/osal.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/src/nonos/osal_task.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_osal"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/osal_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/osal.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/osal.txt
+hso_temp/osal.txt: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_atomic.c
+hso_temp/osal.txt: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_debug.c
+hso_temp/osal.txt: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_interrupt.c
+hso_temp/osal.txt: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_mutex.c
+hso_temp/osal.txt: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_semaphore.c
+hso_temp/osal.txt: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_spinlock.c
+hso_temp/osal.txt: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_wait.c
+hso_temp/osal.txt: /home/cool/fbb_ws63/src/kernel/osal/src/nonos/osal_task.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_osal"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/osal_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/osal.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/osal.txt
 
 HSO_DB_osal: CMakeFiles/HSO_DB_osal
 HSO_DB_osal: hso_temp/osal.txt
@@ -94,6 +94,6 @@ CMakeFiles/HSO_DB_osal.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_osal.dir/clean
 
 CMakeFiles/HSO_DB_osal.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_osal.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_osal.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_osal.dir/depend
 

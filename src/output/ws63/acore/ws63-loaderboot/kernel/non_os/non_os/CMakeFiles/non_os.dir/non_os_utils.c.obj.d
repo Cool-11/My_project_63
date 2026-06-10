@@ -1,24 +1,24 @@
 kernel/non_os/non_os/CMakeFiles/non_os.dir/non_os_utils.c.obj: \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/non_os/non_os/non_os_utils.c \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/mconfig.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/memory_config/include/product/product.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/memory_config/include/product/product_fpga_standard.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/non_os/non_os/non_os.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/core.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_definition.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_definitions.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/chip_core_irq.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/std_def.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stddef.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/bits/alltypes.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdbool.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/include/stdint.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/platform_types.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/include/platform_core_rom.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_definitions.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/boards/ws63/evb/linker/loaderboot_linker/memory_config.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/panic/public/panic.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/chip_io.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/arch/riscv/riscv_common/arch_barrier.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/arch/riscv/riscv31/arch_encoding.h
+ /home/cool/fbb_ws63/src/kernel/non_os/non_os/non_os_utils.c \
+ /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/mconfig.h \
+ /home/cool/fbb_ws63/src/drivers/boards/ws63/evb/memory_config/include/product/product.h \
+ /home/cool/fbb_ws63/src/drivers/boards/ws63/evb/memory_config/include/product/product_fpga_standard.h \
+ /home/cool/fbb_ws63/src/kernel/non_os/non_os/non_os.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/include/core.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/include/chip_core_definition.h \
+ /home/cool/fbb_ws63/src/middleware/utils/common_headers/chip_definitions.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/include/chip_core_irq.h \
+ /home/cool/fbb_ws63/src/middleware/utils/common_headers/std_def.h \
+ /home/cool/fbb_ws63/src/bootloader/commonboot/libc/include/stddef.h \
+ /home/cool/fbb_ws63/src/bootloader/commonboot/libc/include/bits/alltypes.h \
+ /home/cool/fbb_ws63/src/bootloader/commonboot/libc/include/stdbool.h \
+ /home/cool/fbb_ws63/src/bootloader/commonboot/libc/include/stdint.h \
+ /home/cool/fbb_ws63/src/middleware/utils/common_headers/platform_types.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/include/platform_core.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/include/platform_core_rom.h \
+ /home/cool/fbb_ws63/src/middleware/utils/common_headers/chip_definitions.h \
+ /home/cool/fbb_ws63/src/drivers/boards/ws63/evb/linker/loaderboot_linker/memory_config.h \
+ /home/cool/fbb_ws63/src/middleware/utils/dfx/panic/public/panic.h \
+ /home/cool/fbb_ws63/src/middleware/utils/common_headers/chip_io.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/arch/riscv/riscv_common/arch_barrier.h \
+ /home/cool/fbb_ws63/src/drivers/chips/ws63/arch/riscv/riscv31/arch_encoding.h

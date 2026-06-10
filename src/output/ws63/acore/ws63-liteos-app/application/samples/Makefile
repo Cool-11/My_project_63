@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/samples//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/samples//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 application/samples/CMakeFiles/samples.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/CMakeFiles/samples.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/samples/CMakeFiles/samples.dir/rule
 .PHONY : application/samples/CMakeFiles/samples.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ samples: application/samples/CMakeFiles/samples.dir/rule
 
 # fast build rule for target.
 samples/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/build
 .PHONY : samples/fast
 
 peripheral/My_project_63/app/main.obj: peripheral/My_project_63/app/main.c.obj
@@ -135,7 +135,7 @@ peripheral/My_project_63/app/main.obj: peripheral/My_project_63/app/main.c.obj
 
 # target to build an object file
 peripheral/My_project_63/app/main.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/app/main.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/app/main.c.obj
 .PHONY : peripheral/My_project_63/app/main.c.obj
 
 peripheral/My_project_63/app/main.i: peripheral/My_project_63/app/main.c.i
@@ -143,7 +143,7 @@ peripheral/My_project_63/app/main.i: peripheral/My_project_63/app/main.c.i
 
 # target to preprocess a source file
 peripheral/My_project_63/app/main.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/app/main.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/app/main.c.i
 .PHONY : peripheral/My_project_63/app/main.c.i
 
 peripheral/My_project_63/app/main.s: peripheral/My_project_63/app/main.c.s
@@ -151,7 +151,7 @@ peripheral/My_project_63/app/main.s: peripheral/My_project_63/app/main.c.s
 
 # target to generate assembly for a file
 peripheral/My_project_63/app/main.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/app/main.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/app/main.c.s
 .PHONY : peripheral/My_project_63/app/main.c.s
 
 peripheral/My_project_63/components/business_logic/biz_core.obj: peripheral/My_project_63/components/business_logic/biz_core.c.obj
@@ -159,7 +159,7 @@ peripheral/My_project_63/components/business_logic/biz_core.obj: peripheral/My_p
 
 # target to build an object file
 peripheral/My_project_63/components/business_logic/biz_core.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_core.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_core.c.obj
 .PHONY : peripheral/My_project_63/components/business_logic/biz_core.c.obj
 
 peripheral/My_project_63/components/business_logic/biz_core.i: peripheral/My_project_63/components/business_logic/biz_core.c.i
@@ -167,7 +167,7 @@ peripheral/My_project_63/components/business_logic/biz_core.i: peripheral/My_pro
 
 # target to preprocess a source file
 peripheral/My_project_63/components/business_logic/biz_core.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_core.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_core.c.i
 .PHONY : peripheral/My_project_63/components/business_logic/biz_core.c.i
 
 peripheral/My_project_63/components/business_logic/biz_core.s: peripheral/My_project_63/components/business_logic/biz_core.c.s
@@ -175,7 +175,7 @@ peripheral/My_project_63/components/business_logic/biz_core.s: peripheral/My_pro
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/business_logic/biz_core.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_core.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_core.c.s
 .PHONY : peripheral/My_project_63/components/business_logic/biz_core.c.s
 
 peripheral/My_project_63/components/business_logic/biz_esp32_cmd.obj: peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.obj
@@ -183,7 +183,7 @@ peripheral/My_project_63/components/business_logic/biz_esp32_cmd.obj: peripheral
 
 # target to build an object file
 peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.obj
 .PHONY : peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.obj
 
 peripheral/My_project_63/components/business_logic/biz_esp32_cmd.i: peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.i
@@ -191,7 +191,7 @@ peripheral/My_project_63/components/business_logic/biz_esp32_cmd.i: peripheral/M
 
 # target to preprocess a source file
 peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.i
 .PHONY : peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.i
 
 peripheral/My_project_63/components/business_logic/biz_esp32_cmd.s: peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.s
@@ -199,7 +199,7 @@ peripheral/My_project_63/components/business_logic/biz_esp32_cmd.s: peripheral/M
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.s
 .PHONY : peripheral/My_project_63/components/business_logic/biz_esp32_cmd.c.s
 
 peripheral/My_project_63/components/business_logic/biz_esp32_resp.obj: peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.obj
@@ -207,7 +207,7 @@ peripheral/My_project_63/components/business_logic/biz_esp32_resp.obj: periphera
 
 # target to build an object file
 peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.obj
 .PHONY : peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.obj
 
 peripheral/My_project_63/components/business_logic/biz_esp32_resp.i: peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.i
@@ -215,7 +215,7 @@ peripheral/My_project_63/components/business_logic/biz_esp32_resp.i: peripheral/
 
 # target to preprocess a source file
 peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.i
 .PHONY : peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.i
 
 peripheral/My_project_63/components/business_logic/biz_esp32_resp.s: peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.s
@@ -223,7 +223,7 @@ peripheral/My_project_63/components/business_logic/biz_esp32_resp.s: peripheral/
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.s
 .PHONY : peripheral/My_project_63/components/business_logic/biz_esp32_resp.c.s
 
 peripheral/My_project_63/components/business_logic/biz_screen_cmd.obj: peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.obj
@@ -231,7 +231,7 @@ peripheral/My_project_63/components/business_logic/biz_screen_cmd.obj: periphera
 
 # target to build an object file
 peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.obj
 .PHONY : peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.obj
 
 peripheral/My_project_63/components/business_logic/biz_screen_cmd.i: peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.i
@@ -239,7 +239,7 @@ peripheral/My_project_63/components/business_logic/biz_screen_cmd.i: peripheral/
 
 # target to preprocess a source file
 peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.i
 .PHONY : peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.i
 
 peripheral/My_project_63/components/business_logic/biz_screen_cmd.s: peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.s
@@ -247,7 +247,7 @@ peripheral/My_project_63/components/business_logic/biz_screen_cmd.s: peripheral/
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.s
 .PHONY : peripheral/My_project_63/components/business_logic/biz_screen_cmd.c.s
 
 peripheral/My_project_63/components/business_logic/biz_sle.obj: peripheral/My_project_63/components/business_logic/biz_sle.c.obj
@@ -255,7 +255,7 @@ peripheral/My_project_63/components/business_logic/biz_sle.obj: peripheral/My_pr
 
 # target to build an object file
 peripheral/My_project_63/components/business_logic/biz_sle.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_sle.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_sle.c.obj
 .PHONY : peripheral/My_project_63/components/business_logic/biz_sle.c.obj
 
 peripheral/My_project_63/components/business_logic/biz_sle.i: peripheral/My_project_63/components/business_logic/biz_sle.c.i
@@ -263,7 +263,7 @@ peripheral/My_project_63/components/business_logic/biz_sle.i: peripheral/My_proj
 
 # target to preprocess a source file
 peripheral/My_project_63/components/business_logic/biz_sle.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_sle.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_sle.c.i
 .PHONY : peripheral/My_project_63/components/business_logic/biz_sle.c.i
 
 peripheral/My_project_63/components/business_logic/biz_sle.s: peripheral/My_project_63/components/business_logic/biz_sle.c.s
@@ -271,7 +271,7 @@ peripheral/My_project_63/components/business_logic/biz_sle.s: peripheral/My_proj
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/business_logic/biz_sle.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_sle.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_sle.c.s
 .PHONY : peripheral/My_project_63/components/business_logic/biz_sle.c.s
 
 peripheral/My_project_63/components/business_logic/biz_tag_map.obj: peripheral/My_project_63/components/business_logic/biz_tag_map.c.obj
@@ -279,7 +279,7 @@ peripheral/My_project_63/components/business_logic/biz_tag_map.obj: peripheral/M
 
 # target to build an object file
 peripheral/My_project_63/components/business_logic/biz_tag_map.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_tag_map.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_tag_map.c.obj
 .PHONY : peripheral/My_project_63/components/business_logic/biz_tag_map.c.obj
 
 peripheral/My_project_63/components/business_logic/biz_tag_map.i: peripheral/My_project_63/components/business_logic/biz_tag_map.c.i
@@ -287,7 +287,7 @@ peripheral/My_project_63/components/business_logic/biz_tag_map.i: peripheral/My_
 
 # target to preprocess a source file
 peripheral/My_project_63/components/business_logic/biz_tag_map.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_tag_map.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_tag_map.c.i
 .PHONY : peripheral/My_project_63/components/business_logic/biz_tag_map.c.i
 
 peripheral/My_project_63/components/business_logic/biz_tag_map.s: peripheral/My_project_63/components/business_logic/biz_tag_map.c.s
@@ -295,7 +295,7 @@ peripheral/My_project_63/components/business_logic/biz_tag_map.s: peripheral/My_
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/business_logic/biz_tag_map.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_tag_map.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_tag_map.c.s
 .PHONY : peripheral/My_project_63/components/business_logic/biz_tag_map.c.s
 
 peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.obj: peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.obj
@@ -303,7 +303,7 @@ peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.obj: peripheral
 
 # target to build an object file
 peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.obj
 .PHONY : peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.obj
 
 peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.i: peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.i
@@ -311,7 +311,7 @@ peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.i: peripheral/M
 
 # target to preprocess a source file
 peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.i
 .PHONY : peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.i
 
 peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.s: peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.s
@@ -319,7 +319,7 @@ peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.s: peripheral/M
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.s
 .PHONY : peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c.s
 
 peripheral/My_project_63/components/cloud_storage/cloud_storage.obj: peripheral/My_project_63/components/cloud_storage/cloud_storage.c.obj
@@ -327,7 +327,7 @@ peripheral/My_project_63/components/cloud_storage/cloud_storage.obj: peripheral/
 
 # target to build an object file
 peripheral/My_project_63/components/cloud_storage/cloud_storage.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/cloud_storage/cloud_storage.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/cloud_storage/cloud_storage.c.obj
 .PHONY : peripheral/My_project_63/components/cloud_storage/cloud_storage.c.obj
 
 peripheral/My_project_63/components/cloud_storage/cloud_storage.i: peripheral/My_project_63/components/cloud_storage/cloud_storage.c.i
@@ -335,7 +335,7 @@ peripheral/My_project_63/components/cloud_storage/cloud_storage.i: peripheral/My
 
 # target to preprocess a source file
 peripheral/My_project_63/components/cloud_storage/cloud_storage.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/cloud_storage/cloud_storage.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/cloud_storage/cloud_storage.c.i
 .PHONY : peripheral/My_project_63/components/cloud_storage/cloud_storage.c.i
 
 peripheral/My_project_63/components/cloud_storage/cloud_storage.s: peripheral/My_project_63/components/cloud_storage/cloud_storage.c.s
@@ -343,7 +343,7 @@ peripheral/My_project_63/components/cloud_storage/cloud_storage.s: peripheral/My
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/cloud_storage/cloud_storage.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/cloud_storage/cloud_storage.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/cloud_storage/cloud_storage.c.s
 .PHONY : peripheral/My_project_63/components/cloud_storage/cloud_storage.c.s
 
 peripheral/My_project_63/components/shared_protocol/shared_protocol.obj: peripheral/My_project_63/components/shared_protocol/shared_protocol.c.obj
@@ -351,7 +351,7 @@ peripheral/My_project_63/components/shared_protocol/shared_protocol.obj: periphe
 
 # target to build an object file
 peripheral/My_project_63/components/shared_protocol/shared_protocol.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/shared_protocol/shared_protocol.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/shared_protocol/shared_protocol.c.obj
 .PHONY : peripheral/My_project_63/components/shared_protocol/shared_protocol.c.obj
 
 peripheral/My_project_63/components/shared_protocol/shared_protocol.i: peripheral/My_project_63/components/shared_protocol/shared_protocol.c.i
@@ -359,7 +359,7 @@ peripheral/My_project_63/components/shared_protocol/shared_protocol.i: periphera
 
 # target to preprocess a source file
 peripheral/My_project_63/components/shared_protocol/shared_protocol.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/shared_protocol/shared_protocol.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/shared_protocol/shared_protocol.c.i
 .PHONY : peripheral/My_project_63/components/shared_protocol/shared_protocol.c.i
 
 peripheral/My_project_63/components/shared_protocol/shared_protocol.s: peripheral/My_project_63/components/shared_protocol/shared_protocol.c.s
@@ -367,7 +367,7 @@ peripheral/My_project_63/components/shared_protocol/shared_protocol.s: periphera
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/shared_protocol/shared_protocol.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/shared_protocol/shared_protocol.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/shared_protocol/shared_protocol.c.s
 .PHONY : peripheral/My_project_63/components/shared_protocol/shared_protocol.c.s
 
 peripheral/My_project_63/components/sle_network/sle_network.obj: peripheral/My_project_63/components/sle_network/sle_network.c.obj
@@ -375,7 +375,7 @@ peripheral/My_project_63/components/sle_network/sle_network.obj: peripheral/My_p
 
 # target to build an object file
 peripheral/My_project_63/components/sle_network/sle_network.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/sle_network/sle_network.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/sle_network/sle_network.c.obj
 .PHONY : peripheral/My_project_63/components/sle_network/sle_network.c.obj
 
 peripheral/My_project_63/components/sle_network/sle_network.i: peripheral/My_project_63/components/sle_network/sle_network.c.i
@@ -383,7 +383,7 @@ peripheral/My_project_63/components/sle_network/sle_network.i: peripheral/My_pro
 
 # target to preprocess a source file
 peripheral/My_project_63/components/sle_network/sle_network.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/sle_network/sle_network.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/sle_network/sle_network.c.i
 .PHONY : peripheral/My_project_63/components/sle_network/sle_network.c.i
 
 peripheral/My_project_63/components/sle_network/sle_network.s: peripheral/My_project_63/components/sle_network/sle_network.c.s
@@ -391,7 +391,7 @@ peripheral/My_project_63/components/sle_network/sle_network.s: peripheral/My_pro
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/sle_network/sle_network.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/sle_network/sle_network.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/sle_network/sle_network.c.s
 .PHONY : peripheral/My_project_63/components/sle_network/sle_network.c.s
 
 peripheral/My_project_63/components/uart_display/uart_display.obj: peripheral/My_project_63/components/uart_display/uart_display.c.obj
@@ -399,7 +399,7 @@ peripheral/My_project_63/components/uart_display/uart_display.obj: peripheral/My
 
 # target to build an object file
 peripheral/My_project_63/components/uart_display/uart_display.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_display/uart_display.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_display/uart_display.c.obj
 .PHONY : peripheral/My_project_63/components/uart_display/uart_display.c.obj
 
 peripheral/My_project_63/components/uart_display/uart_display.i: peripheral/My_project_63/components/uart_display/uart_display.c.i
@@ -407,7 +407,7 @@ peripheral/My_project_63/components/uart_display/uart_display.i: peripheral/My_p
 
 # target to preprocess a source file
 peripheral/My_project_63/components/uart_display/uart_display.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_display/uart_display.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_display/uart_display.c.i
 .PHONY : peripheral/My_project_63/components/uart_display/uart_display.c.i
 
 peripheral/My_project_63/components/uart_display/uart_display.s: peripheral/My_project_63/components/uart_display/uart_display.c.s
@@ -415,7 +415,7 @@ peripheral/My_project_63/components/uart_display/uart_display.s: peripheral/My_p
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/uart_display/uart_display.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_display/uart_display.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_display/uart_display.c.s
 .PHONY : peripheral/My_project_63/components/uart_display/uart_display.c.s
 
 peripheral/My_project_63/components/uart_vision/uart_vision.obj: peripheral/My_project_63/components/uart_vision/uart_vision.c.obj
@@ -423,7 +423,7 @@ peripheral/My_project_63/components/uart_vision/uart_vision.obj: peripheral/My_p
 
 # target to build an object file
 peripheral/My_project_63/components/uart_vision/uart_vision.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_vision/uart_vision.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_vision/uart_vision.c.obj
 .PHONY : peripheral/My_project_63/components/uart_vision/uart_vision.c.obj
 
 peripheral/My_project_63/components/uart_vision/uart_vision.i: peripheral/My_project_63/components/uart_vision/uart_vision.c.i
@@ -431,7 +431,7 @@ peripheral/My_project_63/components/uart_vision/uart_vision.i: peripheral/My_pro
 
 # target to preprocess a source file
 peripheral/My_project_63/components/uart_vision/uart_vision.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_vision/uart_vision.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_vision/uart_vision.c.i
 .PHONY : peripheral/My_project_63/components/uart_vision/uart_vision.c.i
 
 peripheral/My_project_63/components/uart_vision/uart_vision.s: peripheral/My_project_63/components/uart_vision/uart_vision.c.s
@@ -439,7 +439,7 @@ peripheral/My_project_63/components/uart_vision/uart_vision.s: peripheral/My_pro
 
 # target to generate assembly for a file
 peripheral/My_project_63/components/uart_vision/uart_vision.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_vision/uart_vision.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f application/samples/CMakeFiles/samples.dir/build.make application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/uart_vision/uart_vision.c.s
 .PHONY : peripheral/My_project_63/components/uart_vision/uart_vision.c.s
 
 # Help Target
@@ -501,6 +501,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot
 
 # Include any dependencies generated for this target.
 include driver/pinmux/CMakeFiles/pinctrl.dir/depend.make
@@ -70,18 +70,18 @@ include driver/pinmux/CMakeFiles/pinctrl.dir/progress.make
 include driver/pinmux/CMakeFiles/pinctrl.dir/flags.make
 
 driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.obj: driver/pinmux/CMakeFiles/pinctrl.dir/flags.make
-driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/pinmux/pinctrl.c
+driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/driver/pinmux/pinctrl.c
 driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.obj: driver/pinmux/CMakeFiles/pinctrl.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/driver/pinmux && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.obj -MF CMakeFiles/pinctrl.dir/pinctrl.c.obj.d -o CMakeFiles/pinctrl.dir/pinctrl.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/pinmux/pinctrl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/driver/pinmux && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.obj -MF CMakeFiles/pinctrl.dir/pinctrl.c.obj.d -o CMakeFiles/pinctrl.dir/pinctrl.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/driver/pinmux/pinctrl.c
 
 driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/pinctrl.dir/pinctrl.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/driver/pinmux && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/pinmux/pinctrl.c > CMakeFiles/pinctrl.dir/pinctrl.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/driver/pinmux && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/driver/pinmux/pinctrl.c > CMakeFiles/pinctrl.dir/pinctrl.c.i
 
 driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/pinctrl.dir/pinctrl.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/driver/pinmux && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/pinmux/pinctrl.c -o CMakeFiles/pinctrl.dir/pinctrl.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/driver/pinmux && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=PINCTRL_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/driver/pinmux/pinctrl.c -o CMakeFiles/pinctrl.dir/pinctrl.c.s
 
 # Object files for target pinctrl
 pinctrl_OBJECTS = \
@@ -93,19 +93,19 @@ pinctrl_EXTERNAL_OBJECTS =
 driver/pinmux/libpinctrl.a: driver/pinmux/CMakeFiles/pinctrl.dir/pinctrl.c.obj
 driver/pinmux/libpinctrl.a: driver/pinmux/CMakeFiles/pinctrl.dir/build.make
 driver/pinmux/libpinctrl.a: driver/pinmux/CMakeFiles/pinctrl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libpinctrl.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/driver/pinmux && $(CMAKE_COMMAND) -P CMakeFiles/pinctrl.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/driver/pinmux && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pinctrl.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libpinctrl.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/driver/pinmux && $(CMAKE_COMMAND) -P CMakeFiles/pinctrl.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/driver/pinmux && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pinctrl.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 driver/pinmux/CMakeFiles/pinctrl.dir/build: driver/pinmux/libpinctrl.a
 .PHONY : driver/pinmux/CMakeFiles/pinctrl.dir/build
 
 driver/pinmux/CMakeFiles/pinctrl.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/driver/pinmux && $(CMAKE_COMMAND) -P CMakeFiles/pinctrl.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/driver/pinmux && $(CMAKE_COMMAND) -P CMakeFiles/pinctrl.dir/cmake_clean.cmake
 .PHONY : driver/pinmux/CMakeFiles/pinctrl.dir/clean
 
 driver/pinmux/CMakeFiles/pinctrl.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/pinmux /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/driver/pinmux /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/driver/pinmux/CMakeFiles/pinctrl.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/drivers/driver/pinmux /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/driver/pinmux /home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/driver/pinmux/CMakeFiles/pinctrl.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : driver/pinmux/CMakeFiles/pinctrl.dir/depend
 

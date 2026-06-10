@@ -1,4 +1,4 @@
-# Install script for directory: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils
+# Install script for directory: /home/cool/fbb_ws63/src/middleware/utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,66 +34,66 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-objdump")
+  set(CMAKE_OBJDUMP "/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/algorithm/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/algorithm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/app_init/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/app_init/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/at/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/at/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/common_headers/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/common_headers/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/dfx/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/dfx/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/error_code/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/error_code/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/hcc/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/hcc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/syschannel/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/syschannel/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/nv/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/nv/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/partition/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/partition/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/update/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/update/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-flashboot/utils/mips/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-flashboot/utils/mips/cmake_install.cmake")
 endif()
 

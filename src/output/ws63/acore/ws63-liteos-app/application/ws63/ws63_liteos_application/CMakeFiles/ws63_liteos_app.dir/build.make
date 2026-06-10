@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/depend.make
@@ -70,45 +70,45 @@ include application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/
 include application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/flags.make
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.obj: application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/flags.make
-application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/main.c
+application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.obj: /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/main.c
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.obj: application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.obj -MF CMakeFiles/ws63_liteos_app.dir/main.c.obj.d -o CMakeFiles/ws63_liteos_app.dir/main.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.obj -MF CMakeFiles/ws63_liteos_app.dir/main.c.obj.d -o CMakeFiles/ws63_liteos_app.dir/main.c.obj -c /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/main.c
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ws63_liteos_app.dir/main.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/main.c > CMakeFiles/ws63_liteos_app.dir/main.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/main.c > CMakeFiles/ws63_liteos_app.dir/main.c.i
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ws63_liteos_app.dir/main.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/main.c -o CMakeFiles/ws63_liteos_app.dir/main.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=MAIN_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/main.c -o CMakeFiles/ws63_liteos_app.dir/main.c.s
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/reset_vector.S.obj: application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/flags.make
-application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/reset_vector.S.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/reset_vector.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building ASM object application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/reset_vector.S.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RESET_VECTOR_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/ws63_liteos_app.dir/reset_vector.S.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/reset_vector.S
+application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/reset_vector.S.obj: /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/reset_vector.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building ASM object application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/reset_vector.S.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RESET_VECTOR_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/ws63_liteos_app.dir/reset_vector.S.obj -c /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/reset_vector.S
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/reset_vector.S.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing ASM source to CMakeFiles/ws63_liteos_app.dir/reset_vector.S.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RESET_VECTOR_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/reset_vector.S > CMakeFiles/ws63_liteos_app.dir/reset_vector.S.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RESET_VECTOR_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -E /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/reset_vector.S > CMakeFiles/ws63_liteos_app.dir/reset_vector.S.i
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/reset_vector.S.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling ASM source to assembly CMakeFiles/ws63_liteos_app.dir/reset_vector.S.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RESET_VECTOR_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/reset_vector.S -o CMakeFiles/ws63_liteos_app.dir/reset_vector.S.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(ASM_DEFINES) -DTHIS_FILE_ID=RESET_VECTOR_S -DTHIS_MOD_ID=LOG_PFMODULE $(ASM_INCLUDES) $(ASM_FLAGS) -S /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/reset_vector.S -o CMakeFiles/ws63_liteos_app.dir/reset_vector.S.s
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj: application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/flags.make
-application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/clock_init.c
+application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj: /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/clock_init.c
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj: application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=CLOCK_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj -MF CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj.d -o CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/clock_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=CLOCK_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj -MF CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj.d -o CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj -c /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/clock_init.c
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ws63_liteos_app.dir/clock_init.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=CLOCK_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/clock_init.c > CMakeFiles/ws63_liteos_app.dir/clock_init.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=CLOCK_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/clock_init.c > CMakeFiles/ws63_liteos_app.dir/clock_init.c.i
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ws63_liteos_app.dir/clock_init.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=CLOCK_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application/clock_init.c -o CMakeFiles/ws63_liteos_app.dir/clock_init.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=CLOCK_INIT_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application/clock_init.c -o CMakeFiles/ws63_liteos_app.dir/clock_init.c.s
 
 # Object files for target ws63_liteos_app
 ws63_liteos_app_OBJECTS = \
@@ -124,19 +124,19 @@ application/ws63/ws63_liteos_application/libws63_liteos_app.a: application/ws63/
 application/ws63/ws63_liteos_application/libws63_liteos_app.a: application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clock_init.c.obj
 application/ws63/ws63_liteos_application/libws63_liteos_app.a: application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/build.make
 application/ws63/ws63_liteos_application/libws63_liteos_app.a: application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libws63_liteos_app.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && $(CMAKE_COMMAND) -P CMakeFiles/ws63_liteos_app.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ws63_liteos_app.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libws63_liteos_app.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && $(CMAKE_COMMAND) -P CMakeFiles/ws63_liteos_app.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ws63_liteos_app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/build: application/ws63/ws63_liteos_application/libws63_liteos_app.a
 .PHONY : application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/build
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && $(CMAKE_COMMAND) -P CMakeFiles/ws63_liteos_app.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application && $(CMAKE_COMMAND) -P CMakeFiles/ws63_liteos_app.dir/cmake_clean.cmake
 .PHONY : application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/clean
 
 application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/ws63/ws63_liteos_application /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/application/ws63/ws63_liteos_application /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : application/ws63/ws63_liteos_application/CMakeFiles/ws63_liteos_app.dir/depend
 

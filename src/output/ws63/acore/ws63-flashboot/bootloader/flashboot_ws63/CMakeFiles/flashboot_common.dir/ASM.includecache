@@ -6,5 +6,5 @@
 
 #IncludeRegexTransform: 
 
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/flashboot_ws63/startup/riscv_init.S
+/home/cool/fbb_ws63/src/bootloader/flashboot_ws63/startup/riscv_init.S
 

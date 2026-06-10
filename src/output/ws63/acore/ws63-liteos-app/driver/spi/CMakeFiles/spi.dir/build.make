@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include driver/spi/CMakeFiles/spi.dir/depend.make
@@ -70,18 +70,18 @@ include driver/spi/CMakeFiles/spi.dir/progress.make
 include driver/spi/CMakeFiles/spi.dir/flags.make
 
 driver/spi/CMakeFiles/spi.dir/spi.c.obj: driver/spi/CMakeFiles/spi.dir/flags.make
-driver/spi/CMakeFiles/spi.dir/spi.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/spi/spi.c
+driver/spi/CMakeFiles/spi.dir/spi.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/driver/spi/spi.c
 driver/spi/CMakeFiles/spi.dir/spi.c.obj: driver/spi/CMakeFiles/spi.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object driver/spi/CMakeFiles/spi.dir/spi.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/driver/spi && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SPI_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT driver/spi/CMakeFiles/spi.dir/spi.c.obj -MF CMakeFiles/spi.dir/spi.c.obj.d -o CMakeFiles/spi.dir/spi.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/spi/spi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object driver/spi/CMakeFiles/spi.dir/spi.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/driver/spi && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SPI_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT driver/spi/CMakeFiles/spi.dir/spi.c.obj -MF CMakeFiles/spi.dir/spi.c.obj.d -o CMakeFiles/spi.dir/spi.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/driver/spi/spi.c
 
 driver/spi/CMakeFiles/spi.dir/spi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/spi.dir/spi.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/driver/spi && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SPI_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/spi/spi.c > CMakeFiles/spi.dir/spi.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/driver/spi && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SPI_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/driver/spi/spi.c > CMakeFiles/spi.dir/spi.c.i
 
 driver/spi/CMakeFiles/spi.dir/spi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/spi.dir/spi.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/driver/spi && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SPI_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/spi/spi.c -o CMakeFiles/spi.dir/spi.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/driver/spi && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=SPI_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/driver/spi/spi.c -o CMakeFiles/spi.dir/spi.c.s
 
 # Object files for target spi
 spi_OBJECTS = \
@@ -93,19 +93,19 @@ spi_EXTERNAL_OBJECTS =
 driver/spi/libspi.a: driver/spi/CMakeFiles/spi.dir/spi.c.obj
 driver/spi/libspi.a: driver/spi/CMakeFiles/spi.dir/build.make
 driver/spi/libspi.a: driver/spi/CMakeFiles/spi.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libspi.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/driver/spi && $(CMAKE_COMMAND) -P CMakeFiles/spi.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/driver/spi && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/spi.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libspi.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/driver/spi && $(CMAKE_COMMAND) -P CMakeFiles/spi.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/driver/spi && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/spi.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 driver/spi/CMakeFiles/spi.dir/build: driver/spi/libspi.a
 .PHONY : driver/spi/CMakeFiles/spi.dir/build
 
 driver/spi/CMakeFiles/spi.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/driver/spi && $(CMAKE_COMMAND) -P CMakeFiles/spi.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/driver/spi && $(CMAKE_COMMAND) -P CMakeFiles/spi.dir/cmake_clean.cmake
 .PHONY : driver/spi/CMakeFiles/spi.dir/clean
 
 driver/spi/CMakeFiles/spi.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver/spi /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/driver/spi /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/driver/spi/CMakeFiles/spi.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/drivers/driver/spi /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/driver/spi /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/driver/spi/CMakeFiles/spi.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : driver/spi/CMakeFiles/spi.dir/depend
 

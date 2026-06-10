@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Utility rule file for HSO_DB_common_boot_libc.
 
@@ -68,15 +68,15 @@ include CMakeFiles/HSO_DB_common_boot_libc.dir/progress.make
 
 CMakeFiles/HSO_DB_common_boot_libc: hso_temp/common_boot_libc.txt
 
-hso_temp/common_boot_libc.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/src/string/memset.c
-hso_temp/common_boot_libc.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/src/string/memcpy.c
-hso_temp/common_boot_libc.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/src/string/memcmp.c
-hso_temp/common_boot_libc.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/src/string/strcmp.c
-hso_temp/common_boot_libc.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/src/string/strlen.c
-hso_temp/common_boot_libc.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/bootloader/commonboot/libc/src/string/memmove.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_common_boot_libc"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/common_boot_libc_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/common_boot_libc.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/hso_temp/common_boot_libc.txt
+hso_temp/common_boot_libc.txt: /home/cool/fbb_ws63/src/bootloader/commonboot/libc/src/string/memset.c
+hso_temp/common_boot_libc.txt: /home/cool/fbb_ws63/src/bootloader/commonboot/libc/src/string/memcpy.c
+hso_temp/common_boot_libc.txt: /home/cool/fbb_ws63/src/bootloader/commonboot/libc/src/string/memcmp.c
+hso_temp/common_boot_libc.txt: /home/cool/fbb_ws63/src/bootloader/commonboot/libc/src/string/strcmp.c
+hso_temp/common_boot_libc.txt: /home/cool/fbb_ws63/src/bootloader/commonboot/libc/src/string/strlen.c
+hso_temp/common_boot_libc.txt: /home/cool/fbb_ws63/src/bootloader/commonboot/libc/src/string/memmove.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_common_boot_libc"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/common_boot_libc_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/common_boot_libc.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/hso_temp/common_boot_libc.txt
 
 HSO_DB_common_boot_libc: CMakeFiles/HSO_DB_common_boot_libc
 HSO_DB_common_boot_libc: hso_temp/common_boot_libc.txt
@@ -92,6 +92,6 @@ CMakeFiles/HSO_DB_common_boot_libc.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_common_boot_libc.dir/clean
 
 CMakeFiles/HSO_DB_common_boot_libc.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_common_boot_libc.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles/HSO_DB_common_boot_libc.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_common_boot_libc.dir/depend
 

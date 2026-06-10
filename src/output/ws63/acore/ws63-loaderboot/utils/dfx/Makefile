@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/utils/dfx//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/utils/dfx//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 utils/dfx/CMakeFiles/dfx_panic.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/CMakeFiles/dfx_panic.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/CMakeFiles/dfx_panic.dir/rule
 .PHONY : utils/dfx/CMakeFiles/dfx_panic.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ dfx_panic: utils/dfx/CMakeFiles/dfx_panic.dir/rule
 
 # fast build rule for target.
 dfx_panic/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/build
 .PHONY : dfx_panic/fast
 
 # Convenience name for target.
 utils/dfx/CMakeFiles/dfx_preserve.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/CMakeFiles/dfx_preserve.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/dfx/CMakeFiles/dfx_preserve.dir/rule
 .PHONY : utils/dfx/CMakeFiles/dfx_preserve.dir/rule
 
 # Convenience name for target.
@@ -141,7 +141,7 @@ dfx_preserve: utils/dfx/CMakeFiles/dfx_preserve.dir/rule
 
 # fast build rule for target.
 dfx_preserve/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/build
 .PHONY : dfx_preserve/fast
 
 panic/private/panic.obj: panic/private/panic.c.obj
@@ -149,7 +149,7 @@ panic/private/panic.obj: panic/private/panic.c.obj
 
 # target to build an object file
 panic/private/panic.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic.c.obj
 .PHONY : panic/private/panic.c.obj
 
 panic/private/panic.i: panic/private/panic.c.i
@@ -157,7 +157,7 @@ panic/private/panic.i: panic/private/panic.c.i
 
 # target to preprocess a source file
 panic/private/panic.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic.c.i
 .PHONY : panic/private/panic.c.i
 
 panic/private/panic.s: panic/private/panic.c.s
@@ -165,7 +165,7 @@ panic/private/panic.s: panic/private/panic.c.s
 
 # target to generate assembly for a file
 panic/private/panic.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic.c.s
 .PHONY : panic/private/panic.c.s
 
 panic/private/panic_rom.obj: panic/private/panic_rom.c.obj
@@ -173,7 +173,7 @@ panic/private/panic_rom.obj: panic/private/panic_rom.c.obj
 
 # target to build an object file
 panic/private/panic_rom.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic_rom.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic_rom.c.obj
 .PHONY : panic/private/panic_rom.c.obj
 
 panic/private/panic_rom.i: panic/private/panic_rom.c.i
@@ -181,7 +181,7 @@ panic/private/panic_rom.i: panic/private/panic_rom.c.i
 
 # target to preprocess a source file
 panic/private/panic_rom.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic_rom.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic_rom.c.i
 .PHONY : panic/private/panic_rom.c.i
 
 panic/private/panic_rom.s: panic/private/panic_rom.c.s
@@ -189,7 +189,7 @@ panic/private/panic_rom.s: panic/private/panic_rom.c.s
 
 # target to generate assembly for a file
 panic/private/panic_rom.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic_rom.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_panic.dir/build.make utils/dfx/CMakeFiles/dfx_panic.dir/panic/private/panic_rom.c.s
 .PHONY : panic/private/panic_rom.c.s
 
 preserve/private/crash_data.obj: preserve/private/crash_data.c.obj
@@ -197,7 +197,7 @@ preserve/private/crash_data.obj: preserve/private/crash_data.c.obj
 
 # target to build an object file
 preserve/private/crash_data.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.obj
 .PHONY : preserve/private/crash_data.c.obj
 
 preserve/private/crash_data.i: preserve/private/crash_data.c.i
@@ -205,7 +205,7 @@ preserve/private/crash_data.i: preserve/private/crash_data.c.i
 
 # target to preprocess a source file
 preserve/private/crash_data.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.i
 .PHONY : preserve/private/crash_data.c.i
 
 preserve/private/crash_data.s: preserve/private/crash_data.c.s
@@ -213,7 +213,7 @@ preserve/private/crash_data.s: preserve/private/crash_data.c.s
 
 # target to generate assembly for a file
 preserve/private/crash_data.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/crash_data.c.s
 .PHONY : preserve/private/crash_data.c.s
 
 preserve/private/preserve.obj: preserve/private/preserve.c.obj
@@ -221,7 +221,7 @@ preserve/private/preserve.obj: preserve/private/preserve.c.obj
 
 # target to build an object file
 preserve/private/preserve.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.obj
 .PHONY : preserve/private/preserve.c.obj
 
 preserve/private/preserve.i: preserve/private/preserve.c.i
@@ -229,7 +229,7 @@ preserve/private/preserve.i: preserve/private/preserve.c.i
 
 # target to preprocess a source file
 preserve/private/preserve.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.i
 .PHONY : preserve/private/preserve.c.i
 
 preserve/private/preserve.s: preserve/private/preserve.c.s
@@ -237,7 +237,7 @@ preserve/private/preserve.s: preserve/private/preserve.c.s
 
 # target to generate assembly for a file
 preserve/private/preserve.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(MAKE) $(MAKESILENT) -f utils/dfx/CMakeFiles/dfx_preserve.dir/build.make utils/dfx/CMakeFiles/dfx_preserve.dir/preserve/private/preserve.c.s
 .PHONY : preserve/private/preserve.c.s
 
 # Help Target
@@ -273,6 +273,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

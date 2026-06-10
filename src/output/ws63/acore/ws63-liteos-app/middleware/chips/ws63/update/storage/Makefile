@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/update/storage//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/update/storage//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/rule
 .PHONY : middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ update_storage_ws63: middleware/chips/ws63/update/storage/CMakeFiles/update_stor
 
 # fast build rule for target.
 update_storage_ws63/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build.make middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build.make middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build
 .PHONY : update_storage_ws63/fast
 
 upg_backup.obj: upg_backup.c.obj
@@ -135,7 +135,7 @@ upg_backup.obj: upg_backup.c.obj
 
 # target to build an object file
 upg_backup.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build.make middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/upg_backup.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build.make middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/upg_backup.c.obj
 .PHONY : upg_backup.c.obj
 
 upg_backup.i: upg_backup.c.i
@@ -143,7 +143,7 @@ upg_backup.i: upg_backup.c.i
 
 # target to preprocess a source file
 upg_backup.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build.make middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/upg_backup.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build.make middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/upg_backup.c.i
 .PHONY : upg_backup.c.i
 
 upg_backup.s: upg_backup.c.s
@@ -151,7 +151,7 @@ upg_backup.s: upg_backup.c.s
 
 # target to generate assembly for a file
 upg_backup.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build.make middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/upg_backup.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/build.make middleware/chips/ws63/update/storage/CMakeFiles/update_storage_ws63.dir/upg_backup.c.s
 .PHONY : upg_backup.c.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

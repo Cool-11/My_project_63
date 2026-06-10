@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/log_file/log_file.c" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file.c.obj" "gcc" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/log_file/log_file_file.c" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file_file.c.obj" "gcc" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file_file.c.obj.d"
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/log_file/log_file_flash.c" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file_flash.c.obj" "gcc" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file_flash.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/dfx/log_file/log_file.c" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file.c.obj" "gcc" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/dfx/log_file/log_file_file.c" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file_file.c.obj" "gcc" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file_file.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/utils/dfx/log_file/log_file_flash.c" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file_flash.c.obj" "gcc" "utils/dfx/CMakeFiles/log_file.dir/log_file/log_file_flash.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

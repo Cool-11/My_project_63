@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/update/ab_upg/upg_ab.c" "middleware/chips/ws63/update/ab_upg/CMakeFiles/update_ab_ws63.dir/upg_ab.c.obj" "gcc" "middleware/chips/ws63/update/ab_upg/CMakeFiles/update_ab_ws63.dir/upg_ab.c.obj.d"
+  "/home/cool/fbb_ws63/src/middleware/chips/ws63/update/ab_upg/upg_ab.c" "middleware/chips/ws63/update/ab_upg/CMakeFiles/update_ab_ws63.dir/upg_ab.c.obj" "gcc" "middleware/chips/ws63/update/ab_upg/CMakeFiles/update_ab_ws63.dir/upg_ab.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

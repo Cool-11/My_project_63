@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include hal/pwm/CMakeFiles/hal_pwm.dir/depend.make
@@ -70,46 +70,46 @@ include hal/pwm/CMakeFiles/hal_pwm.dir/progress.make
 include hal/pwm/CMakeFiles/hal_pwm.dir/flags.make
 
 hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.obj: hal/pwm/CMakeFiles/hal_pwm.dir/flags.make
-hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/hal_pwm.c
+hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/hal_pwm.c
 hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.obj: hal/pwm/CMakeFiles/hal_pwm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.obj -MF CMakeFiles/hal_pwm.dir/hal_pwm.c.obj.d -o CMakeFiles/hal_pwm.dir/hal_pwm.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/hal_pwm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.obj -MF CMakeFiles/hal_pwm.dir/hal_pwm.c.obj.d -o CMakeFiles/hal_pwm.dir/hal_pwm.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/hal_pwm.c
 
 hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_pwm.dir/hal_pwm.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/hal_pwm.c > CMakeFiles/hal_pwm.dir/hal_pwm.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/hal_pwm.c > CMakeFiles/hal_pwm.dir/hal_pwm.c.i
 
 hal/pwm/CMakeFiles/hal_pwm.dir/hal_pwm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_pwm.dir/hal_pwm.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/hal_pwm.c -o CMakeFiles/hal_pwm.dir/hal_pwm.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/hal_pwm.c -o CMakeFiles/hal_pwm.dir/hal_pwm.c.s
 
 hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj: hal/pwm/CMakeFiles/hal_pwm.dir/flags.make
-hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151.c
+hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151.c
 hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj: hal/pwm/CMakeFiles/hal_pwm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj -MF CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj.d -o CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj -MF CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj.d -o CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151.c
 
 hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151.c > CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151.c > CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.i
 
 hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151.c -o CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151.c -o CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.s
 
 hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj: hal/pwm/CMakeFiles/hal_pwm.dir/flags.make
-hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151_regs_op.c
+hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj: /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151_regs_op.c
 hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj: hal/pwm/CMakeFiles/hal_pwm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj -MF CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj.d -o CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151_regs_op.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj -MF CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj.d -o CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj -c /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151_regs_op.c
 
 hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151_regs_op.c > CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151_regs_op.c > CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.i
 
 hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151_regs_op.c -o CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=HAL_PWM_V151_REGS_OP_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm/v151/hal_pwm_v151_regs_op.c -o CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.s
 
 # Object files for target hal_pwm
 hal_pwm_OBJECTS = \
@@ -125,19 +125,19 @@ hal/pwm/libhal_pwm.a: hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151.c.obj
 hal/pwm/libhal_pwm.a: hal/pwm/CMakeFiles/hal_pwm.dir/v151/hal_pwm_v151_regs_op.c.obj
 hal/pwm/libhal_pwm.a: hal/pwm/CMakeFiles/hal_pwm.dir/build.make
 hal/pwm/libhal_pwm.a: hal/pwm/CMakeFiles/hal_pwm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libhal_pwm.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && $(CMAKE_COMMAND) -P CMakeFiles/hal_pwm.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_pwm.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libhal_pwm.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && $(CMAKE_COMMAND) -P CMakeFiles/hal_pwm.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hal_pwm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 hal/pwm/CMakeFiles/hal_pwm.dir/build: hal/pwm/libhal_pwm.a
 .PHONY : hal/pwm/CMakeFiles/hal_pwm.dir/build
 
 hal/pwm/CMakeFiles/hal_pwm.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm && $(CMAKE_COMMAND) -P CMakeFiles/hal_pwm.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm && $(CMAKE_COMMAND) -P CMakeFiles/hal_pwm.dir/cmake_clean.cmake
 .PHONY : hal/pwm/CMakeFiles/hal_pwm.dir/clean
 
 hal/pwm/CMakeFiles/hal_pwm.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/pwm /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hal/pwm/CMakeFiles/hal_pwm.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/drivers/hal/pwm /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hal/pwm/CMakeFiles/hal_pwm.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : hal/pwm/CMakeFiles/hal_pwm.dir/depend
 

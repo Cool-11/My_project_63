@@ -1,4 +1,4 @@
-# Install script for directory: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/bt/controller/chba
+# Install script for directory: /home/cool/fbb_ws63/src/protocol/bt/controller/chba
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-objdump")
+  set(CMAKE_OBJDUMP "/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-objdump")
 endif()
 

@@ -1,1 +1,1 @@
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-ar rcD libupdate_ab_ws63.a CMakeFiles/update_ab_ws63.dir/upg_ab.c.obj
+/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-ar rcD libupdate_ab_ws63.a CMakeFiles/update_ab_ws63.dir/upg_ab.c.obj

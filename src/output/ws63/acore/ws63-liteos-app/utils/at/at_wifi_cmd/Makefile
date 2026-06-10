@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/at/at_wifi_cmd//CMakeFiles/progress.marks
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/at/at_wifi_cmd//CMakeFiles/progress.marks
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/clean
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/preinstall
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/rule:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/rule
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/rule
 .PHONY : utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ wifi_at: utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/rule
 
 # fast build rule for target.
 wifi_at/fast:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build
 .PHONY : wifi_at/fast
 
 at/at_ccpriv.obj: at/at_ccpriv.c.obj
@@ -135,7 +135,7 @@ at/at_ccpriv.obj: at/at_ccpriv.c.obj
 
 # target to build an object file
 at/at_ccpriv.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_ccpriv.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_ccpriv.c.obj
 .PHONY : at/at_ccpriv.c.obj
 
 at/at_ccpriv.i: at/at_ccpriv.c.i
@@ -143,7 +143,7 @@ at/at_ccpriv.i: at/at_ccpriv.c.i
 
 # target to preprocess a source file
 at/at_ccpriv.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_ccpriv.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_ccpriv.c.i
 .PHONY : at/at_ccpriv.c.i
 
 at/at_ccpriv.s: at/at_ccpriv.c.s
@@ -151,7 +151,7 @@ at/at_ccpriv.s: at/at_ccpriv.c.s
 
 # target to generate assembly for a file
 at/at_ccpriv.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_ccpriv.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_ccpriv.c.s
 .PHONY : at/at_ccpriv.c.s
 
 at/at_mfg.obj: at/at_mfg.c.obj
@@ -159,7 +159,7 @@ at/at_mfg.obj: at/at_mfg.c.obj
 
 # target to build an object file
 at/at_mfg.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_mfg.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_mfg.c.obj
 .PHONY : at/at_mfg.c.obj
 
 at/at_mfg.i: at/at_mfg.c.i
@@ -167,7 +167,7 @@ at/at_mfg.i: at/at_mfg.c.i
 
 # target to preprocess a source file
 at/at_mfg.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_mfg.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_mfg.c.i
 .PHONY : at/at_mfg.c.i
 
 at/at_mfg.s: at/at_mfg.c.s
@@ -175,7 +175,7 @@ at/at_mfg.s: at/at_mfg.c.s
 
 # target to generate assembly for a file
 at/at_mfg.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_mfg.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_mfg.c.s
 .PHONY : at/at_mfg.c.s
 
 at/at_register.obj: at/at_register.c.obj
@@ -183,7 +183,7 @@ at/at_register.obj: at/at_register.c.obj
 
 # target to build an object file
 at/at_register.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_register.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_register.c.obj
 .PHONY : at/at_register.c.obj
 
 at/at_register.i: at/at_register.c.i
@@ -191,7 +191,7 @@ at/at_register.i: at/at_register.c.i
 
 # target to preprocess a source file
 at/at_register.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_register.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_register.c.i
 .PHONY : at/at_register.c.i
 
 at/at_register.s: at/at_register.c.s
@@ -199,7 +199,7 @@ at/at_register.s: at/at_register.c.s
 
 # target to generate assembly for a file
 at/at_register.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_register.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_register.c.s
 .PHONY : at/at_register.c.s
 
 at/at_sendtest.obj: at/at_sendtest.c.obj
@@ -207,7 +207,7 @@ at/at_sendtest.obj: at/at_sendtest.c.obj
 
 # target to build an object file
 at/at_sendtest.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_sendtest.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_sendtest.c.obj
 .PHONY : at/at_sendtest.c.obj
 
 at/at_sendtest.i: at/at_sendtest.c.i
@@ -215,7 +215,7 @@ at/at_sendtest.i: at/at_sendtest.c.i
 
 # target to preprocess a source file
 at/at_sendtest.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_sendtest.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_sendtest.c.i
 .PHONY : at/at_sendtest.c.i
 
 at/at_sendtest.s: at/at_sendtest.c.s
@@ -223,7 +223,7 @@ at/at_sendtest.s: at/at_sendtest.c.s
 
 # target to generate assembly for a file
 at/at_sendtest.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_sendtest.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_sendtest.c.s
 .PHONY : at/at_sendtest.c.s
 
 at/at_utils.obj: at/at_utils.c.obj
@@ -231,7 +231,7 @@ at/at_utils.obj: at/at_utils.c.obj
 
 # target to build an object file
 at/at_utils.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_utils.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_utils.c.obj
 .PHONY : at/at_utils.c.obj
 
 at/at_utils.i: at/at_utils.c.i
@@ -239,7 +239,7 @@ at/at_utils.i: at/at_utils.c.i
 
 # target to preprocess a source file
 at/at_utils.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_utils.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_utils.c.i
 .PHONY : at/at_utils.c.i
 
 at/at_utils.s: at/at_utils.c.s
@@ -247,7 +247,7 @@ at/at_utils.s: at/at_utils.c.s
 
 # target to generate assembly for a file
 at/at_utils.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_utils.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_utils.c.s
 .PHONY : at/at_utils.c.s
 
 at/at_wifi.obj: at/at_wifi.c.obj
@@ -255,7 +255,7 @@ at/at_wifi.obj: at/at_wifi.c.obj
 
 # target to build an object file
 at/at_wifi.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_wifi.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_wifi.c.obj
 .PHONY : at/at_wifi.c.obj
 
 at/at_wifi.i: at/at_wifi.c.i
@@ -263,7 +263,7 @@ at/at_wifi.i: at/at_wifi.c.i
 
 # target to preprocess a source file
 at/at_wifi.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_wifi.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_wifi.c.i
 .PHONY : at/at_wifi.c.i
 
 at/at_wifi.s: at/at_wifi.c.s
@@ -271,7 +271,7 @@ at/at_wifi.s: at/at_wifi.c.s
 
 # target to generate assembly for a file
 at/at_wifi.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_wifi.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/at/at_wifi.c.s
 .PHONY : at/at_wifi.c.s
 
 src/at_cmd_register.obj: src/at_cmd_register.c.obj
@@ -279,7 +279,7 @@ src/at_cmd_register.obj: src/at_cmd_register.c.obj
 
 # target to build an object file
 src/at_cmd_register.c.obj:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/src/at_cmd_register.c.obj
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/src/at_cmd_register.c.obj
 .PHONY : src/at_cmd_register.c.obj
 
 src/at_cmd_register.i: src/at_cmd_register.c.i
@@ -287,7 +287,7 @@ src/at_cmd_register.i: src/at_cmd_register.c.i
 
 # target to preprocess a source file
 src/at_cmd_register.c.i:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/src/at_cmd_register.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/src/at_cmd_register.c.i
 .PHONY : src/at_cmd_register.c.i
 
 src/at_cmd_register.s: src/at_cmd_register.c.s
@@ -295,7 +295,7 @@ src/at_cmd_register.s: src/at_cmd_register.c.s
 
 # target to generate assembly for a file
 src/at_cmd_register.c.s:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/src/at_cmd_register.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(MAKE) $(MAKESILENT) -f utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/build.make utils/at/at_wifi_cmd/CMakeFiles/wifi_at.dir/src/at_cmd_register.c.s
 .PHONY : src/at_cmd_register.c.s
 
 # Help Target
@@ -339,6 +339,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

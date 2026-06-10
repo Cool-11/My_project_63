@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/depend.make
@@ -70,18 +70,18 @@ include protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/progress.make
 include protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/flags.make
 
 protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj: protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/flags.make
-protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi/source/host/feature/hmac_auto_adjust_freq.c
+protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj: /home/cool/fbb_ws63/src/protocol/wifi/source/host/feature/hmac_auto_adjust_freq.c
 protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj: protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj -MF CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj.d -o CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi/source/host/feature/hmac_auto_adjust_freq.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj -MF CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj.d -o CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj -c /home/cool/fbb_ws63/src/protocol/wifi/source/host/feature/hmac_auto_adjust_freq.c
 
 protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi/source/host/feature/hmac_auto_adjust_freq.c > CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/protocol/wifi/source/host/feature/hmac_auto_adjust_freq.c > CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.i
 
 protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi/source/host/feature/hmac_auto_adjust_freq.c -o CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/protocol/wifi/source/host/feature/hmac_auto_adjust_freq.c -o CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.s
 
 # Object files for target wifi_auto_adjust_freq
 wifi_auto_adjust_freq_OBJECTS = \
@@ -90,22 +90,22 @@ wifi_auto_adjust_freq_OBJECTS = \
 # External object files for target wifi_auto_adjust_freq
 wifi_auto_adjust_freq_EXTERNAL_OBJECTS =
 
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a: protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a: protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a: protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -P CMakeFiles/wifi_auto_adjust_freq.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wifi_auto_adjust_freq.dir/link.txt --verbose=$(VERBOSE)
+/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a: protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/source/host/feature/hmac_auto_adjust_freq.c.obj
+/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a: protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build.make
+/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a: protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library /home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -P CMakeFiles/wifi_auto_adjust_freq.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wifi_auto_adjust_freq.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a
+protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build: /home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_auto_adjust_freq.a
 .PHONY : protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/build
 
 protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -P CMakeFiles/wifi_auto_adjust_freq.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -P CMakeFiles/wifi_auto_adjust_freq.dir/cmake_clean.cmake
 .PHONY : protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/clean
 
 protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/protocol/wifi /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : protocol/wifi/CMakeFiles/wifi_auto_adjust_freq.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/depend.make
@@ -70,18 +70,18 @@ include protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/progress.make
 include protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/flags.make
 
 protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj: protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/flags.make
-protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi/source/host/feature/hmac_radar_sensor.c
+protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj: /home/cool/fbb_ws63/src/protocol/wifi/source/host/feature/hmac_radar_sensor.c
 protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj: protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj -MF CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj.d -o CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi/source/host/feature/hmac_radar_sensor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj -MF CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj.d -o CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj -c /home/cool/fbb_ws63/src/protocol/wifi/source/host/feature/hmac_radar_sensor.c
 
 protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi/source/host/feature/hmac_radar_sensor.c > CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/protocol/wifi/source/host/feature/hmac_radar_sensor.c > CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.i
 
 protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi/source/host/feature/hmac_radar_sensor.c -o CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_MOD_ID=LOG_WIFIMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/protocol/wifi/source/host/feature/hmac_radar_sensor.c -o CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.s
 
 # Object files for target wifi_radar_sensor
 wifi_radar_sensor_OBJECTS = \
@@ -90,22 +90,22 @@ wifi_radar_sensor_OBJECTS = \
 # External object files for target wifi_radar_sensor
 wifi_radar_sensor_EXTERNAL_OBJECTS =
 
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a: protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a: protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make
-/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a: protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -P CMakeFiles/wifi_radar_sensor.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wifi_radar_sensor.dir/link.txt --verbose=$(VERBOSE)
+/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a: protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/source/host/feature/hmac_radar_sensor.c.obj
+/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a: protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build.make
+/home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a: protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library /home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -P CMakeFiles/wifi_radar_sensor.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wifi_radar_sensor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a
+protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build: /home/cool/fbb_ws63/src/interim_binary/ws63/libs/wifi/ws63-liteos-app/libwifi_radar_sensor.a
 .PHONY : protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/build
 
 protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -P CMakeFiles/wifi_radar_sensor.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi && $(CMAKE_COMMAND) -P CMakeFiles/wifi_radar_sensor.dir/cmake_clean.cmake
 .PHONY : protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/clean
 
 protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/protocol/wifi /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/protocol/wifi /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : protocol/wifi/CMakeFiles/wifi_radar_sensor.dir/depend
 

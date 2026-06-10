@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/depend.make
@@ -70,18 +70,18 @@ include middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/progress.
 include middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/flags.make
 
 middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj: middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/flags.make
-middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/nv/nv_zdiag/nv_adapt_zdiag.c
+middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj: /home/cool/fbb_ws63/src/middleware/chips/ws63/nv/nv_zdiag/nv_adapt_zdiag.c
 middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj: middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=NV_ADAPT_ZDIAG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj -MF CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj.d -o CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/nv/nv_zdiag/nv_adapt_zdiag.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=NV_ADAPT_ZDIAG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj -MF CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj.d -o CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj -c /home/cool/fbb_ws63/src/middleware/chips/ws63/nv/nv_zdiag/nv_adapt_zdiag.c
 
 middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=NV_ADAPT_ZDIAG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/nv/nv_zdiag/nv_adapt_zdiag.c > CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=NV_ADAPT_ZDIAG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/middleware/chips/ws63/nv/nv_zdiag/nv_adapt_zdiag.c > CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.i
 
 middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=NV_ADAPT_ZDIAG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/nv/nv_zdiag/nv_adapt_zdiag.c -o CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=NV_ADAPT_ZDIAG_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/middleware/chips/ws63/nv/nv_zdiag/nv_adapt_zdiag.c -o CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.s
 
 # Object files for target nv_zdiag_ws63
 nv_zdiag_ws63_OBJECTS = \
@@ -93,19 +93,19 @@ nv_zdiag_ws63_EXTERNAL_OBJECTS =
 middleware/chips/ws63/nv/nv_zdiag/libnv_zdiag_ws63.a: middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/nv_adapt_zdiag.c.obj
 middleware/chips/ws63/nv/nv_zdiag/libnv_zdiag_ws63.a: middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/build.make
 middleware/chips/ws63/nv/nv_zdiag/libnv_zdiag_ws63.a: middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libnv_zdiag_ws63.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && $(CMAKE_COMMAND) -P CMakeFiles/nv_zdiag_ws63.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nv_zdiag_ws63.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libnv_zdiag_ws63.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && $(CMAKE_COMMAND) -P CMakeFiles/nv_zdiag_ws63.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nv_zdiag_ws63.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/build: middleware/chips/ws63/nv/nv_zdiag/libnv_zdiag_ws63.a
 .PHONY : middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/build
 
 middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && $(CMAKE_COMMAND) -P CMakeFiles/nv_zdiag_ws63.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag && $(CMAKE_COMMAND) -P CMakeFiles/nv_zdiag_ws63.dir/cmake_clean.cmake
 .PHONY : middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/clean
 
 middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/nv/nv_zdiag /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/middleware/chips/ws63/nv/nv_zdiag /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : middleware/chips/ws63/nv/nv_zdiag/CMakeFiles/nv_zdiag_ws63.dir/depend
 

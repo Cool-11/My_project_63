@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Include any dependencies generated for this target.
 include utils/dfx/CMakeFiles/dfx_log_reader.dir/depend.make
@@ -70,18 +70,18 @@ include utils/dfx/CMakeFiles/dfx_log_reader.dir/progress.make
 include utils/dfx/CMakeFiles/dfx_log_reader.dir/flags.make
 
 utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj: utils/dfx/CMakeFiles/dfx_log_reader.dir/flags.make
-utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/log_reader/log_uart.c
+utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj: /home/cool/fbb_ws63/src/middleware/utils/dfx/log_reader/log_uart.c
 utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj: utils/dfx/CMakeFiles/dfx_log_reader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=LOG_UART_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj -MF CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj.d -o CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/log_reader/log_uart.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=LOG_UART_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj -MF CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj.d -o CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj -c /home/cool/fbb_ws63/src/middleware/utils/dfx/log_reader/log_uart.c
 
 utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=LOG_UART_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/log_reader/log_uart.c > CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=LOG_UART_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/middleware/utils/dfx/log_reader/log_uart.c > CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.i
 
 utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=LOG_UART_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx/log_reader/log_uart.c -o CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=LOG_UART_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/middleware/utils/dfx/log_reader/log_uart.c -o CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.s
 
 # Object files for target dfx_log_reader
 dfx_log_reader_OBJECTS = \
@@ -93,19 +93,19 @@ dfx_log_reader_EXTERNAL_OBJECTS =
 utils/dfx/libdfx_log_reader.a: utils/dfx/CMakeFiles/dfx_log_reader.dir/log_reader/log_uart.c.obj
 utils/dfx/libdfx_log_reader.a: utils/dfx/CMakeFiles/dfx_log_reader.dir/build.make
 utils/dfx/libdfx_log_reader.a: utils/dfx/CMakeFiles/dfx_log_reader.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libdfx_log_reader.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx && $(CMAKE_COMMAND) -P CMakeFiles/dfx_log_reader.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dfx_log_reader.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libdfx_log_reader.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx && $(CMAKE_COMMAND) -P CMakeFiles/dfx_log_reader.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dfx_log_reader.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 utils/dfx/CMakeFiles/dfx_log_reader.dir/build: utils/dfx/libdfx_log_reader.a
 .PHONY : utils/dfx/CMakeFiles/dfx_log_reader.dir/build
 
 utils/dfx/CMakeFiles/dfx_log_reader.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx && $(CMAKE_COMMAND) -P CMakeFiles/dfx_log_reader.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx && $(CMAKE_COMMAND) -P CMakeFiles/dfx_log_reader.dir/cmake_clean.cmake
 .PHONY : utils/dfx/CMakeFiles/dfx_log_reader.dir/clean
 
 utils/dfx/CMakeFiles/dfx_log_reader.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/dfx /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/utils/dfx/CMakeFiles/dfx_log_reader.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/middleware/utils/dfx /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/utils/dfx/CMakeFiles/dfx_log_reader.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : utils/dfx/CMakeFiles/dfx_log_reader.dir/depend
 

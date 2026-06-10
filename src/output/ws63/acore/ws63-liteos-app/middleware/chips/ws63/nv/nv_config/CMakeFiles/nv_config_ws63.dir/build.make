@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for nv_config_ws63.
 
@@ -69,9 +69,9 @@ include middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63.dir/progres
 middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63: middleware/chips/ws63/nv/nv_config/NV_SRC
 
 middleware/chips/ws63/nv/nv_config/NV_SRC:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating NV_SRC"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/nv/nv_config && /usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/nv/generate_utils.py NV include /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/acore.c
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/nv/nv_config && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc -o /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/acore.etypes -I/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/nv/nv_config/include -I/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/utils/common_headers/native -DCONFIG_NV_SUPPORT_SINGLE_CORE_SYSTEM -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/acore.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating NV_SRC"
+	cd /home/cool/fbb_ws63/src/middleware/chips/ws63/nv/nv_config && /usr/bin/python3 /home/cool/fbb_ws63/src/build/script/nv/generate_utils.py NV include /home/cool/fbb_ws63/src/output/ws63/acore/acore.c
+	cd /home/cool/fbb_ws63/src/middleware/chips/ws63/nv/nv_config && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl_fp/bin/riscv32-linux-musl-gcc -o /home/cool/fbb_ws63/src/output/ws63/acore/acore.etypes -I/home/cool/fbb_ws63/src/middleware/chips/ws63/nv/nv_config/include -I/home/cool/fbb_ws63/src/middleware/utils/common_headers/native -DCONFIG_NV_SUPPORT_SINGLE_CORE_SYSTEM -E /home/cool/fbb_ws63/src/output/ws63/acore/acore.c
 
 nv_config_ws63: middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63
 nv_config_ws63: middleware/chips/ws63/nv/nv_config/NV_SRC
@@ -83,10 +83,10 @@ middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63.dir/build: nv_confi
 .PHONY : middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63.dir/build
 
 middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_config && $(CMAKE_COMMAND) -P CMakeFiles/nv_config_ws63.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_config && $(CMAKE_COMMAND) -P CMakeFiles/nv_config_ws63.dir/cmake_clean.cmake
 .PHONY : middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63.dir/clean
 
 middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/nv/nv_config /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_config /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/middleware/chips/ws63/nv/nv_config /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_config /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : middleware/chips/ws63/nv/nv_config/CMakeFiles/nv_config_ws63.dir/depend
 

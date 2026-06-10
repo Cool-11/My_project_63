@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot
 
 # Include any dependencies generated for this target.
 include drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/depend.make
@@ -70,18 +70,18 @@ include drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/progress.make
 include drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/flags.make
 
 drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.obj: drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/flags.make
-drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.obj: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/uart/uart_porting.c
+drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.obj: /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/uart/uart_porting.c
 drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.obj: drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.obj"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=UART_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.obj -MF CMakeFiles/uart_port.dir/uart_porting.c.obj.d -o CMakeFiles/uart_port.dir/uart_porting.c.obj -c /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/uart/uart_porting.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.obj"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=UART_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -MD -MT drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.obj -MF CMakeFiles/uart_port.dir/uart_porting.c.obj.d -o CMakeFiles/uart_port.dir/uart_porting.c.obj -c /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/uart/uart_porting.c
 
 drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/uart_port.dir/uart_porting.c.i"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=UART_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/uart/uart_porting.c > CMakeFiles/uart_port.dir/uart_porting.c.i
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=UART_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -E /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/uart/uart_porting.c > CMakeFiles/uart_port.dir/uart_porting.c.i
 
 drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/uart_port.dir/uart_porting.c.s"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=UART_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/uart/uart_porting.c -o CMakeFiles/uart_port.dir/uart_porting.c.s
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && /home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-gcc $(C_DEFINES) -DTHIS_FILE_ID=UART_PORTING_C -DTHIS_MOD_ID=LOG_PFMODULE $(C_INCLUDES) $(C_FLAGS) -S /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/uart/uart_porting.c -o CMakeFiles/uart_port.dir/uart_porting.c.s
 
 # Object files for target uart_port
 uart_port_OBJECTS = \
@@ -93,19 +93,19 @@ uart_port_EXTERNAL_OBJECTS =
 drivers/chips/ws63/porting/uart/libuart_port.a: drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/uart_porting.c.obj
 drivers/chips/ws63/porting/uart/libuart_port.a: drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/build.make
 drivers/chips/ws63/porting/uart/libuart_port.a: drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libuart_port.a"
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && $(CMAKE_COMMAND) -P CMakeFiles/uart_port.dir/cmake_clean_target.cmake
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/uart_port.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libuart_port.a"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && $(CMAKE_COMMAND) -P CMakeFiles/uart_port.dir/cmake_clean_target.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/uart_port.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/build: drivers/chips/ws63/porting/uart/libuart_port.a
 .PHONY : drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/build
 
 drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/clean:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && $(CMAKE_COMMAND) -P CMakeFiles/uart_port.dir/cmake_clean.cmake
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart && $(CMAKE_COMMAND) -P CMakeFiles/uart_port.dir/cmake_clean.cmake
 .PHONY : drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/clean
 
 drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/uart /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/drivers/chips/ws63/porting/uart /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart /home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : drivers/chips/ws63/porting/uart/CMakeFiles/uart_port.dir/depend
 

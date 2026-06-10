@@ -1,4 +1,4 @@
-# Install script for directory: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/driver
+# Install script for directory: /home/cool/fbb_ws63/src/drivers/drivers/driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,106 +34,106 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-objdump")
+  set(CMAKE_OBJDUMP "/home/cool/fbb_ws63/src/tools/bin/compiler/riscv/cc_riscv32_musl_105/cc_riscv32_musl/bin/riscv32-linux-musl-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/adc/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/adc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/dma/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/dma/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/gpio/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/gpio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/i2c/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/i2c/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/i2s/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/i2s/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/lpm/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/lpm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/pinmux/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/pinmux/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/pmp/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/pmp/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/pwm/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/pwm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/security/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/security/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/security_unified/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/security_unified/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/spi/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/spi/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/systick/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/systick/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/tcxo/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/tcxo/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/timer/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/timer/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/tsensor/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/tsensor/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/uart/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/uart/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/watchdog/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/watchdog/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/rtc_unified/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/rtc_unified/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-loaderboot/driver/efuse/cmake_install.cmake")
+  include("/home/cool/fbb_ws63/src/output/ws63/acore/ws63-loaderboot/driver/efuse/cmake_install.cmake")
 endif()
 

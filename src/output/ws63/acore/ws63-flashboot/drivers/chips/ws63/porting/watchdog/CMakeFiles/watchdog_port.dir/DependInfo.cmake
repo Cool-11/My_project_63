@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/chips/ws63/porting/watchdog/watchdog_porting.c" "drivers/chips/ws63/porting/watchdog/CMakeFiles/watchdog_port.dir/watchdog_porting.c.obj" "gcc" "drivers/chips/ws63/porting/watchdog/CMakeFiles/watchdog_port.dir/watchdog_porting.c.obj.d"
+  "/home/cool/fbb_ws63/src/drivers/chips/ws63/porting/watchdog/watchdog_porting.c" "drivers/chips/ws63/porting/watchdog/CMakeFiles/watchdog_port.dir/watchdog_porting.c.obj" "gcc" "drivers/chips/ws63/porting/watchdog/CMakeFiles/watchdog_port.dir/watchdog_porting.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

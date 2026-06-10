@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for HSO_DB_hal_security_unified.
 
@@ -68,35 +68,35 @@ include CMakeFiles/HSO_DB_hal_security_unified.dir/progress.make
 
 CMakeFiles/HSO_DB_hal_security_unified: hso_temp/hal_security_unified.txt
 
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/crypto_osal/cfbb/os/crypto_osal_lib.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/crypto_osal/cfbb/crypto_security.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/drv_common_pke.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_sign_verify_common.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/arch/ecc_data_ram_addr.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/arch/rom_lib.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/hal_pke.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/spacc/hal_hash.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/spacc/hal_symc.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/trng/hal_trng.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_fapc/hal_fapc.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_km/hal_rkp.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_km/hal_keyslot.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_km/hal_klad.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/arch/rsa_data_ram_addr.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/rsa.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/sm2_ec_fp_sign_verify.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_sign_common.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_sign.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_verify_common.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_verify.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_sign_common.c
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_bt.h
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_pf.h
-hso_temp/hal_security_unified.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_hal_security_unified"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/hal_security_unified_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/hal_security_unified.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/hal_security_unified.txt
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/crypto_osal/cfbb/os/crypto_osal_lib.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/crypto_osal/cfbb/crypto_security.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/drv_common_pke.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_sign_verify_common.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/arch/ecc_data_ram_addr.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/arch/rom_lib.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/hal_pke.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/spacc/hal_hash.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/spacc/hal_symc.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/trng/hal_trng.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_fapc/hal_fapc.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_km/hal_rkp.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_km/hal_keyslot.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_km/hal_klad.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/arch/rsa_data_ram_addr.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/rsa.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/sm2_ec_fp_sign_verify.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_sign_common.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_sign.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_verify_common.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_verify.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/drivers/drivers/hal/security_unified/hal_cipher/pke/alg/ecc_ec_fp_sign_common.c
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_bt.h
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_pf.h
+hso_temp/hal_security_unified.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_hal_security_unified"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/hal_security_unified_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/hal_security_unified.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/hal_security_unified.txt
 
 HSO_DB_hal_security_unified: CMakeFiles/HSO_DB_hal_security_unified
 HSO_DB_hal_security_unified: hso_temp/hal_security_unified.txt
@@ -112,6 +112,6 @@ CMakeFiles/HSO_DB_hal_security_unified.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_hal_security_unified.dir/clean
 
 CMakeFiles/HSO_DB_hal_security_unified.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_hal_security_unified.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_hal_security_unified.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_hal_security_unified.dir/depend
 

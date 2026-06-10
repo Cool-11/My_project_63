@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src
+CMAKE_SOURCE_DIR = /home/cool/fbb_ws63/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app
+CMAKE_BINARY_DIR = /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app
 
 # Utility rule file for HSO_DB_mbedtls.
 
@@ -68,113 +68,113 @@ include CMakeFiles/HSO_DB_mbedtls.dir/progress.make
 
 CMakeFiles/HSO_DB_mbedtls: hso_temp/mbedtls.txt
 
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/aes.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/aesni.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/aria.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/asn1parse.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/asn1write.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/base64.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/bignum.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/camellia.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ccm.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/chacha20.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/chachapoly.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/cipher.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/cipher_wrap.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/cmac.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/constant_time.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ctr_drbg.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/debug.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/des.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/dhm.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecdh.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecdsa.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecjpake.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecp.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecp_curves.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/entropy.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/error.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/gcm.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/hmac_drbg.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/hkdf.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/md.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/md5.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/memory_buffer_alloc.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/mps_reader.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/mps_trace.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/nist_kw.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/oid.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/padlock.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/pem.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/pk.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/pk_wrap.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/pkcs5.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/pkcs12.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/pkparse.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/pkwrite.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/platform.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/platform_util.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/poly1305.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ripemd160.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/rsa.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/rsa_alt_helpers.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/sha1.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/sha256.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/sha512.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_cache.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_ciphersuites.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_cli.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_cookie.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_debug_helpers_generated.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_msg.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_srv.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_ticket.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls13_client.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls13_generic.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls13_server.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls13_keys.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/threading.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/version.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/version_features.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509_create.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509_crl.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509_crt.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509_csr.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509write_crt.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509write_csr.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/library/net_sockets.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/cipher_adapt.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/cipher_common.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/cmac_harden.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/ecc_harden_common.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/ecc_harden.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/hkdf_harden.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/pbkdf2_hmac_harden.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/bignum_harden.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/entropy_harden.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/dfx.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/gcm_harden.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/ccm_harden.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/hash_harden_common.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/hash_harden_adapt.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/sha1.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/sha256.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/sha512.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/aes.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/aes_harden_adapt.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/rsa.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/rsa_harden_adapt.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/ecp.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/ecp_harden_adapt.c
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_bt.h
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_pf.h
-hso_temp/mbedtls.txt: /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_mbedtls"
-	cp /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/mbedtls_temp.txt /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/mbedtls.txt
-	/usr/bin/python3 /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/build/script/hdbxml/mk_hso_prim_xml.py /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/ ws63 acore riscv31 TRUE pf False /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/hso_temp/mbedtls.txt
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/aes.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/aesni.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/aria.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/asn1parse.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/asn1write.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/base64.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/bignum.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/camellia.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ccm.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/chacha20.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/chachapoly.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/cipher.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/cipher_wrap.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/cmac.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/constant_time.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ctr_drbg.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/debug.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/des.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/dhm.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecdh.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecdsa.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecjpake.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecp.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ecp_curves.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/entropy.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/error.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/gcm.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/hmac_drbg.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/hkdf.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/md.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/md5.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/memory_buffer_alloc.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/mps_reader.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/mps_trace.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/nist_kw.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/oid.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/padlock.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/pem.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/pk.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/pk_wrap.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/pkcs5.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/pkcs12.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/pkparse.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/pkwrite.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/platform.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/platform_util.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/poly1305.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ripemd160.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/rsa.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/rsa_alt_helpers.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/sha1.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/sha256.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/sha512.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_cache.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_ciphersuites.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_cli.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_cookie.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_debug_helpers_generated.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_msg.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_srv.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_ticket.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls13_client.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls13_generic.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls13_server.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/ssl_tls13_keys.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/threading.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/version.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/version_features.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509_create.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509_crl.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509_crt.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509_csr.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509write_crt.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/x509write_csr.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/library/net_sockets.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/cipher_adapt.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/cipher_common.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/cmac_harden.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/ecc_harden_common.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/ecc_harden.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/hkdf_harden.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/pbkdf2_hmac_harden.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/bignum_harden.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/entropy_harden.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/dfx.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/gcm_harden.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/ccm_harden.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/hash_harden_common.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/hash_harden_adapt.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/sha1.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/sha256.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/sha512.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/aes.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/aes_harden_adapt.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/rsa.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/rsa_harden_adapt.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/ecp.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/open_source/mbedtls/mbedtls_v3.1.0/harden/src/connect_src/ecp_harden_adapt.c
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_bt.h
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_dsp.h
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_pf.h
+hso_temp/mbedtls.txt: /home/cool/fbb_ws63/src/middleware/chips/ws63/dfx/include/log_def_wifi.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building HSO_DB_mbedtls"
+	cp /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/mbedtls_temp.txt /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/mbedtls.txt
+	/usr/bin/python3 /home/cool/fbb_ws63/src/build/script/hdbxml/mk_hso_prim_xml.py /home/cool/fbb_ws63/src/ ws63 acore riscv31 TRUE pf False /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/hso_temp/mbedtls.txt
 
 HSO_DB_mbedtls: CMakeFiles/HSO_DB_mbedtls
 HSO_DB_mbedtls: hso_temp/mbedtls.txt
@@ -190,6 +190,6 @@ CMakeFiles/HSO_DB_mbedtls.dir/clean:
 .PHONY : CMakeFiles/HSO_DB_mbedtls.dir/clean
 
 CMakeFiles/HSO_DB_mbedtls.dir/depend:
-	cd /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_mbedtls.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app /home/cool/fbb_ws63/src/output/ws63/acore/ws63-liteos-app/CMakeFiles/HSO_DB_mbedtls.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HSO_DB_mbedtls.dir/depend
 
