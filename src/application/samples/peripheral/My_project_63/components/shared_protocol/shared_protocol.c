@@ -1,6 +1,9 @@
 #include "shared_protocol.h"
 #include "soc_osal.h"
 
+/* 调试开关：1=打印 unpack 日志，0=关闭（减少刷屏） */
+#define SHARED_PROTO_DEBUG_LOG  0
+
 static uint16_t read_le16(const uint8_t *buf)
 {
     return (uint16_t)(buf[0] | ((uint16_t)buf[1] << 8));
@@ -109,15 +112,14 @@ int shared_protocol_unpack_adv(const uint8_t *in_buf, uint16_t in_len, shared_pr
 {
     int ret;
 
+#if SHARED_PROTO_DEBUG_LOG
     osal_printk("[WS63_SHARED] unpack start\r\n");
+#endif
     if ((in_buf == NULL) || (field == NULL)) {
-        osal_printk("[WS63_SHARED] unpack failed: null input\r\n");
         return SHARED_PROTO_ERR_NULL;
     }
 
     if (in_len != SHARED_PROTO_ADV_FIELD_LEN) {
-        osal_printk("[WS63_SHARED] unpack failed: in_len=%u expect=%u\r\n",
-            (unsigned int)in_len, (unsigned int)SHARED_PROTO_ADV_FIELD_LEN);
         return SHARED_PROTO_ERR_LEN;
     }
 
@@ -128,11 +130,15 @@ int shared_protocol_unpack_adv(const uint8_t *in_buf, uint16_t in_len, shared_pr
         field->status = in_buf[8];
         field->battery = in_buf[9];
         field->seq = read_le16(&in_buf[10]);
+#if SHARED_PROTO_DEBUG_LOG
         osal_printk("[WS63_SHARED] unpack LE ok\r\n");
+#endif
     } else {
         uint32_t be_magic = read_be32(&in_buf[0]);
+#if SHARED_PROTO_DEBUG_LOG
         osal_printk("[WS63_SHARED] LE magic=0x%08x mismatch, try BE raw=0x%08x\r\n",
             (unsigned int)field->magic, (unsigned int)be_magic);
+#endif
         if (be_magic == SHARED_PROTO_MAGIC) {
             field->magic = be_magic;
             field->tag_id = read_be16(&in_buf[4]);
@@ -140,26 +146,27 @@ int shared_protocol_unpack_adv(const uint8_t *in_buf, uint16_t in_len, shared_pr
             field->status = in_buf[8];
             field->battery = in_buf[9];
             field->seq = read_be16(&in_buf[10]);
+#if SHARED_PROTO_DEBUG_LOG
             osal_printk("[WS63_SHARED] unpack BE ok\r\n");
+#endif
         } else {
-            osal_printk("[WS63_SHARED] unpack failed: magic LE=0x%08x BE=0x%08x both mismatch\r\n",
-                (unsigned int)field->magic, (unsigned int)be_magic);
             return SHARED_PROTO_ERR_MAGIC;
         }
     }
 
     ret = shared_protocol_validate(field);
     if (ret != SHARED_PROTO_OK) {
-        osal_printk("[WS63_SHARED] unpack failed: validate ret=%d\r\n", ret);
         return ret;
     }
 
+#if SHARED_PROTO_DEBUG_LOG
     osal_printk("[WS63_SHARED] unpack done: tag=%u qty=%u status=%u bat=%u seq=%u\r\n",
         (unsigned int)field->tag_id,
         (unsigned int)field->qty,
         (unsigned int)field->status,
         (unsigned int)field->battery,
         (unsigned int)field->seq);
+#endif
     return SHARED_PROTO_OK;
 }
 

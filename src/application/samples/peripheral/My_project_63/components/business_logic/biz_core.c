@@ -186,6 +186,7 @@ void biz_screen_reply(const char *cmd, const char *fmt, ...)
         vsnprintf(params, sizeof(params), fmt, ap);
         va_end(ap);
     }
+    osal_printk("[WS63_BIZ] →屏 #%s,%s\r\n", cmd, params);
     uart_display_send(cmd, "%s", params);
 }
 

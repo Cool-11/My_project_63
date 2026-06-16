@@ -3,6 +3,9 @@
 #include "securec.h"
 #include "common_def.h"
 #include "tcxo.h"
+
+/* 调试开关：1=打印广播数据日志，0=关闭（减少刷屏） */
+#define SLE_ADV_DEBUG_LOG  0
 #include <string.h>
 #include "cmsis_os2.h"
 
@@ -125,6 +128,23 @@ static int sle_adv_extract_and_update(const struct sle_adv_msg *msg)
     static shared_proto_adv_field_t s_adv;  /* 静态 buffer，避免栈上反复分配 */
     const uint8_t *data = msg->raw;
     uint16_t len = msg->raw_len;
+
+    /* 广播数据日志（由 SLE_ADV_DEBUG_LOG 宏控制） */
+#if SLE_ADV_DEBUG_LOG
+    {
+        uint16_t dump_len = len > 22 ? 22 : len;
+        osal_printk("[WS63_RAW] len=%u mac=%02X:%02X:%02X:%02X:%02X:%02X rssi=%d\r\n",
+            (unsigned int)len,
+            msg->addr[0], msg->addr[1], msg->addr[2],
+            msg->addr[3], msg->addr[4], msg->addr[5],
+            (int)msg->rssi);
+        osal_printk("[WS63_RAW] data=");
+        for (uint16_t i = 0; i < dump_len; i++) {
+            osal_printk("%02X ", data[i]);
+        }
+        osal_printk("\r\n");
+    }
+#endif
 
     /* 遍历 AD 结构体，按偏移量查找 manufacturer data (type=0xFF) */
     for (uint16_t off = 0; off + 1 < len;) {
@@ -280,7 +300,7 @@ int sle_network_start_scan(void)
 
     osal_printk("[WS63_NET] sle_network_start_scan start\r\n");
     param.own_addr_type = 0;
-    param.filter_duplicates = 0;
+    param.filter_duplicates = 1;  /* 开启重复过滤，减少同一 MAC 的高频回调刷屏 */
     param.seek_filter_policy = 0;
     param.seek_phys = MY63_SLE_SCAN_PHY_NUM;
     param.seek_type[0] = SLE_SEEK_ACTIVE;
@@ -734,6 +754,35 @@ static void my63_seek_result_cb(sle_seek_result_info_t *seek_result_data)
     }
 
     g_my63_scan_result_count++;
+
+    /* 预过滤：扫描 raw 数据是否包含 BS21E 厂商标记 (FF 5A A5)，不匹配直接丢弃 */
+    {
+        bool is_bs21e = false;
+        uint16_t scan_limit = seek_result_data->data_length >= 3 ?
+            (uint16_t)(seek_result_data->data_length - 2) : 0;
+        for (uint16_t i = 0; i < scan_limit; i++) {
+            if (seek_result_data->data[i] == MY63_ADV_FIELD_TYPE_MANUFACTURER &&
+                seek_result_data->data[i + 1] == MY63_MANUFACTURER_ID_L &&
+                seek_result_data->data[i + 2] == MY63_MANUFACTURER_ID_H) {
+                is_bs21e = true;
+                break;
+            }
+        }
+        if (!is_bs21e) {
+            /* 调试：打印被过滤掉的广播前 8 字节，用于确认过滤是否误杀 */
+            static uint32_t filter_drop_count = 0;
+            if (filter_drop_count < 5) {
+                filter_drop_count++;
+                osal_printk("[WS63_FILTER] drop len=%u first8=%02X%02X%02X%02X%02X%02X%02X%02X\r\n",
+                    (unsigned int)seek_result_data->data_length,
+                    seek_result_data->data[0], seek_result_data->data[1],
+                    seek_result_data->data[2], seek_result_data->data[3],
+                    seek_result_data->data[4], seek_result_data->data[5],
+                    seek_result_data->data[6], seek_result_data->data[7]);
+            }
+            return;  /* 非 BS21E 广播，直接丢弃不入队 */
+        }
+    }
 
     /* 仅 memcpy，不做任何解析或打印 */
     msg.raw_len = seek_result_data->data_length;

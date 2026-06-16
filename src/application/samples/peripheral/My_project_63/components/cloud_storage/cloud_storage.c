@@ -317,7 +317,8 @@ int cs_mqtt_connect(const cs_mqtt_config_t *config)
     }
 
     if (cs_wifi_is_got_ip() == false) {
-        osal_printk("[WS63_CLOUD] wifi not got ip, cannot connect mqtt\r\n");
+        osal_printk("[WS63_CLOUD] mqtt connect blocked: wifi state=%d (need GOT_IP=3)\r\n",
+            (int)cs_wifi_get_state());
         return -2;
     }
 

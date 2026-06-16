@@ -1,10 +1,11 @@
 # WS63 ↔ ESP32-S3 通信协议规范
 
-> **文档版本**: v3.3  
-> **最后更新**: 2026-05-26  
+> **文档版本**: v3.4  
+> **最后更新**: 2026-06-05  
 > **适用项目**: CAM_AI (ESP32-S3 视觉感知物资管理子节点)  
 > **主要更新**: 
-> - **v3.3**: 补全缺失命令（delete/cancel/get_asset/ping），完善下行命令体系 ⭐NEW
+> - **v3.4**: ⭐ 架构重构 + GPIO 迁移（引入 business_executor 业务执行器，UART 处理器重构，GPIO17/18→47/21 解决摄像头冲突，outbound 分步控制，TX 诊断日志，step 动态化，补全 ping/sys_info/list_assets_page/get_asset 命令）⭐NEW
+> - **v3.3**: 补全缺失命令（delete/cancel/get_asset/ping），完善下行命令体系
 > - **v3.2**: Tag ID 改造（标识符从MAC地址升级为16位Tag ID，新增验证式更新流程）⭐
 > - v3.1: L610 4G模块完整集成（MQTT云端通信、主动上报机制）
 > - v3.0: WS63协议支持（JSON格式UART通信）
@@ -48,34 +49,29 @@
 ```
 ┌───────────────────────┐         UART1 (JSON)      ┌──────────────────────────┐
 │        WS63           │ ◄────────────────────────► │       ESP32-S3           │
-│     (主控/Host)        │   TX(GPIO17) ──► RX(18)  │    (视觉感知子节点)        │
-│                       │   RX(GPIO18) ◄── TX(17)  │                          │
-│  职责：                │   GPIO2 ──────────► RTC   │  职责：                   │
-│  · 星闪网络全局时钟     │    (唤醒信号)              │  · 3视图拍摄 (前/侧/顶)   │
-│  · 人机交互/UI         │                             │  · MobileNet 特征提取     │
-│  · 业务逻辑编排         │   UART0 (调试保留)          │  · 多帧融合 + 模糊检测    │
-│  · 云平台通讯           │   TX/RX ────────► PC      │  · 相似度匹配 + 盘点比对  │
-│  · 指令下发 + 结果收集  │                             │  · SD卡资产存储/管理       │
-└───────────────────────┘                             └──────────────────────────┘
+│     (主控/Host)        │   TX(GPIO47) ──► RX(21)  │    (视觉感知子节点)        │
 ```
 
 **核心原则：**
 - WS63 掌握**控制权**（何时让 ESP32 工作）
 - ESP32 掌握**数据权**（推理完成主动推送结果，无需 WS63 轮询）
+- **business_executor 统一处理**：所有业务命令通过 business_executor 层处理，双通道输出（UART0_TEXT/UART1_JSON）⭐v3.4
 
 ---
 
 ## 2. 硬件连接
 
-### 2.1 WS63 ↔ ESP32-S3 连接
+### 2.1 WS63 ↔ ESP32-S3 连接 ⭐v3.4 更新
 
 | 信号 | ESP32-S3 引脚 | WS63 引脚 | 方向 | 说明 |
 |------|-------------|----------|------|------|
-| UART TX | **GPIO17** | RX | ESP32 → WS63 | cJSON 数据发送 |
-| UART RX | **GPIO18** | TX | WS63 → ESP32 | cJSON 命令接收 |
+| UART TX | **GPIO47** ⭐ | RX | ESP32 → WS63 | cJSON 数据发送（v3.4 从 GPIO17 迁移） |
+| UART RX | **GPIO21** ⭐ | TX | WS63 → ESP32 | cJSON 命令接收（v3.4 从 GPIO18 迁移） |
 | RTC 唤醒 | **GPIO2** | GPIO (推挽输出) | WS63 → ESP32 | 拉高唤醒 ESP32，拉低允许睡眠 |
 | GND | GND | GND | — | 共地 |
 
+> **⚠️ 重要变更（v3.4）**：由于 GPIO17/18 被摄像头 DVP 总线（D6/D5）占用，导致 UART1 通信乱码。现已迁移至空闲引脚 GPIO47(TX)/GPIO21(RX)。
+>
 > **调试接口（保留）**：UART0 使用默认引脚 TX=GPIO43 / RX=GPIO44，连接 PC 用于开发调试和日志输出。
 
 ---
@@ -254,7 +250,7 @@ ESP32: 拍摄正视图 → 提取特征 → 计算相似度
 ```
 
 **验证成功响应**：
-```json
+```
 {
   "type": "task_done",
   "task": "register",
@@ -274,7 +270,7 @@ ESP32: 拍摄正视图 → 提取特征 → 计算相似度
 ```
 
 **验证失败响应**：
-```json
+```
 {
   "type": "error",
   "code": "ERR_VERIFICATION_FAILED",
@@ -339,7 +335,7 @@ ESP32: 拍摄正视图 → 提取特征 → 计算相似度
 以便用户在拍照前确认资产身份。**
 
 **盘点完成响应**：
-```json
+```
 {
   "type": "task_done",
   "task": "inventory",
@@ -469,7 +465,7 @@ WS63                           ESP32
 - `top`: 俯视图
 
 **响应**：
-```json
+```
 {
   "type": "capture_progress",
   "tag_id": "0x0001",
@@ -808,7 +804,7 @@ FINALIZING ──[cancel]──► CLEANING ──[完成]──► IDLE
 ```
 
 **响应**：
-```json
+```
 {
   "type": "system_info",
   "heap_free": 125000,
@@ -923,6 +919,101 @@ FINALIZING ──[cancel]──► CLEANING ──[完成]──► IDLE
 
 ---
 
+### 7.4 asset_info - 资产信息查询结果 ⭐NEW v3.4
+
+**触发时机**：收到 `outbound` 或 `inventory` 命令后，立即返回资产基本信息（在硬件初始化之前）
+
+**消息格式**：
+```json
+{
+  "type": "asset_info",
+  "task": "outbound",
+  "tag_id": "0x0001",
+  "item_name": "扳手",
+  "storage_area": "A",
+  "quantity": 50,
+  "remove_qty": 5,
+  "remaining_qty": 45
+}
+```
+
+**字段说明**：
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| type | string | ✅ | 固定值"asset_info" |
+| task | string | ✅ | 任务类型："outbound"/"inventory" |
+| tag_id | string | ✅ | Tag ID |
+| item_name | string | ✅ | 物品名称 |
+| storage_area | string | ✅ | 存放区域 |
+| quantity | number | ✅ | 当前库存数量 |
+| remove_qty | number | ❌ | 出库数量（仅outbound任务） |
+| remaining_qty | number | ❌ | 出库后剩余数量（仅outbound任务） |
+
+**用途**：WS63可在串口屏上显示资产详情，用户确认后再发送 `capture` 命令拍照验证。
+
+---
+
+### 7.5 pong - 心跳响应 ⭐NEW v3.4
+
+**触发时机**：收到 `ping` 命令后立即响应
+
+**消息格式**：
+```json
+{
+  "type": "pong",
+  "camera_ready": true,
+  "storage_ready": true,
+  "free_heap": 125000,
+  "state": "idle"
+}
+```
+
+**字段说明**：
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| type | string | 固定值"pong" |
+| camera_ready | boolean | 摄像头是否就绪 |
+| storage_ready | boolean | SD卡是否挂载成功 |
+| free_heap | number | 可用堆内存（字节） |
+| state | string | 当前状态："idle"/"initializing"/"waiting_capture"/"capturing"/"finalizing" |
+
+**适用场景**：
+- WS63 定期健康检查（建议间隔30秒）
+- 任务下发前确认设备就绪
+- 故障诊断和远程调试
+
+---
+
+### 7.6 sys_info - 系统信息响应 ⭐NEW v3.4
+
+**触发时机**：收到 `sys_info` 命令后响应
+
+**消息格式**：
+```json
+{
+  "type": "sys_info",
+  "camera_ready": true,
+  "storage_ready": true,
+  "storage_total_mb": 7500,
+  "storage_free_mb": 6800,
+  "free_heap": 125000,
+  "state": "idle"
+}
+```
+
+**字段说明**：
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| type | string | 固定值"sys_info" |
+| camera_ready | boolean | 摄像头是否就绪 |
+| storage_ready | boolean | SD卡是否挂载成功 |
+| storage_total_mb | number | SD卡总容量（MB） |
+| storage_free_mb | number | SD卡可用空间（MB） |
+| free_heap | number | 可用堆内存（字节） |
+| state | string | 当前状态机状态 |
+
+---
+
 ## 8. 任务时序流程
 
 ### 8.1 注册流程
@@ -950,6 +1041,41 @@ WS63                          ESP32
  │                              │── 计算置信度
  │◄── task_done ────────────│
 ```
+
+### 8.3 出库流程（分步控制）⭐NEW v3.4
+
+```
+WS63                           ESP32
+  │                               │
+  │── {"cmd":"outbound",          │
+  │    "tag_id":"0x0001",         │
+  │    "remove_qty":5}            │
+  │                               │── asset_load → 读取资产记录
+  │◄── asset_info ──────────────│  (立即返回，此时未初始化硬件)
+  │    {item_name:"扳手",          │
+  │     quantity:50,               │
+  │     remove_qty:5,              │
+  │     remaining_qty:45}          │
+  │                               │
+  │── {"cmd":"capture",           │  ← WS63 收到 asset_info 后确认无误
+  │    "view":"front"}            │    再发送 capture 命令
+  │                               │── ai_module_init() 【此刻才初始化】
+  │                               │── camera_module_init()
+  │                               │── 拍摄 → 特征提取 → 匹配
+  │                               │── 匹配成功则更新数量
+  │◄── task_done ───────────────│
+  │    {result:"success",          │
+  │     is_match:true,             │
+  │     item_name:"扳手",           │
+  │     original_qty:50,           │
+  │     remove_qty:5,              │
+  │     remaining_qty:45}          │
+```
+
+**优势**：
+1. **按需初始化**：仅在收到 `capture` 命令后才初始化 AI+摄像头，节省资源
+2. **用户确认**：WS63 可在串口屏显示资产信息，用户确认后再拍照
+3. **快速响应**：`asset_info` 立即返回，无需等待硬件初始化
 
 ---
 
@@ -1301,7 +1427,7 @@ AT+MQTTLOG=1    # 开启MQTT详细日志
 ### 14.3 l610_error - L610模块错误（⭐主动上报）
 
 **消息格式**：
-```json
+```
 {
   "type": "l610_error",
   "code": "L610_NOT_RESPONDING",
@@ -1335,7 +1461,7 @@ AT+MQTTLOG=1    # 开启MQTT详细日志
 ### 14.4 mqtt_publish_result - MQTT发布结果 ⭐NEW v3.1
 
 **消息格式**：
-```json
+```
 {
   "type": "mqtt_publish_result",
   "result": "ok",
@@ -1355,7 +1481,7 @@ AT+MQTTLOG=1    # 开启MQTT详细日志
 - 收到L610的+MQTTPUB URC事件后
 
 **示例**：
-```json
+```
 // 成功
 {
   "type": "mqtt_publish_result",
@@ -1376,7 +1502,7 @@ AT+MQTTLOG=1    # 开启MQTT详细日志
 ### 14.5 l610_at_result - AT指令结果 ⭐NEW v3.1
 
 **消息格式**：
-```json
+```
 {
   "type": "l610_at_result",
   "cmd": "AT+CSQ",
@@ -1437,7 +1563,7 @@ AT+MQTTLOG=1    # 开启MQTT详细日志
 ### 14.6 l610_status - L610模块状态 ⭐NEW v3.1
 
 **消息格式**：
-```json
+```
 {
   "type": "l610_status",
   "l610_state": "READY",
@@ -1479,7 +1605,7 @@ AT+MQTTLOG=1    # 开启MQTT详细日志
 | `CONNECTED` | MQTT已连接 |
 
 **示例**：
-```json
+```
 // 正常状态
 {
   "type": "l610_status",
@@ -1567,7 +1693,7 @@ v3.1版本新增了L610模块**主动向WS63上报**的能力，无需WS63轮询
 3. 检测到URC事件或错误时，直接调用回调发送JSON
 
 **代码实现**：
-```c
+```
 // protocol_handler.c:L180
 void protocol_handler_init(void) {
     // 注册L610主动上报回调
@@ -1736,7 +1862,8 @@ void protocol_handler_init(void) {
 
 ### B. 版本历史
 
-- **v3.3** (2026-05-26): 补全缺失命令（delete/cancel/get_asset/ping），完善下行命令体系 ⭐NEW
+- **v3.4** (2026-06-05): ⭐ 架构重构 + GPIO 迁移（引入 business_executor 业务执行器，UART 处理器重构，GPIO17/18→47/21 解决摄像头冲突，outbound 分步控制，TX 诊断日志，step 动态化，补全 ping/sys_info/list_assets_page/get_asset 命令）⭐NEW
+- **v3.3** (2026-05-26): 补全缺失命令（delete/cancel/get_asset/ping），完善下行命令体系
 - **v3.2** (2026-05-19): Tag ID 改造（标识符升级、验证式更新流程）⭐
 - **v3.1** (2026-05-10): L610 4G模块完整集成
 - **v3.0** (2026-04-29): WS63协议支持
@@ -1744,7 +1871,7 @@ void protocol_handler_init(void) {
 
 ---
 
-**文档版本**: v3.3  
-**最后更新**: 2026-05-26  
+**文档版本**: v3.4  
+**最后更新**: 2026-06-05  
 **维护者**: TcXc  
 **反馈邮箱**: 202500201056@stumail.sztu.edu.cn

@@ -179,18 +179,14 @@ static void biz_handle_task_done(cJSON *root, const char *data_json)
         ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
 
         biz_screen_reply("DONE", "reg,%s,%s", result, tag_display);
-        if (g_biz_pending.active) {
-            biz_clear_pending();
-        }
+        /* 不清除 pending — 等 @in,confirm 来清除并执行 BIND_TAG + 持久化 */
     } else if (strcmp(task, "outbound") == 0) {
         cJSON *j_match = cJSON_GetObjectItem(root, "is_match");
         bool is_match = (j_match && cJSON_IsBool(j_match)) ? cJSON_IsTrue(j_match) : false;
         cJSON *j_remain = cJSON_GetObjectItem(root, "remaining_qty");
         int remain = (j_remain && cJSON_IsNumber(j_remain)) ? j_remain->valueint : 0;
         biz_screen_reply("DONE", "out,%s,%d", is_match ? "success" : "fail", remain);
-        if (g_biz_pending.active) {
-            biz_clear_pending();
-        }
+        /* 不清除 pending — 等 @out,confirm 来清除并执行持久化 */
     } else if (strcmp(task, "inventory") == 0) {
         cJSON *j_conf = cJSON_GetObjectItem(root, "weighted_confidence");
         double conf = (j_conf && cJSON_IsNumber(j_conf)) ? j_conf->valuedouble : 0.0;

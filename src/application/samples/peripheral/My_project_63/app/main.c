@@ -38,8 +38,11 @@ static void my63_wifi_state_cb(cs_wifi_state_t state)
     if (state == CS_WIFI_GOT_IP) {
         uart_display_send("NET", "wifi,connected,");
         if (g_my63_mqtt_cfg_loaded) {
-            osal_printk("[WS63_APP] wifi got ip, auto reconnect mqtt\r\n");
+            osal_printk("[WS63_APP] wifi got ip, auto reconnect mqtt uri=%s\r\n",
+                g_my63_mqtt_cfg.uri);
             cs_mqtt_connect(&g_my63_mqtt_cfg);
+        } else {
+            osal_printk("[WS63_APP] wifi got ip but mqtt cfg not loaded, skip auto-connect\r\n");
         }
     } else if (state == CS_WIFI_DISCONNECTED) {
         uart_display_send("NET", "wifi,disconnected,");
@@ -229,11 +232,31 @@ static int my63_init_modules(void)
         g_my63_wifi_cfg_loaded = true;
         osal_printk("[WS63_APP] wifi cfg loaded from nv ssid=%s\r\n", g_my63_wifi_cfg.ssid);
         cs_wifi_connect(g_my63_wifi_cfg.ssid, g_my63_wifi_cfg.psk);
+    } else {
+        osal_printk("[WS63_APP] wifi cfg NOT in nv, waiting for screen cmd\r\n");
     }
 
     if (cs_mqtt_config_load_nv(&g_my63_mqtt_cfg) == 0) {
         g_my63_mqtt_cfg_loaded = true;
-        osal_printk("[WS63_APP] mqtt cfg loaded from nv uri=%s\r\n", g_my63_mqtt_cfg.uri);
+        osal_printk("[WS63_APP] mqtt cfg loaded from nv uri=%s client=%s user=%s\r\n",
+            g_my63_mqtt_cfg.uri,
+            g_my63_mqtt_cfg.client_id,
+            g_my63_mqtt_cfg.username);
+    } else {
+        /* NV 中无 MQTT 配置，使用硬编码默认值并写入 NV */
+        (void)memset_s(&g_my63_mqtt_cfg, sizeof(cs_mqtt_config_t), 0, sizeof(cs_mqtt_config_t));
+        strncpy_s(g_my63_mqtt_cfg.uri, CS_MQTT_URI_MAX,
+            CS_MQTT_DEFAULT_URI, CS_MQTT_URI_MAX - 1);
+        strncpy_s(g_my63_mqtt_cfg.client_id, CS_MQTT_CLIENTID_MAX,
+            CS_MQTT_DEFAULT_CLIENT_ID, CS_MQTT_CLIENTID_MAX - 1);
+        strncpy_s(g_my63_mqtt_cfg.username, CS_MQTT_USER_MAX,
+            CS_MQTT_DEFAULT_USERNAME, CS_MQTT_USER_MAX - 1);
+        strncpy_s(g_my63_mqtt_cfg.password, CS_MQTT_PASS_MAX,
+            CS_MQTT_DEFAULT_PASSWORD, CS_MQTT_PASS_MAX - 1);
+        (void)cs_mqtt_config_save_nv(&g_my63_mqtt_cfg);
+        g_my63_mqtt_cfg_loaded = true;
+        osal_printk("[WS63_APP] mqtt cfg using defaults uri=%s client=%s (saved to nv)\r\n",
+            g_my63_mqtt_cfg.uri, g_my63_mqtt_cfg.client_id);
     }
 
     return 0;
