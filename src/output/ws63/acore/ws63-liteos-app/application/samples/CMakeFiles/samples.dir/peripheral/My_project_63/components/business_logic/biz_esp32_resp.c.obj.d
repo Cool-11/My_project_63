@@ -36,13 +36,24 @@ application/samples/CMakeFiles/samples.dir/peripheral/My_project_63/components/b
  /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/include/schedule/osal_workqueue.h \
  /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/include/memory/osal_cache.h \
  /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/osal/include/schedule/osal_completion.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/cjson/cjson/cJSON.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stddef.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/../uart_display/uart_display.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/string.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/features.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/strings.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/platform/libsec/include/securec.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/platform/libsec/include/securectype.h \
  /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdio.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/features.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/string.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/strings.h \
  /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdlib.h \
  /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/malloc.h \
- /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/alloca.h
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/alloca.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stddef.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/stdarg.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/include/errno.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/musl/arch/generic/bits/errno.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/open_source/cjson/cjson/cJSON.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/../uart_display/uart_display.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/../sle_network/sle_network.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/kernel/liteos/liteos_v208.5.0/Huawei_LiteOS/open_source/CMSIS/CMSIS/RTOS2/Include/cmsis_os2.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/middleware/services/bts/sle/sle_device_discovery.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/errcode.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/include/middleware/services/bts/sle/sle_common.h \
+ /home/zyh110206/TcXc/ws63_bs2x_sle_project/src/application/samples/peripheral/My_project_63/components/business_logic/../sle_network/../shared_protocol/shared_protocol.h

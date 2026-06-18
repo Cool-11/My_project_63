@@ -7105,6 +7105,7 @@
 8       ./.plat_bss_flash/application/ws63/ws63_liteos_application/main.c/systick_count1
 8       ./.plat_bss_flash/application/ws63/ws63_liteos_application/main.c/tcxo_count1
 226     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_tag_map.c/biz_build_tags_json
+130     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_sle.c/biz_check_confirm_bind
 166     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c/biz_check_global_compare
 14      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_clear_pending
 14      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_cloud_publish
@@ -7124,9 +7125,9 @@
 170     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c/biz_cmd_wifi_connect
 76      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_wifi_mqtt.c/biz_cmd_wifi_status
 58      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_esp32_to_tag_id
-68      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_get_pending_timeout_ms
-1918    ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c/biz_handle_esp32_msg
-1558    ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c/biz_handle_screen_cmd
+86      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_get_pending_timeout_ms
+2218    ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_esp32_resp.c/biz_handle_esp32_msg
+1496    ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c/biz_handle_screen_cmd
 448     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_sle.c/biz_handle_sle_adv
 136     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c/biz_locate_check_timeout
 144     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_tag_map.c/biz_map_add
@@ -7145,10 +7146,10 @@
 108     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c/biz_screen_check_global
 88      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c/biz_screen_check_specific
 186     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c/biz_screen_find_locate
-266     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c/biz_screen_in_capture
-88      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_screen_reply
+414     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_screen_cmd.c/biz_screen_in_capture
+102     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_screen_reply
 76      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_set_pending
-642     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_sle.c/biz_sle_notify_cb
+644     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_sle.c/biz_sle_notify_cb
 26      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_tag_id_to_esp32
 46      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_sle.c/biz_tag_list_find_by_mac
 522     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/business_logic/biz_core.c/biz_uart_cmd_handler
@@ -7167,7 +7168,7 @@
 226     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/cs_cache_push
 90      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/cs_mqtt_config_load_nv
 56      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/cs_mqtt_config_save_nv
-450     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/cs_mqtt_connect
+448     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/cs_mqtt_connect
 26      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/cs_mqtt_connection_lost
 2       ./.bth_text_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/cs_mqtt_delivery_complete
 56      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/cs_mqtt_disconnect
@@ -7193,7 +7194,7 @@
 28      ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_cloud_publish_cb
 322     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_connect_state_changed_cb
 68      ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_entry
-610     ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_main_task
+746     ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_main_task
 36      ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_mqtt_cmd_cb
 134     ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_mqtt_cmd_cb.part.0
 20      ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_mqtt_msg_cb
@@ -7202,24 +7203,24 @@
 108     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_restart_scan_after_security_fail
 12      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_seek_disable_cb
 12      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_seek_enable_cb
-174     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_seek_result_cb
+288     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_seek_result_cb
 140     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_sle_enable_cb
 86      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_exchange_info_cb
-286     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_find_property_cb
+290     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_find_property_cb
 182     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_find_structure_cb
-144     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_find_structure_cmp_cb
+158     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_find_structure_cmp_cb
 12      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_indication_cb
 288     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_notification_cb
 12      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_read_cfm_cb
 82      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_ssap_write_cfm_cb
-112     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_start_ssap_exchange
+118     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_start_ssap_exchange
 178     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/my63_uuid_match
 114     ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_wifi_cmd_cb
-104     ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_wifi_state_cb
+120     ./.bth_text_flash/application/samples/peripheral/My_project_63/app/main.c/my63_wifi_state_cb
 128     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c/shared_protocol_init
 208     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c/shared_protocol_pack_adv
 156     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c/shared_protocol_pack_write_cmd
-364     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c/shared_protocol_unpack_adv
+206     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c/shared_protocol_unpack_adv
 146     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c/shared_protocol_unpack_bind_rsp
 158     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c/shared_protocol_unpack_inventory
 94      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/shared_protocol/shared_protocol.c/shared_protocol_validate
@@ -7232,14 +7233,16 @@
 10      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_get_scan_count
 8       ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_get_scan_table
 10      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_get_scan_table_count
-386     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_init
+388     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_init
 10      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_is_connected
+10      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_is_connecting
+10      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_is_link_lost
 36      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_is_ssap_ready
 10      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_is_target_found
 112     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_poll
 20      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_register_notify_cb
-168     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_send_cmd
-144     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_start_scan
+174     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_send_cmd
+146     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_start_scan
 78      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_stop_scan
 76      ./.bth_text_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/sle_network_update_scan_tag_id
 220     ./.bth_text_flash/application/samples/peripheral/My_project_63/components/uart_display/uart_display.c/uart_display_init
@@ -7476,7 +7479,6 @@
 4       ./.bth_bss_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/g_my63_authenticated
 4       ./.bth_bss_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/g_my63_cccd_written
 36      ./.bth_bss_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/g_my63_conn_cbk
-2       ./.bth_bss_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/g_my63_conn_id
 4       ./.bth_bss_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/g_my63_connected
 4       ./.bth_bss_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/g_my63_connecting
 4       ./.bth_bss_flash/application/samples/peripheral/My_project_63/app/main.c/g_my63_events
@@ -7515,6 +7517,7 @@
 8192    ./.bth_bss_flash/application/samples/peripheral/My_project_63/components/uart_vision/uart_vision.c/g_uv_rx_buf
 16      ./.bth_data_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/g_cs_ifname
 48      ./.bth_data_flash/application/samples/peripheral/My_project_63/components/cloud_storage/cloud_storage.c/g_cs_wifi_event_cb
+2       ./.bth_data_flash/application/samples/peripheral/My_project_63/components/sle_network/sle_network.c/g_my63_conn_id
 8       ./.bth_data_flash/application/samples/peripheral/My_project_63/components/uart_display/uart_display.c/g_ud_buffer_cfg
 8       ./.bth_data_flash/application/samples/peripheral/My_project_63/components/uart_vision/uart_vision.c/g_uv_buffer_cfg
 4       ./.wifi_bss_tcm/home/l60091321/SDK/ws63_106/protocol/wifi/source/host/forward/hmac_rx_data_filter.c/g_deauth_flow_control_ms
@@ -7592,4 +7595,4 @@
 30      ./.plat_text_sram/drivers/chips/ws63/porting/sfc/porting/sfc_protect.c/sfc_port_write_unlock
 788     ./.patch/application/ws63/ws63_liteos_application/main.c/patch_cmp
 1552    ./.patch/application/ws63/ws63_liteos_application/main.c/patch_remap
-done. Lines: 19408, Matches: 7594
+done. Lines: 19412, Matches: 7597

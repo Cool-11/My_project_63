@@ -56,6 +56,10 @@ uint32_t biz_get_pending_timeout_ms(const char *cmd)
         strcmp(cmd, "check_global") == 0) {
         return BIZ_PENDING_TIMEOUT_ESP32_MS;
     }
+    /* SLE 连接+SSAP发现：10秒超时 */
+    if (strcmp(cmd, "confirm_conn") == 0) {
+        return 10000;
+    }
     /* SLE 命令：BIND_TAG/FIND 等，5秒超时 */
     return BIZ_PENDING_TIMEOUT_SLE_MS;
 }
@@ -186,6 +190,7 @@ void biz_screen_reply(const char *cmd, const char *fmt, ...)
         vsnprintf(params, sizeof(params), fmt, ap);
         va_end(ap);
     }
+    osal_printk("[WS63_BIZ] →屏 #%s,%s\r\n", cmd, params);
     uart_display_send(cmd, "%s", params);
 }
 

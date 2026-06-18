@@ -26,6 +26,12 @@ extern "C" {
 #define CS_THINGSKIT_GATEWAY_TELEMETRY    "v1/gateway/telemetry"
 #define CS_THINGSKIT_GATEWAY_RPC_SUB      "v1/gateway/rpc"
 
+/* MQTT 默认配置（首次启动时写入 NV，后续可通过命令覆盖） */
+#define CS_MQTT_DEFAULT_URI       "tcp://thingskit.aiotcomm.com.cn:11883"
+#define CS_MQTT_DEFAULT_CLIENT_ID "aiotcomm11"
+#define CS_MQTT_DEFAULT_USERNAME  "aiotcomm11"
+#define CS_MQTT_DEFAULT_PASSWORD  "aiotcomm11"
+
 typedef enum {
     CS_WIFI_IDLE = 0,
     CS_WIFI_SCANNING,

@@ -1,8 +1,10 @@
 #include "business_logic.h"
 #include "business_logic_internal.h"
 #include "soc_osal.h"
+#include "securec.h"
 #include "cJSON.h"
 #include "../uart_display/uart_display.h"
+#include "../sle_network/sle_network.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -88,7 +90,17 @@ static void biz_handle_asset_detail(cJSON *root)
 {
     cJSON *j_found = cJSON_GetObjectItem(root, "found");
     if (j_found && cJSON_IsBool(j_found) && !cJSON_IsTrue(j_found)) {
-        biz_screen_reply("ERR", "ERR_ASSET_NOT_FOUND,Not registered");
+        /* ESP32 上没有此资产（可能 TF 卡被手动清理），同步删除本地 NV */
+        cJSON *j_tag = cJSON_GetObjectItem(root, "tag_id");
+        const char *tag_str = (j_tag && cJSON_IsString(j_tag)) ? j_tag->valuestring : "0";
+        uint16_t tag_id = 0;
+        if (biz_esp32_to_tag_id(tag_str, &tag_id) == 0 && tag_id != 0) {
+            biz_map_remove(tag_id);
+            biz_map_save_nv();
+            osal_printk("[WS63_BIZ] asset_detail not found on ESP32, removed tag=%u from NV\r\n",
+                (unsigned int)tag_id);
+        }
+        biz_screen_reply("ERR", "ERR_ASSET_NOT_FOUND,Cleared from local");
         return;
     }
 
@@ -106,6 +118,24 @@ static void biz_handle_asset_detail(cJSON *root)
     biz_esp32_to_tag_id(tag_str, &tag_id);
     char tag_display[8];
     ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
+
+    /* 同步 ESP32 数据到本地 biz_map */
+    if (tag_id != 0 && qty > 0) {
+        biz_tag_entry_t *entry = biz_map_find_by_tag(tag_id);
+        if (entry == NULL) {
+            entry = biz_map_add(tag_id);
+        }
+        if (entry != NULL) {
+            if (name[0] != '?' && name[0] != '\0') {
+                (void)strncpy_s(entry->item, BIZ_ITEM_LEN, name, BIZ_ITEM_LEN - 1);
+            }
+            if (area[0] != '?' && area[0] != '\0') {
+                (void)strncpy_s(entry->zone, BIZ_ZONE_LEN, area, BIZ_ZONE_LEN - 1);
+            }
+            entry->qty = (uint16_t)qty;
+            biz_map_save_nv();
+        }
+    }
 
     biz_screen_reply("TAG_INFO", "%s,%s,%s,%d", tag_display, name, area, qty);
 }
@@ -154,6 +184,23 @@ static void biz_handle_asset_list_page(cJSON *root)
             char tag_display[8];
             ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
 
+            /* 同步 ESP32 数据到本地 biz_map */
+            if (tag_id != 0) {
+                biz_tag_entry_t *entry = biz_map_find_by_tag(tag_id);
+                if (entry == NULL) {
+                    entry = biz_map_add(tag_id);
+                }
+                if (entry != NULL) {
+                    if (name[0] != '?' && name[0] != '\0') {
+                        (void)strncpy_s(entry->item, BIZ_ITEM_LEN, name, BIZ_ITEM_LEN - 1);
+                    }
+                    if (area[0] != '?' && area[0] != '\0') {
+                        (void)strncpy_s(entry->zone, BIZ_ZONE_LEN, area, BIZ_ZONE_LEN - 1);
+                    }
+                    entry->qty = (uint16_t)qty;
+                }
+            }
+
             biz_screen_reply("ITEM", "%d,%s,%s,%s,%d", i, tag_display, name, area, qty);
         }
     }
@@ -178,19 +225,40 @@ static void biz_handle_task_done(cJSON *root, const char *data_json)
         char tag_display[8];
         ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
 
-        biz_screen_reply("DONE", "reg,%s,%s", result, tag_display);
-        if (g_biz_pending.active) {
-            biz_clear_pending();
+        /* 入库成功：确保 tag 在 biz_map 中（物品信息已在 @in,capture 时保存） */
+        if (strcmp(result, "success") == 0 || strcmp(result, "success_updated") == 0) {
+            biz_tag_entry_t *entry = biz_map_find_by_tag(tag_id);
+            if (entry == NULL) {
+                entry = biz_map_add(tag_id);
+                if (entry != NULL) {
+                    /* 从扫描表获取 MAC */
+                    const sle_scan_entry_t *scan = sle_network_get_scan_table();
+                    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+                        if (scan[i].used && scan[i].tag_id == tag_id) {
+                            (void)memcpy_s(entry->mac, BIZ_MAC_LEN, scan[i].mac, BIZ_MAC_LEN);
+                            break;
+                        }
+                    }
+                    osal_printk("[WS63_BIZ] register success, added tag=%u to biz_map\r\n",
+                        (unsigned int)tag_id);
+                }
+            }
+            /* 更新状态为 ONLINE，防止 @in,cancel 误删已注册的 tag */
+            if (entry != NULL) {
+                entry->status = BIZ_TAG_ONLINE;
+            }
+            biz_map_save_nv();
         }
+
+        biz_screen_reply("DONE", "reg,%s,%s", result, tag_display);
+        /* 不清除 pending — 等 @in,confirm 来清除并执行 BIND_TAG + 持久化 */
     } else if (strcmp(task, "outbound") == 0) {
         cJSON *j_match = cJSON_GetObjectItem(root, "is_match");
         bool is_match = (j_match && cJSON_IsBool(j_match)) ? cJSON_IsTrue(j_match) : false;
         cJSON *j_remain = cJSON_GetObjectItem(root, "remaining_qty");
         int remain = (j_remain && cJSON_IsNumber(j_remain)) ? j_remain->valueint : 0;
         biz_screen_reply("DONE", "out,%s,%d", is_match ? "success" : "fail", remain);
-        if (g_biz_pending.active) {
-            biz_clear_pending();
-        }
+        /* 不清除 pending — 等 @out,confirm 来清除并执行持久化 */
     } else if (strcmp(task, "inventory") == 0) {
         cJSON *j_conf = cJSON_GetObjectItem(root, "weighted_confidence");
         double conf = (j_conf && cJSON_IsNumber(j_conf)) ? j_conf->valuedouble : 0.0;

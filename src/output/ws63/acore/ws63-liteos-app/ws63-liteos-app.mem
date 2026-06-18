@@ -34,9 +34,9 @@
     .wifi_data_sram   0x00A0F718                     0                  
     .btc_data_sram    0x00A0F718                     0                  
     .bth_data_sram    0x00A0F718                     0                  
-    .btc_data_flash   0x00A0F718                  5028 load address 0x396840
-    .bth_data_flash   0x00A10AC0                  2592 load address 0x397BE8
-    .data             0x00A114E0                   664 load address 0x398608
+    .btc_data_flash   0x00A0F718                  5028 load address 0x396C48
+    .bth_data_flash   0x00A10AC0                  2592 load address 0x397FF0
+    .data             0x00A114E0                   664 load address 0x398A10
     .plat_bss_sram    0x00A11780                  1217                  
     .plat_bss_flash   0x00A11C48                 13196                  
     .wifi_bss_flash   0x00A14FD8                 38048                  
@@ -55,7 +55,7 @@
     startup           0x00230300                   424                  
     .sysintcall.init  0x002304A8                    52                  
   
-  PROGRAM             0x00230700    0x23F900  0x1681A0 = 1474976
+  PROGRAM             0x00230700    0x23F900  0x1685A8 = 1476008
     .patch            0x00230700                  2344                  
     .rom_ram_cb_text  0x00231028                  1816                  
     .plat_romdata     0x00231740                   212                  
@@ -71,13 +71,13 @@
     .wifi_text_flash  0x0027DBE0                589306                  
     .patch_on_flash   0x0030D9E0                  2378                  
     .btc_text_flash   0x0030E330                136832                  
-    .bth_text_flash   0x0032F9B0                277693                  
-    .radar_text_flash  0x00373670                 44810                  
-    .radar_ai_text_flash  0x0037E580                 10188                  
-    .text             0x00380D50                 88816                  
-    .btc_data_flash   0x00396840                  5028                  
-    .bth_data_flash   0x00397BE8                  2592                  
-    .data             0x00398608                   664                  
+    .bth_text_flash   0x0032F9B0                278725                  
+    .radar_text_flash  0x00373A78                 44810                  
+    .radar_ai_text_flash  0x0037E988                 10188                  
+    .text             0x00381158                 88816                  
+    .btc_data_flash   0x00396C48                  5028                  
+    .bth_data_flash   0x00397FF0                  2592                  
+    .data             0x00398A10                   664                  
 
   ====================================================
 
@@ -1573,30 +1573,30 @@
   --------------------------------  --------  -----
 
 
-  .bth_text_flash                      22896
+  .bth_text_flash                      23606
 
     application                             
       samples                               
         peripheral                          
           My_project_63                     
-            components                 21770
-              business_logic           11252
+            components                 22328
+              business_logic           11802
                 biz_tag_map                       1022
-                biz_screen_cmd                    2620
-                biz_core                          1472
+                biz_sle                           1268
+                biz_screen_cmd                    2706
+                biz_core                          1504
                 biz_esp32_cmd                     2160
                 biz_wifi_mqtt                      924
-                biz_esp32_resp                    1918
-                biz_sle                           1136
+                biz_esp32_resp                    2218
 
-              cloud_storage             2436
-                cloud_storage                     2436
+              cloud_storage             2434
+                cloud_storage                     2434
 
-              sle_network               4188
-                sle_network                       4188
+              sle_network               4356
+                sle_network                       4356
 
-              shared_protocol           1254
-                shared_protocol                   1254
+              shared_protocol           1096
+                shared_protocol                   1096
 
               uart_display              1204
                 uart_display                      1204
@@ -1604,8 +1604,8 @@
               uart_vision               1436
                 uart_vision                       1436
 
-            app                         1126
-              main                                1126
+            app                         1278
+              main                                1278
 
 
   Section                            Total     Size
@@ -1889,15 +1889,15 @@
   --------------------------------  --------  -----
 
 
-  .bth_bss_flash                       33251
+  .bth_bss_flash                       33249
 
     application                             
       samples                               
         peripheral                          
           My_project_63                     
-            components                 32812
-              sle_network               1215
-                sle_network                       1215
+            components                 32810
+              sle_network               1213
+                sle_network                       1213
 
               business_logic            2210
                 biz_core                          2078
@@ -1921,7 +1921,7 @@
   --------------------------------  --------  -----
 
 
-  .bth_data_flash                         80
+  .bth_data_flash                         82
 
     application                             
       samples                               
@@ -1930,6 +1930,9 @@
             components                      
               cloud_storage               64
                 cloud_storage                       64
+
+              sle_network                  2
+                sle_network                          2
 
               uart_display                 8
                 uart_display                         8

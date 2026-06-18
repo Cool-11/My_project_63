@@ -280,3 +280,42 @@ void biz_handle_sle_adv(void)
         tle->last_publish_ms = now;
     }
 }
+
+/* 主循环调用：检查 confirm_conn 状态，SSAP 就绪后发送 BIND_TAG */
+void biz_check_confirm_bind(void)
+{
+    if (!g_biz_pending.active) {
+        return;
+    }
+    if (strcmp(g_biz_pending.cmd, "confirm_conn") != 0) {
+        return;
+    }
+
+    /* 检查连接是否还活着（连接失败时 pending 会超时，但主动检查更及时） */
+    if (sle_network_is_link_lost()) {
+        biz_screen_reply("ERR", "ERR_CONNECT_LOST,Connection lost");
+        biz_clear_pending();
+        (void)sle_network_start_scan();
+        return;
+    }
+
+    /* 检查 SSAP 是否就绪 */
+    if (!sle_network_is_ssap_ready()) {
+        return;  /* 还没就绪，继续等 */
+    }
+
+    /* SSAP 就绪，发送 BIND_TAG */
+    int ret = sle_network_send_cmd(SSAP_CMD_BIND_TAG, g_biz_pending.tag_id);
+    if (ret != 0) {
+        biz_screen_reply("ERR", "ERR_BIND_SEND_FAIL,Bind send fail");
+        biz_clear_pending();
+        (void)sle_network_start_scan();
+        return;
+    }
+
+    /* 更新 pending 状态，等待 biz_sle_notify_cb 回调 */
+    biz_set_pending("in_confirm", 0, g_biz_pending.tag_id);
+    biz_screen_reply("MSG", "Binding...");
+    osal_printk("[WS63_BIZ] in,confirm tag=%u SSAP ready, sent BIND_TAG\r\n",
+        (unsigned int)g_biz_pending.tag_id);
+}
