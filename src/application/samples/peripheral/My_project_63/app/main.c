@@ -343,6 +343,9 @@ static void *my63_main_task(const char *arg)
             biz_handle_sle_adv();
         }
 
+        /* 检查 in_confirm_connecting 状态，SSAP 就绪后发 BIND_TAG */
+        biz_check_confirm_bind();
+
         /* 定时器事件（心跳/超时/扫描重启） */
         if (flags & EVENT_TIMER) {
             business_logic_poll();

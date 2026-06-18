@@ -1,8 +1,10 @@
 #include "business_logic.h"
 #include "business_logic_internal.h"
 #include "soc_osal.h"
+#include "securec.h"
 #include "cJSON.h"
 #include "../uart_display/uart_display.h"
+#include "../sle_network/sle_network.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -177,6 +179,31 @@ static void biz_handle_task_done(cJSON *root, const char *data_json)
         biz_esp32_to_tag_id(tag_str, &tag_id);
         char tag_display[8];
         ud_tag_id_to_str(tag_id, tag_display, sizeof(tag_display));
+
+        /* 入库成功：确保 tag 在 biz_map 中（物品信息已在 @in,capture 时保存） */
+        if (strcmp(result, "success") == 0 || strcmp(result, "success_updated") == 0) {
+            biz_tag_entry_t *entry = biz_map_find_by_tag(tag_id);
+            if (entry == NULL) {
+                entry = biz_map_add(tag_id);
+                if (entry != NULL) {
+                    /* 从扫描表获取 MAC */
+                    const sle_scan_entry_t *scan = sle_network_get_scan_table();
+                    for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+                        if (scan[i].used && scan[i].tag_id == tag_id) {
+                            (void)memcpy_s(entry->mac, BIZ_MAC_LEN, scan[i].mac, BIZ_MAC_LEN);
+                            break;
+                        }
+                    }
+                    osal_printk("[WS63_BIZ] register success, added tag=%u to biz_map\r\n",
+                        (unsigned int)tag_id);
+                }
+            }
+            /* 更新状态为 ONLINE，防止 @in,cancel 误删已注册的 tag */
+            if (entry != NULL) {
+                entry->status = BIZ_TAG_ONLINE;
+            }
+            biz_map_save_nv();
+        }
 
         biz_screen_reply("DONE", "reg,%s,%s", result, tag_display);
         /* 不清除 pending — 等 @in,confirm 来清除并执行 BIND_TAG + 持久化 */

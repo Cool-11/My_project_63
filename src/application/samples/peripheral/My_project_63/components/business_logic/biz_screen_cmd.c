@@ -163,6 +163,21 @@ static void biz_screen_in_capture(const char *params)
 
     biz_raw_json_send(esp32_json);
 
+    /* 立即把物品信息写入 biz_map（不依赖 ESP32 的 task_done 响应） */
+    if (mode != 2 && parsed >= 4) {
+        biz_tag_entry_t *entry = biz_map_find_by_tag(tag_id);
+        if (entry == NULL) {
+            entry = biz_map_add(tag_id);
+        }
+        if (entry != NULL) {
+            (void)strncpy_s(entry->item, BIZ_ITEM_LEN, name, BIZ_ITEM_LEN - 1);
+            (void)strncpy_s(entry->zone, BIZ_ZONE_LEN, area, BIZ_ZONE_LEN - 1);
+            entry->qty = (uint16_t)qty;
+            osal_printk("[WS63_BIZ] capture saved item=%s zone=%s qty=%u to biz_map\r\n",
+                name, area, (unsigned int)qty);
+        }
+    }
+
     /* 记录 pending（不连接 BS21E，等 @in,confirm 时再连） */
     biz_set_pending("in_capture", 0, tag_id);
     biz_screen_reply("PROG", "1,front,0");
@@ -180,7 +195,7 @@ static void biz_screen_in_photo(const char *view)
     biz_raw_json_send(esp32_json);
 }
 
-/* @in,confirm → 连接BS21E → BIND_TAG → 蜂鸣5s → NV+上云 */
+/* @in,confirm → 连接BS21E → 等SSAP就绪 → BIND_TAG → 蜂鸣5s → NV+上云 */
 static void biz_screen_in_confirm(void)
 {
     if (!g_biz_pending.active) {
@@ -196,7 +211,7 @@ static void biz_screen_in_confirm(void)
         return;
     }
 
-    /* 连接 BS21E */
+    /* 连接 BS21E（异步，连接+SSAP发现需要时间） */
     int ret = sle_network_connect_by_tag(g_biz_pending.tag_id);
     if (ret != 0) {
         biz_screen_reply("ERR", "ERR_CONNECT_FAIL,Connect fail(%d)", ret);
@@ -204,18 +219,10 @@ static void biz_screen_in_confirm(void)
         return;
     }
 
-    /* 发送 BIND_TAG */
-    ret = sle_network_send_cmd(SSAP_CMD_BIND_TAG, g_biz_pending.tag_id);
-    if (ret != 0) {
-        biz_screen_reply("ERR", "ERR_BIND_SEND_FAIL,Bind send fail");
-        biz_clear_pending();
-        return;
-    }
-
-    /* 更新 pending 状态，等待 biz_sle_notify_cb 回调 */
-    biz_set_pending("in_confirm", 0, g_biz_pending.tag_id);
-    biz_screen_reply("MSG", "Binding...");
-    osal_printk("[WS63_BIZ] in,confirm tag=%u sent BIND_TAG\r\n",
+    /* 设置 pending 为 "in_confirm_connecting"，等待 SSAP 就绪 */
+    biz_set_pending("in_confirm_connecting", 0, g_biz_pending.tag_id);
+    biz_screen_reply("MSG", "Connecting...");
+    osal_printk("[WS63_BIZ] in,confirm tag=%u connecting, waiting for SSAP\r\n",
         (unsigned int)g_biz_pending.tag_id);
 }
 
@@ -293,7 +300,7 @@ static void biz_screen_out_capture(const char *params)
 
     biz_raw_json_send(esp32_json);
     biz_set_pending("outbound", 0, tag_id);
-    osal_printk("[WS63_BIZ] screen out,capture tag=%s qty=%s\r\n", id_str, qty_str);
+    osal_printk("[WS63_BIZ] screen out,capture tag=%s qty=%s json=%s\r\n", id_str, qty_str, esp32_json);
 }
 
 /* @out,photo,front → capture JSON */
