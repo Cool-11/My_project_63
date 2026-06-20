@@ -173,6 +173,17 @@ static void biz_screen_in_capture(const char *params)
             (void)strncpy_s(entry->item, BIZ_ITEM_LEN, name, BIZ_ITEM_LEN - 1);
             (void)strncpy_s(entry->zone, BIZ_ZONE_LEN, area, BIZ_ZONE_LEN - 1);
             entry->qty = (uint16_t)qty;
+            /* 从扫描表锁定 MAC — 此刻用户正对着要注册的标签，MAC 最准确 */
+            const sle_scan_entry_t *scan = sle_network_get_scan_table();
+            for (uint16_t i = 0; i < SLE_SCAN_TABLE_MAX; i++) {
+                if (scan[i].used && scan[i].tag_id == tag_id) {
+                    (void)memcpy_s(entry->mac, BIZ_MAC_LEN, scan[i].mac, BIZ_MAC_LEN);
+                    osal_printk("[WS63_BIZ] capture locked mac=%02x:%02x:%02x:%02x:%02x:%02x\r\n",
+                        entry->mac[0], entry->mac[1], entry->mac[2],
+                        entry->mac[3], entry->mac[4], entry->mac[5]);
+                    break;
+                }
+            }
             osal_printk("[WS63_BIZ] capture saved item=%s zone=%s qty=%u to biz_map\r\n",
                 name, area, (unsigned int)qty);
         }
@@ -195,7 +206,7 @@ static void biz_screen_in_photo(const char *view)
     biz_raw_json_send(esp32_json);
 }
 
-/* @in,confirm → 连接BS21E → 等SSAP就绪 → BIND_TAG → 蜂鸣5s → NV+上云 */
+/* @in,confirm → 持久化（BIND 留待 SLE 连接稳定后后台执行） */
 static void biz_screen_in_confirm(void)
 {
     if (!g_biz_pending.active) {
@@ -203,26 +214,14 @@ static void biz_screen_in_confirm(void)
         return;
     }
 
-    /* 用 pending 中的 tag_id 查 biz_map 获取 MAC */
     biz_tag_entry_t *entry = biz_map_find_by_tag(g_biz_pending.tag_id);
-    if (entry == NULL) {
-        biz_screen_reply("ERR", "ERR_NOT_REGISTERED,Not registered");
-        biz_clear_pending();
-        return;
+    if (entry != NULL) {
+        entry->status = BIZ_TAG_BOUND;
     }
-
-    /* 连接 BS21E（异步，连接+SSAP发现需要时间） */
-    int ret = sle_network_connect_by_tag(g_biz_pending.tag_id);
-    if (ret != 0) {
-        biz_screen_reply("ERR", "ERR_CONNECT_FAIL,Connect fail(%d)", ret);
-        biz_clear_pending();
-        return;
-    }
-
-    /* 设置 pending 为 "in_confirm_connecting"，等待 SSAP 就绪 */
-    biz_set_pending("in_confirm_connecting", 0, g_biz_pending.tag_id);
-    biz_screen_reply("MSG", "Connecting...");
-    osal_printk("[WS63_BIZ] in,confirm tag=%u connecting, waiting for SSAP\r\n",
+    biz_map_save_nv();
+    biz_clear_pending();
+    biz_screen_reply("MSG", "Registered OK");
+    osal_printk("[WS63_BIZ] in,confirm tag=%u saved to NV\r\n",
         (unsigned int)g_biz_pending.tag_id);
 }
 

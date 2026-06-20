@@ -266,8 +266,9 @@ static void my63_poll_sle(uint64_t now)
 {
     sle_network_poll();
 
-    /* 扫描未激活时定期重启 */
+    /* 扫描未激活时定期重启（连接进行中不启动扫描，避免冲突） */
     if (sle_network_is_connected() == 0 &&
+        sle_network_is_connecting() == 0 &&
         sle_network_get_scan_active() == 0) {
         if (now - g_my63_last_rescan >= MY63_SLE_RESCAN_MS) {
             g_my63_last_rescan = now;

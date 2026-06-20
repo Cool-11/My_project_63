@@ -281,13 +281,13 @@ void biz_handle_sle_adv(void)
     }
 }
 
-/* 主循环调用：检查 in_confirm_connecting 状态，SSAP 就绪后发送 BIND_TAG */
+/* 主循环调用：检查 confirm_conn 状态，SSAP 就绪后发送 BIND_TAG */
 void biz_check_confirm_bind(void)
 {
     if (!g_biz_pending.active) {
         return;
     }
-    if (strcmp(g_biz_pending.cmd, "in_confirm_connecting") != 0) {
+    if (strcmp(g_biz_pending.cmd, "confirm_conn") != 0) {
         return;
     }
 

@@ -57,7 +57,7 @@ uint32_t biz_get_pending_timeout_ms(const char *cmd)
         return BIZ_PENDING_TIMEOUT_ESP32_MS;
     }
     /* SLE 连接+SSAP发现：10秒超时 */
-    if (strcmp(cmd, "in_confirm_connecting") == 0) {
+    if (strcmp(cmd, "confirm_conn") == 0) {
         return 10000;
     }
     /* SLE 命令：BIND_TAG/FIND 等，5秒超时 */
