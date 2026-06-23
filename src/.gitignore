@@ -1,0 +1,40 @@
+# 编译产物
+output/
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.fwpkg
+*.map
+*.lst
+*.mem
+*.nm
+*.asm
+*.du
+
+# CMake 生成文件
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE 文件
+.vscode/
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.tmp
+*.bak
+*.log
+
+# NV 数据文件
+ruvector.db
