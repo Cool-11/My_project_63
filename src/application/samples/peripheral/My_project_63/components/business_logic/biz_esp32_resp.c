@@ -137,6 +137,17 @@ static void biz_handle_asset_detail(cJSON *root)
         }
     }
 
+    /* 如果是 out_start 查询，发送 #TAG 给屏幕并清除 pending */
+    if (g_biz_pending.active &&
+        strcmp(g_biz_pending.cmd, "out_start_query") == 0 &&
+        g_biz_pending.tag_id == tag_id) {
+        biz_screen_reply("TAG", "%s,%s,%s,%d", tag_display, name, area, qty);
+        biz_clear_pending();
+        osal_printk("[WS63_BIZ] out_start query done, sent #TAG for tag=%u\r\n",
+            (unsigned int)tag_id);
+        return;
+    }
+
     biz_screen_reply("TAG_INFO", "%s,%s,%s,%d", tag_display, name, area, qty);
 }
 

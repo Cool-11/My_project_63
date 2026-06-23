@@ -60,6 +60,14 @@ uint32_t biz_get_pending_timeout_ms(const char *cmd)
     if (strcmp(cmd, "confirm_conn") == 0) {
         return 10000;
     }
+    /* 出库查询：5秒超时 */
+    if (strcmp(cmd, "out_start_query") == 0) {
+        return BIZ_PENDING_TIMEOUT_SLE_MS;
+    }
+    /* 查找定位连接：10秒超时（含 SSAP 发现） */
+    if (strcmp(cmd, "find_locate_connecting") == 0) {
+        return 10000;
+    }
     /* SLE 命令：BIND_TAG/FIND 等，5秒超时 */
     return BIZ_PENDING_TIMEOUT_SLE_MS;
 }

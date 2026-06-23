@@ -247,7 +247,7 @@ static void biz_screen_in_cancel(void)
 
 /* ========== Page2 出库命令处理 ========== */
 
-/* @out,start → 扫描已注册 → #TAG,name,area,total / #MSG */
+/* @out,start → 扫描已注册 → 查询ESP32最新数据 → #TAG,name,area,total / #MSG */
 static void biz_screen_out_start(void)
 {
     int idx = 0;
@@ -265,11 +265,18 @@ static void biz_screen_out_start(void)
         return;
     }
 
-    char tag_str[8];
-    ud_tag_id_to_str(entry->tag_id, tag_str, sizeof(tag_str));
-    biz_screen_reply("TAG", "%s,%s,%s,%u",
-        tag_str, entry->item, entry->zone, (unsigned int)entry->qty);
-    biz_set_pending("out_start", 0, entry->tag_id);
+    /* 向 ESP32 查询最新数据，等待 asset_detail 回调 */
+    char tag_esp32[8];
+    biz_tag_id_to_esp32(entry->tag_id, tag_esp32, sizeof(tag_esp32));
+    char esp32_json[64];
+    snprintf(esp32_json, sizeof(esp32_json),
+        "{\"cmd\":\"get_asset\",\"tag_id\":\"%s\"}", tag_esp32);
+    biz_raw_json_send(esp32_json);
+
+    /* 设置 pending，等待 asset_detail 回调后发送 #TAG 给屏幕 */
+    biz_set_pending("out_start_query", 0, entry->tag_id);
+    osal_printk("[WS63_BIZ] out,start query tag=%u from ESP32\r\n",
+        (unsigned int)entry->tag_id);
 }
 
 /* @out,capture,<id>,<qty> → outbound JSON */
@@ -474,7 +481,7 @@ static void biz_screen_find_list(const char *page_str)
     biz_raw_json_send(esp32_json);
 }
 
-/* @find,locate,<id> → 连接BS21E + 蜂鸣（不经ESP32） */
+/* @find,locate,<id> → 连接BS21E → 等SSAP就绪 → 蜂鸣（不经ESP32） */
 static void biz_screen_find_locate(const char *id_str)
 {
     uint16_t tag_id = 0;
@@ -488,7 +495,7 @@ static void biz_screen_find_locate(const char *id_str)
         return;
     }
 
-    /* 连接 BS21E */
+    /* 连接 BS21E（异步） */
     int ret = sle_network_connect_by_tag(tag_id);
     if (ret != 0) {
         biz_screen_reply("LOCATE", "timeout,%s", id_str);
@@ -496,12 +503,10 @@ static void biz_screen_find_locate(const char *id_str)
         return;
     }
 
-    /* 发送蜂鸣指令 */
-    ret = sle_network_send_cmd(SSAP_CMD_FIND, tag_id);
-    if (ret != 0) {
-        biz_screen_reply("LOCATE", "timeout,%s", id_str);
-        return;
-    }
+    /* 设置 pending，等待 SSAP 就绪后发送蜂鸣指令 */
+    biz_set_pending("find_locate_connecting", 0, tag_id);
+    biz_screen_reply("MSG", "Connecting...");
+    osal_printk("[WS63_BIZ] find,locate tag=%s connecting, waiting for SSAP\r\n", id_str);
 
     /* 记录到活跃列表 */
     g_locate_tags[g_locate_count].tag_id = tag_id;

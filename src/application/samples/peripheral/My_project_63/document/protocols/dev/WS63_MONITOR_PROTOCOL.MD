@@ -4,8 +4,9 @@
 > **物理层**: UART, 115200bps, 8N1, 3.3V TTL  
 > **帧格式**: 逗号分隔文本帧（CSV-like），帧头 `#` / `@`，帧尾 `\r\n`  
 > **屏端模式**: `recmod=1` 主动解析  
-> **文档版本**: v2.3  
-> **最后更新**: 2026-05-27  
+> **文档版本**: v2.4  
+> **最后更新**: 2026-06-19  
+> **v2.4 更新**: ⭐ 出库自动查询ESP32最新数据（@out,start 先发 get_asset 再返回 #TAG）；入库确认简化（@in,confirm 直接保存 NV，不做 BIND_TAG）  
 > **v2.3 更新**: 新增 Page5 设置（WiFi连接/断开、背光调节）；所有页面 b3 返回统一加 cancel 帧；同步代码汇总  
 > **v2.2 更新**: 新增 Page4 查找定位（分页列表+标签蜂鸣）；补全 ESP32 命令映射  
 > **v2.1 更新**: 对齐 PROTOCOL.md v3.3 outbound 分步流程（新增 #ASSET_INFO 帧、出库 asset_info 确认步骤、task_done 改用 is_match 判断）  
@@ -110,8 +111,9 @@
   │
   ├─ [b7] 确认入库  ←─ 仅 sys0==4
   │   屏 → WS63: @in,confirm\r\n
-  │   WS63: 持久化资产记录
-  │   t5 = "确认入库中..."
+  │   WS63: 更新 biz_map 状态为 BOUND，保存 NV
+  │   WS63 → 屏: #MSG,Registered OK\r\n
+  │   t5 = "Registered OK"
   │   sys0 = 0
   │
   └─ [b3] 返回menu → page 0
@@ -249,7 +251,10 @@
   │
   ├─ [b0] 开始匹配标签
   │   屏 → WS63: @out,start\r\n
-  │   WS63: SLE扫描, RSSI取最近标签, 查询数据库
+  │   WS63: SLE扫描, RSSI取最近已注册标签
+  │   WS63 → ESP32: {"cmd":"get_asset","tag_id":"0x0001"} (查询最新数据)
+  │   ESP32 → WS63: {"type":"asset_detail","item_name":"扳手","storage_area":"A","quantity":50,...}
+  │   WS63: 同步数据到本地 biz_map
   │   WS63 → 屏: #TAG,0001,扳手,A,50\r\n
   │   t0 = "0001"   t3 = "扳手"   t2 = "A"   t1 = "50"
   │   t7 = "当前库存: 50  请输入出库数量"
@@ -643,14 +648,15 @@ ESP32→WS63: "0x0001"  →  WS63内部: "0001"  →  屏: "0001"
 ### 8.1 收到 `@in,start` / `@out,start`
 
 ```
-SLE扫描 → RSSI取最强标签 → 查询本地数据库:
+SLE扫描 → RSSI取最强已注册标签:
 
   in 页:
     标签不存在 → 发送 #TAG,<tag_id>
     标签已存在 → 发送 #VERIFY,<tag_id>,<name>,<area>,<qty>
 
-  out 页:
-    标签已存在 → 发送 #TAG,<tag_id>,<name>,<area>,<total>
+  out 页 (⭐ v2.4: 自动查询ESP32最新数据):
+    标签已存在 → 发送 get_asset 到 ESP32 → 等待 asset_detail
+               → 同步 biz_map → 发送 #TAG,<tag_id>,<name>,<area>,<qty>
     标签不存在 → 发送 #ERR,ERR_ASSET_NOT_FOUND,标签未注册
 ```
 
@@ -817,7 +823,8 @@ WS63 → SLE: 停止当前定位信号
 ### 7.14 收到 `@in,confirm` / `@out,confirm`
 
 ```
-in:  标记入库完成，持久化资产记录
+in:  ⭐ v2.4: 更新 biz_map 状态为 BOUND，保存 NV，清除 pending
+     → 屏: #MSG,Registered OK
 out: 确认出库完成（ESP32已在 task_done 中执行扣减）
 ```
 

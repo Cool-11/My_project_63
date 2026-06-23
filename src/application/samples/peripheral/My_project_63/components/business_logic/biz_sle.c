@@ -249,6 +249,21 @@ void biz_handle_sle_adv(void)
             continue;
         }
 
+        /* 自动同步 MAC：如果 biz_map 中该 tag_id 的 MAC 为空或不匹配，从扫描表更新 */
+        biz_tag_entry_t *entry_for_mac = biz_map_find_by_tag(scan[i].tag_id);
+        if (entry_for_mac != NULL) {
+            bool mac_empty = true;
+            for (int m = 0; m < BIZ_MAC_LEN; m++) {
+                if (entry_for_mac->mac[m] != 0) { mac_empty = false; break; }
+            }
+            if (mac_empty || memcmp(entry_for_mac->mac, scan[i].mac, BIZ_MAC_LEN) != 0) {
+                (void)memcpy_s(entry_for_mac->mac, BIZ_MAC_LEN, scan[i].mac, BIZ_MAC_LEN);
+                biz_map_save_nv();
+                osal_printk("[WS63_BIZ] auto-sync MAC for tag=%u from scan table\r\n",
+                    (unsigned int)scan[i].tag_id);
+            }
+        }
+
         /* 白名单判定 */
         bool whitelisted = biz_is_whitelisted(scan[i].tag_id, scan[i].mac);
         tle->whitelisted = whitelisted;
@@ -281,17 +296,21 @@ void biz_handle_sle_adv(void)
     }
 }
 
-/* 主循环调用：检查 confirm_conn 状态，SSAP 就绪后发送 BIND_TAG */
+/* 主循环调用：检查 SSAP 就绪后发送命令（confirm_conn / find_locate_connecting） */
 void biz_check_confirm_bind(void)
 {
     if (!g_biz_pending.active) {
         return;
     }
-    if (strcmp(g_biz_pending.cmd, "confirm_conn") != 0) {
+
+    /* 只处理需要等待 SSAP 的 pending 状态 */
+    bool is_confirm = (strcmp(g_biz_pending.cmd, "confirm_conn") == 0);
+    bool is_locate = (strcmp(g_biz_pending.cmd, "find_locate_connecting") == 0);
+    if (!is_confirm && !is_locate) {
         return;
     }
 
-    /* 检查连接是否还活着（连接失败时 pending 会超时，但主动检查更及时） */
+    /* 检查连接是否还活着 */
     if (sle_network_is_link_lost()) {
         biz_screen_reply("ERR", "ERR_CONNECT_LOST,Connection lost");
         biz_clear_pending();
@@ -304,18 +323,27 @@ void biz_check_confirm_bind(void)
         return;  /* 还没就绪，继续等 */
     }
 
-    /* SSAP 就绪，发送 BIND_TAG */
-    int ret = sle_network_send_cmd(SSAP_CMD_BIND_TAG, g_biz_pending.tag_id);
+    /* SSAP 就绪，根据 pending 类型发送不同命令 */
+    uint8_t cmd = is_confirm ? SSAP_CMD_BIND_TAG : SSAP_CMD_FIND;
+    int ret = sle_network_send_cmd(cmd, g_biz_pending.tag_id);
     if (ret != 0) {
-        biz_screen_reply("ERR", "ERR_BIND_SEND_FAIL,Bind send fail");
+        biz_screen_reply("ERR", is_confirm ? "ERR_BIND_SEND_FAIL,Bind send fail"
+                                           : "ERR_FIND_SEND_FAIL,Find send fail");
         biz_clear_pending();
         (void)sle_network_start_scan();
         return;
     }
 
-    /* 更新 pending 状态，等待 biz_sle_notify_cb 回调 */
-    biz_set_pending("in_confirm", 0, g_biz_pending.tag_id);
-    biz_screen_reply("MSG", "Binding...");
-    osal_printk("[WS63_BIZ] in,confirm tag=%u SSAP ready, sent BIND_TAG\r\n",
-        (unsigned int)g_biz_pending.tag_id);
+    if (is_confirm) {
+        biz_set_pending("in_confirm", 0, g_biz_pending.tag_id);
+        biz_screen_reply("MSG", "Binding...");
+        osal_printk("[WS63_BIZ] in,confirm tag=%u SSAP ready, sent BIND_TAG\r\n",
+            (unsigned int)g_biz_pending.tag_id);
+    } else {
+        /* 发送 #LOCATE,found 给屏幕 */
+        biz_screen_reply("LOCATE", "found,%04u", (unsigned int)g_biz_pending.tag_id);
+        biz_clear_pending();
+        osal_printk("[WS63_BIZ] find,locate tag=%u SSAP ready, sent FIND\r\n",
+            (unsigned int)g_biz_pending.tag_id);
+    }
 }
