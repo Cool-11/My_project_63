@@ -458,6 +458,11 @@ int sle_network_connect_by_tag(uint16_t tag_id)
     /* 停止扫描，准备连接 */
     (void)sle_network_stop_scan();
 
+    /* 清除上次连接的 SSAP 残留状态，避免 biz_check_confirm_bind 误判 */
+    g_my63_ssap_ready = 0;
+    g_my63_property_handle = 0;
+    g_my63_cccd_written = 0;
+
     g_my63_target_addr.type = 0;
     (void)memcpy_s(g_my63_target_addr.addr, SLE_ADDR_LEN, entry->mac, SLE_ADDR_LEN);
     g_my63_target_found = 1;
