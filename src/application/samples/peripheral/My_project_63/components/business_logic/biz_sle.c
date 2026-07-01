@@ -314,6 +314,7 @@ void biz_check_confirm_bind(void)
     if (sle_network_is_link_lost()) {
         biz_screen_reply("ERR", "ERR_CONNECT_LOST,Connection lost");
         biz_clear_pending();
+        sle_network_clear_connecting();
         (void)sle_network_start_scan();
         return;
     }
@@ -330,6 +331,7 @@ void biz_check_confirm_bind(void)
         biz_screen_reply("ERR", is_confirm ? "ERR_BIND_SEND_FAIL,Bind send fail"
                                            : "ERR_FIND_SEND_FAIL,Find send fail");
         biz_clear_pending();
+        sle_network_clear_connecting();
         (void)sle_network_start_scan();
         return;
     }
@@ -340,7 +342,8 @@ void biz_check_confirm_bind(void)
         osal_printk("[WS63_BIZ] in,confirm tag=%u SSAP ready, sent BIND_TAG\r\n",
             (unsigned int)g_biz_pending.tag_id);
     } else {
-        /* 发送 #LOCATE,found 给屏幕 */
+        /* 发送 #LOCATE,found 给屏幕，记录到活跃列表（start_ms 从现在开始） */
+        biz_locate_record_tag(g_biz_pending.tag_id);
         biz_screen_reply("LOCATE", "found,%04u", (unsigned int)g_biz_pending.tag_id);
         biz_clear_pending();
         osal_printk("[WS63_BIZ] find,locate tag=%u SSAP ready, sent FIND\r\n",

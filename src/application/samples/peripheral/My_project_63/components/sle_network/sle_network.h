@@ -44,6 +44,7 @@ int sle_network_stop_scan(void);
 int sle_network_is_target_found(void);
 int sle_network_is_connected(void);
 int sle_network_is_connecting(void);
+void sle_network_clear_connecting(void);
 int sle_network_is_link_lost(void);
 int sle_network_is_authenticated(void);
 int sle_network_is_ssap_ready(void);

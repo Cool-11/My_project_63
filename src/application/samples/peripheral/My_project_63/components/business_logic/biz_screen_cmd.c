@@ -507,14 +507,17 @@ static void biz_screen_find_locate(const char *id_str)
     biz_set_pending("find_locate_connecting", 0, tag_id);
     biz_screen_reply("MSG", "Connecting...");
     osal_printk("[WS63_BIZ] find,locate tag=%s connecting, waiting for SSAP\r\n", id_str);
+}
 
-    /* 记录到活跃列表 */
+/* 记录已定位的标签到活跃列表（由 biz_check_confirm_bind 在发送 FIND 后调用） */
+void biz_locate_record_tag(uint16_t tag_id)
+{
+    if (g_locate_count >= LOCATE_MAX_TAGS) {
+        return;
+    }
     g_locate_tags[g_locate_count].tag_id = tag_id;
     g_locate_tags[g_locate_count].start_ms = uapi_tcxo_get_ms();
     g_locate_count++;
-
-    biz_screen_reply("LOCATE", "found,%s", id_str);
-    osal_printk("[WS63_BIZ] find,locate tag=%s beep started\r\n", id_str);
 }
 
 /* @find,stop → 停止所有蜂鸣 */

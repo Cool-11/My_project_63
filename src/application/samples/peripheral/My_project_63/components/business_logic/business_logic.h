@@ -81,6 +81,7 @@ void business_logic_poll(void);
 /* 事件驱动新增：主循环调用的非阻塞入口 */
 void biz_handle_sle_adv(void);      /* 处理 SLE 广播队列数据 */
 void biz_check_confirm_bind(void);  /* 检查 in_confirm_connecting，SSAP 就绪后发 BIND_TAG */
+void biz_locate_record_tag(uint16_t tag_id);  /* 记录已定位标签（FIND 发送后调用） */
 void biz_handle_screen_cmd(const char *cmd, const char *params); /* 串口屏命令入口 */
 
 biz_tag_entry_t *biz_map_find_by_tag(uint16_t tag_id);

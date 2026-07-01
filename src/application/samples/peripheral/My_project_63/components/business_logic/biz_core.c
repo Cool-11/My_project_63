@@ -317,6 +317,8 @@ void business_logic_poll(void)
         /* 超时通知屏端，不发 ESP32（内部命令 ESP32 不认识） */
         biz_screen_reply("ERR", "ERR_TIMEOUT,%s timeout", g_biz_pending.cmd);
         biz_clear_pending();
+        sle_network_clear_connecting();
+        (void)sle_network_start_scan();
     }
 
     /* 寻物超时检查：5秒后自动停止蜂鸣 */

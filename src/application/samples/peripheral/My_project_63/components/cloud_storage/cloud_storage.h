@@ -24,13 +24,13 @@ extern "C" {
 #define CS_NV_KEY_WIFI_CFG  0x5003
 
 #define CS_THINGSKIT_GATEWAY_TELEMETRY    "v1/gateway/telemetry"
-#define CS_THINGSKIT_GATEWAY_RPC_SUB      "v1/gateway/rpc"
+#define CS_THINGSKIT_GATEWAY_RPC_SUB      "v1/gateway/rpc/+"
 
-/* MQTT 默认配置（首次启动时写入 NV，后续可通过命令覆盖） */
-#define CS_MQTT_DEFAULT_URI       "tcp://thingskit.aiotcomm.com.cn:11883"
-#define CS_MQTT_DEFAULT_CLIENT_ID "aiotcomm11"
-#define CS_MQTT_DEFAULT_USERNAME  "aiotcomm11"
-#define CS_MQTT_DEFAULT_PASSWORD  "aiotcomm11"
+/* MQTT 默认配置（EMQX Cloud 后端对接） */
+#define CS_MQTT_DEFAULT_URI       "ssl://h13f6185.ala.cn-hangzhou.emqxsl.cn:8883"
+#define CS_MQTT_DEFAULT_CLIENT_ID "ws63_gateway"
+#define CS_MQTT_DEFAULT_USERNAME  "111222qy"
+#define CS_MQTT_DEFAULT_PASSWORD  "huang19771128"
 
 typedef enum {
     CS_WIFI_IDLE = 0,

@@ -360,6 +360,12 @@ int sle_network_is_connecting(void)
     return g_my63_connecting;
 }
 
+void sle_network_clear_connecting(void)
+{
+    g_my63_connecting = 0;
+    osal_printk("[WS63_NET] connecting state cleared\r\n");
+}
+
 int sle_network_is_link_lost(void)
 {
     return g_my63_link_lost;
@@ -908,6 +914,8 @@ static void my63_write_cccd(void)
     ssapc_write_param_t param = {0};
     static uint8_t cccd_val[2] = {0x01, 0x00};
     errcode_t ret;
+    /* CCCD handle = property handle + 1（SLE 协议规范：descriptor 紧跟在 property 之后） */
+    uint16_t cccd_handle = g_my63_property_handle + 1;
 
     if (g_my63_conn_id == 0xFFFF || g_my63_property_handle == 0) {
         osal_printk("[WS63_NET] write_cccd skip: conn_id=%u handle=0x%04x\r\n",
@@ -915,13 +923,13 @@ static void my63_write_cccd(void)
         return;
     }
 
-    param.handle = g_my63_property_handle;
+    param.handle = cccd_handle;
     param.type = SSAP_DESCRIPTOR_CLIENT_CONFIGURATION;
     param.data_len = 2;
     param.data = cccd_val;
 
-    osal_printk("[WS63_NET] write_cccd handle=0x%04x data=[0x01,0x00] conn_id=%u\r\n",
-        g_my63_property_handle, g_my63_conn_id);
+    osal_printk("[WS63_NET] write_cccd cccd_handle=0x%04x (property=0x%04x) data=[0x01,0x00] conn_id=%u\r\n",
+        cccd_handle, g_my63_property_handle, g_my63_conn_id);
     ret = ssapc_write_req(0, g_my63_conn_id, &param);
     if (ret != ERRCODE_SLE_SUCCESS) {
         osal_printk("[WS63_NET] write_cccd failed ret=0x%x\r\n", ret);
