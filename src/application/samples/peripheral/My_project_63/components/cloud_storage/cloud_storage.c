@@ -3,6 +3,7 @@
 #include "securec.h"
 #include "nv.h"
 #include "wifi_device.h"
+#include "emqxsl_ca.h"
 #include "wifi_event.h"
 #include "wifi_hotspot_config.h"
 #include "wifi_linked_info.h"
@@ -368,12 +369,21 @@ int cs_mqtt_connect(const cs_mqtt_config_t *config)
     }
 
     MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+    MQTTClient_SSLOptions ssl_opts = MQTTClient_SSLOptions_initializer;
+
     conn_opts.keepAliveInterval = 60;
     conn_opts.cleansession = 1;
     conn_opts.connectTimeout = 10;
     if (strlen(g_cs_mqtt_config.username) > 0) {
         conn_opts.username = g_cs_mqtt_config.username;
         conn_opts.password = g_cs_mqtt_config.password;
+    }
+
+    /* SSL 配置：启用 SSL 但跳过证书验证（测试阶段） */
+    if (strncmp(g_cs_mqtt_config.uri, "ssl://", 6) == 0) {
+        ssl_opts.verify = 0;  /* 跳过证书验证 */
+        conn_opts.ssl = &ssl_opts;
+        osal_printk("[WS63_CLOUD] mqtt SSL enabled (verify=0)\r\n");
     }
 
     mqtt_rc = MQTTClient_connect(g_cs_mqtt_client, &conn_opts);

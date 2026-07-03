@@ -504,7 +504,7 @@ static void biz_screen_find_locate(const char *id_str)
     }
 
     /* 设置 pending，等待 SSAP 就绪后发送蜂鸣指令 */
-    biz_set_pending("find_locate_connecting", 0, tag_id);
+    biz_set_pending("locate_conn", 0, tag_id);
     biz_screen_reply("MSG", "Connecting...");
     osal_printk("[WS63_BIZ] find,locate tag=%s connecting, waiting for SSAP\r\n", id_str);
 }
@@ -520,15 +520,17 @@ void biz_locate_record_tag(uint16_t tag_id)
     g_locate_count++;
 }
 
-/* @find,stop → 停止所有蜂鸣 */
+/* @find,stop → 停止所有蜂鸣 + 断开连接 */
 static void biz_screen_find_stop(void)
 {
     for (uint16_t i = 0; i < g_locate_count; i++) {
         sle_network_send_cmd(SSAP_CMD_STOP_FIND, g_locate_tags[i].tag_id);
     }
     g_locate_count = 0;
+    /* 主动断开 SLE 连接，释放信道 */
+    (void)sle_network_disconnect();
     biz_screen_reply("MSG", "Stopped");
-    osal_printk("[WS63_BIZ] find,stop all beeps stopped\r\n");
+    osal_printk("[WS63_BIZ] find,stop all beeps stopped, disconnected\r\n");
 }
 
 /* 寻物超时检查：5秒后自动停止蜂鸣（由 business_logic_poll 调用） */

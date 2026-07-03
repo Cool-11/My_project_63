@@ -305,7 +305,7 @@ void biz_check_confirm_bind(void)
 
     /* 只处理需要等待 SSAP 的 pending 状态 */
     bool is_confirm = (strcmp(g_biz_pending.cmd, "confirm_conn") == 0);
-    bool is_locate = (strcmp(g_biz_pending.cmd, "find_locate_connecting") == 0);
+    bool is_locate = (strcmp(g_biz_pending.cmd, "locate_conn") == 0);
     if (!is_confirm && !is_locate) {
         return;
     }
@@ -321,6 +321,11 @@ void biz_check_confirm_bind(void)
 
     /* 检查 SSAP 是否就绪 */
     if (!sle_network_is_ssap_ready()) {
+        static uint32_t wait_log_count = 0;
+        if (wait_log_count < 3) {
+            wait_log_count++;
+            osal_printk("[WS63_BIZ] ssap not ready yet, waiting...\r\n");
+        }
         return;  /* 还没就绪，继续等 */
     }
 

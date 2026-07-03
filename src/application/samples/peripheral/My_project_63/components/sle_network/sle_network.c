@@ -935,7 +935,9 @@ static void my63_write_cccd(void)
         osal_printk("[WS63_NET] write_cccd failed ret=0x%x\r\n", ret);
         return;
     }
-    osal_printk("[WS63_NET] write_cccd req sent ok\r\n");
+    /* 直接标记 CCCD 已写入（不依赖写入确认回调，因为 SDK 可能返回错误的 type） */
+    g_my63_cccd_written = 1;
+    osal_printk("[WS63_NET] write_cccd req sent ok, cccd_written=1\r\n");
 }
 
 static void my63_ssap_find_property_cb(uint8_t client_id, uint16_t conn_id,
